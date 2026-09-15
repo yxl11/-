@@ -1,0 +1,202 @@
+[
+  {
+    "name": "capture_localization",
+    "category": "acceptance",
+    "payload_mass_factor": 1.0,
+    "position_noise_std_m": 0.002,
+    "velocity_noise_std_m_s": 0.005,
+    "noise_correlation_s": 0.15,
+    "measurement_delay_s": 0.04,
+    "position_bias_m": [
+      [
+        0.003,
+        -0.0015,
+        0.0012
+      ],
+      [
+        -0.0024,
+        0.003,
+        -0.0009
+      ],
+      [
+        0.0015,
+        -0.0024,
+        0.0015
+      ]
+    ],
+    "command_delay_s": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "clock_offset_s": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "wind_peak_N": 0.0,
+    "wind_start_s": 30.0,
+    "wind_duration_s": 8.0,
+    "seed": 7
+  },
+  {
+    "name": "capture_light_seed7",
+    "category": "acceptance",
+    "payload_mass_factor": 0.9,
+    "position_noise_std_m": 0.002,
+    "velocity_noise_std_m_s": 0.005,
+    "noise_correlation_s": 0.15,
+    "measurement_delay_s": 0.04,
+    "position_bias_m": [
+      [
+        0.003,
+        -0.0015,
+        0.0012
+      ],
+      [
+        -0.0024,
+        0.003,
+        -0.0009
+      ],
+      [
+        0.0015,
+        -0.0024,
+        0.0015
+      ]
+    ],
+    "command_delay_s": [
+      0.02,
+      0.04,
+      0.06
+    ],
+    "clock_offset_s": [
+      0,
+      0.01,
+      -0.01
+    ],
+    "wind_peak_N": 0.3,
+    "wind_start_s": 30.0,
+    "wind_duration_s": 8.0,
+    "seed": 7
+  },
+  {
+    "name": "capture_heavy_seed7",
+    "category": "acceptance",
+    "payload_mass_factor": 1.1,
+    "position_noise_std_m": 0.002,
+    "velocity_noise_std_m_s": 0.005,
+    "noise_correlation_s": 0.15,
+    "measurement_delay_s": 0.04,
+    "position_bias_m": [
+      [
+        0.003,
+        -0.0015,
+        0.0012
+      ],
+      [
+        -0.0024,
+        0.003,
+        -0.0009
+      ],
+      [
+        0.0015,
+        -0.0024,
+        0.0015
+      ]
+    ],
+    "command_delay_s": [
+      0.02,
+      0.04,
+      0.06
+    ],
+    "clock_offset_s": [
+      0,
+      0.01,
+      -0.01
+    ],
+    "wind_peak_N": 0.3,
+    "wind_start_s": 30.0,
+    "wind_duration_s": 8.0,
+    "seed": 7
+  },
+  {
+    "name": "capture_heavy_seed19",
+    "category": "acceptance",
+    "payload_mass_factor": 1.1,
+    "position_noise_std_m": 0.002,
+    "velocity_noise_std_m_s": 0.005,
+    "noise_correlation_s": 0.15,
+    "measurement_delay_s": 0.04,
+    "position_bias_m": [
+      [
+        0.003,
+        -0.0015,
+        0.0012
+      ],
+      [
+        -0.0024,
+        0.003,
+        -0.0009
+      ],
+      [
+        0.0015,
+        -0.0024,
+        0.0015
+      ]
+    ],
+    "command_delay_s": [
+      0.02,
+      0.04,
+      0.06
+    ],
+    "clock_offset_s": [
+      0,
+      0.01,
+      -0.01
+    ],
+    "wind_peak_N": 0.3,
+    "wind_start_s": 30.0,
+    "wind_duration_s": 8.0,
+    "seed": 19
+  },
+  {
+    "name": "capture_heavy_seed41",
+    "category": "acceptance",
+    "payload_mass_factor": 1.1,
+    "position_noise_std_m": 0.002,
+    "velocity_noise_std_m_s": 0.005,
+    "noise_correlation_s": 0.15,
+    "measurement_delay_s": 0.04,
+    "position_bias_m": [
+      [
+        0.003,
+        -0.0015,
+        0.0012
+      ],
+      [
+        -0.0024,
+        0.003,
+        -0.0009
+      ],
+      [
+        0.0015,
+        -0.0024,
+        0.0015
+      ]
+    ],
+    "command_delay_s": [
+      0.02,
+      0.04,
+      0.06
+    ],
+    "clock_offset_s": [
+      0,
+      0.01,
+      -0.01
+    ],
+    "wind_peak_N": 0.3,
+    "wind_start_s": 30.0,
+    "wind_duration_s": 8.0,
+    "seed": 41
+  }
+]

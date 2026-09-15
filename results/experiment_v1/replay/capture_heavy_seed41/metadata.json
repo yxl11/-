@@ -1,0 +1,56 @@
+{
+  "numpy": "2.5.3",
+  "trajectory_sha256": "8c0d40a889478decac3863e14570afba2c5c06ba1d9e14c5bdc4267e42425d52",
+  "source_sha256": {
+    "__init__.py": "8b60c491771631ca11ceec8454d27fd9fc80a04074a8b6e0b48dd569fa8f0d05",
+    "config.py": "5771b1d172416341e0cd69b8e4c295ffbf6ef98c21f323dde4d410029b98c786",
+    "controller.py": "f68b22828a53b57194b650626f1f9b3df939c7533c9e56fa1cafe1ee8ea8beab",
+    "experiment_visualization.py": "770fcec4b72fe2ef244657fcca955489e7eb8ef688240e906ade4899d35ee4d0",
+    "force_controller.py": "06bd6c470fdbce07463adc66dd9e6964201864671344862720e17a39188040af",
+    "force_mapping.py": "34d52908e223f4758b47b258e4e6a219adb432ce7511f2a946c2818ced9be373",
+    "force_results.py": "b61382517cafddb692c92c77f26255a11015f86b9b5074af6c0772401490af6a",
+    "force_visualization.py": "bab6010ec60775b51c42c86d58fd7f64050cc3d3b0c07dfb6ebadac477e9509a",
+    "model.py": "4a64673c54e1b389b886854d6a0aaaaa7974ed18e7a43644bd8e94908102c72f",
+    "pde.py": "04931d34481917d16d2fda32ccf05e97d81757032baf9bd8d688cfde69415248",
+    "pde_controller.py": "004b34ec551b575cf8607aa13d20021c4e7733a0ccc1d149d310aa2a8626dee5",
+    "replay.py": "5a56cbe2c5f839f33b7cf68f85d932288f68bc4110e15f5d665c4e87c33aae64",
+    "rotations.py": "7dfa555909d1e37879dc4889855f906a6025527144e5ed8122ab401453d004de",
+    "simulation.py": "62380bcc72f7722a85f9d68ca5f329b61ebb4a2285d094ec7e4f1a7389b3f275",
+    "trajectory.py": "e56c419f55a9426228d2a99a02681c073f36f5a1723dbec4dd32897321a9a499",
+    "tube_mpc.py": "07e04d9a169c3d8a6fe5d02c18b27bc88e7611426db5d459a1336acadf48ef1b",
+    "visualization.py": "e1ef16e8e652e63335abe6fc46c9c0a06a5b8c234c19ac3c7b18624ed3d08527"
+  },
+  "control_inputs": [
+    "recorded_UAV_pva_and_time",
+    "delayed_noisy_UAV_position_velocity",
+    "ideal_UAV_attitude_gyro"
+  ],
+  "evaluation_only": [
+    "payload_state",
+    "tension",
+    "external_force",
+    "force_actual"
+  ],
+  "nominal_load_share_compensation": "constant nominal mass, radial hover preload, recorded acceleration inertial share",
+  "local_position_integral": {
+    "gain_per_second": [
+      0.3,
+      0.3,
+      0.8
+    ],
+    "component_acceleration_limit_m_s2": 0.6,
+    "antiwindup": "conditional_integration_when_candidate_acceleration_norm_at_most_1"
+  },
+  "assumptions": [
+    "taut_cables_only",
+    "no_PX4_ROS",
+    "no_ground_contact",
+    "no_downwash",
+    "ideal_attitude_gyro",
+    "fixed_link_latency_and_clock_offsets_not_packet_loss",
+    "position_velocity_noise_are_correlated_Gaussian_models",
+    "mass_variation_changes_payload_inertia_but_not_geometry",
+    "sampled_clearance_not_continuous_collision_proof"
+  ],
+  "flight_ready": false
+}

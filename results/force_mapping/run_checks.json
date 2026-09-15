@@ -1,0 +1,29 @@
+{
+  "all_passed": true,
+  "checks": {
+    "full_task_completed": true,
+    "integrated_controller_selected": true,
+    "finite_aligned_logs": true,
+    "all_requested_QPs_solved": true,
+    "allocation_force_and_moment_equalities": true,
+    "raw_and_filtered_force_cones": true,
+    "actual_positive_tension_within_design_range": true,
+    "inverse_and_physical_rope_lengths": true,
+    "mapped_reference_derivatives_consistent": true,
+    "formation_mapping_is_nonzero": true,
+    "future_prediction_sequence_is_nonconstant": true,
+    "force_forecast_plus_tube_feedback_matches_command": true,
+    "no_motor_saturation": true,
+    "PDE_commands_within_limits_without_clipping": true,
+    "positive_sampled_body_and_workspace_clearance": true,
+    "nominal_MPC_constraints": true,
+    "sampled_state_within_tube": true,
+    "sampled_model_residual_within_assumed_W": true,
+    "current_source_matches_saved_run": true
+  },
+  "reference_velocity_difference_peak_m_s": 3.3851616662304013e-06,
+  "unit_checks_executed": 26,
+  "algorithm_comparison_performed": false,
+  "flight_ready": false,
+  "continuous_time_robust_guarantee": false
+}

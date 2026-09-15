@@ -1,0 +1,24 @@
+{
+  "source_directory": "C:\\Users\\31977\\Documents\\ChatGPT\\协同吊运实验\\results\\experiment_v1\\planning",
+  "source_log_sha256": "89ba7fc0b1fac2d9d05dfe5e547d8987de86e091d4eb48bc9ad490c71d286342",
+  "source_config_sha256": "0fa01751d4fca32c101f5d76680630315bcf2700401c7cbd08cf66ba28e9f8a4",
+  "trajectory_sha256": "8c0d40a889478decac3863e14570afba2c5c06ba1d9e14c5bdc4267e42425d52",
+  "duration_s": 88.0,
+  "samples_per_uav": 4401,
+  "sample_period_s": 0.019999999999999574,
+  "coordinate_frame": "shared_local_world_z_up; heading fixed; ROS/PX4 transforms not implemented",
+  "interpolation": "quintic Hermite, analytical p/v/a, C2 within recorded interval; outside endpoint hold",
+  "start_velocity_peak_m_s": 0.0,
+  "end_velocity_peak_m_s": 1.1547370133577232e-06,
+  "start_acceleration_peak_m_s2": 0.0,
+  "end_acceleration_peak_m_s2": 6.785283294210679e-06,
+  "execution_inputs": [
+    "time",
+    "three_UAV_position_velocity_acceleration",
+    "zero_yaw"
+  ],
+  "payload_feedback": false,
+  "tension_feedback": false,
+  "online_PDE_MPC_ESO": false,
+  "flight_ready": false
+}

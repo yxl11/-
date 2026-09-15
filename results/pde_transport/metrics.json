@@ -1,0 +1,90 @@
+{
+  "payload_position_rmse_m": 0.012071421618182601,
+  "payload_position_peak_m": 0.10000000000000006,
+  "uav_position_rmse_m": [
+    0.009080300468628535,
+    0.012457370692478268,
+    0.008046231607548379
+  ],
+  "payload_tilt_peak_deg": 1.9999999999999472,
+  "final_hold_payload_tilt_peak_deg": 0.0025310126585166627,
+  "cable_direction_deviation_peak_deg": 2.0547283350757537,
+  "tension_min_N": 10.112376113913362,
+  "tension_max_N": 10.667630445026942,
+  "tension_rate_rms_N_s": [
+    0.06563123254306313,
+    0.06803031323607116,
+    0.04972370396618718
+  ],
+  "rope_length_error_peak_m": 1.220135104063047e-12,
+  "cable_constraint_power_peak_W": 6.403004108110042e-10,
+  "quaternion_norm_error_peak": 2.220446049250313e-16,
+  "minimum_uav_center_distance_m": 1.4389285795587357,
+  "minimum_uav_bounding_sphere_clearance_m": 0.4789285795587357,
+  "minimum_workspace_bounding_sphere_clearance_m": 0.4594086538297015,
+  "rotor_thrust_peak_N": 8.759827625914333,
+  "status": "completed",
+  "failure_reason": null,
+  "scenario": "pde_transport",
+  "requested_duration_s": 104.0,
+  "logged_end_s": 104.0,
+  "wall_time_s": 72.5172930000117,
+  "saturated_attitude_update_fraction": 0.0,
+  "state_extrema_sampling_hz": 50.0,
+  "flight_ready": false,
+  "px4_validated": false,
+  "controller": "proposal_PDE_backstepping_three_nodes_velocity_realization",
+  "pde": {
+    "source_equations": [
+      1,
+      6,
+      7,
+      8,
+      9
+    ],
+    "topology_coordinates": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "node_roles": [
+      "anchor",
+      "follower",
+      "leader"
+    ],
+    "quadrature": "left_rectangle_on_three_actual_nodes",
+    "boundary_weights": [
+      -0.0,
+      -0.43669635526158995
+    ],
+    "kernel_sigma": 2.96,
+    "ideal_first_order_eigenvalues": [
+      {
+        "real": -1.3382195944726494,
+        "imag": 0.0
+      },
+      {
+        "real": -1.0,
+        "imag": 0.0
+      },
+      {
+        "real": -1.0,
+        "imag": 0.0
+      }
+    ],
+    "tracking_reference_lifting": true,
+    "dynamic_boundary_realization": true,
+    "continuum_stability_proof_for_physical_plant": false
+  },
+  "formation_error_L2_initial_m": 0.10369853712565583,
+  "formation_error_L2_final_m": 4.5682568162657684e-07,
+  "formation_error_L2_peak_m": 0.1037484393581997,
+  "boundary_residual_peak_m": 0.14894911508924727,
+  "boundary_residual_final_m": 2.0919139235253032e-07,
+  "interior_PDE_defect_rms_m_s": 0.007286919735186745,
+  "pde_velocity_command_peak_m_s": 0.4788397857212301,
+  "pde_acceleration_command_peak_m_s2": 0.6705801511325686,
+  "pde_velocity_limit_fraction": 0.0,
+  "pde_acceleration_limit_fraction": 0.0,
+  "post_initial_hold_payload_rmse_m": 0.006960487240841598
+}

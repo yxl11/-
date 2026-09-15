@@ -1,0 +1,132 @@
+{
+  "description": "Proposal 2.3(1) and 2.3(3): momentum ESO, linear tube-MPC, vector force allocation, inverse formation, PDE; uncalibrated",
+  "gravity": 9.81,
+  "payload_mass": 3.3000000000000003,
+  "payload_dimensions": [
+    0.6,
+    0.5,
+    0.25
+  ],
+  "anchor_radius": 0.25,
+  "anchor_height": 0.125,
+  "uav_mass": 2.5,
+  "uav_inertia": [
+    0.035,
+    0.035,
+    0.06
+  ],
+  "arm_length": 0.3,
+  "propeller_radius": 0.18,
+  "rotor_yaw_coefficient": 0.02,
+  "max_rotor_thrust": 16.25,
+  "motor_time_constant": 0.04,
+  "rope_length": 1.8,
+  "hover_rope_angle_deg": 20.0,
+  "uav_linear_drag": 0.1,
+  "payload_linear_drag": 0.1,
+  "uav_angular_drag": 0.005,
+  "payload_angular_drag": 0.005,
+  "constraint_omega": 20.0,
+  "constraint_zeta": 1.0,
+  "position_kp": [
+    4.0,
+    4.0,
+    6.0
+  ],
+  "position_kd": [
+    3.5,
+    3.5,
+    4.0
+  ],
+  "attitude_kp": [
+    2.0,
+    2.0,
+    1.0
+  ],
+  "attitude_kd": [
+    0.4,
+    0.4,
+    0.3
+  ],
+  "physics_dt": 0.002,
+  "position_period": 0.02,
+  "attitude_period": 0.004,
+  "log_period": 0.02,
+  "leg_duration": 32.0,
+  "hold_duration": 8.0,
+  "payload_com_height": 0.875,
+  "workspace_half_size": [
+    10.0,
+    5.0,
+    5.0
+  ],
+  "controller": "force_pde",
+  "pde": {
+    "alpha": 1.0,
+    "b": 0.2,
+    "reaction": 1.0,
+    "mu": 2.0,
+    "time_scale": 0.15,
+    "anchor_c": 6.666666666666667,
+    "boundary_gain": 1.0,
+    "velocity_gain": 4.5,
+    "velocity_limit": 0.8,
+    "acceleration_limit": 1.0,
+    "initial_translation_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "initial_payload_tilt_deg": 0.0
+  },
+  "force_mapping": {
+    "prediction_period": 0.1,
+    "horizon": 20,
+    "tube_feedback": [
+      1.0,
+      2.0
+    ],
+    "acceleration_residual_bound": [
+      0.35,
+      0.35,
+      0.03
+    ],
+    "acceleration_bounds": [
+      3.5,
+      3.5,
+      1.0
+    ],
+    "velocity_bounds": [
+      2.0,
+      2.0,
+      0.6
+    ],
+    "position_min": [
+      -7.0,
+      -3.0,
+      0.5
+    ],
+    "position_max": [
+      7.0,
+      3.0,
+      2.5
+    ],
+    "state_cost": [
+      20.0,
+      8.0
+    ],
+    "input_cost": 0.5,
+    "input_change_cost": 8.0,
+    "eso_bandwidth": 3.0,
+    "attitude_gain": 0.03,
+    "angular_velocity_gain": 0.008,
+    "allocation_smooth_weight": 1.0,
+    "tension_min": 4.0,
+    "tension_max": 18.0,
+    "cone_angle_deg": 35.0,
+    "force_filter_bandwidth": 3.0,
+    "wind_peak_N": 0.3,
+    "wind_start_s": 20.0,
+    "wind_duration_s": 8.0
+  }
+}

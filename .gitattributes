@@ -1,0 +1,6 @@
+# Existing source/CSV bytes are referenced by SHA256 in simulation metadata.
+# Preserve them across Windows/Linux even if core.autocrlf=true on a host.
+* -text
+
+# New shell scripts should always be checked out with Unix line endings.
+*.sh text eol=lf

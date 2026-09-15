@@ -1,0 +1,52 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.5.3",
+  "source_sha256": {
+    "__init__.py": "8b60c491771631ca11ceec8454d27fd9fc80a04074a8b6e0b48dd569fa8f0d05",
+    "config.py": "78740fe5f5b73a6c4c600b80184009094c84cf1642fb7b0bd0f18fded5a6360d",
+    "controller.py": "f68b22828a53b57194b650626f1f9b3df939c7533c9e56fa1cafe1ee8ea8beab",
+    "model.py": "4a64673c54e1b389b886854d6a0aaaaa7974ed18e7a43644bd8e94908102c72f",
+    "rotations.py": "7dfa555909d1e37879dc4889855f906a6025527144e5ed8122ab401453d004de",
+    "simulation.py": "ca7c3e83e2c4f1a1af7c063559372d7acaaa6c9fd8a41225411a3e7a455c9479",
+    "trajectory.py": "e56c419f55a9426228d2a99a02681c073f36f5a1723dbec4dd32897321a9a499",
+    "visualization.py": "a6f8239423e8132b784bedd65a8e0aa210e4e49f0263fea06942f3e4fed9b4bf"
+  },
+  "frame": "world_z_up_body_z_thrust_positive",
+  "quaternion": "wxyz_body_to_world",
+  "body_order": [
+    "payload",
+    "uav1",
+    "uav2",
+    "uav3"
+  ],
+  "state_layout": {
+    "position": [
+      0,
+      12
+    ],
+    "velocity": [
+      12,
+      24
+    ],
+    "quaternion": [
+      24,
+      40
+    ],
+    "body_angular_velocity": [
+      40,
+      52
+    ],
+    "rotor_thrust": [
+      52,
+      64
+    ]
+  },
+  "limitations": [
+    "uncalibrated_parameters",
+    "taut_cables_only",
+    "no_ground_contact",
+    "no_sensor_noise_or_delay",
+    "no_PX4_or_ROS_execution",
+    "no_downwash_or_cable_collision"
+  ]
+}

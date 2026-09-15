@@ -1,0 +1,184 @@
+{
+  "integrity_checks": {
+    "planning_completed": true,
+    "planning_no_external_wind": true,
+    "source_log_hash_matches": true,
+    "source_config_hash_matches": true,
+    "trajectory_hash_matches": true,
+    "exported_reference_is_exact_planning_pva": true,
+    "duration_88s_and_50Hz": true,
+    "reference_speed_below_08m_s": true,
+    "reference_acceleration_below_1m_s2": true,
+    "inverse_reference_is_dynamic": true,
+    "terminal_reference_velocity_acceleration_negligible": true,
+    "planning_physical_margins": true,
+    "planning_QPs_feasible": true,
+    "case_audits_all_pass": true
+  },
+  "case_integrity": {
+    "ideal": {
+      "completed_full_88s": true,
+      "finite_aligned_logs": true,
+      "same_frozen_trajectory": true,
+      "controller_source_matches": true,
+      "nominal_mass_not_replaced_by_truth": true,
+      "no_online_load_or_planner_feedback": true,
+      "recomputed_threshold_flags_match": true,
+      "suite_metric_matches_saved_case": true
+    },
+    "localization": {
+      "completed_full_88s": true,
+      "finite_aligned_logs": true,
+      "same_frozen_trajectory": true,
+      "controller_source_matches": true,
+      "nominal_mass_not_replaced_by_truth": true,
+      "no_online_load_or_planner_feedback": true,
+      "recomputed_threshold_flags_match": true,
+      "suite_metric_matches_saved_case": true
+    },
+    "communication": {
+      "completed_full_88s": true,
+      "finite_aligned_logs": true,
+      "same_frozen_trajectory": true,
+      "controller_source_matches": true,
+      "nominal_mass_not_replaced_by_truth": true,
+      "no_online_load_or_planner_feedback": true,
+      "recomputed_threshold_flags_match": true,
+      "suite_metric_matches_saved_case": true
+    },
+    "mass_plus_10pct": {
+      "completed_full_88s": true,
+      "finite_aligned_logs": true,
+      "same_frozen_trajectory": true,
+      "controller_source_matches": true,
+      "nominal_mass_not_replaced_by_truth": true,
+      "no_online_load_or_planner_feedback": true,
+      "recomputed_threshold_flags_match": true,
+      "suite_metric_matches_saved_case": true
+    },
+    "mass_minus_10pct": {
+      "completed_full_88s": true,
+      "finite_aligned_logs": true,
+      "same_frozen_trajectory": true,
+      "controller_source_matches": true,
+      "nominal_mass_not_replaced_by_truth": true,
+      "no_online_load_or_planner_feedback": true,
+      "recomputed_threshold_flags_match": true,
+      "suite_metric_matches_saved_case": true
+    },
+    "combined_light_seed7": {
+      "completed_full_88s": true,
+      "finite_aligned_logs": true,
+      "same_frozen_trajectory": true,
+      "controller_source_matches": true,
+      "nominal_mass_not_replaced_by_truth": true,
+      "no_online_load_or_planner_feedback": true,
+      "recomputed_threshold_flags_match": true,
+      "suite_metric_matches_saved_case": true
+    },
+    "combined_heavy_seed7": {
+      "completed_full_88s": true,
+      "finite_aligned_logs": true,
+      "same_frozen_trajectory": true,
+      "controller_source_matches": true,
+      "nominal_mass_not_replaced_by_truth": true,
+      "no_online_load_or_planner_feedback": true,
+      "recomputed_threshold_flags_match": true,
+      "suite_metric_matches_saved_case": true
+    },
+    "combined_heavy_seed19": {
+      "completed_full_88s": true,
+      "finite_aligned_logs": true,
+      "same_frozen_trajectory": true,
+      "controller_source_matches": true,
+      "nominal_mass_not_replaced_by_truth": true,
+      "no_online_load_or_planner_feedback": true,
+      "recomputed_threshold_flags_match": true,
+      "suite_metric_matches_saved_case": true
+    },
+    "combined_heavy_seed41": {
+      "completed_full_88s": true,
+      "finite_aligned_logs": true,
+      "same_frozen_trajectory": true,
+      "controller_source_matches": true,
+      "nominal_mass_not_replaced_by_truth": true,
+      "no_online_load_or_planner_feedback": true,
+      "recomputed_threshold_flags_match": true,
+      "suite_metric_matches_saved_case": true
+    },
+    "boundary_bias_1cm": {
+      "completed_full_88s": true,
+      "finite_aligned_logs": true,
+      "same_frozen_trajectory": true,
+      "controller_source_matches": true,
+      "nominal_mass_not_replaced_by_truth": true,
+      "no_online_load_or_planner_feedback": true,
+      "recomputed_threshold_flags_match": true,
+      "suite_metric_matches_saved_case": true
+    },
+    "boundary_combined_bias_1cm": {
+      "completed_full_88s": true,
+      "finite_aligned_logs": true,
+      "same_frozen_trajectory": true,
+      "controller_source_matches": true,
+      "nominal_mass_not_replaced_by_truth": true,
+      "no_online_load_or_planner_feedback": true,
+      "recomputed_threshold_flags_match": true,
+      "suite_metric_matches_saved_case": true
+    },
+    "capture_localization": {
+      "completed_full_88s": true,
+      "finite_aligned_logs": true,
+      "same_frozen_trajectory": true,
+      "controller_source_matches": true,
+      "nominal_mass_not_replaced_by_truth": true,
+      "no_online_load_or_planner_feedback": true,
+      "recomputed_threshold_flags_match": true,
+      "suite_metric_matches_saved_case": true
+    },
+    "capture_light_seed7": {
+      "completed_full_88s": true,
+      "finite_aligned_logs": true,
+      "same_frozen_trajectory": true,
+      "controller_source_matches": true,
+      "nominal_mass_not_replaced_by_truth": true,
+      "no_online_load_or_planner_feedback": true,
+      "recomputed_threshold_flags_match": true,
+      "suite_metric_matches_saved_case": true
+    },
+    "capture_heavy_seed7": {
+      "completed_full_88s": true,
+      "finite_aligned_logs": true,
+      "same_frozen_trajectory": true,
+      "controller_source_matches": true,
+      "nominal_mass_not_replaced_by_truth": true,
+      "no_online_load_or_planner_feedback": true,
+      "recomputed_threshold_flags_match": true,
+      "suite_metric_matches_saved_case": true
+    },
+    "capture_heavy_seed19": {
+      "completed_full_88s": true,
+      "finite_aligned_logs": true,
+      "same_frozen_trajectory": true,
+      "controller_source_matches": true,
+      "nominal_mass_not_replaced_by_truth": true,
+      "no_online_load_or_planner_feedback": true,
+      "recomputed_threshold_flags_match": true,
+      "suite_metric_matches_saved_case": true
+    },
+    "capture_heavy_seed41": {
+      "completed_full_88s": true,
+      "finite_aligned_logs": true,
+      "same_frozen_trajectory": true,
+      "controller_source_matches": true,
+      "nominal_mass_not_replaced_by_truth": true,
+      "no_online_load_or_planner_feedback": true,
+      "recomputed_threshold_flags_match": true,
+      "suite_metric_matches_saved_case": true
+    }
+  },
+  "integrity_passed": true,
+  "engineering_passed_cases": 10,
+  "engineering_total_cases": 16,
+  "all_capture_cases_passed": true
+}

@@ -1,0 +1,34 @@
+.venv/
+.venv-*/
+__pycache__/
+*.pyc
+.pytest_cache/
+.cache/
+
+# Keep formal results; local smoke tests and superseded debugging runs are reproducible.
+/results/*smoke*/
+/results/*debug*/
+/results/force_mapping_initial_unstable/
+/results/experiment_v1/debug_pd_initial/
+/results/ubuntu_smoke/
+/results/migration_checks/
+
+# Future ROS build products and large flight recordings.
+/build/
+/devel/
+/install/
+/log/
+/.catkin_tools/
+*.bag
+*.bag.active
+*.db3
+*.mcap
+*.ulg
+
+# Machine-local credentials and editor state.
+.env
+.env.*
+!.env.example
+.idea/
+.DS_Store
+Thumbs.db

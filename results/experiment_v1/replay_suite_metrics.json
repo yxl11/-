@@ -1,0 +1,1666 @@
+[
+  {
+    "payload_position_rmse_m": 0.004798748817430281,
+    "payload_position_peak_m": 0.01232758952370586,
+    "uav_position_rmse_m": [
+      0.002249777212945539,
+      0.0027554798710061465,
+      0.0027731044963791697
+    ],
+    "payload_tilt_peak_deg": 0.4338184737601825,
+    "final_hold_payload_tilt_peak_deg": 0.009982481401577592,
+    "cable_direction_deviation_peak_deg": 0.9388759387532577,
+    "tension_min_N": 10.320727732717057,
+    "tension_max_N": 10.560023519024814,
+    "tension_rate_rms_N_s": [
+      0.0038202929919882314,
+      0.019061746431356785,
+      0.018492919648303335
+    ],
+    "rope_length_error_peak_m": 1.2434497875801753e-14,
+    "cable_constraint_power_peak_W": 1.0785584914224115e-11,
+    "quaternion_norm_error_peak": 2.220446049250313e-16,
+    "minimum_uav_center_distance_m": 1.4909724727856608,
+    "minimum_uav_bounding_sphere_clearance_m": 0.5309724727856608,
+    "minimum_workspace_bounding_sphere_clearance_m": 0.46490906074026467,
+    "rotor_thrust_peak_N": 8.664319736208252,
+    "status": "completed",
+    "failure_reason": null,
+    "failure_step_time_s": null,
+    "scenario": "ideal",
+    "case": {
+      "name": "ideal",
+      "category": "acceptance",
+      "payload_mass_factor": 1.0,
+      "position_noise_std_m": 0.0,
+      "velocity_noise_std_m_s": 0.0,
+      "noise_correlation_s": 0.15,
+      "measurement_delay_s": 0.0,
+      "position_bias_m": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "command_delay_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "clock_offset_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "wind_peak_N": 0.0,
+      "wind_start_s": 30.0,
+      "wind_duration_s": 8.0,
+      "seed": 7
+    },
+    "controller": "offline_pva_replay_local_UAV_PID_nominal_load_share",
+    "requested_duration_s": 88.0,
+    "logged_end_s": 88.0,
+    "wall_time_s": 57.484993000049144,
+    "flight_ready": false,
+    "px4_validated": false,
+    "payload_feedback": false,
+    "tension_feedback": false,
+    "online_PDE_MPC_ESO": false,
+    "nominal_payload_mass_kg": 3.0,
+    "actual_payload_mass_kg": 3.0,
+    "uav_position_peak_m": 0.0062364957518089474,
+    "final_hold_payload_rmse_m": 0.0015428605448557105,
+    "acceleration_limit_fraction": 0.0,
+    "saturated_attitude_update_fraction": 0.0,
+    "rotor_limit_utilization_peak": 0.5331889068435848,
+    "state_extrema_sampling_hz": 50.0,
+    "acceptance_checks": {
+      "full_duration": true,
+      "payload_peak_error_at_most_15cm": true,
+      "uav_peak_error_at_most_10cm": true,
+      "payload_tilt_at_most_5deg": true,
+      "cable_deviation_at_most_5deg": true,
+      "tension_within_4_to_18N": true,
+      "uav_surface_clearance_at_least_25cm": true,
+      "workspace_clearance_at_least_30cm": true,
+      "rotor_at_most_80pct_assumed_limit": true,
+      "no_motor_saturation": true,
+      "no_acceleration_clipping": true,
+      "final_hold_RMSE_at_most_5cm": true,
+      "final_hold_tilt_at_most_1deg": true,
+      "rope_length_residual_at_most_10um": true
+    },
+    "engineering_screen_passed": true
+  },
+  {
+    "payload_position_rmse_m": 0.013926717790293528,
+    "payload_position_peak_m": 0.03695438867380477,
+    "uav_position_rmse_m": [
+      0.012044340567247668,
+      0.013031413786570533,
+      0.011946764329046325
+    ],
+    "payload_tilt_peak_deg": 1.450093053201367,
+    "final_hold_payload_tilt_peak_deg": 1.2186825195042548,
+    "cable_direction_deviation_peak_deg": 1.3381754992946953,
+    "tension_min_N": 10.129758503453813,
+    "tension_max_N": 10.829466583442825,
+    "tension_rate_rms_N_s": [
+      0.5536511592790062,
+      0.5464138272263536,
+      0.5316808803230387
+    ],
+    "rope_length_error_peak_m": 1.0718093079731261e-12,
+    "cable_constraint_power_peak_W": 5.92452884930452e-10,
+    "quaternion_norm_error_peak": 2.220446049250313e-16,
+    "minimum_uav_center_distance_m": 1.4614420297730513,
+    "minimum_uav_bounding_sphere_clearance_m": 0.5014420297730513,
+    "minimum_workspace_bounding_sphere_clearance_m": 0.457130536997797,
+    "rotor_thrust_peak_N": 8.768957463493615,
+    "status": "completed",
+    "failure_reason": null,
+    "failure_step_time_s": null,
+    "scenario": "localization",
+    "case": {
+      "name": "localization",
+      "category": "acceptance",
+      "payload_mass_factor": 1.0,
+      "position_noise_std_m": 0.005,
+      "velocity_noise_std_m_s": 0.01,
+      "noise_correlation_s": 0.15,
+      "measurement_delay_s": 0.04,
+      "position_bias_m": [
+        [
+          0.003,
+          -0.0015,
+          0.0012
+        ],
+        [
+          -0.0024,
+          0.003,
+          -0.0009
+        ],
+        [
+          0.0015,
+          -0.0024,
+          0.0015
+        ]
+      ],
+      "command_delay_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "clock_offset_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "wind_peak_N": 0.0,
+      "wind_start_s": 30.0,
+      "wind_duration_s": 8.0,
+      "seed": 7
+    },
+    "controller": "offline_pva_replay_local_UAV_PID_nominal_load_share",
+    "requested_duration_s": 88.0,
+    "logged_end_s": 88.0,
+    "wall_time_s": 57.81219460000284,
+    "flight_ready": false,
+    "px4_validated": false,
+    "payload_feedback": false,
+    "tension_feedback": false,
+    "online_PDE_MPC_ESO": false,
+    "nominal_payload_mass_kg": 3.0,
+    "actual_payload_mass_kg": 3.0,
+    "uav_position_peak_m": 0.04116846495938477,
+    "final_hold_payload_rmse_m": 0.004845727021389,
+    "acceleration_limit_fraction": 0.0,
+    "saturated_attitude_update_fraction": 0.0,
+    "rotor_limit_utilization_peak": 0.5396281515996071,
+    "state_extrema_sampling_hz": 50.0,
+    "acceptance_checks": {
+      "full_duration": true,
+      "payload_peak_error_at_most_15cm": true,
+      "uav_peak_error_at_most_10cm": true,
+      "payload_tilt_at_most_5deg": true,
+      "cable_deviation_at_most_5deg": true,
+      "tension_within_4_to_18N": true,
+      "uav_surface_clearance_at_least_25cm": true,
+      "workspace_clearance_at_least_30cm": true,
+      "rotor_at_most_80pct_assumed_limit": true,
+      "no_motor_saturation": true,
+      "no_acceleration_clipping": true,
+      "final_hold_RMSE_at_most_5cm": true,
+      "final_hold_tilt_at_most_1deg": false,
+      "rope_length_residual_at_most_10um": true
+    },
+    "engineering_screen_passed": false
+  },
+  {
+    "payload_position_rmse_m": 0.010641374132755465,
+    "payload_position_peak_m": 0.025240118445020356,
+    "uav_position_rmse_m": [
+      0.008369516663797972,
+      0.009746893758144588,
+      0.016566510354974757
+    ],
+    "payload_tilt_peak_deg": 0.5137924065002948,
+    "final_hold_payload_tilt_peak_deg": 0.04215731735462512,
+    "cable_direction_deviation_peak_deg": 1.026726425491034,
+    "tension_min_N": 10.300126147428193,
+    "tension_max_N": 10.571763109948673,
+    "tension_rate_rms_N_s": [
+      0.004249641819359471,
+      0.019024767433759335,
+      0.019142179611761664
+    ],
+    "rope_length_error_peak_m": 1.2212453270876722e-14,
+    "cable_constraint_power_peak_W": 1.0699258049232894e-11,
+    "quaternion_norm_error_peak": 2.220446049250313e-16,
+    "minimum_uav_center_distance_m": 1.48281709265724,
+    "minimum_uav_bounding_sphere_clearance_m": 0.52281709265724,
+    "minimum_workspace_bounding_sphere_clearance_m": 0.463836286636842,
+    "rotor_thrust_peak_N": 8.666793630281958,
+    "status": "completed",
+    "failure_reason": null,
+    "failure_step_time_s": null,
+    "scenario": "communication",
+    "case": {
+      "name": "communication",
+      "category": "acceptance",
+      "payload_mass_factor": 1.0,
+      "position_noise_std_m": 0.0,
+      "velocity_noise_std_m_s": 0.0,
+      "noise_correlation_s": 0.15,
+      "measurement_delay_s": 0.0,
+      "position_bias_m": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "command_delay_s": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "clock_offset_s": [
+        0.0,
+        0.01,
+        -0.01
+      ],
+      "wind_peak_N": 0.0,
+      "wind_start_s": 30.0,
+      "wind_duration_s": 8.0,
+      "seed": 7
+    },
+    "controller": "offline_pva_replay_local_UAV_PID_nominal_load_share",
+    "requested_duration_s": 88.0,
+    "logged_end_s": 88.0,
+    "wall_time_s": 57.73136400000658,
+    "flight_ready": false,
+    "px4_validated": false,
+    "payload_feedback": false,
+    "tension_feedback": false,
+    "online_PDE_MPC_ESO": false,
+    "nominal_payload_mass_kg": 3.0,
+    "actual_payload_mass_kg": 3.0,
+    "uav_position_peak_m": 0.03833655935968915,
+    "final_hold_payload_rmse_m": 0.0018434374188018806,
+    "acceleration_limit_fraction": 0.0,
+    "saturated_attitude_update_fraction": 0.0,
+    "rotor_limit_utilization_peak": 0.5333411464788897,
+    "state_extrema_sampling_hz": 50.0,
+    "acceptance_checks": {
+      "full_duration": true,
+      "payload_peak_error_at_most_15cm": true,
+      "uav_peak_error_at_most_10cm": true,
+      "payload_tilt_at_most_5deg": true,
+      "cable_deviation_at_most_5deg": true,
+      "tension_within_4_to_18N": true,
+      "uav_surface_clearance_at_least_25cm": true,
+      "workspace_clearance_at_least_30cm": true,
+      "rotor_at_most_80pct_assumed_limit": true,
+      "no_motor_saturation": true,
+      "no_acceleration_clipping": true,
+      "final_hold_RMSE_at_most_5cm": true,
+      "final_hold_tilt_at_most_1deg": true,
+      "rope_length_residual_at_most_10um": true
+    },
+    "engineering_screen_passed": true
+  },
+  {
+    "payload_position_rmse_m": 0.017094807858074396,
+    "payload_position_peak_m": 0.07308407127023048,
+    "uav_position_rmse_m": [
+      0.016173389786530826,
+      0.015987580967502878,
+      0.01597756165809076
+    ],
+    "payload_tilt_peak_deg": 0.45175078915570854,
+    "final_hold_payload_tilt_peak_deg": 0.011266819468732753,
+    "cable_direction_deviation_peak_deg": 0.9883807872751077,
+    "tension_min_N": 11.20536344560979,
+    "tension_max_N": 11.607386767086279,
+    "tension_rate_rms_N_s": [
+      0.14202929648779664,
+      0.1434042605151694,
+      0.14332003063977475
+    ],
+    "rope_length_error_peak_m": 6.59472476627343e-14,
+    "cable_constraint_power_peak_W": 7.822510223650686e-11,
+    "quaternion_norm_error_peak": 4.440892098500626e-16,
+    "minimum_uav_center_distance_m": 1.4594354926704833,
+    "minimum_uav_bounding_sphere_clearance_m": 0.49943549267048337,
+    "minimum_workspace_bounding_sphere_clearance_m": 0.39188544206083004,
+    "rotor_thrust_peak_N": 8.955366558497511,
+    "status": "completed",
+    "failure_reason": null,
+    "failure_step_time_s": null,
+    "scenario": "mass_plus_10pct",
+    "case": {
+      "name": "mass_plus_10pct",
+      "category": "acceptance",
+      "payload_mass_factor": 1.1,
+      "position_noise_std_m": 0.0,
+      "velocity_noise_std_m_s": 0.0,
+      "noise_correlation_s": 0.15,
+      "measurement_delay_s": 0.0,
+      "position_bias_m": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "command_delay_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "clock_offset_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "wind_peak_N": 0.0,
+      "wind_start_s": 30.0,
+      "wind_duration_s": 8.0,
+      "seed": 7
+    },
+    "controller": "offline_pva_replay_local_UAV_PID_nominal_load_share",
+    "requested_duration_s": 88.0,
+    "logged_end_s": 88.0,
+    "wall_time_s": 60.83603349997429,
+    "flight_ready": false,
+    "px4_validated": false,
+    "payload_feedback": false,
+    "tension_feedback": false,
+    "online_PDE_MPC_ESO": false,
+    "nominal_payload_mass_kg": 3.0,
+    "actual_payload_mass_kg": 3.3000000000000003,
+    "uav_position_peak_m": 0.06886295236393644,
+    "final_hold_payload_rmse_m": 0.0014489892542624656,
+    "acceleration_limit_fraction": 0.0,
+    "saturated_attitude_update_fraction": 0.0,
+    "rotor_limit_utilization_peak": 0.5510994805229238,
+    "state_extrema_sampling_hz": 50.0,
+    "acceptance_checks": {
+      "full_duration": true,
+      "payload_peak_error_at_most_15cm": true,
+      "uav_peak_error_at_most_10cm": true,
+      "payload_tilt_at_most_5deg": true,
+      "cable_deviation_at_most_5deg": true,
+      "tension_within_4_to_18N": true,
+      "uav_surface_clearance_at_least_25cm": true,
+      "workspace_clearance_at_least_30cm": true,
+      "rotor_at_most_80pct_assumed_limit": true,
+      "no_motor_saturation": true,
+      "no_acceleration_clipping": true,
+      "final_hold_RMSE_at_most_5cm": true,
+      "final_hold_tilt_at_most_1deg": true,
+      "rope_length_residual_at_most_10um": true
+    },
+    "engineering_screen_passed": true
+  },
+  {
+    "payload_position_rmse_m": 0.016995590823723292,
+    "payload_position_peak_m": 0.0732651207258605,
+    "uav_position_rmse_m": [
+      0.015891581324705573,
+      0.016237391394048367,
+      0.016255662564248118
+    ],
+    "payload_tilt_peak_deg": 0.4172972721186729,
+    "final_hold_payload_tilt_peak_deg": 0.008173486418868172,
+    "cable_direction_deviation_peak_deg": 1.0162904810967472,
+    "tension_min_N": 9.300368355889628,
+    "tension_max_N": 9.635155590546516,
+    "tension_rate_rms_N_s": [
+      0.12280984704138208,
+      0.12404893015573837,
+      0.12397389251563422
+    ],
+    "rope_length_error_peak_m": 6.994405055138486e-14,
+    "cable_constraint_power_peak_W": 6.886109849533997e-11,
+    "quaternion_norm_error_peak": 2.220446049250313e-16,
+    "minimum_uav_center_distance_m": 1.4944591421491902,
+    "minimum_uav_bounding_sphere_clearance_m": 0.5344591421491902,
+    "minimum_workspace_bounding_sphere_clearance_m": 0.4649695133285819,
+    "rotor_thrust_peak_N": 8.599041965915408,
+    "status": "completed",
+    "failure_reason": null,
+    "failure_step_time_s": null,
+    "scenario": "mass_minus_10pct",
+    "case": {
+      "name": "mass_minus_10pct",
+      "category": "acceptance",
+      "payload_mass_factor": 0.9,
+      "position_noise_std_m": 0.0,
+      "velocity_noise_std_m_s": 0.0,
+      "noise_correlation_s": 0.15,
+      "measurement_delay_s": 0.0,
+      "position_bias_m": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "command_delay_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "clock_offset_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "wind_peak_N": 0.0,
+      "wind_start_s": 30.0,
+      "wind_duration_s": 8.0,
+      "seed": 7
+    },
+    "controller": "offline_pva_replay_local_UAV_PID_nominal_load_share",
+    "requested_duration_s": 88.0,
+    "logged_end_s": 88.0,
+    "wall_time_s": 60.819007299956866,
+    "flight_ready": false,
+    "px4_validated": false,
+    "payload_feedback": false,
+    "tension_feedback": false,
+    "online_PDE_MPC_ESO": false,
+    "nominal_payload_mass_kg": 3.0,
+    "actual_payload_mass_kg": 2.7,
+    "uav_position_peak_m": 0.06868520528056853,
+    "final_hold_payload_rmse_m": 0.001660201911138245,
+    "acceleration_limit_fraction": 0.0,
+    "saturated_attitude_update_fraction": 0.0,
+    "rotor_limit_utilization_peak": 0.529171813287102,
+    "state_extrema_sampling_hz": 50.0,
+    "acceptance_checks": {
+      "full_duration": true,
+      "payload_peak_error_at_most_15cm": true,
+      "uav_peak_error_at_most_10cm": true,
+      "payload_tilt_at_most_5deg": true,
+      "cable_deviation_at_most_5deg": true,
+      "tension_within_4_to_18N": true,
+      "uav_surface_clearance_at_least_25cm": true,
+      "workspace_clearance_at_least_30cm": true,
+      "rotor_at_most_80pct_assumed_limit": true,
+      "no_motor_saturation": true,
+      "no_acceleration_clipping": true,
+      "final_hold_RMSE_at_most_5cm": true,
+      "final_hold_tilt_at_most_1deg": true,
+      "rope_length_residual_at_most_10um": true
+    },
+    "engineering_screen_passed": true
+  },
+  {
+    "payload_position_rmse_m": 0.018635208160723764,
+    "payload_position_peak_m": 0.07688797240278228,
+    "uav_position_rmse_m": [
+      0.017379237069422418,
+      0.017680444258846267,
+      0.01851669783135629
+    ],
+    "payload_tilt_peak_deg": 1.6172226598562278,
+    "final_hold_payload_tilt_peak_deg": 1.2769885214129364,
+    "cable_direction_deviation_peak_deg": 1.4392653701481497,
+    "tension_min_N": 9.116658356482862,
+    "tension_max_N": 9.743007869148496,
+    "tension_rate_rms_N_s": [
+      0.5411227011448817,
+      0.5373919742716449,
+      0.5187220358849483
+    ],
+    "rope_length_error_peak_m": 1.0083045509645672e-12,
+    "cable_constraint_power_peak_W": 5.093109995315432e-10,
+    "quaternion_norm_error_peak": 2.220446049250313e-16,
+    "minimum_uav_center_distance_m": 1.459606900101322,
+    "minimum_uav_bounding_sphere_clearance_m": 0.49960690010132214,
+    "minimum_workspace_bounding_sphere_clearance_m": 0.4569802320396071,
+    "rotor_thrust_peak_N": 8.646175797755495,
+    "status": "completed",
+    "failure_reason": null,
+    "failure_step_time_s": null,
+    "scenario": "combined_light_seed7",
+    "case": {
+      "name": "combined_light_seed7",
+      "category": "acceptance",
+      "payload_mass_factor": 0.9,
+      "position_noise_std_m": 0.005,
+      "velocity_noise_std_m_s": 0.01,
+      "noise_correlation_s": 0.15,
+      "measurement_delay_s": 0.04,
+      "position_bias_m": [
+        [
+          0.003,
+          -0.0015,
+          0.0012
+        ],
+        [
+          -0.0024,
+          0.003,
+          -0.0009
+        ],
+        [
+          0.0015,
+          -0.0024,
+          0.0015
+        ]
+      ],
+      "command_delay_s": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "clock_offset_s": [
+        0.0,
+        0.01,
+        -0.01
+      ],
+      "wind_peak_N": 0.3,
+      "wind_start_s": 30.0,
+      "wind_duration_s": 8.0,
+      "seed": 7
+    },
+    "controller": "offline_pva_replay_local_UAV_PID_nominal_load_share",
+    "requested_duration_s": 88.0,
+    "logged_end_s": 88.0,
+    "wall_time_s": 60.74109019996831,
+    "flight_ready": false,
+    "px4_validated": false,
+    "payload_feedback": false,
+    "tension_feedback": false,
+    "online_PDE_MPC_ESO": false,
+    "nominal_payload_mass_kg": 3.0,
+    "actual_payload_mass_kg": 2.7,
+    "uav_position_peak_m": 0.07392454501905403,
+    "final_hold_payload_rmse_m": 0.005080393770623275,
+    "acceleration_limit_fraction": 0.0,
+    "saturated_attitude_update_fraction": 0.0,
+    "rotor_limit_utilization_peak": 0.5320723567849536,
+    "state_extrema_sampling_hz": 50.0,
+    "acceptance_checks": {
+      "full_duration": true,
+      "payload_peak_error_at_most_15cm": true,
+      "uav_peak_error_at_most_10cm": true,
+      "payload_tilt_at_most_5deg": true,
+      "cable_deviation_at_most_5deg": true,
+      "tension_within_4_to_18N": true,
+      "uav_surface_clearance_at_least_25cm": true,
+      "workspace_clearance_at_least_30cm": true,
+      "rotor_at_most_80pct_assumed_limit": true,
+      "no_motor_saturation": true,
+      "no_acceleration_clipping": true,
+      "final_hold_RMSE_at_most_5cm": true,
+      "final_hold_tilt_at_most_1deg": false,
+      "rope_length_residual_at_most_10um": true
+    },
+    "engineering_screen_passed": false
+  },
+  {
+    "payload_position_rmse_m": 0.01978178490050275,
+    "payload_position_peak_m": 0.0728016325100224,
+    "uav_position_rmse_m": [
+      0.018866805973101235,
+      0.019438027944328546,
+      0.019541427362696824
+    ],
+    "payload_tilt_peak_deg": 1.5230843598783506,
+    "final_hold_payload_tilt_peak_deg": 1.1490111041705868,
+    "cable_direction_deviation_peak_deg": 1.5008432354082417,
+    "tension_min_N": 11.140841335978267,
+    "tension_max_N": 11.84782489043622,
+    "tension_rate_rms_N_s": [
+      0.5979057417802502,
+      0.586355675652942,
+      0.5778117639718101
+    ],
+    "rope_length_error_peak_m": 1.0977885267493548e-12,
+    "cable_constraint_power_peak_W": 6.648535236577439e-10,
+    "quaternion_norm_error_peak": 4.440892098500626e-16,
+    "minimum_uav_center_distance_m": 1.4424407933754655,
+    "minimum_uav_bounding_sphere_clearance_m": 0.4824407933754655,
+    "minimum_workspace_bounding_sphere_clearance_m": 0.3927062364493415,
+    "rotor_thrust_peak_N": 9.017617290433263,
+    "status": "completed",
+    "failure_reason": null,
+    "failure_step_time_s": null,
+    "scenario": "combined_heavy_seed7",
+    "case": {
+      "name": "combined_heavy_seed7",
+      "category": "acceptance",
+      "payload_mass_factor": 1.1,
+      "position_noise_std_m": 0.005,
+      "velocity_noise_std_m_s": 0.01,
+      "noise_correlation_s": 0.15,
+      "measurement_delay_s": 0.04,
+      "position_bias_m": [
+        [
+          0.003,
+          -0.0015,
+          0.0012
+        ],
+        [
+          -0.0024,
+          0.003,
+          -0.0009
+        ],
+        [
+          0.0015,
+          -0.0024,
+          0.0015
+        ]
+      ],
+      "command_delay_s": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "clock_offset_s": [
+        0.0,
+        0.01,
+        -0.01
+      ],
+      "wind_peak_N": 0.3,
+      "wind_start_s": 30.0,
+      "wind_duration_s": 8.0,
+      "seed": 7
+    },
+    "controller": "offline_pva_replay_local_UAV_PID_nominal_load_share",
+    "requested_duration_s": 88.0,
+    "logged_end_s": 88.0,
+    "wall_time_s": 60.71156249998603,
+    "flight_ready": false,
+    "px4_validated": false,
+    "payload_feedback": false,
+    "tension_feedback": false,
+    "online_PDE_MPC_ESO": false,
+    "nominal_payload_mass_kg": 3.0,
+    "actual_payload_mass_kg": 3.3000000000000003,
+    "uav_position_peak_m": 0.07112454036600376,
+    "final_hold_payload_rmse_m": 0.004934628267555996,
+    "acceleration_limit_fraction": 0.0,
+    "saturated_attitude_update_fraction": 0.0,
+    "rotor_limit_utilization_peak": 0.5549302947958931,
+    "state_extrema_sampling_hz": 50.0,
+    "acceptance_checks": {
+      "full_duration": true,
+      "payload_peak_error_at_most_15cm": true,
+      "uav_peak_error_at_most_10cm": true,
+      "payload_tilt_at_most_5deg": true,
+      "cable_deviation_at_most_5deg": true,
+      "tension_within_4_to_18N": true,
+      "uav_surface_clearance_at_least_25cm": true,
+      "workspace_clearance_at_least_30cm": true,
+      "rotor_at_most_80pct_assumed_limit": true,
+      "no_motor_saturation": true,
+      "no_acceleration_clipping": true,
+      "final_hold_RMSE_at_most_5cm": true,
+      "final_hold_tilt_at_most_1deg": false,
+      "rope_length_residual_at_most_10um": true
+    },
+    "engineering_screen_passed": false
+  },
+  {
+    "payload_position_rmse_m": 0.019634564059673284,
+    "payload_position_peak_m": 0.07615229089477779,
+    "uav_position_rmse_m": [
+      0.01929907685230647,
+      0.01881453590643435,
+      0.01950730304176817
+    ],
+    "payload_tilt_peak_deg": 1.3363535191600378,
+    "final_hold_payload_tilt_peak_deg": 1.0872866046834802,
+    "cable_direction_deviation_peak_deg": 1.5325226646928016,
+    "tension_min_N": 11.16449498779343,
+    "tension_max_N": 11.78425737441974,
+    "tension_rate_rms_N_s": [
+      0.5713124719354992,
+      0.5457209793151419,
+      0.5608165955702601
+    ],
+    "rope_length_error_peak_m": 1.3504752871540404e-12,
+    "cable_constraint_power_peak_W": 9.326974598153972e-10,
+    "quaternion_norm_error_peak": 4.440892098500626e-16,
+    "minimum_uav_center_distance_m": 1.4408408077980432,
+    "minimum_uav_bounding_sphere_clearance_m": 0.4808408077980433,
+    "minimum_workspace_bounding_sphere_clearance_m": 0.3889508304766301,
+    "rotor_thrust_peak_N": 9.02609471900752,
+    "status": "completed",
+    "failure_reason": null,
+    "failure_step_time_s": null,
+    "scenario": "combined_heavy_seed19",
+    "case": {
+      "name": "combined_heavy_seed19",
+      "category": "acceptance",
+      "payload_mass_factor": 1.1,
+      "position_noise_std_m": 0.005,
+      "velocity_noise_std_m_s": 0.01,
+      "noise_correlation_s": 0.15,
+      "measurement_delay_s": 0.04,
+      "position_bias_m": [
+        [
+          0.003,
+          -0.0015,
+          0.0012
+        ],
+        [
+          -0.0024,
+          0.003,
+          -0.0009
+        ],
+        [
+          0.0015,
+          -0.0024,
+          0.0015
+        ]
+      ],
+      "command_delay_s": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "clock_offset_s": [
+        0.0,
+        0.01,
+        -0.01
+      ],
+      "wind_peak_N": 0.3,
+      "wind_start_s": 30.0,
+      "wind_duration_s": 8.0,
+      "seed": 19
+    },
+    "controller": "offline_pva_replay_local_UAV_PID_nominal_load_share",
+    "requested_duration_s": 88.0,
+    "logged_end_s": 88.0,
+    "wall_time_s": 60.7035995000042,
+    "flight_ready": false,
+    "px4_validated": false,
+    "payload_feedback": false,
+    "tension_feedback": false,
+    "online_PDE_MPC_ESO": false,
+    "nominal_payload_mass_kg": 3.0,
+    "actual_payload_mass_kg": 3.3000000000000003,
+    "uav_position_peak_m": 0.07348976958058273,
+    "final_hold_payload_rmse_m": 0.007075296228389959,
+    "acceleration_limit_fraction": 0.0,
+    "saturated_attitude_update_fraction": 0.0,
+    "rotor_limit_utilization_peak": 0.5554519827081551,
+    "state_extrema_sampling_hz": 50.0,
+    "acceptance_checks": {
+      "full_duration": true,
+      "payload_peak_error_at_most_15cm": true,
+      "uav_peak_error_at_most_10cm": true,
+      "payload_tilt_at_most_5deg": true,
+      "cable_deviation_at_most_5deg": true,
+      "tension_within_4_to_18N": true,
+      "uav_surface_clearance_at_least_25cm": true,
+      "workspace_clearance_at_least_30cm": true,
+      "rotor_at_most_80pct_assumed_limit": true,
+      "no_motor_saturation": true,
+      "no_acceleration_clipping": true,
+      "final_hold_RMSE_at_most_5cm": true,
+      "final_hold_tilt_at_most_1deg": false,
+      "rope_length_residual_at_most_10um": true
+    },
+    "engineering_screen_passed": false
+  },
+  {
+    "payload_position_rmse_m": 0.019295815538250577,
+    "payload_position_peak_m": 0.07195872074116645,
+    "uav_position_rmse_m": [
+      0.018672852343539426,
+      0.019067445503069432,
+      0.01877418389346347
+    ],
+    "payload_tilt_peak_deg": 1.4066989483151136,
+    "final_hold_payload_tilt_peak_deg": 0.9001211032320372,
+    "cable_direction_deviation_peak_deg": 1.640858711587376,
+    "tension_min_N": 11.123664434411864,
+    "tension_max_N": 11.791094815100545,
+    "tension_rate_rms_N_s": [
+      0.5743553336085941,
+      0.5802451899056483,
+      0.5623531100544003
+    ],
+    "rope_length_error_peak_m": 1.2092549184217205e-12,
+    "cable_constraint_power_peak_W": 7.207827083168541e-10,
+    "quaternion_norm_error_peak": 4.440892098500626e-16,
+    "minimum_uav_center_distance_m": 1.4516831628924538,
+    "minimum_uav_bounding_sphere_clearance_m": 0.49168316289245384,
+    "minimum_workspace_bounding_sphere_clearance_m": 0.3930410515137735,
+    "rotor_thrust_peak_N": 9.014084924305577,
+    "status": "completed",
+    "failure_reason": null,
+    "failure_step_time_s": null,
+    "scenario": "combined_heavy_seed41",
+    "case": {
+      "name": "combined_heavy_seed41",
+      "category": "acceptance",
+      "payload_mass_factor": 1.1,
+      "position_noise_std_m": 0.005,
+      "velocity_noise_std_m_s": 0.01,
+      "noise_correlation_s": 0.15,
+      "measurement_delay_s": 0.04,
+      "position_bias_m": [
+        [
+          0.003,
+          -0.0015,
+          0.0012
+        ],
+        [
+          -0.0024,
+          0.003,
+          -0.0009
+        ],
+        [
+          0.0015,
+          -0.0024,
+          0.0015
+        ]
+      ],
+      "command_delay_s": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "clock_offset_s": [
+        0.0,
+        0.01,
+        -0.01
+      ],
+      "wind_peak_N": 0.3,
+      "wind_start_s": 30.0,
+      "wind_duration_s": 8.0,
+      "seed": 41
+    },
+    "controller": "offline_pva_replay_local_UAV_PID_nominal_load_share",
+    "requested_duration_s": 88.0,
+    "logged_end_s": 88.0,
+    "wall_time_s": 60.888698900002055,
+    "flight_ready": false,
+    "px4_validated": false,
+    "payload_feedback": false,
+    "tension_feedback": false,
+    "online_PDE_MPC_ESO": false,
+    "nominal_payload_mass_kg": 3.0,
+    "actual_payload_mass_kg": 3.3000000000000003,
+    "uav_position_peak_m": 0.06908498599055775,
+    "final_hold_payload_rmse_m": 0.008483831377447584,
+    "acceleration_limit_fraction": 0.0,
+    "saturated_attitude_update_fraction": 0.0,
+    "rotor_limit_utilization_peak": 0.5547129184188047,
+    "state_extrema_sampling_hz": 50.0,
+    "acceptance_checks": {
+      "full_duration": true,
+      "payload_peak_error_at_most_15cm": true,
+      "uav_peak_error_at_most_10cm": true,
+      "payload_tilt_at_most_5deg": true,
+      "cable_deviation_at_most_5deg": true,
+      "tension_within_4_to_18N": true,
+      "uav_surface_clearance_at_least_25cm": true,
+      "workspace_clearance_at_least_30cm": true,
+      "rotor_at_most_80pct_assumed_limit": true,
+      "no_motor_saturation": true,
+      "no_acceleration_clipping": true,
+      "final_hold_RMSE_at_most_5cm": true,
+      "final_hold_tilt_at_most_1deg": true,
+      "rope_length_residual_at_most_10um": true
+    },
+    "engineering_screen_passed": true
+  },
+  {
+    "payload_position_rmse_m": 0.015630365640455068,
+    "payload_position_peak_m": 0.03976268231698394,
+    "uav_position_rmse_m": [
+      0.01594333127195129,
+      0.01728372508105965,
+      0.01558780121224861
+    ],
+    "payload_tilt_peak_deg": 1.47645085631775,
+    "final_hold_payload_tilt_peak_deg": 1.3554464094287768,
+    "cable_direction_deviation_peak_deg": 1.4322748561069543,
+    "tension_min_N": 10.098321335163343,
+    "tension_max_N": 10.86634287290977,
+    "tension_rate_rms_N_s": [
+      0.5513694361090586,
+      0.5448001671917596,
+      0.5293197845024543
+    ],
+    "rope_length_error_peak_m": 1.0869083411080283e-12,
+    "cable_constraint_power_peak_W": 6.013174592311743e-10,
+    "quaternion_norm_error_peak": 2.220446049250313e-16,
+    "minimum_uav_center_distance_m": 1.445586171212059,
+    "minimum_uav_bounding_sphere_clearance_m": 0.48558617121205905,
+    "minimum_workspace_bounding_sphere_clearance_m": 0.45404910678528604,
+    "rotor_thrust_peak_N": 8.76810945013355,
+    "status": "completed",
+    "failure_reason": null,
+    "failure_step_time_s": null,
+    "scenario": "boundary_bias_1cm",
+    "case": {
+      "name": "boundary_bias_1cm",
+      "category": "boundary",
+      "payload_mass_factor": 1.0,
+      "position_noise_std_m": 0.005,
+      "velocity_noise_std_m_s": 0.01,
+      "noise_correlation_s": 0.15,
+      "measurement_delay_s": 0.04,
+      "position_bias_m": [
+        [
+          0.01,
+          -0.005,
+          0.004
+        ],
+        [
+          -0.008,
+          0.01,
+          -0.003
+        ],
+        [
+          0.005,
+          -0.008,
+          0.005
+        ]
+      ],
+      "command_delay_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "clock_offset_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "wind_peak_N": 0.0,
+      "wind_start_s": 30.0,
+      "wind_duration_s": 8.0,
+      "seed": 7
+    },
+    "controller": "offline_pva_replay_local_UAV_PID_nominal_load_share",
+    "requested_duration_s": 88.0,
+    "logged_end_s": 88.0,
+    "wall_time_s": 54.780473899969365,
+    "flight_ready": false,
+    "px4_validated": false,
+    "payload_feedback": false,
+    "tension_feedback": false,
+    "online_PDE_MPC_ESO": false,
+    "nominal_payload_mass_kg": 3.0,
+    "actual_payload_mass_kg": 3.0,
+    "uav_position_peak_m": 0.04838018697080337,
+    "final_hold_payload_rmse_m": 0.00865617974890971,
+    "acceleration_limit_fraction": 0.0,
+    "saturated_attitude_update_fraction": 0.0,
+    "rotor_limit_utilization_peak": 0.5395759661620647,
+    "state_extrema_sampling_hz": 50.0,
+    "acceptance_checks": {
+      "full_duration": true,
+      "payload_peak_error_at_most_15cm": true,
+      "uav_peak_error_at_most_10cm": true,
+      "payload_tilt_at_most_5deg": true,
+      "cable_deviation_at_most_5deg": true,
+      "tension_within_4_to_18N": true,
+      "uav_surface_clearance_at_least_25cm": true,
+      "workspace_clearance_at_least_30cm": true,
+      "rotor_at_most_80pct_assumed_limit": true,
+      "no_motor_saturation": true,
+      "no_acceleration_clipping": true,
+      "final_hold_RMSE_at_most_5cm": true,
+      "final_hold_tilt_at_most_1deg": false,
+      "rope_length_residual_at_most_10um": true
+    },
+    "engineering_screen_passed": false
+  },
+  {
+    "payload_position_rmse_m": 0.022036084121014224,
+    "payload_position_peak_m": 0.07572652764856937,
+    "uav_position_rmse_m": [
+      0.02334400284983488,
+      0.02396888893881682,
+      0.02319475982422402
+    ],
+    "payload_tilt_peak_deg": 1.3657886128266763,
+    "final_hold_payload_tilt_peak_deg": 1.2853065283049476,
+    "cable_direction_deviation_peak_deg": 1.6272361148107408,
+    "tension_min_N": 11.107562946376694,
+    "tension_max_N": 11.889243093144183,
+    "tension_rate_rms_N_s": [
+      0.5973145508692574,
+      0.5841181417826584,
+      0.5773007524032278
+    ],
+    "rope_length_error_peak_m": 1.091571277811454e-12,
+    "cable_constraint_power_peak_W": 6.568075074741452e-10,
+    "quaternion_norm_error_peak": 4.440892098500626e-16,
+    "minimum_uav_center_distance_m": 1.4335583547951003,
+    "minimum_uav_bounding_sphere_clearance_m": 0.47355835479510033,
+    "minimum_workspace_bounding_sphere_clearance_m": 0.3896402693480004,
+    "rotor_thrust_peak_N": 9.028111702040778,
+    "status": "completed",
+    "failure_reason": null,
+    "failure_step_time_s": null,
+    "scenario": "boundary_combined_bias_1cm",
+    "case": {
+      "name": "boundary_combined_bias_1cm",
+      "category": "boundary",
+      "payload_mass_factor": 1.1,
+      "position_noise_std_m": 0.005,
+      "velocity_noise_std_m_s": 0.01,
+      "noise_correlation_s": 0.15,
+      "measurement_delay_s": 0.04,
+      "position_bias_m": [
+        [
+          0.01,
+          -0.005,
+          0.004
+        ],
+        [
+          -0.008,
+          0.01,
+          -0.003
+        ],
+        [
+          0.005,
+          -0.008,
+          0.005
+        ]
+      ],
+      "command_delay_s": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "clock_offset_s": [
+        0.0,
+        0.01,
+        -0.01
+      ],
+      "wind_peak_N": 0.3,
+      "wind_start_s": 30.0,
+      "wind_duration_s": 8.0,
+      "seed": 7
+    },
+    "controller": "offline_pva_replay_local_UAV_PID_nominal_load_share",
+    "requested_duration_s": 88.0,
+    "logged_end_s": 88.0,
+    "wall_time_s": 54.71997009997722,
+    "flight_ready": false,
+    "px4_validated": false,
+    "payload_feedback": false,
+    "tension_feedback": false,
+    "online_PDE_MPC_ESO": false,
+    "nominal_payload_mass_kg": 3.0,
+    "actual_payload_mass_kg": 3.3000000000000003,
+    "uav_position_peak_m": 0.07475327416486859,
+    "final_hold_payload_rmse_m": 0.008924700771960208,
+    "acceleration_limit_fraction": 0.0,
+    "saturated_attitude_update_fraction": 0.0,
+    "rotor_limit_utilization_peak": 0.555576104740971,
+    "state_extrema_sampling_hz": 50.0,
+    "acceptance_checks": {
+      "full_duration": true,
+      "payload_peak_error_at_most_15cm": true,
+      "uav_peak_error_at_most_10cm": true,
+      "payload_tilt_at_most_5deg": true,
+      "cable_deviation_at_most_5deg": true,
+      "tension_within_4_to_18N": true,
+      "uav_surface_clearance_at_least_25cm": true,
+      "workspace_clearance_at_least_30cm": true,
+      "rotor_at_most_80pct_assumed_limit": true,
+      "no_motor_saturation": true,
+      "no_acceleration_clipping": true,
+      "final_hold_RMSE_at_most_5cm": true,
+      "final_hold_tilt_at_most_1deg": false,
+      "rope_length_residual_at_most_10um": true
+    },
+    "engineering_screen_passed": false
+  },
+  {
+    "payload_position_rmse_m": 0.01246672599423422,
+    "payload_position_peak_m": 0.03376108166113896,
+    "uav_position_rmse_m": [
+      0.010105293526065167,
+      0.010838454234052967,
+      0.010288687958667447
+    ],
+    "payload_tilt_peak_deg": 0.8075164173118523,
+    "final_hold_payload_tilt_peak_deg": 0.595292433949365,
+    "cable_direction_deviation_peak_deg": 1.1533672243672057,
+    "tension_min_N": 10.246816829328399,
+    "tension_max_N": 10.676707125203617,
+    "tension_rate_rms_N_s": [
+      0.26062174451664977,
+      0.25717875373342364,
+      0.24923584196393592
+    ],
+    "rope_length_error_peak_m": 2.475797344914099e-13,
+    "cable_constraint_power_peak_W": 1.3672761203265646e-10,
+    "quaternion_norm_error_peak": 2.220446049250313e-16,
+    "minimum_uav_center_distance_m": 1.4752607549372618,
+    "minimum_uav_bounding_sphere_clearance_m": 0.5152607549372619,
+    "minimum_workspace_bounding_sphere_clearance_m": 0.4605314500316546,
+    "rotor_thrust_peak_N": 8.706556486850895,
+    "status": "completed",
+    "failure_reason": null,
+    "failure_step_time_s": null,
+    "scenario": "capture_localization",
+    "case": {
+      "name": "capture_localization",
+      "category": "acceptance",
+      "payload_mass_factor": 1.0,
+      "position_noise_std_m": 0.002,
+      "velocity_noise_std_m_s": 0.005,
+      "noise_correlation_s": 0.15,
+      "measurement_delay_s": 0.04,
+      "position_bias_m": [
+        [
+          0.003,
+          -0.0015,
+          0.0012
+        ],
+        [
+          -0.0024,
+          0.003,
+          -0.0009
+        ],
+        [
+          0.0015,
+          -0.0024,
+          0.0015
+        ]
+      ],
+      "command_delay_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "clock_offset_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "wind_peak_N": 0.0,
+      "wind_start_s": 30.0,
+      "wind_duration_s": 8.0,
+      "seed": 7
+    },
+    "controller": "offline_pva_replay_local_UAV_PID_nominal_load_share",
+    "requested_duration_s": 88.0,
+    "logged_end_s": 88.0,
+    "wall_time_s": 60.3739642999717,
+    "flight_ready": false,
+    "px4_validated": false,
+    "payload_feedback": false,
+    "tension_feedback": false,
+    "online_PDE_MPC_ESO": false,
+    "nominal_payload_mass_kg": 3.0,
+    "actual_payload_mass_kg": 3.0,
+    "uav_position_peak_m": 0.03222469538336896,
+    "final_hold_payload_rmse_m": 0.0034878839751874046,
+    "acceleration_limit_fraction": 0.0,
+    "saturated_attitude_update_fraction": 0.0,
+    "rotor_limit_utilization_peak": 0.5357880914985166,
+    "state_extrema_sampling_hz": 50.0,
+    "acceptance_checks": {
+      "full_duration": true,
+      "payload_peak_error_at_most_15cm": true,
+      "uav_peak_error_at_most_10cm": true,
+      "payload_tilt_at_most_5deg": true,
+      "cable_deviation_at_most_5deg": true,
+      "tension_within_4_to_18N": true,
+      "uav_surface_clearance_at_least_25cm": true,
+      "workspace_clearance_at_least_30cm": true,
+      "rotor_at_most_80pct_assumed_limit": true,
+      "no_motor_saturation": true,
+      "no_acceleration_clipping": true,
+      "final_hold_RMSE_at_most_5cm": true,
+      "final_hold_tilt_at_most_1deg": true,
+      "rope_length_residual_at_most_10um": true
+    },
+    "engineering_screen_passed": true
+  },
+  {
+    "payload_position_rmse_m": 0.01763413638105808,
+    "payload_position_peak_m": 0.07477896528709006,
+    "uav_position_rmse_m": [
+      0.016085339852868412,
+      0.01630910887775671,
+      0.017616456071761818
+    ],
+    "payload_tilt_peak_deg": 0.9450138639672616,
+    "final_hold_payload_tilt_peak_deg": 0.6224282921511513,
+    "cable_direction_deviation_peak_deg": 1.2408353328437487,
+    "tension_min_N": 9.226967444754806,
+    "tension_max_N": 9.670255800570384,
+    "tension_rate_rms_N_s": [
+      0.27727485696908627,
+      0.27814917359253355,
+      0.2682551679850678
+    ],
+    "rope_length_error_peak_m": 2.369215934550084e-13,
+    "cable_constraint_power_peak_W": 1.196774568109842e-10,
+    "quaternion_norm_error_peak": 2.220446049250313e-16,
+    "minimum_uav_center_distance_m": 1.473368823981862,
+    "minimum_uav_bounding_sphere_clearance_m": 0.5133688239818621,
+    "minimum_workspace_bounding_sphere_clearance_m": 0.4597937494146746,
+    "rotor_thrust_peak_N": 8.62337819103019,
+    "status": "completed",
+    "failure_reason": null,
+    "failure_step_time_s": null,
+    "scenario": "capture_light_seed7",
+    "case": {
+      "name": "capture_light_seed7",
+      "category": "acceptance",
+      "payload_mass_factor": 0.9,
+      "position_noise_std_m": 0.002,
+      "velocity_noise_std_m_s": 0.005,
+      "noise_correlation_s": 0.15,
+      "measurement_delay_s": 0.04,
+      "position_bias_m": [
+        [
+          0.003,
+          -0.0015,
+          0.0012
+        ],
+        [
+          -0.0024,
+          0.003,
+          -0.0009
+        ],
+        [
+          0.0015,
+          -0.0024,
+          0.0015
+        ]
+      ],
+      "command_delay_s": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "clock_offset_s": [
+        0,
+        0.01,
+        -0.01
+      ],
+      "wind_peak_N": 0.3,
+      "wind_start_s": 30.0,
+      "wind_duration_s": 8.0,
+      "seed": 7
+    },
+    "controller": "offline_pva_replay_local_UAV_PID_nominal_load_share",
+    "requested_duration_s": 88.0,
+    "logged_end_s": 88.0,
+    "wall_time_s": 60.204228200018406,
+    "flight_ready": false,
+    "px4_validated": false,
+    "payload_feedback": false,
+    "tension_feedback": false,
+    "online_PDE_MPC_ESO": false,
+    "nominal_payload_mass_kg": 3.0,
+    "actual_payload_mass_kg": 2.7,
+    "uav_position_peak_m": 0.07062803213356804,
+    "final_hold_payload_rmse_m": 0.00378869643919731,
+    "acceleration_limit_fraction": 0.0,
+    "saturated_attitude_update_fraction": 0.0,
+    "rotor_limit_utilization_peak": 0.5306694271403194,
+    "state_extrema_sampling_hz": 50.0,
+    "acceptance_checks": {
+      "full_duration": true,
+      "payload_peak_error_at_most_15cm": true,
+      "uav_peak_error_at_most_10cm": true,
+      "payload_tilt_at_most_5deg": true,
+      "cable_deviation_at_most_5deg": true,
+      "tension_within_4_to_18N": true,
+      "uav_surface_clearance_at_least_25cm": true,
+      "workspace_clearance_at_least_30cm": true,
+      "rotor_at_most_80pct_assumed_limit": true,
+      "no_motor_saturation": true,
+      "no_acceleration_clipping": true,
+      "final_hold_RMSE_at_most_5cm": true,
+      "final_hold_tilt_at_most_1deg": true,
+      "rope_length_residual_at_most_10um": true
+    },
+    "engineering_screen_passed": true
+  },
+  {
+    "payload_position_rmse_m": 0.018767231967309013,
+    "payload_position_peak_m": 0.07392834223808928,
+    "uav_position_rmse_m": [
+      0.017739186906742605,
+      0.017976262711238644,
+      0.018348675473245687
+    ],
+    "payload_tilt_peak_deg": 0.8995604198185841,
+    "final_hold_payload_tilt_peak_deg": 0.5620755062870121,
+    "cable_direction_deviation_peak_deg": 1.2929152648191675,
+    "tension_min_N": 11.18438922516017,
+    "tension_max_N": 11.688257687116995,
+    "tension_rate_rms_N_s": [
+      0.3106362121668894,
+      0.30325998608588944,
+      0.3000389662600025
+    ],
+    "rope_length_error_peak_m": 2.5868196473766147e-13,
+    "cable_constraint_power_peak_W": 1.5382844422900504e-10,
+    "quaternion_norm_error_peak": 4.440892098500626e-16,
+    "minimum_uav_center_distance_m": 1.4546449965910733,
+    "minimum_uav_bounding_sphere_clearance_m": 0.4946449965910733,
+    "minimum_workspace_bounding_sphere_clearance_m": 0.39115111603569624,
+    "rotor_thrust_peak_N": 8.986064469327395,
+    "status": "completed",
+    "failure_reason": null,
+    "failure_step_time_s": null,
+    "scenario": "capture_heavy_seed7",
+    "case": {
+      "name": "capture_heavy_seed7",
+      "category": "acceptance",
+      "payload_mass_factor": 1.1,
+      "position_noise_std_m": 0.002,
+      "velocity_noise_std_m_s": 0.005,
+      "noise_correlation_s": 0.15,
+      "measurement_delay_s": 0.04,
+      "position_bias_m": [
+        [
+          0.003,
+          -0.0015,
+          0.0012
+        ],
+        [
+          -0.0024,
+          0.003,
+          -0.0009
+        ],
+        [
+          0.0015,
+          -0.0024,
+          0.0015
+        ]
+      ],
+      "command_delay_s": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "clock_offset_s": [
+        0,
+        0.01,
+        -0.01
+      ],
+      "wind_peak_N": 0.3,
+      "wind_start_s": 30.0,
+      "wind_duration_s": 8.0,
+      "seed": 7
+    },
+    "controller": "offline_pva_replay_local_UAV_PID_nominal_load_share",
+    "requested_duration_s": 88.0,
+    "logged_end_s": 88.0,
+    "wall_time_s": 60.53395430004457,
+    "flight_ready": false,
+    "px4_validated": false,
+    "payload_feedback": false,
+    "tension_feedback": false,
+    "online_PDE_MPC_ESO": false,
+    "nominal_payload_mass_kg": 3.0,
+    "actual_payload_mass_kg": 3.3000000000000003,
+    "uav_position_peak_m": 0.07072964522603188,
+    "final_hold_payload_rmse_m": 0.00374334449317568,
+    "acceleration_limit_fraction": 0.0,
+    "saturated_attitude_update_fraction": 0.0,
+    "rotor_limit_utilization_peak": 0.5529885827278397,
+    "state_extrema_sampling_hz": 50.0,
+    "acceptance_checks": {
+      "full_duration": true,
+      "payload_peak_error_at_most_15cm": true,
+      "uav_peak_error_at_most_10cm": true,
+      "payload_tilt_at_most_5deg": true,
+      "cable_deviation_at_most_5deg": true,
+      "tension_within_4_to_18N": true,
+      "uav_surface_clearance_at_least_25cm": true,
+      "workspace_clearance_at_least_30cm": true,
+      "rotor_at_most_80pct_assumed_limit": true,
+      "no_motor_saturation": true,
+      "no_acceleration_clipping": true,
+      "final_hold_RMSE_at_most_5cm": true,
+      "final_hold_tilt_at_most_1deg": true,
+      "rope_length_residual_at_most_10um": true
+    },
+    "engineering_screen_passed": true
+  },
+  {
+    "payload_position_rmse_m": 0.01870093587034053,
+    "payload_position_peak_m": 0.07561508355685392,
+    "uav_position_rmse_m": [
+      0.017900122099107553,
+      0.01769055232431192,
+      0.01824045978724209
+    ],
+    "payload_tilt_peak_deg": 0.7656359719764362,
+    "final_hold_payload_tilt_peak_deg": 0.6021882650516407,
+    "cable_direction_deviation_peak_deg": 1.2991591142578596,
+    "tension_min_N": 11.170275280320755,
+    "tension_max_N": 11.68808217020947,
+    "tension_rate_rms_N_s": [
+      0.29819398813719916,
+      0.28843608414081406,
+      0.2932999836219455
+    ],
+    "rope_length_error_peak_m": 2.970956813896919e-13,
+    "cable_constraint_power_peak_W": 1.9937513270694825e-10,
+    "quaternion_norm_error_peak": 4.440892098500626e-16,
+    "minimum_uav_center_distance_m": 1.446389226806368,
+    "minimum_uav_bounding_sphere_clearance_m": 0.4863892268063681,
+    "minimum_workspace_bounding_sphere_clearance_m": 0.3893887475144106,
+    "rotor_thrust_peak_N": 8.988808252387173,
+    "status": "completed",
+    "failure_reason": null,
+    "failure_step_time_s": null,
+    "scenario": "capture_heavy_seed19",
+    "case": {
+      "name": "capture_heavy_seed19",
+      "category": "acceptance",
+      "payload_mass_factor": 1.1,
+      "position_noise_std_m": 0.002,
+      "velocity_noise_std_m_s": 0.005,
+      "noise_correlation_s": 0.15,
+      "measurement_delay_s": 0.04,
+      "position_bias_m": [
+        [
+          0.003,
+          -0.0015,
+          0.0012
+        ],
+        [
+          -0.0024,
+          0.003,
+          -0.0009
+        ],
+        [
+          0.0015,
+          -0.0024,
+          0.0015
+        ]
+      ],
+      "command_delay_s": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "clock_offset_s": [
+        0,
+        0.01,
+        -0.01
+      ],
+      "wind_peak_N": 0.3,
+      "wind_start_s": 30.0,
+      "wind_duration_s": 8.0,
+      "seed": 19
+    },
+    "controller": "offline_pva_replay_local_UAV_PID_nominal_load_share",
+    "requested_duration_s": 88.0,
+    "logged_end_s": 88.0,
+    "wall_time_s": 61.22070130001521,
+    "flight_ready": false,
+    "px4_validated": false,
+    "payload_feedback": false,
+    "tension_feedback": false,
+    "online_PDE_MPC_ESO": false,
+    "nominal_payload_mass_kg": 3.0,
+    "actual_payload_mass_kg": 3.3000000000000003,
+    "uav_position_peak_m": 0.0722473173523003,
+    "final_hold_payload_rmse_m": 0.004844489277257945,
+    "acceleration_limit_fraction": 0.0,
+    "saturated_attitude_update_fraction": 0.0,
+    "rotor_limit_utilization_peak": 0.5531574309161337,
+    "state_extrema_sampling_hz": 50.0,
+    "acceptance_checks": {
+      "full_duration": true,
+      "payload_peak_error_at_most_15cm": true,
+      "uav_peak_error_at_most_10cm": true,
+      "payload_tilt_at_most_5deg": true,
+      "cable_deviation_at_most_5deg": true,
+      "tension_within_4_to_18N": true,
+      "uav_surface_clearance_at_least_25cm": true,
+      "workspace_clearance_at_least_30cm": true,
+      "rotor_at_most_80pct_assumed_limit": true,
+      "no_motor_saturation": true,
+      "no_acceleration_clipping": true,
+      "final_hold_RMSE_at_most_5cm": true,
+      "final_hold_tilt_at_most_1deg": true,
+      "rope_length_residual_at_most_10um": true
+    },
+    "engineering_screen_passed": true
+  },
+  {
+    "payload_position_rmse_m": 0.018482596824854407,
+    "payload_position_peak_m": 0.07389030488473182,
+    "uav_position_rmse_m": [
+      0.01756238665591218,
+      0.017823266935855658,
+      0.017919330129618504
+    ],
+    "payload_tilt_peak_deg": 0.8635950316798513,
+    "final_hold_payload_tilt_peak_deg": 0.49761522071099995,
+    "cable_direction_deviation_peak_deg": 1.3404198137876984,
+    "tension_min_N": 11.175349639517792,
+    "tension_max_N": 11.690624432514554,
+    "tension_rate_rms_N_s": [
+      0.3024702467480025,
+      0.2998101425405105,
+      0.2914044714118813
+    ],
+    "rope_length_error_peak_m": 2.398081733190338e-13,
+    "cable_constraint_power_peak_W": 1.5266594637717712e-10,
+    "quaternion_norm_error_peak": 4.440892098500626e-16,
+    "minimum_uav_center_distance_m": 1.4520045360258749,
+    "minimum_uav_bounding_sphere_clearance_m": 0.4920045360258749,
+    "minimum_workspace_bounding_sphere_clearance_m": 0.39109995101705325,
+    "rotor_thrust_peak_N": 8.982089660436012,
+    "status": "completed",
+    "failure_reason": null,
+    "failure_step_time_s": null,
+    "scenario": "capture_heavy_seed41",
+    "case": {
+      "name": "capture_heavy_seed41",
+      "category": "acceptance",
+      "payload_mass_factor": 1.1,
+      "position_noise_std_m": 0.002,
+      "velocity_noise_std_m_s": 0.005,
+      "noise_correlation_s": 0.15,
+      "measurement_delay_s": 0.04,
+      "position_bias_m": [
+        [
+          0.003,
+          -0.0015,
+          0.0012
+        ],
+        [
+          -0.0024,
+          0.003,
+          -0.0009
+        ],
+        [
+          0.0015,
+          -0.0024,
+          0.0015
+        ]
+      ],
+      "command_delay_s": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "clock_offset_s": [
+        0,
+        0.01,
+        -0.01
+      ],
+      "wind_peak_N": 0.3,
+      "wind_start_s": 30.0,
+      "wind_duration_s": 8.0,
+      "seed": 41
+    },
+    "controller": "offline_pva_replay_local_UAV_PID_nominal_load_share",
+    "requested_duration_s": 88.0,
+    "logged_end_s": 88.0,
+    "wall_time_s": 61.368264999997336,
+    "flight_ready": false,
+    "px4_validated": false,
+    "payload_feedback": false,
+    "tension_feedback": false,
+    "online_PDE_MPC_ESO": false,
+    "nominal_payload_mass_kg": 3.0,
+    "actual_payload_mass_kg": 3.3000000000000003,
+    "uav_position_peak_m": 0.0698195587632654,
+    "final_hold_payload_rmse_m": 0.00529988045960224,
+    "acceleration_limit_fraction": 0.0,
+    "saturated_attitude_update_fraction": 0.0,
+    "rotor_limit_utilization_peak": 0.5527439791037546,
+    "state_extrema_sampling_hz": 50.0,
+    "acceptance_checks": {
+      "full_duration": true,
+      "payload_peak_error_at_most_15cm": true,
+      "uav_peak_error_at_most_10cm": true,
+      "payload_tilt_at_most_5deg": true,
+      "cable_deviation_at_most_5deg": true,
+      "tension_within_4_to_18N": true,
+      "uav_surface_clearance_at_least_25cm": true,
+      "workspace_clearance_at_least_30cm": true,
+      "rotor_at_most_80pct_assumed_limit": true,
+      "no_motor_saturation": true,
+      "no_acceleration_clipping": true,
+      "final_hold_RMSE_at_most_5cm": true,
+      "final_hold_tilt_at_most_1deg": true,
+      "rope_length_residual_at_most_10um": true
+    },
+    "engineering_screen_passed": true
+  }
+]

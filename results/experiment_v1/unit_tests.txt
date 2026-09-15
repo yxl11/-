@@ -1,0 +1,41 @@
+test_MPC_uses_future_reference_and_keeps_nominal_separate (test_force_mapping.ForceMappingChecks.test_MPC_uses_future_reference_and_keeps_nominal_separate) ... ok
+test_force_filter_preserves_convex_segment_and_C2_at_target_change (test_force_mapping.ForceMappingChecks.test_force_filter_preserves_convex_segment_and_C2_at_target_change) ... ok
+test_integrated_hover_export_uses_per_UAV_derivatives (test_force_mapping.ForceMappingChecks.test_integrated_hover_export_uses_per_UAV_derivatives) ... ok
+test_inverse_analytic_velocity_and_acceleration (test_force_mapping.ForceMappingChecks.test_inverse_analytic_velocity_and_acceleration) ... ok
+test_inverse_mapping_uses_attachment_offsets_and_changes_shape (test_force_mapping.ForceMappingChecks.test_inverse_mapping_uses_attachment_offsets_and_changes_shape) ... ok
+test_momentum_ESO_estimates_unprovided_disturbance (test_force_mapping.ForceMappingChecks.test_momentum_ESO_estimates_unprovided_disturbance) ... ok
+test_rotational_damping_reaches_force_before_geometry_moves (test_force_mapping.ForceMappingChecks.test_rotational_damping_reaches_force_before_geometry_moves) ... ok
+test_tube_invariant_boundary_under_corner_disturbances (test_force_mapping.ForceMappingChecks.test_tube_invariant_boundary_under_corner_disturbances) ... ok
+test_vector_allocation_satisfies_force_moment_and_positive_cones (test_force_mapping.ForceMappingChecks.test_vector_allocation_satisfies_force_moment_and_positive_cones) ... ok
+test_controller_does_not_read_load_truth (test_pde.PDEChecks.test_controller_does_not_read_load_truth) ... ok
+test_convection_transform_has_required_sign (test_pde.PDEChecks.test_convection_transform_has_required_sign) ... ok
+test_dynamic_boundary_enforces_dirichlet_residual (test_pde.PDEChecks.test_dynamic_boundary_enforces_dirichlet_residual) ... ok
+test_kernel_diagonal_and_origin_limits (test_pde.PDEChecks.test_kernel_diagonal_and_origin_limits) ... ok
+test_kernel_satisfies_hyperbolic_kernel_equation (test_pde.PDEChecks.test_kernel_satisfies_hyperbolic_kernel_equation) ... ok
+test_neighbor_feedback_changes_follower_and_leader (test_pde.PDEChecks.test_neighbor_feedback_changes_follower_and_leader) ... ok
+test_pde_hover_and_log_lengths (test_pde.PDEChecks.test_pde_hover_and_log_lengths) ... ok
+test_reference_lifting_preserves_translation_invariance (test_pde.PDEChecks.test_reference_lifting_preserves_translation_invariance) ... ok
+test_constraint_acceleration_is_zero_for_tangent_velocity (test_physics.PhysicsChecks.test_constraint_acceleration_is_zero_for_tangent_velocity) ... ok
+test_controller_does_not_read_payload_feedback (test_physics.PhysicsChecks.test_controller_does_not_read_payload_feedback) ... ok
+test_internal_cable_moments_cancel_about_world_origin (test_physics.PhysicsChecks.test_internal_cable_moments_cancel_about_world_origin) ... ok
+test_internal_forces_cancel_in_linear_momentum (test_physics.PhysicsChecks.test_internal_forces_cancel_in_linear_momentum) ... ok
+test_negative_tension_is_rejected_not_clamped (test_physics.PhysicsChecks.test_negative_tension_is_rejected_not_clamped) ... ok
+test_quaternion_rotation_round_trip (test_physics.PhysicsChecks.test_quaternion_rotation_round_trip) ... ok
+test_reference_is_smooth_at_segment_boundaries (test_physics.PhysicsChecks.test_reference_is_smooth_at_segment_boundaries) ... ok
+test_rotor_allocation_obeys_realizable_bounds (test_physics.PhysicsChecks.test_rotor_allocation_obeys_realizable_bounds) ... ok
+test_static_balance_matches_hand_calculation (test_physics.PhysicsChecks.test_static_balance_matches_hand_calculation) ... ok
+test_C2_across_knots_and_endpoint_hold (test_replay.ReplayChecks.test_C2_across_knots_and_endpoint_hold) ... ok
+test_Hermite_reproduces_quintic_and_analytic_derivatives (test_replay.ReplayChecks.test_Hermite_reproduces_quintic_and_analytic_derivatives) ... ok
+test_controller_input_boundary_excludes_payload_and_tension (test_replay.ReplayChecks.test_controller_input_boundary_excludes_payload_and_tension) ... ok
+test_export_contains_reference_not_actual_response (test_replay.ReplayChecks.test_export_contains_reference_not_actual_response) ... ok
+test_local_integrator_does_not_wind_up_under_unreachable_position (test_replay.ReplayChecks.test_local_integrator_does_not_wind_up_under_unreachable_position) ... ok
+test_measurement_latency_uses_past_not_current_state (test_replay.ReplayChecks.test_measurement_latency_uses_past_not_current_state) ... ok
+test_noise_is_seeded_and_affects_measurements (test_replay.ReplayChecks.test_noise_is_seeded_and_affects_measurements) ... ok
+test_per_UAV_reference_ages_are_applied_in_physical_replay (test_replay.ReplayChecks.test_per_UAV_reference_ages_are_applied_in_physical_replay) ... ok
+test_replay_runs_without_planner_and_response_is_not_assigned (test_replay.ReplayChecks.test_replay_runs_without_planner_and_response_is_not_assigned) ... ok
+test_table_rejects_bad_time_nonfinite_data_and_hidden_channels (test_replay.ReplayChecks.test_table_rejects_bad_time_nonfinite_data_and_hidden_channels) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 0.992s
+
+OK

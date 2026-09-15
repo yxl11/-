@@ -1,0 +1,5 @@
+# Ubuntu: sudo apt install fonts-noto-cjk
+# The existing plotting helper chooses Microsoft YaHei on Windows when available.
+font.family: sans-serif
+font.sans-serif: Noto Sans CJK SC, WenQuanYi Zen Hei, DejaVu Sans
+axes.unicode_minus: False

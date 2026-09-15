@@ -1,0 +1,31 @@
+{
+  "status": "reference_design_check_only",
+  "coupled_dynamics_simulated": false,
+  "px4_tested": false,
+  "flight_ready": false,
+  "assumptions": {
+    "total_suspended_mass_kg_pending_rigging_confirmation": 3.0,
+    "rope_length_m": 1.8,
+    "anchor_radius_m": 0.25,
+    "hover_rope_angle_from_vertical_deg": 20,
+    "outbound_duration_s": 40.0,
+    "full_suspended_sequence_duration_s": 104
+  },
+  "geometry": {
+    "uav_attachment_radius_m": 0.8656362579862037,
+    "attachment_separation_m": 1.499325979705905,
+    "vertical_attachment_offset_m": 1.6914467174146353
+  },
+  "static_load_ignoring_rope_mass": {
+    "tension_per_rope_N": 10.439583947988698,
+    "horizontal_force_per_uav_N": 3.570547998151445,
+    "vertical_force_per_uav_N": 9.81
+  },
+  "analytic_derivative_sampling": {
+    "sample_count": 40001,
+    "speed_peak_m_s": 0.47511578966316265,
+    "acceleration_peak_m_s2": 0.09808472161524365,
+    "jerk_peak_m_s3": 0.04598820386744296,
+    "endpoint_derivative_conditions_passed": true
+  }
+}

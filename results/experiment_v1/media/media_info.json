@@ -1,0 +1,12 @@
+{
+  "mp4_frames": 221,
+  "mp4_duration_s": 22.1,
+  "gif_frames": 221,
+  "gif_frame_duration_ms": 100,
+  "simulation_duration_s": 88,
+  "speedup": 4,
+  "visualized_case": "ideal",
+  "planning_log_sha256": "89ba7fc0b1fac2d9d05dfe5e547d8987de86e091d4eb48bc9ad490c71d286342",
+  "replay_log_sha256": "c7f63c6586cfae30a6878149dba8d70b86bfd798df8b6df22c00acc1995bd019",
+  "mp4_sha256": "391475ac0896204f371a45991b90aae0a9ec292ee575c5384fa973f88d4b1f0f"
+}

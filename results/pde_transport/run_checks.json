@@ -1,0 +1,24 @@
+{
+  "all_passed": true,
+  "checks": {
+    "completed_requested_duration": true,
+    "PDE_controller_selected": true,
+    "finite_aligned_logs": true,
+    "positive_logged_tensions": true,
+    "no_rotor_command_saturation": true,
+    "rotor_thrust_within_bounds": true,
+    "positive_sampled_uav_clearance": true,
+    "positive_sampled_workspace_clearance": true,
+    "rope_residual_below_one_micrometre": true,
+    "boundary_feedback_actually_nonzero": true,
+    "Volterra_boundary_identity": true,
+    "source_hashes_match_run": true
+  },
+  "post_initial_hold_peak_payload_error_m": 0.017365560125178512,
+  "post_initial_hold_peak_tilt_deg": 0.10935484781558977,
+  "boundary_feedback_correction_peak_m": 0.04728705274163759,
+  "final_payload_position_error_m": 5.213630552253075e-07,
+  "all_metrics_sampling_hz": 50.0,
+  "algorithm_comparison_performed": false,
+  "flight_authorization": false
+}

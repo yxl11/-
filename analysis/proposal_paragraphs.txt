@@ -1,0 +1,343 @@
+P000: 报告正文（2026版）
+P001: 参照以下提纲撰写，要求内容翔实、清晰，层次分明，标题突出。申请书正文原则上不超过30页，鼓励简洁表达。请勿删除或改动下述提纲标题及括号中的文字。
+P002: （一）立项依据：
+P003: （为什么要开展此项研究，研究的科学技术价值如何）
+P004: 1.1研究意义
+P005: 随着低空经济被纳入国家战略新兴产业，发展高效、可靠的集群协同作业装备成为培育新质生产力的重要方向。多无人机协同吊运系统作为突破传统运输限制的关键技术手段，在应急物资投送、大型工程吊装、山区物流配送等领域展现出独特价值。然而，在实际工程部署中，多无人机协同吊运系统面临以下亟待解决的关键问题：
+P006: 一是参数不确定性与动态干扰的耦合影响。负载质量变化、吊索弹性形变、气动参数摄动等系统参数不确定性普遍存在；同时，作业环境中的持续风场、突发阵风等外部干扰直接影响系统稳定性。这些因素相互耦合，导致传统基于精确模型假设的控制方法在实际应用中性能急剧下降。
+P007: 二是系统故障与突发异常的安全风险。在实际长时间作业中，无人机动力衰减、执行器异常、通信链路异常等故障难以避免。缺乏有效的故障诊断与容错机制将导致任务中断，甚至引发连锁安全事故。
+P008: 三是动态障碍环境下的实时响应瓶颈。在城区、林区等复杂环境中，突现的飞行器、移动障碍物要求系统具备毫秒级应急响应能力。传统分层式“感知-规划-控制”架构存在的决策延迟，难以满足紧急避障的实时性要求，且生成的避障轨迹往往忽视吊运系统的整体动力学约束，易引发控制冲突。
+P009: 针对上述工程实际问题，本项目引入创新的解决方案：
+P010: 在协同控制层面，采用基于偏微分方程（PDE）的连续体建模与控制方法。该方法将整个无人机编队与负载系统抽象为一个空间连续智能体，其特有优势在于：①模型与规模解耦：控制律设计复杂度不随无人机数量增加而显著上升，为大规模工程集群提供统一控制框架；②精准刻画耦合效应：通过反应-扩散-对流方程自然描述负载摆动与编队运动间的能量传递，克服了传统离散模型对耦合动力学描述不精确的缺陷；③支持快速参数化重构：仅通过调整少数PDE参数即可实现不同作业任务下构型的平滑、快速切换，提升了系统对不同工程任务的适应性。
+P011: 在安全避障层面，发展端到端紧急避障方法，该方法将环境感知信息直接映射为协同控制指令，省去了中间规划环节，通过“感知控制”一体化映射，在保障安全约束的前提下实现快速响应，并结合仿真到现实迁移与安全强化学习机制，提升策略在真实场景中的安全泛化能力。
+P012:  [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId8', 'cstate': 'print'}]]
+P013: 图1 低空多机吊运系统应用场景及面临的挑战
+P014: 综上所述，本项目通过攻克多无人机协同吊运在实际工程应用中的控制精度、环境适应和应急响应等关键技术难题，致力于建立一套可工程化实施的理论方法体系。研究成果将直接应用于应急救援、重大工程、特种运输等关键领域，为提升国家应急响应能力、完善低空物流网络提供可靠的技术装备支撑。这不仅是推动智能无人系统技术工程化发展的重要突破，更是服务国家低空经济战略布局、培育新质生产力的具体实践，具有显著的工程应用价值和战略发展意义。
+P015: 
+P016:  [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId9', 'cstate': 'print'}]]
+P017: 
+P018: 
+P019: 
+P020: 
+P021: 
+P022: 
+P023: 
+P024: 1.2国内外研究现状及发展动态分析
+P025: 为系统梳理多无人机吊运领域的发展动态、明晰技术瓶颈，将从以下三个核心研究方向展开论述：首先，探讨基于偏微分方程（PDE）的系统建模与集群协同控制方法，分析其在描述系统宏观动力学与实现可扩展控制方面的进展；其次，剖析模型预测控制（MPC）与张力分配策略在力指令生成与优化中面临的鲁棒性与平滑性问题；最后，阐述动态环境下智能避障与系统容错方法的研究现状，重点关注端到端学习与安全可验证性相结合的演进趋势。通过对上述方向的深入分析，旨在揭示当前研究存在的关键瓶颈，为后续提出创新性解决方案提供理论与技术依据。
+P026: (1)协同系统建模与集群控制
+P027: 多无人机吊运系统是由多个无人机、柔性缆绳和负载构成的强耦合、分布式参数系统。早期研究常采用“准静态”假设，仅通过运动学进行路径规划，完全忽视了系统动态耦合，导致生成的轨迹无法抑制负载摆动且张力分配不可行[1]。为精确描述系统动力学，Sreenath等人[2]首次证明了该系统的微分平坦性，为基于模型的控制奠定了理论基础。后续研究普遍采用拉格朗日或牛顿-欧拉方法建立集中式常微分方程（ODE）模型，并发展了逆动力学控制、几何控制等方法[3]。然而，集中式模型维数高、非线性强，且极度依赖精确的系统参数（如负载质量、惯量），对建模误差和外部扰动异常敏感。为提高可扩展性与鲁棒性，研究转向分布式协同控制。基于一致性的方法通过设计分布式反馈律，使无人机在状态或输出力上达成一致，以共同稳定负载[4]。进一步地，分布式滑模控制、H∞控制等鲁棒方法被引入以增强抗干扰能力[5-7]。近年来，基于偏微分方程（PDE）的连续体建模思想为解决大规模集群的宏观分析与控制提供了新视角。该方法将无人机编队与缆绳系统抽象为空间连续体，用反应-扩散-对流型PDE自然描述负载摆动与编队形变间的能量传递与耦合机理，其模型形式与运动体数量无关，具备良好的可扩展性。然而，PDE模型的控制器设计（如边界控制）通常需要全局信息或复杂的分布式状态估计，且其实时求解对计算能力要求高，与工程实践中有限通信、资源受限的分布式执行架构存在矛盾。
+P028: 当前研究存在的主要问题在于：一是模型精确性与控制律可部署性脱节，高精度模型往往难以在分布式系统中高效实现；二是现有分布式协同控制算法对通信时延、执行器饱和等实际工程约束的适应性弱；三是系统可扩展性与控制实时性难以兼顾。针对这些问题，本项目引入基于PDE的连续体建模与边界控制框架，通过建立统一动力学模型并设计仅需调控编队边界关键节点的分布式控制律，在保持模型精度的同时，大幅降低通信与计算复杂度，为实现集群的高效协同控制提供新途径。
+P029: (2)预测控制与优化分配策略
+P030: 生成与负载期望运动匹配的合力后，需将其分解为各缆绳的张力指令。这一过程包含预测性力序列生成与多目标张力分配两个核心环节。模型预测控制（MPC）因其能显式处理动力学与约束，并通过滚动优化前瞻性地规划平滑指令，成为提升动态性能的有力工具。Sun和Franchi[8]、Li和Loianno[9]以及Masone[10]等人提出的多种集中式非线性MPC框架，在仿真中实现了对负载的高精度跟踪。然而，这些MPC方法多基于确定性模型，当存在模型参数不确定性和有界外部干扰时，其闭环稳定性与约束满足性缺乏理论保证，限制了其在可靠性要求极高的吊运任务中的应用。尽管Tube MPC等鲁棒预测控制方法理论上能通过鲁棒不变集提供严格保证，但在吊运系统这类高维非线性系统中，其计算复杂度成为实时应用的瓶颈。在分配层面，最基本的方法是计算分配矩阵的伪逆以获得最小范数解[11]。为优化性能，研究利用零空间冗余实现载荷均衡等目标[12]。Daniel等人的工作表明，张力均匀化有助于提升跟踪性能[13]。然而，现有分配算法普遍追求瞬时最优（如最小能耗），严重缺乏对张力序列动态平滑性的主动优化。而张力的剧烈变化正是激发负载残余振动、限制系统操作带宽与敏捷性的关键原因[14]。同时，现有研究大多未充分考虑吊运过程中因负载运动而实时变化的缆绳方向矩阵及其对可达力锥的动态影响，也未有效处理无人机旋翼动力学响应与理想力指令之间的动态失配问题。
+P031: 当前研究存在的主要问题在于：一是先进预测控制方法在模型不确定性下缺乏严格的鲁棒性理论保证；二是张力分配策略与动态平滑性这一关键性能目标脱节；三是力指令的前馈生成与后续分配环节常被割裂设计，难以实现全局协同优化。为此，本项目致力于构建集鲁棒前馈、平滑分配与滚动优化于一体的力序列生成框架。该框架拟采用扩张状态观测器（ESO）在线估计并补偿集总扰动，以获取鲁棒的总需求力指令；进而，在时变可达力锥表征下，建立融合张力变化率惩罚的多目标凸优化分配模型，从源头抑制力波动；最终，通过Tube MPC鲁棒模型预测控制框架，将上述环节深度融合于一个在线滚动优化问题中，在主动管理力序列动态平滑性的同时，为系统在不确定性下的稳定性与安全性提供严格的理论保障。
+P032: (3)动态环境端到端避障方法
+P033: 在城区、林区等复杂低空环境中作业，系统必须应对突发动态障碍与内部单元故障的双重挑战。传统“感知-规划-控制”分层架构存在决策延迟，且规划层往往忽视吊运系统的整体动力学约束，导致避障轨迹不可行或引发控制冲突[15]。端到端学习方法通过深度耦合感知与决策，实现从原始观测到控制指令的直接映射，为毫秒级应急响应提供了可能[16-17]。监督学习依赖大量标注数据，在动态障碍环境下的泛化能力受限；强化学习通过与环境交互进行策略优化，更适合不确定环境，例如结合安全屏障函数以提升安全性[18-20]。然而，将端到端方法应用于吊运系统面临独特挑战：控制策略需同时满足避障、负载稳定与多机协同等要求，且其“黑箱”特性导致安全性缺乏可验证机制，难以满足高可靠性任务要求。当前趋势走向“结构化学习与安全增强融合”[21]，例如利用实时生成的凸多面体安全走廊（SFC）提供明确的几何安全约束，再结合神经网络学习优化策略[22]。
+P034: 综上所述，当前多无人机协同吊运研究在系统建模、力指令优化与安全控制方面虽取得长足进步，但面向低空复杂环境的高可靠、高动态工程应用需求，仍存在三个环环相扣的核心挑战：一是缺乏能兼顾模型精确性、控制分布式可部署性与系统可扩展性的统一协同控制框架；二是缺乏能在模型不确定性下提供严格稳定性保证、同时主动优化动态平滑性的预测控制与分配方法；三是缺乏能协同应对突发外部障碍与内部单元故障、且具备安全可验证性的智能鲁棒控制机制。
+P035: 1.3拟解决的关键科学问题
+P036: 科学问题1：跨尺度耦合动力学建模与有限边界输入下集群全局协同镇定机制
+P037: 多机协同吊运系统由多个无人机通过柔性吊索与负载连接，构成一个动力学上深度耦合的分布式参数系统。传统基于离散运动体模型的集中式或分布式控制方法，难以精确刻画这种连续的能量传递与空间分布特性，导致控制律设计复杂、稳定性分析困难，且在模型参数不确定和外部扰动下鲁棒性不足。
+P038: 因此，如何从连续介质力学的视角，构建一个能精确描述“编队无人机-柔性吊索-刚性负载”整体动力学的偏微分方程（PDE）模型，并基于此模型设计出仅需在系统边界施加作用的分布式协同控制律，是实现高精度、强鲁棒吊运控制的首要科学挑战。
+P039: 科学问题2：动态化环境下端到端无人机自主导航策略泛化与迁移失效的影响因素及作用机理
+P040: 在动态化环境中，障碍物运动模式复杂且具有突发性，同时叠加传感噪声、光照变化、系统动力学偏差与控制时延等现实因素，易导致策略产生分布失配，出现避障迟滞甚至失效风险。尤其在Sim-to-Real迁移过程中，仿真环境的理想化假设难以覆盖真实环境部署时的动态不确定性，导致策略实际部署中性能退化。同时，动态环境呈现强非平稳特性，策略失效往往源于感知误差、运动不确定性与控制时延的耦合放大，而端到端模型内部决策链条难以解析，使观测扰动与安全裕度之间的因果关系难以描述。
+P041: 因此，系统的挖掘影响基于数据的端到端导航策略泛化与迁移失效的关键因素，揭示其导致性能退化与安全风险上升的作用机理，是本项目亟需解决的关键科学问题。
+P042: 参考文献：
+P043: [1] SREENATH K, KUMAR V. Dynamics, control and planning for cooperative manipulation of payloads suspended by cables from multiple quadrotor robots[C]//2013 Robotics: Science and Systems IX. 2013.
+P044: [2] SREENATH K, LEE T, KUMAR V. Geometric control and differential flatness of a quadrotor UAV with a cable-suspended load[C]//52nd IEEE Conference on Decision and Control. 2013: 2269-2274.
+P045: [3] KOTARU P, SREENATH K. Multiple quadrotors carrying a flexible hose: dynamics, differential flatness and control[J]. IFAC-PapersOnLine, 2020, 53(2): 8832-8839.
+P046: [4] TAN S Y. Development of distributed consensus protocol for multi-unmanned aerial vehicle coordination[J]. 2022.
+P047: [5] 张争坤, 杨艺. 基于自适应滑模控制的四旋翼无人机传感器偏置故障研究[J]. Journal of Sensor Technology and Application, 2025, 13: 278.
+P048: [6] 韩亮, 任章, 董希旺, 等. 多无人机协同控制方法及应用研究[J]. 导航定位与授时, 2018, 5(4): 1-7.
+P049: [7] 苟进展, 梁天骄, 陶呈纲, 等. 基于一致性理论的无人机编队控制与集结方法[J]. 北京航空航天大学学报, 2022, 50(5): 1646-1654.
+P050: [8] SUN S, FRANCHI A. Nonlinear MPC for Full-Pose Manipulation of a Cable-Suspended Load using Multiple UAVs[C]//2023 International Conference on Unmanned Aircraft Systems (ICUAS). 2023: 969-975.
+P051: [9] LI G, LOIANNO G. Nonlinear Model Predictive Control for Cooperative Transportation and Manipulation of Cable Suspended Payloads with Multiple Quadrotors[C]//2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS). 2023: 5034-5041.
+P052: [10] MASONE C, STEGAGNO P. Shared control of an aerial cooperative transportation system with a cable-suspended payload[J]. Journal of Intelligent and Robotic Systems, 2021, 103(3): 1-29.
+P053: [11] WAHBA K, HÖNIG W. Efficient optimization-based cable force allocation for geometric control of a multirotor team transporting a payload[J]. IEEE Robotics and Automation Letters, 2024, 9(4): 3688-3695.
+P054: [12] GENG J, SINGLA P, LANGELAAN J W. Load-distribution-based trajectory planning and control for a multilift system[J]. Journal of Aerospace Information Systems, 2022, 19(5): 366-381.
+P055: [13] VILLA D K D, BRANDÃO A S, CARELLI R, et al. Cooperative Load Transportation With Two Quadrotors Using Adaptive Control[J]. IEEE Access, 2021, 9: 129148-129160.
+P056: [14] LI G, LIU X, LOIANNO G. RotorTM: A Flexible Simulator for Aerial Transportation and Manipulation[J]. IEEE Transactions on Robotics, 2024, 40: 831-850.
+P057: [15] ROSS S, MELIK-BARKHUDAROV N, SHANKAR K S, et al. Learning monocular reactive UAV control in cluttered natural environments[C]//2013 IEEE International Conference on Robotics and Automation. 2013: 1765-1772.
+P058: [16] LOQUERCIO A, MAQUEDA A I, DEL-BLANCO C R, et al. DroNet: Learning to Fly by Driving[J]. IEEE Robotics and Automation Letters, 2018, 3(2): 1088-1095.
+P059: [17] LOQUERCIO A, KAUFMANN E, RANFTL R, et al. Deep Drone Racing: From Simulation to Reality With Domain Randomization[J]. IEEE Transactions on Robotics, 2020, 36(1): 1-14.
+P060: [18] XU Z, HAN X, SHEN H, et al. NavRL: learning safe flight in dynamic environments[J]. IEEE Robotics and Automation Letters, 2025, 10(4): 3668-3675.
+P061: [19] XU G, WU T, WANG Z, et al. Flying on Point Clouds with Reinforcement Learning[C]//2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS). 2025: 7231-7238.
+P062: [20] KULKARNI M, ALEXIS K. Reinforcement Learning for Collision-free Flight Exploiting Deep Collision Encoding[C]//2024 IEEE International Conference on Robotics and Automation (ICRA). 2024: 15781-15788.
+P063: [21] HU Y, ZHANG Y, SONG Y, et al. Seeing Through Pixel Motion: Learning Obstacle Avoidance From Optical Flow With One Camera[J]. IEEE Robotics and Automation Letters, 2025, 10(6): 5871-5878.
+P064: [22] LU J, ZHANG X, SHEN H, et al. You only plan once: a learning-based one-stage planner with guidance learning[J]. IEEE Robotics and Automation Letters, 2024, 9(7): 6083-6090.
+P065: （二）研究内容：
+P066: （提纲不做限制，请按照研究工作的自身逻辑撰写。应提炼出特色与创新点、年度研究计划）
+P067: 2.1研究目标
+P068: 本项目以无人机协同吊运系统为研究对象，针对编队运输任务中存在的构型保持、轨迹跟踪、抗扰容错与动态避障等安全控制问题，开展系统动力学统一建模、编队映射机理、故障诊断与容错控制、安全导航与端到端避障等理论和方法的研究，突破分布式参数系统控制、模型预测与优化等关键技术，形成具备高鲁棒性、高安全性的协同吊运控制机制，提升无人机集群在复杂动态环境中执行协同运输任务的自主性、可靠性与安全性。具体研究目标包括：
+P069: (1)揭示无人机协同吊运系统的分布式动力学特性，构建基于偏微分方程的编队-负载统一建模与协同控制框架；
+P070: (2)构建面向执行器故障与通信时延的编队系统容错抗扰控制机制；
+P071: (3)建立负载吊运合力与无人机编队构型之间的精确映射模型，形成满足动态轨迹跟踪与负载稳定要求的平滑合力生成与分配方法；
+P072: (4)形成基于端到端感知的编队领导者动态避障与跟随协同策略，保障系统在动态障碍环境中的整体飞行。
+P073: 2.2研究内容
+P074: 本项目遵循“统一建模→核心控制→安全保障”的递进式研究逻辑，系统性地开展四个方面的研究工作：
+P075:  [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId13', 'cstate': 'print'}]]
+P076: 图2 本项目的主要研究内容
+P077: (1)无人机群‑吊运负载联合动力学建模与集群分布式边界控制方法
+P078: 针对多无人机协同吊运系统在执行运输任务时面临的轨迹精确跟踪与编队整体稳定控制难题，需建立能够精确描述编队协同运动与吊索张力动力学耦合关系的统一模型。然而，无人机个体动力学、柔性吊索的摆动、负载的质心变化以及编队间的协同约束构成了一个强非线性、强耦合的复杂系统，传统单机或松散编队模型难以准确描述其整体动力学行为，给高性能控制律的设计带来挑战。主要研究内容包括：
+P079: 无人机群‑负载联合动力学模型。针对无人机编队、柔性吊索与刚性负载之间的强耦合动力学问题，基于连续介质力学思想，建立一维空间连续体模型，采用反应‑扩散‑对流型偏微分方程统一描述系统整体动力学行为，实现对编队整体动力学与负载摆动的统一数学描述。
+P080: 基于PDE模型的分布式协同预测控制算法。在满足执行器饱和、通信拓扑等约束下，实现编队对预设三维空间轨迹的精确、平滑跟踪，并主动抑制负载摆动。
+P081: (2)针对编队多因素故障与通讯时延的安全控制方法
+P082: 在实际任务中，部分无人机可能因执行器故障、动力失效或通信中断而丧失正常功能，此时系统需具备强大的抗干扰与容错能力，能够利用剩余的正常无人机重新组织编队，继续维持基本的吊运任务，保障系统整体生存性与任务可靠性。故障下的编队重构与合力保持是协同运输领域的核心挑战之一。主要研究内容包括：
+P083: 开发面向执行器故障的PDE模型容错控制律。当部分节点失效时，动态调整编队拓扑与控制器参数，重新分配控制任务，以维持系统整体合力方向与幅值的基本稳定；
+P084: 构建基于状态观测的分布式时延补偿机制。针对通信干扰引发的随机时延问题，设计分布式状态观测器实时估计无人机状态与控制输入的时延偏差，结合预测校正方法补偿指令同步误差，在维持现有编队拓扑的前提下，保证吊运货物合力方向的准确性与系统稳定性。
+P085: (3)基于合力前馈预测的集群编队逆向映射机制
+P086: 为实现多无人机系统对负载的柔顺、高精度吊运控制，核心前提是能生成与负载期望运动轨迹精确匹配、物理可行的期望力/力矩指令序列。本部分聚焦于“给定负载轨迹，如何计算并优化无人机应施加的缆绳力”这一关键环节，构建集鲁棒前馈计算、可行分配与滚动优化于一体的期望力序列生成框架。主要研究内容包括：
+P087: 融合集总扰动估计的逆动力学模型。将总需求力映射为一组物理可实现的最优合力，将动态平滑性作为核心优化目标之一，从分配源头抑制力波动。克服模型失配与未知干扰，实现从负载参考轨迹到其所需总外力/力矩的精确、抗扰解算；
+P088: 基于Tube MPC鲁棒模型预测控制的在线滚动优化器。将前馈力指令生成与反馈校正深度融合，在一个统一的预测框架内主动管理力序列，为其在模型不确定性与有界干扰下提供闭环稳定性保障；
+P089: 合力‑编队逆向映射与分布式协同控制算法。建立从期望合力到无人机编队构型的逆向求解模型，结合PDE编队控制架构，实现合力指令到各无人机控制指令的分布式解析与协同执行，在保证整体合力跟踪精度的同时，维持编队形态稳定与负载摆动抑制。
+P090: (4)安全空间快速编码集群端到端避障方法研究
+P091: 本部分将构建基于数据的面向复杂动态环境的无人机协同吊运端到端紧急避障模块，重点解决吊运作业中动态避障、编队保持与任务适应性的核心挑战。系统地设计“感知-决策-控制”一体化架构，融合高效训练与虚实迁移机制，实现从仿真验证到实际部署的闭环支撑。主要研究内容包括：
+P092: 面向吊运任务的动态场景库与测试基准。基于已有仿真与半实物平台，建立覆盖多类运动障碍、突发扰动与典型作业环境的动态场景数据集，形成用于端到端策略训练与评估的标准化任务集，为算法验证提供可靠支撑。
+P093: 构建吊运导向的端到端导航架构设计与训练机制。设计以协同吊运为目标的“感知-决策-控制”一体化模型框架，重点融合Sim-to-Real迁移学习与高样本效率训练方法，提升系统在真实动态环境中的适应性与鲁棒性。
+P094: 2.3 研究方案
+P095: 首先，在动力学建模与协同控制层面，针对无人机集群、柔性吊索与吊运负载构成的强耦合分布参数吊运系统，利用反应-扩散-对流偏微分方程（PDE）建立吊运系统宏观动力学模型；在此基础上，基于反步法设计集群编队构型分布式控制律，形成适于工程化部署的动力学模型与控制基座。
+P096: 然后，以上述动力学模型为基础，针对无人机执行器故障与通信时延两类异常干扰构建安全控制机制；通过建立故障模型与PDE状态观测器，在线估计故障参数与时延偏差并实现自适应补偿，形成完备的集群抗扰控制容错机制。
+P097: 随后，在吊运负载合力优化与前馈预测层面，设计扩张状态观测器实时补偿未建模动态与风扰等集总扰动；并引入Tube MPC模型预测控制框架主动优化合力序列；通过建立的合力到无人机编队队形的逆向映射模型，构建无人机集群分布式控制指令，从源头抑制负载摆动。
+P098: 最后，在基于数据的端到端安全避障层面，提出基于安全走廊编码的紧急避障架构；通过配置空间迭代区域膨胀算法生成凸多面体安全走廊，并利用对称聚合网络建立固定维度特征向量；构建从感知到控制的可微分强化学习映射网络，输出实时的避障策略，保障集群在突发障碍下的整体飞行安全。
+P099: 
+P100:  [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId14', 'cstate': 'print'}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId15', 'cstate': 'print'}]]
+P101: 图3 本项目的总体研究方案与技术路线
+P102: (1)偏微分连续体建模与分布式边界控制
+P103: 针对多无人机协同吊运系统的核心控制难题——即无人机编队、柔性吊索与刚性负载三者间存在的强耦合、分布式动力学特性，本项目引入并发展基于偏微分方程（PDE）的连续体建模与边界控制框架，旨在构建一个能够精确刻画“无人机-吊索-负载”耦合动力学的宏观模型，并基于此设计高效的分布式协同控制律。
+P104: a.多无人机-吊运负载系统的统一动力学建模
+P105: 借鉴连续介质力学与分布参数系统理论，将呈一维空间排列的无人机编队及其通过柔性吊索连接的负载，抽象为一个连续的“柔性体”。其整体动力学行为可用一类反应-扩散-对流型偏微分方程进行描述：
+P106: (1) [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId16', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P107: 式中各符号含义：
+P108: ：编队参数坐标 x 处无人机在时间 t 的三维位置 [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId18', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P109: ：分别表示对时间和空间的一阶、二阶偏导数 [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId20', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P110: ：系统参数，分别反映对流、反应和锚定强度 [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId22', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P111: ：编队起始端期望位置 [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId24', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P112: ：编队末端边界控制输入 [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId26', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P113:  [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId28', 'cstate': 'print'}]]
+P114: 图4 多无人机-负载系统模型示意图
+P115: 根据无人机在拓扑链中的位置，将其分为领导者单元、跟随者单元和锚点单元。负载（吊箱）被视为一个质量为、转动惯量为的刚体，其空间位置记为，姿态由旋转矩阵  描述（为姿态角）。第 i 架无人机通过一根长度为固定值的刚性绳索与负载连接，连接点在负载体坐标系中的位置为。 [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId29', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId31', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId33', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId35', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId37', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId39', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId41', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P116: 关键的几何约束来源于绳索长度不变，这直接建立了无人机位置  与负载位姿  之间的几何关系： [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId43', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId45', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P117: (2) [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId47', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P118: 其中是第 i 架无人机在编队连续体参数域中对应的固定坐标。该约束表明，每一架无人机都必须位于以负载上对应连接点为球心、以为半径的球面上。负载在空中的运动受所有绳索拉力的合力及合力矩控制。设第 i 根绳索的拉力大小为，其方向向量由几何约束自然确定： [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId49', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId51', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId53', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId55', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P119: (3) [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId57', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P120: 根据牛顿-欧拉方程，负载的平动与转动动力学由以下ODE描述：
+P121: (4) [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId59', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P122: 式中Ti(t)为第 i 根绳索的拉力大小，综合上述三部分，得到多无人机-负载吊运系统的完整统一动力学模型。
+P123:  [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId61', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P124: 
+P125: 
+P126: 
+P127: 
+P128: (5)
+P129: 
+P130: 
+P131: 
+P132: 
+P133: 
+P134: b.基于反步法的分布式边界控制器设计
+P135: 在有限通信条件下实现无人机吊运系统的协同编队控制，关键在于设计具有分布式特性、低通信依赖且能保证吊运稳定性的边界控制器。本项目采用反步法（Backstepping）构建一种完全分布式的边界控制器，该控制器仅通过在系统空间域边界施加控制作用，即可实现对吊运编队整体形态的精确调控与稳定控制。
+P136: 考虑由公式（1）描述的动力学模型设定为吊运系统中无人机群的领导者无人机，其中状态变量表征无人机群中各无人机节点的空间位置与姿态，U(t)是作用于边界，即领导者的控制输入。控制目标是设计 U(t)，使得吊运系统中无人机状态w(x,t)全局指数收敛至期望的编队分布，保持吊运过程的稳定性和协同性。 [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId63', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId65', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId67', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P137: 为实现这一目标，首先定义无人机编队的跟踪误差，并构建误差系统。核心思路是通过一个可逆的Volterra积分变换，将原始误差系统映射为一个预先设计的、稳定的目标系统。该变换形式如下： [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId69', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P138: (6) [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId71', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P139: 将变换关系代入原系统与目标系统，通过匹配项可推导出核函数 k(x,y)必须满足的偏微分方程及其边界条件。该方程在定义域上具有如下解析解: [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId73', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P140: (7) [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId75', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P141: 基于上述可逆变换，并利用目标系统在处的边界条件，可反解得到吊运系统边界处的控制律 U(t)。其连续形式为： [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId77', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId79', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P142: (8) [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId81', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P143: 该控制律表明，领导者无人机的控制输入由其自身的期望状态和对整个吊运空间域上其他领导者无人机状态误差的加权积分共同决定。为实现分布式计算，将上述积分进行离散化近似，得到适用于离散吊运系统的分布式控制律： [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId83', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P144: (9) [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId85', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P145: 在此表达式中,代表领导者无人机的状态， 为其期望状态，求和项仅依赖有限个无人机节点的状态误差 进行加权组合。权值由预先计算好的核函数值及对流项系数 b 决定。该算法可离线存储参数组合列表，在线计算复杂度低，适合吊运系统在有限通信条件下的实时控制需求。 [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId87', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId89', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId91', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId93', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P146: 通过构造合适的Lyapunov泛函并对闭环系统进行分析，可以严格证明，在该分布式边界控制律作用下，吊运系统领导者层的跟踪误差 e(x,t) 能够实现全局指数收敛，从而确保整个吊运编队快速、稳定地达成并保持期望的吊运形态。
+P147: (2)针对编队多因素故障与通讯时延的安全控制方法研究
+P148: a.面向集群吊运的执行器故障容错控制方法研究
+P149: 在领导者-跟随者架构的多无人机协同吊运系统中，领导者承担关键控制任务，其执行器故障会沿编队空间传播，引发级联失稳。执行器故障通常表现为乘性故障（推进效率下降，如电机老化）和加性故障（恒定偏置，如GPS漂移）。由于执行器与传感器共享物理平台，当领导者发生执行器故障时，其传感器数据往往也不可信。基于此，本项目提出一种传感器与执行器物理分离的自适应容错控制架构，利用编队内部健康无人机的传感器数据，通过空间动力学模型重构全编队状态，并在线估计和补偿领导者的执行器故障，核心架构如下图所示：
+P150:  [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId95', 'cstate': 'print'}]]
+P151: 图4 执行器故障容错控制核心架构
+P152: 考虑乘性和加性联合故障，执行器输出模型为：
+P153: (10) [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId96', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P154: 其中为未知乘性故障，ε为未知偏置，u(t)为理想控制指令，U(t)为实际作用信号。 [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId98', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P155: 定义跟踪误差 ，并选取编队中第x_s架无人机作为可靠观测节点，其测量值为y(t)=e(x_s,t)。设计如下滤波器组用于状态重构： [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId100', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P156: 输出滤波器 ：反映测量输出对系统状态的贡献 [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId102', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P157: 输入滤波器 ：反映控制输入对系统状态的贡献 [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId104', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P158: 稳态滤波器 ：满足,。 [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId106', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId108', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId110', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P159: 基于这些滤波器，构造系统误差的观测器：
+P160:  (11) [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId112', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P161: 其中为故障参数估计,为空间耦合参数估计。观测误差 驱动参数自适应律： [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId114', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId116', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId118', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P162:  (12) [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId120', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P163: 基于估计值设计容错控制律：
+P164:  (13) [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId122', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P165: 该控制律利用健康节点测量信息，通过观测器重构的故障参数实现主动补偿。通过构造Lyapunov函数并应用Barbalat引理，可证明闭环系统渐近稳定，编队误差在L2范数意义下收敛至零。
+P166: b.基于状态观测的通信时延补偿控制方法研究
+P167: 在实际低空环境中，通信链路不可避免会受到干扰，导致控制指令传输存在随机时延。而时延会破坏指令同步，引起无人机集群系统状态振荡甚至失稳，严重影响吊运任务的安全性与精度。针对这一问题，本部分研究基于状态观测的分布式时延补偿控制方法，该方法在维持链式编队拓扑的前提下，通过在线估计未知时延并补偿其对控制指令的影响，保证合力方向的准确性与系统稳定性。
+P168:  [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId124', 'cstate': 'print'}]]
+P169: 图5 通信时延补偿控制核心架构
+P170: 
+P171: 考虑领导者‑跟随者架构下的链式编队，领导者接收地面站指令时存在未知常值时延。将无人机编队抽象为一维连续体后，构造如下形式PDE状态观测器：
+P172:  (14) [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId125', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P173: 其中为执行器状态的估计值，为常值时延估计，为待设计的观测器增益函数，为输出估计误差。该观测器利用边界输出误差驱动，使估计状态收敛至真实值。定义估计误差 ，通过选择合适的增益 可使误差系统指数稳定。 [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId127', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId129', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId131', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId133', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId135', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId137', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId133', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P174: 进一步，采用 backstepping 方法对观测器状态进行变换，将原系统与观测器误差系统映射为便于稳定性分析的目标系统。同时为实现时延在线辨识，设计基于Lyapunov方法的自适应更新律：
+P175:  (15) [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId140', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P176: 其中为自适应增益， 由核函数和状态估计构成，投影算子保证估计值有界。最终，设计基于估计状态和时延计算的补偿控制律： [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId142', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId144', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P177:  (16) [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId146', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P178: 其中核函数 依赖于 ，可离线求解参数化形式在线更新。该控制律仅需当前时刻的系统状态e和观测器状态 ，实现时延补偿的闭环控制。 [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId148', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId150', '{urn:schemas-microsoft-com:office:office}title': ''}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id': 'rId152', '{urn:schemas-microsoft-com:office:office}title': ''}]]
+P179: 模型预测前馈优化与平滑合力序列生成
+P180: 为了实现多无人机系统的高精度吊运控制，本研究旨在生成与负载期望轨迹匹配、物理可行且鲁棒的期望力/力矩指令序列，重点研究如何优化无人机施加的缆绳力。研究将构建融合鲁棒前馈计算、可行分配与滚动优化的框架，采用鲁棒逆动力学模型并通过动态平滑性优化，克服模型失配与干扰，实现精确的力/力矩解算。同时，设计基于Tube鲁棒模型预测控制的滚动优化器，确保力序列的鲁棒性与稳定性。最后，研究通过合力-编队逆向映射与分布式协同控制算法，精确分配合力指令，保证合力跟踪精度并维持编队稳定，研究框架如下图所示：
+P181:  [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId154'}]]
+P182: 图6 模型预测前馈优化与平滑合力序列生成研究框架
+P183: a.基于扩张状态观测器的鲁棒逆动力学在线解算
+P184: 从负载期望运动轨迹反解出其所需的总力/力矩，是整个力生成过程的起点，其精度直接决定后续所有环节的性能上限。然而，实际系统中负载的质量、惯量难以精确获知，且持续受到风扰等外部扰动，导致基于标称模型的传统逆解算方法存在固有误差。这种需求计算偏差会传递并放大，最终破坏跟踪精度。现有基于在线参数辨识的方法计算复杂且对激励信号有要求，难以满足高动态任务的实时性需求。
+P185: 为规避复杂的参数辨识，本项目采用自抗扰机制思想，将所有的模型不确定性（参数偏差）与外部扰动统一视为作用于系统的“集总扰动”，并设计线性扩张状态观测器（LESO）对其进行实时估计与动态前馈补偿。该方法不依赖于扰动具体模型，仅通过设计观测器带宽即可实现对扰动的快速跟踪与抵消，兼具鲁棒性与计算高效性。
+P186: 首先，基于负载的标称动力学参数m0,I0与给定的高精度期望轨迹pdt,qdt及其一阶、二阶导数（pd,pd,ωd,ωd），计算名义上的总需求力与力矩：
+P187: Fbase=m0pd-m0g#17
+P188: Mbase=I0ωd+ωd×I0ωd#18
+P189: 然而，真实的系统动力学受到扰动影响。为此，建立负载线动量与角动量的误差动力学模型。以线动量为例，定义速度跟踪误差ev=p-pd，其动态可表述为：
+P190: m0ev=Ftotal-Fbase+dF #19
+P191: 其中Ftotal是作用于负载的真实总合力，dF是包含了所有模型误差与外扰的集总扰动。将dF扩张为一个新的状态变量，并假设其变化率有界dF≈0。据此，构建线性扩张状态观测器：
+P192: ev=1m0Ftotal-Fbase+dF+β1ev-evdF=β2ev-ev#20
+P193: 该观测器利用可测量的负载实际速度p与期望速度pd计算出误差ev，并通过调节增益β1,β2（与观测器带宽相关）来快速、准确地估计出扰动dF。最终，总需求力指令通过前馈补偿产生：
+P194: Freq=Fbase-dF#21
+P195: 同理，可设计针对旋转动力学的观测器，得到总需求力矩Mreq。该方法避免了复杂的参数辨识，仅通过误差反馈即可实现扰动抑制，为后续优化提供了抗干扰的精准输入。
+P196: b.基于Tube MPC鲁棒模型预测控制的在线滚动优化
+P197: 在逆动力学模型生成前馈合力序列的基础上，进一步考虑系统在实际运行中面临的模型不确定性与有界干扰，构建基于Tube MPC的在线滚动优化框架，实现合力序列的动态修正。该框架将前馈力指令生成与反馈校正深度融合，在一个统一的预测框架内主动管理力序列的动态演变。
+P198: 将吊运系统离散化为线性时变预测模型：
+P199: xk+1=Akxk+BkFk+wk#22
+P200: 其中，状态变量x=[η,η]T，F为吊运货物的合力/力矩输入，w(k)∈W为有界扰动集。Tube MPC的核心思想是将名义系统与实际系统的状态轨迹分离，通过设计局部反馈控制器F(k)=F(k)+K(x(k)-x(k))，使得实际状态始终保持在名义状态x的邻域内。
+P201: 名义系统定义为不考虑扰动的确定性模型：
+P202: xk+1=Akxk+BkFk#23
+P203: 在每一控制周期，求解如下滚动时域优化问题：
+P204: minF0,…,FN-1i=0N-1∥xi-xref∥Q2+∥Fi∥R2+∥ΔFi∥S2+∥xN-xref∥P2#24
+P205: 其中，∥ΔFi∥S2项即对标称输入变化率的惩罚，是在预测控制层面对力序列平滑性进行的二次主动优化。约束条件需满足：
+P206: xi+1=Akxi+BkFix0=xkFi∈F⊖KW收紧的控制约束xi∈X⊖Zi收紧的状态约束#25
+P207: 其中，Zi为管状状态集合（Tube）截面的不变集，通过求解相应的不变集方程获得。通过引入Tube技术，将原始约束进行收紧处理，确保对于任意扰动w(k)∈W，实际状态x(k)始终满足原始约束。
+P208: 求解上述优化问题得到最优名义控制序列F0:N-1*，取首项 F0*作为期望合力指令，并施加局部反馈控制：
+P209: Fk=F0*+Kxk-x0#26
+P210: 在下一时刻，基于新的状态测量值重复上述过程，形成滚动优化闭环。该框架不仅利用预测优化生成了平滑的前馈力序列，更通过严谨的鲁棒不变集理论，为合力指令在模型不确定性与有界干扰下的鲁棒可行性与闭环稳定性提供了严格保障。
+P211: c.合力-编队逆向映射与分布式协同控制
+P212: 在完成期望合力/力矩序列Fd(t)的鲁棒生成与滚动优化后，需将其映射为多无人机编队的分布式控制指令，实现合力指令的精确跟踪。本部分旨在建立从期望合力到编队构型的逆向映射模型，并结合偏微分方程编队控制架构设计分布式协同控制算法。
+P213: 首先，建立合力与编队构型之间的映射关系。考虑N架无人机通过缆绳连接至吊运负载，每架无人机施加的缆绳张力为fi，方向为从负载指向无人机的单位向量ei。则合力/力矩满足：
+P214: Fd=i=1Nfiei,Md=i=1Nri×fiei#27
+P215: 其中，ri为负载质心到缆绳挂载点的力臂。上式构成一个欠定方程组，需引入优化准则求解最优的缆绳力分配方案。在获得总需求力/力矩后，采用最小二乘准则，在满足力/力矩平衡约束的前提下最小化缆绳张力的平方和：
+P216: minfii=1Nfi2    s.t.力/力矩平衡方程成立,fi∈fmin,fmax#28
+P217: 
+P218: 通过求解上述优化问题，得到期望的缆绳力序列fid。在此基础上，由无人机动力学方程反向解算出各无人机的位置指令pid：
+P219: pid=pL+liei,  ei=fidei|fidei|#29
+P220: 其中，pL为负载质心位置，li为缆绳长度。上式实现了从期望合力到期望编队构型的逆向映射。
+P221: 为实现上述编队构型的分布式协同跟踪，本研究拟采用基于偏微分方程的编队控制架构。将无人机编队视为定义在连续曲线上的采样点，其期望构型对应于曲线的某一平衡态。定义无人机i的邻居集合为Ni，设计分布式控制协议：
+P222: ui=-kppi-pid-kvpi-pid-j∈Ni∇piU∥pi-pj∥#30
+P223: 其中，前两项为跟踪期望位置与速度的比例-微分控制，确保整体合力跟踪精度；第三项为维持编队形态的人工势场力，U为描述无人机间期望距离的势能函数。该控制协议可视为对连续PDE模型的离散化近似：
+P224: ∂2p∂t2=∂∂sEs∂p∂s+fext#31
+P225: 其中s为曲线参数，E(s)为弹性系数，fext为外力项。通过设计合适的势能函数U，可使编队保持期望的几何形态。
+P226: (4)动态环境下端到端自主导航的安全表示生成与可迁移机理研究
+P227: 本部分围绕安全空间快速编码、领航驱动集群避障、可微高效控制优化的总体思路开展研究，揭示动态环境中障碍物时变运动、传感不确定性与闭环控制时延对集群协同避障性能的影响机理，并提升策略在仿真到现实迁移过程中的鲁棒性与样本利用效率。
+P228:  [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId155', 'cstate': 'print'}]]
+P229: 图7 端到端自主导航技术路线流程图
+P230: a.基于点云安全走廊序列的快速生成及其刷新边界研究
+P231: 配置空间凸分解
+P232: 本课题首先在无人机机载LiDAR点云基础上进行局部空间建模，将障碍物以配置空间可用的形式转化为“可分离的凸安全区域”，并用半空间集合表达安全走廊，从而为后续策略学习提供低维、强约束的安全状态。具体地，在局部窗口内采集障碍点云O并以机器人等效半径r将工作空间障碍映射为配置空间障碍。该步骤生成一个由若干线性不等式定义的凸多面体安全域（即单段SFC），其标准形式为
+P233: P=x∈R3A x≤b#32
+P234: 其中每个面对应一个半空间约束
+P235: HiAi,bi:Aix≤bi,i=1,…,K,#33
+P236: 其中K为面数。这样，走廊不再依赖网格或距离场，而是由少量平面约束刻画，可直接用于快速可行域判定、约束损失设计与策略输入。
+P237: 为适配配置空间碰撞判定，本课题采用障碍点球化的建模：将每个障碍点视为以该点为中心、半径为𝑟的球体，表示为
+P238: Soj,r=x∈R3|x-oj|2≤r.#34
+P239: 在此基础上，生成的安全多面体P需要与所有球化障碍相分离，并包含给定“种子”，S=sa,sb用于确保走廊覆盖局部飞行通道。因此该模块的关键，是在点云球化障碍集合与种子之间持续构造“分离超平面”，并最终得到可用的凸域交集 P。
+P240: 考虑动态环境时，点云与障碍状态随时间变化，本课题并非维护体素/ESDF，而是以固定频率在局部窗口内重复上述“半空间走廊生成”，得到时序走廊序列
+P241: SFC1:T=P1,P2,…,PT#35
+P242: 其中每一帧Pt均由当前点云局部构建，天然支持高频刷新；同时半空间表达只依赖几何边界，不绑定某一特定LiDAR扫描拓扑，便于后续跨传感器、跨平台的策略迁移。
+P243: 基于椭球的凸分解高效生成多面体约束
+P244: 为快速获得稳定且体积较大的安全多面体，本课题采用“椭球—障碍球”的分离几何来生成半空间。其核心做法是用一个可调椭球近似当前可行域的“内核”，再对椭球做均匀膨胀，直到与最近障碍球切触，由切点确定分离超平面；重复生成平面，直至排除所有激活障碍点，得到多面体P。
+P245: 椭球使用Lowner–John椭球的参数化令C∈R3×3为形状矩阵、d∈R3为中心，并引入均匀膨胀形式,则椭球定义为
+P246: EαC,d=Cx+dx2≤α, α≥1.#36
+P247: 为避免在α上搜索，将问题转换到椭球坐标系E（单位球坐标系），使用逆映射将世界坐标点x映射为
+P248: x=C-1x-d.#37
+P249: 在椭球坐标系下，与障碍球切触的关键点ptE可由一个最小距离问题得到：
+P250: ptE=argminx|x|2 s.t. x∈EsE#38
+P251: 其中EsE表示将障碍球在逆映射后得到的集合（材料表述为“障碍球在椭球坐标系下的像”）。求得ptE后，可直接构造椭球坐标系下的分离半空间，并将其变换回世界坐标系得到超平面
+P252: HWAW,bW:AWx≤bW,AW=CAE,bW=bE+AW⊤d.#39
+P253: 重复“选最近障碍—求切点—生成平面—剔除平面外障碍点”的过程，即可得到包含种子的多面体P，并为后续MVIE更新提供可行域边界。
+P254: 最大体积内接椭球与 CIRI 迭代
+P255: 在得到由若干分离平面构成的多面体 P后，需要更新椭球，使其尽可能“撑满”该多面体，从而在下一轮生成更合理、更大的分离平面集合。该问题定义为最大体积内接椭球（MVIE）：在多面体约束下最大化 det⁡(C)（椭球体积的单调函数）。对由 K个平面构成的 P={H1,…,HK}，其优化形式写为
+P256: maxC,ddetC   s.t. sup|x|2≤1AiCx+Aid≤bi,∀i,C⪰0.#40
+P257: 其中 Ai,bi来自平面 Hi(Ai,bi)的参数化。进一步采用标准变换将上式转为 SOCP 形式（关键约束可写成范数形式），即
+P258: |AiC|2+Aid≤bi,∀i=1,…,K.#41
+P259: 该MVIE更新与前述“椭球切触生成平面”的过程相互交替：先根据当前椭球生成多面体，再根据多面体求 MVIE 更新椭球。如此迭代可逐步增大椭球体积并提升多面体质量。
+P260: 据此，给出配置空间迭代区域膨胀（CIRI）框架：初始化椭球为单位球（C=I），中心取种子中点 d=(sa+sb)/2，每轮执行一次椭球凸分解与MVIE更新，并以椭球体积增益作为收敛判据。
+P261: b．无序变长走廊的结构化编码与可迁移表征机制研究
+P262: 安全走廊由若干半空间约束面构成，具有无序、变长特性，难以直接作为深度网络固定维度输入，且简单拼接会引入伪顺序依赖。本项目拟将每帧走廊视为“约束面集合”，并采用共享特征提取网络对面特征进行共享嵌入，再通过对称聚合函数将可变长集合压缩为固定维度“安全空间向量”。该向量对面顺序置换不敏感，且在面数变化时保持稳定输出，可与无人机内部状态融合形成统一策略接口，从而提升端到端策略对场景变化与动态密度变化的鲁棒表达能力。
+P263: 在每个时刻 t，局部安全走廊可由若干半空间约束共同限定，形成凸多面体可行域：
+P264: P=x∈R3A x≤b#42
+P265: 其中第 i条约束对应一个平面at,i⊤x≤bt,i为提升尺度鲁棒性并消除同一平面的缩放不唯一性，将每条约束做归一化，得到单位法向与偏置。此外，为让策略更直接感知当前状态距离边界的紧迫程度，可引入基于无人机当前位置 pt的安全余量（距离到该面的代数余量）
+P266: st,i=dt,i-nt,i⊤pt#43
+P267: 最终，每个面被编码为固定维度的面特征向量
+P268: et,i=nt,i,dt,i,st,i∈R5.#44
+P269: 这样，走廊在时刻 t就对应一个无序集合 Et={et,i}i=1mt，其中面数 mt可变。之后参考 PointNet/DeepSets 思路，对集合中每个面特征使用同一个共享的特征提取网络得到面级嵌入，再通过对称聚合函数得到对顺序不敏感的全局走廊向量：
+P270: ht,i=ϕet,i,zt=ρpooli=1mtht,i.#45
+P271: 其中 ϕ(⋅)表示共享的非线性映射，pool 是对称聚合算子，ρ(⋅) 可用于后处理。由对称聚合的性质，zt 对面顺序置换不敏感，并能在 mt变化时保持输出维度固定，从而实现“变长走廊 → 固定维度表示”的结构化转换。
+P272: 之后，得到的安全空间向量 zt作为“几何可行域的压缩表示”，与无人机内部状态（速度、姿态、角速度、目标相对方向等）xt 融合，形成策略网络输入：
+P273: ut=ψzt,xt,at=πut.#46
+P274: 这里 ψ(⋅)可为简单拼接后的融合层，π(⋅)为策略网络输出动作（。由于 zt对走廊面数与顺序鲁棒，策略接口在不同场景、不同走廊形态下保持一致，从而显著降低端到端学习对“固定输入尺寸”的依赖，并为后续高频闭环控制提供稳定、可迁移的几何约束信息。
+P275: c．含走廊约束的可微分强化学习建模与高频敏捷控制机制研究
+P276: 本课题采用可微分强化学习范式：将策略、动力学与安全约束统一写成可微时序优化，并通过反向传播获得低方差梯度。策略以观测ot（含 hsfc与状态融合向量 zt）为输入，输出 CTBR 控制接口动作：
+P277: at=Tt,ωt⊤⊤,ωt=ωx,ωy,ωz⊤.#47
+P278: 系统可微动力学写为离散形式
+P279: xt+1=fθxt,at,Δt,#48
+P280: 其中 xt含位置、速度、姿态，θ 可包含可学习/可标定的动力学参数（或固定的可微物理模型）。在有限时域 t=0..H上，定义总损失为“任务项 + 安全屏障项 + 平滑项”
+P281: L=t=0HLts xt,at+λsafe Lsf xt+λsmooth |at-at-1|22#49
+P282: 其中安全项直接由走廊半空间约束给出。若在时刻 t的走廊为 ni,t⊤ptbi,t}i=1..Kt，并留出安全余量 δ>0，定义每个面的松弛量
+P283: gi,tpt=bi,t-ni,t⊤pt-δ,#50
+P284: 并采用对数屏障构造可微安全损失，保证在可行域内趋于无穷大边界惩罚：
+P285: Lsf xt=-μi=1Ktloggi,tpt,gi,tpt>0.#51
+P286: 由于动力学函数fθ是可微的，策略梯度可通过时间展开（BPTT）形式直接反向传递。考虑时间衰减系数 α用于限制远时刻梯度爆炸，整体梯度表达为
+P287: ∂Lθ∂θ=1Nk=0N-1i=0k∂Lk∂xkj=i+1k∂xj∂xj-1e-αΔt∂xi∂θ+∂Lk∂uk∂uk∂θ.#52
+P288: 其中第一项描述了损失对系统参数 θ的长期依赖梯度衰减传播，第二项则为策略网络参数的直接影响项。与传统无模型强化学习基于采样估计的梯度相比，可微分强化学习直接对可导物理过程求梯度，显著降低方差、提升样本效率。
+P289: 2.4 本项目的创新之处
+P290: （1）提出了基于偏微分方程的无人机群-吊运负载连续体建模与分布式边界控制方法。 将离散无人机编队、柔性吊索与刚性负载抽象为空间连续智能体，建立反应-扩散-对流型偏微分方程统一描述系统整体动力学。在此基础上，设计仅需调控编队边界关键节点的反步法分布式控制器，在保证负载摆动精确抑制与轨迹跟踪精度的同时，大幅降低通信与计算负担，为大规模集群协同吊运提供了可工程化实施的控制框架。
+P291: （2）构建了平滑合力前馈预测与优化分配机制。 创新性地将扩张状态观测器引入逆动力学解算，实现模型不确定性与外部扰动的实时估计与主动补偿；进而设计基于Tube MPC的滚动优化器，将力序列动态平滑性作为核心优化目标，并利用鲁棒不变集理论为闭环稳定性提供严格保障；最后建立合力-编队逆向映射模型，将优化后的合力指令精确解算为分布式编队控制指令，从源头抑制合力波动，显著提升系统动态性能与鲁棒性。
+P292: （3）建立了基于数据的端到端紧急避障与安全可迁移学习一体化架构。通过配置空间迭代区域膨胀（CIRI）算法快速生成凸多面体安全走廊，并利用对称聚合网络将变长无序约束面编码为固定维度安全特征向量，实现感知信息到控制指令的直接映射；引入可微分强化学习框架，将安全走廊约束构建为可微屏障函数，通过时序反向传播实现高频敏捷控制，显著提升策略在动态环境中的响应速度、样本效率与Sim-to-Real迁移泛化能力。
+P293: 2.5 年度研究计划
+P294: 
+P295: （三）研究基础：
+P296: 1．研究基础与可行性分析（与本项目相关的研究工作积累和已取得的研究工作成绩，研究风险的应对措施等）；
+P297: 1.1 相关工作积累与可行性分析
+P298: 申请人长期从事智能控制理论与应用领域的技术研究工作，主要研究方向包括新概念飞行器设计、多智能体集群控制、智能感知与规划控制、人机协同智能控制等。申请人主持完成2项国家自然科学基金，3项科技部重点研发计划课题，1项航空科学基金，20余项国防预研基金。研究成果发表论文90余篇，授权发明专利10余项，获国防科学技术进步二等奖2项，三等奖1项，主编专著3部。
+P299: 申请人所在的项目团队在巡飞武器系统设计、微小型无人系统设计和探测感知装备研制方面有超过20年的研究基础，具有丰富的应用基础和工程研究基础。参与研制的装备产品应用在陆军、空军多个兵种平台上。以上工作积累和研究经验为实现本项目研究成果的工程转化提供了可操作的路径。
+P300: 代表性成果1：飞行器自主避障控制方法基础
+P301: 针对飞行器自主控制问题，申请人提出基于视觉的仿蜻蜓追捕昆虫神经网络训练的仿生制导控制方法，实现了对机动目标的精准打击（CJA,2015,28(1):260-267)；针对复杂环境中避障问题，提出基于调制函数的反应式方法（CJA,2022,35(12):212-225），以及基于控制障碍函数法（CBF）的避障制导控制算法（兵工学报，2023, 44(9):2814-2823）,可以完成对运动障碍、多障碍环境中飞行器的无碰撞的安全控制任务。
+P302: 无人系统自主能力提升与对环境的精准感知以及信息快速处理有密切关系，申请人提出一种结合在线光度校准的新型半直接视觉惯性里程，解决了因光度变化对定位精度影响的难题（Robotics and Autonomous Systems，2021,146（3），103877)；进一步针对复杂环境中移动障碍严重影响定位精度问题，利用图像中的语义信息、几何信息与光流信息，降低运动物体对SLAM算法稳定性影响，提升了无人系统在动态环境下的精确定位能力（兵工学报,2024,45(1):156-165）。
+P303: 在智能感知与自主控制方法的深入研究基础上，申请人带领学生在数次国家级无人机自主控制赛事中取得优异成绩，包括，智能无人系统应用挑战赛（无人机避障），无人飞行器智能感知技术大赛，RoboMaster 2025机甲大师高校人工智能挑战赛，也创造了北京理工大学在该赛事中的历史最佳战绩。
+P304: 申请人在无人飞行器自主控制方面的研究基础，一方面验证了无人飞行器协同吊运在低空复杂空域场景下运行的可行性，另一方面可以帮助本项目的研究从适应真实飞行场景的视角，捕捉自主飞行器在躲避运动障碍以及突发障碍中的安全隐患点，为本项目低空避障中风险识别研究提供了坚实的技术支撑。
+P305:  [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId156', 'cstate': 'print'}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId157', 'cstate': 'print'}]]
+P306: 图7 无人飞行器智能感知技术大赛证书（左） 智能无人系统应用挑战赛证书（右）
+P307: 代表性成果2：无人集群系统协同控制方法基础
+P308: 在前期研究中，申请人考虑通信扰动情况下协同决策问题，对于有向网络下具有测量噪声和时变通信延迟的多智能体系统的一致性进行了深入研究，相关技术支撑申请人主持完成科技部重点研发计划课题“自组网集群作业管理软件开发与系统集成”（2018YFF01013403，2018-2021）；并支撑集群武器实战化应用，用于申请人主持的航空601所研制的空军“无人制空XX飞机”（2019-2020，870万），开展算法验证试飞累计超过400架次，累计飞行300小时，形成无人机集群协同空战对抗能力，显著优化了编队一致性。对于集群协同决策与控制的瓶颈问题以及现有技术水平有深入的认识和思考，指导博士生针对编队通信时滞问题，采用偏微分方程方法完成无穷维集群系统动力学建模，解决了跟随者在局部状态反馈下的大规模集群编队问题（Asian J. Control. 2023;1–15）。相关关键技术获国防科学技术进步三等奖（项目名称：巡飞子弹药组网协同技术）,2022,王正杰（4/10）、国防科学技术进步二等奖（项目名称：高速平台组网协同控制技术）2025,王正杰（6/10）。
+P309:  [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId158', 'cstate': 'print'}]]
+P310: 图8 自主协同多机试飞总体框架
+P311:   [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId159'}, {'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId160', 'cstate': 'print'}]]
+P312: 图9 四机协同编队外场试验地面站显示以及实飞影像截图
+P313: 申请人团队已经初步具备从飞行器协同编队控制与决策向飞行器协同吊运等复杂任务演化的技术储备，理论层面厘清平稳快速吊运货物与多飞行器队形耦合动力学与运动学表征路径，实践层面初步验证了算法的稳健性。综上所述，本项目所提出多飞行器协同控制吊运货物技术路线具备坚实的可行性支撑。
+P314: 代表性成果3：柔性翼仿生飞行器设计方法
+P315: 在新概念飞行器设计方面，针对柔性固定翼飞行器飞行动力学建模与控制基础性科学问题开展了深入研究，以此为基础，申请人开拓了小型柔性翼仿生弹药总体设计新方向，揭示了柔性翼优化设计被动控制抗突风机理（The Aeronautical Journal，2018,122(1250):572-597；International Journal of Aerospace Engineering，2017，Article ID 1592527），并设计完成了几个尺度的微小型飞行器原理样机，飞行试验证明了仿生技术的交叉引入大幅提升了微小型飞行器的机动飞行性能（Journal of Aircraft，2019,25(6):20932382)。
+P316: 上述研究涵盖了从刚柔耦合动力学建模方法、抗突风主被动飞行控制方法到多种尺度飞行器样机设计的技术路径，验证了处理复杂环境下飞行器抗扰控制的技术可行性，也为本项目提出的低空复杂环境下多飞行器协同安全控制理论研究奠定了坚实的算法模型基础。
+P317: 1.2研究风险应对措施
+P318: 本项目中针对突然出现的障碍目标采用基于数据的端到端的方法，虽然技术方案中已经将sim-to-real问题作为主要突破口设计了基于安全走廊方法的方案，避免训练环境到实际环境部署时泛化性低的难题。但是训练环境的数据样本量不足或数据质量不高，将直接影响端到端避障算法的训练精度与有效性验证。 
+P319: 针对上述研究风险，在算法研究过程，依托申请人所在团队开发的协同探测侦察与态势感知虚实结合仿真系统，从多个维度保障数据支撑：设计建成了具有动力学运算库的高逼真度物理引擎和数字仿真系统，可支持大规模分布式仿真模拟，目前已经突破实现20个分布式节点的硬件在回路仿真；基于低延迟图像传输策略，支持多模图像数据采集及视觉智能算法的数据自动采集和训练任务，结合积累的近10年飞行数据以及探测数据，紧密依托高细粒度仿真数据，可以快速构建特定环境数据集。该实验仿真系统可支撑本项目全过程仿真试验验证。
+P320:  [IMAGES [{'{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed': 'rId161', 'cstate': 'print'}]]
+P321: 图10 虚实结合的系统架构及仿真流程
+P322: 2．工作条件（包括已具备的实验条件，尚缺少的实验条件和拟解决的途径，包括利用国家实验室、全国重点实验室和部门重点实验室等研究基地的计划与落实情况）；
+P323: 本项目依托的北京理工大学“兵器科学与技术”A+学科，是我国最早建立的国防特色学科专业之一，在国内兵器领域有着极高的学术声誉，代表着兵器领域前沿科技的国家队水平，并进入世界一流学科建设行列。智能无人系统集群协同控制与决策也是北京理工大学在兵器科学与技术学科建设和兵器学科特区建设中的重点支持方向，拥有“爆炸科学与技术全国重点实验室”和“近感探测与控制全国重点实验室”平台。申请人所在团队长期从事智能感知与控制算法研究、无人系统集成、集群系统决策与控制等研究。通过教育部“211工程”、“985工程”、“双一流”建设、国防领域“专项能力建设”和“基础研究条件保障建设”等支持，购置了大批先进的软件、设备和仪器，以及高性能计算机工作站。通过自研拥有多款无人机，为无人机集群决策的实验验证提供了仿真和试验平台。实验室已形成基于python的集群数值仿真平台和基于Anylogic的分布式集群仿真平台，对多无人机协同决策算法进行了仿真和验证。本项目将结合以往的智能无人系统协同控制与智能感知与控制的研究基础，对无人机集群协同吊运系统自主安全控制方法开展仿真分析和算法验证。
+P324: 3．正在承担的与本项目相关的科研项目情况（申请人和主要参与者正在承担的与本项目相关的科研项目情况，包括国家自然科学基金的项目和国家其他科技计划项目，要注明项目的资助机构、项目类别、批准号、项目名称、获资助金额、起止年月、与本项目的关系及负责的内容等）；
+P325: 申请人正在主持军委科技委创新项目：射流变形翼飞行器仿生组件技术研究（2025.12-2027.11）；资助金额：187万元。此项目重点开展新概念固定翼飞行器动力学建模与动力学特性分析、射流耦合情况下气动增升原理分析以及多控制面分配策略研究并完成数值仿真与飞行试验。此项目主要针对固定翼无人机长续航、短距起降能力提升开展工作。本项目涉及的协同吊运背景目前是旋翼机为主，但是复合翼（垂起固定翼）因为优越的航行能力已经成为货运发展趋势，因此正在主持项目关键技术的突破对本项目研究成果快速落地有极大支撑作用。
+P326: 4．完成国家自然科学基金项目情况（对申请人负责的前一个已资助期满的科学基金项目（项目名称及批准号）完成情况、后续研究进展及与本申请项目的关系加以详细说明。另附该项目的研究工作总结摘要（限500字）和相关成果详细目录）。
+P327: 本项目申请者2017年到2020年主持了自然科学基金项目“飞行器刚体与弹性体气动弹性耦合对飞行稳定性与控制的影响研究” （项目批准号：1167203）。针对大展弦比柔性翼飞行器这一空间自由弹性体，以及小尺度柔性翼弱耦合飞行器中刚柔耦合动力学特性开展研究分析。依托1167203项目，共发表重要的学术论文9篇，其中SCI论文3篇，申请发明专利2项，培养硕博士研究生各2名。
+P328: 本项目聚焦多飞行器的协同吊运，不论是旋翼飞行器还是固定翼飞行器研究多机协同吊运货物涉及整个系统动力学建模，以便精准分析动力学特性，前期对于刚柔耦合飞行器动力学建模以及特性分析与控制方法研究，对本项目基于模型的设计分析部分内容能提供坚实技术支撑。
+P329: 附录1 已结题项目研究工作总结摘要
+P330: 飞行器刚体与弹性体气动弹性耦合对飞行稳定性与控制的影响研究（项目批准号：1167203），主要针对飞行器柔性翼机翼与机体弱耦合、强耦合情况，推导了状态空间形式的刚柔耦合动力学模型。弱耦合模型基于平均轴系法和准定常假设，推导出的状态空间形式的模型具有较高的透明度。强耦合模型基于自由-自由模态法，在简化了耦合建模数学过程的同时， 直观体现了惯性力产生的刚柔强耦合效应。这是研究得到的最基础的理论成果，在此基础之上，设计了基于鸟类翅翼特点的柔性机翼，利用其被动变形特性改善了小型飞行器的动力学特性，增强了抗突风能力。采用压电执行机构完成了主动变形翼的设计，并应用控制模态定义的方法建立了变形翼的气动伺服弹性模型，通过开环控制仿真对主动变形效果进行了验证。完成了两种柔性翼飞行器的设计，一种为薄膜型可被动变形气动弹性翼，另一种为可主动变后缘无缝连续变形翼，并兼顾了射流控制方案。完成了主动驱动变形驱动机构设计，完成了形变测试的风洞试验，验证了设计的有效性。并完成了飞行试验验证。
+P331: 附录2 已结题项目成果详细目录
+P332: （四）其他需要说明的情况：
+P333: 1. 申请人同年申请不同类型的国家自然科学基金项目情况（列明同年申请的其他项目的项目类型、项目名称信息，并说明与本项目之间的区别与联系；已收到自然科学基金委不予受理或不予资助决定的，无需列出）。
+P334: 无。
+P335: 2. 具有高级专业技术职务（职称）的申请人或者主要参与者是否存在同年申请或者参与申请国家自然科学基金项目的单位不一致的情况；如存在上述情况，列明所涉及人员的姓名，申请或参与申请的其他项目的项目类型、项目名称、单位名称、上述人员在该项目中是申请人还是参与者，并说明单位不一致原因。
+P336: 无。
+P337: 3. 具有高级专业技术职务（职称）的申请人或者主要参与者是否存在与正在承担的国家自然科学基金项目的单位不一致的情况；如存在上述情况，列明所涉及人员的姓名，正在承担项目的批准号、项目类型、项目名称、单位名称、起止年月，并说明单位不一致原因。
+P338: 无。
+P339: 4. 申请人和主要参与者同年以不同专业技术职务（职称）申请或参与申请科学基金项目的情况（应详细说明原因）。
+P340: 无。
+P341: 5. 其他。
+P342: 无。

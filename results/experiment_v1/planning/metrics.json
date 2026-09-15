@@ -1,0 +1,202 @@
+{
+  "payload_position_rmse_m": 0.0032244569489131452,
+  "payload_position_peak_m": 0.008707271634088678,
+  "uav_position_rmse_m": [
+    0.0016812928640026442,
+    0.0026860658584489704,
+    0.0013706521437560559
+  ],
+  "payload_tilt_peak_deg": 0.2028371631080703,
+  "final_hold_payload_tilt_peak_deg": 0.00599676533639366,
+  "cable_direction_deviation_peak_deg": 0.8842448670981395,
+  "tension_min_N": 10.237452796886933,
+  "tension_max_N": 10.642681378615837,
+  "tension_rate_rms_N_s": [
+    0.0070234730230786194,
+    0.03452620256139465,
+    0.033353130930261064
+  ],
+  "rope_length_error_peak_m": 1.0436096431476471e-14,
+  "cable_constraint_power_peak_W": 8.079651563989153e-12,
+  "quaternion_norm_error_peak": 2.220446049250313e-16,
+  "minimum_uav_center_distance_m": 1.4886616394786416,
+  "minimum_uav_bounding_sphere_clearance_m": 0.5286616394786416,
+  "minimum_workspace_bounding_sphere_clearance_m": 0.4642463704559407,
+  "rotor_thrust_peak_N": 8.685705247091592,
+  "status": "completed",
+  "failure_reason": null,
+  "scenario": "nominal",
+  "requested_duration_s": 88.0,
+  "logged_end_s": 88.0,
+  "wall_time_s": 50.65350389998639,
+  "saturated_attitude_update_fraction": 0.0,
+  "state_extrema_sampling_hz": 50.0,
+  "flight_ready": false,
+  "px4_validated": false,
+  "controller": "ESO_linear_tube_MPC_vector_force_inverse_geometry_PDE",
+  "pde": {
+    "source_equations": [
+      1,
+      6,
+      7,
+      8,
+      9
+    ],
+    "topology_coordinates": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "node_roles": [
+      "anchor",
+      "follower",
+      "leader"
+    ],
+    "quadrature": "left_rectangle_on_three_actual_nodes",
+    "boundary_weights": [
+      -0.0,
+      -0.43669635526158995
+    ],
+    "kernel_sigma": 2.96,
+    "ideal_first_order_eigenvalues": [
+      {
+        "real": -1.3382195944726494,
+        "imag": 0.0
+      },
+      {
+        "real": -1.0,
+        "imag": 0.0
+      },
+      {
+        "real": -1.0,
+        "imag": 0.0
+      }
+    ],
+    "tracking_reference_lifting": true,
+    "dynamic_boundary_realization": true,
+    "continuum_stability_proof_for_physical_plant": false
+  },
+  "formation_error_L2_initial_m": 5.551115123125783e-17,
+  "formation_error_L2_final_m": 7.408806437404944e-07,
+  "formation_error_L2_peak_m": 0.004086469524768294,
+  "boundary_residual_peak_m": 0.005291931220937458,
+  "boundary_residual_final_m": 8.304588744361097e-07,
+  "interior_PDE_defect_rms_m_s": 0.0017872031754078792,
+  "pde_velocity_command_peak_m_s": 0.5892374653283562,
+  "pde_acceleration_command_peak_m_s2": 0.16566673241623744,
+  "pde_velocity_limit_fraction": 0.0,
+  "pde_acceleration_limit_fraction": 0.0,
+  "post_initial_hold_payload_rmse_m": 0.0033818005472161395,
+  "force_mapping": {
+    "source_section": "2.3(3)",
+    "source_equations": [
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "tube_mpc": {
+      "model": "three_independent_double_integrators",
+      "horizon_steps": 20,
+      "prediction_period_s": 0.1,
+      "horizon_s": 2.0,
+      "nominal_state_reset_each_solve": false,
+      "tube_type": "product_of_Lyapunov_RPI_ellipsoids_for_additive_W",
+      "K": [
+        -1.0,
+        -2.0
+      ],
+      "P": [
+        [
+          15.135327635327645,
+          4.513888888888892
+        ],
+        [
+          4.513888888888892,
+          4.923878205128208
+        ]
+      ],
+      "gamma": 0.9698626948679885,
+      "rho": [
+        2.702009498285159,
+        2.702009498285159,
+        0.2316008141387279
+      ],
+      "state_tightening": [
+        [
+          0.8147868868177168,
+          1.4285198950819469
+        ],
+        [
+          0.8147868868177168,
+          1.4285198950819469
+        ],
+        [
+          0.06983887601294717,
+          0.12244456243559546
+        ]
+      ],
+      "input_tightening": [
+        2.528271316083129,
+        2.528271316083129,
+        0.21670896994998248
+      ],
+      "assumed_acceleration_residual_bound_m_s2": [
+        0.35,
+        0.35,
+        0.03
+      ],
+      "terminal_cost": "DARE",
+      "terminal_invariant_constraint": false,
+      "nonlinear_plant_robust_stability_proven": false
+    },
+    "mpc_solves": 881,
+    "allocation_solves": 4401,
+    "allocation_variables": "9 cable force vector components",
+    "allocation_wrench_equalities": 6,
+    "attachment_offset_in_inverse": true,
+    "reference_smoothing": "causal_third_order_critical_force_filter_C2",
+    "actuator_force_feedforward": "current_QP_force_without_geometry_filter_delay",
+    "measurement_assumption": "ideal_load_pose_velocity_angular_velocity_and_cable_wrench",
+    "injected_disturbance_truth_used_by_controller": false,
+    "scope": "translation_tube_MPC_rotation_ESO_feedback_vector_allocation_PDE"
+  },
+  "requested_to_actual_force_rmse_N": 0.015632763552276274,
+  "smoothed_to_actual_force_rmse_N": 0.07292094567633362,
+  "requested_to_actual_moment_rmse_Nm": 5.043362070874224e-05,
+  "allocation_wrench_residual_peak": 3.0751297730446936e-08,
+  "allocation_force_residual_peak_N": 3.98036883704547e-08,
+  "allocation_moment_residual_peak_Nm": 1.2330149808688507e-08,
+  "inverse_geometry_rope_residual_peak_m": 6.661338147750939e-16,
+  "force_induced_reference_offset_peak_m": 0.025939769499721804,
+  "desired_cable_angle_range_deg": [
+    19.50748562331368,
+    20.4771375196992
+  ],
+  "allocated_tension_range_N": [
+    10.243559806449017,
+    10.636551176193233
+  ],
+  "geometry_filtered_tension_range_N": [
+    10.250603252118047,
+    10.62945125754638
+  ],
+  "geometry_filter_force_lag_rmse_N": 0.08102193342604298,
+  "tube_utilization_peak": 0.014093879964939703,
+  "sampled_acceleration_residual_bound_ratio_peak": 0.0468997875935309,
+  "sampled_acceleration_residual_bound_violation_fraction": 0.0,
+  "eso_force_estimation_rmse_N": 0.004207784500630399,
+  "mpc_constraint_violation_peak": 0.0,
+  "mpc_solve_time_ms_median": 0.11330000000000001,
+  "mpc_solve_time_ms_peak": 0.3828,
+  "allocation_solve_time_ms_peak": 0.3765
+}
