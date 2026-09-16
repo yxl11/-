@@ -1,5 +1,13 @@
 # 三机吊载合力前馈预测与编队逆映射仿真
 
+**实际任务 2 倍速试验：**[44 秒 Gazebo 往返视频](results/gazebo_transport_2x_verified/gazebo_roundtrip.mp4)保留同步张力、负载误差和倾角曲线，仍为 1280×720、10 fps。任务完成并通过原筛选，但负载最大误差增至 13.42 cm；见 [加速试验报告](results/gazebo_transport_2x_verified/实际任务两倍速试验.md)。
+
+**最新数据面板版：**[Gazebo 88 秒往返视频](results/gazebo_transport_dashboard/gazebo_roundtrip.mp4)删除放大特写，保留完整场景，右侧同步显示三绳张力、负载位置误差和倾角曲线，底部显示实时数值与 XYZ 误差分量。保留三机编号、状态、任务阶段和公共仿真时间，分辨率与帧率仍为 1280×720、10 fps。[数据面板说明](results/gazebo_transport_dashboard/实时数据面板说明.md)。
+
+**Gazebo / ROS 1 / PX4 物理引擎接入：**新增 `gazebo_sling/`，使用现有 Gazebo Classic 11、ROS Noetic 和三套 PX4 1.13 SITL 执行冻结三机轨迹，吊载由 ODE 与仅受拉吊索力驱动。编译、运行、视频录制、轨迹导出及实机标定边界见 [运行说明](docs/GAZEBO_ROS1_PX4.md)。下文未接入 ROS/PX4 的描述对应原 Python 仿真阶段。
+
+已完成 Gazebo 中的 88 秒三机吊运往返，三根吊索可见，背景为浅色网格试验场与低矮围栏。负载位置最大误差 2.79 cm，最大倾角 0.345°，全部仿真筛选通过，结束后三机自动降落并解除武装。[Gazebo 往返视频](results/gazebo_transport_final/gazebo_roundtrip.mp4)、[验证报告](results/gazebo_transport_final/Gazebo物理仿真验证报告.md)、[三机 ENU 轨迹](results/gazebo_transport_final/hardware_candidate/)已保存。轨迹尚未完成实机参数与坐标标定，不能直接视为可飞文件。
+
 **迁移到已有Ubuntu 20.04 / ROS 1环境：**见[Git上传与Ubuntu迁移步骤](docs/MIGRATION_UBUNTU20_ROS1.md)。代码使用独立Python 3.12环境，现有ROS/Gazebo/PX4系统保持原环境；Windows虚拟环境和中间调试结果不进入Git。正式结果、轨迹、研究内容和方法说明保留。
 
 **最新交付：88秒离线轨迹回放与拍摄方案。** 已将申请书方法生成的三机p/v/a冻结为独立文件，用仅接收本机状态的PID执行器重新运行吊载物理模型；回放期间不运行负载ESO、MPC或PDE。16个最终工况全部完成，10个通过14项预设检查，另外6个的末段倾角超过1°；5个低噪声拍摄候选工况全部通过。这些是有限数值样本，未接入ROS/PX4或实机。

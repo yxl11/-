@@ -13,6 +13,35 @@ __pycache__/
 /results/ubuntu_smoke/
 /results/migration_checks/
 
+# Superseded Gazebo integration diagnostics; verified run is retained separately.
+/results/gazebo_transport/
+/results/gazebo_transport_v2/
+/results/gazebo_transport_v3/
+/results/gazebo_transport_verified/
+/results/gazebo_transport_final/etc/
+/results/gazebo_transport_final/px4_*/
+/results/gazebo_transport_final/ros_home/
+/results/gazebo_transport_final/ros_logs/
+/results/gazebo_transport_visual/etc/
+/results/gazebo_transport_visual/px4_*/
+/results/gazebo_transport_visual/ros_home/
+/results/gazebo_transport_visual/ros_logs/
+/results/gazebo_transport_visual/
+/results/gazebo_transport_visual_final/
+/results/gazebo_transport_presentation/etc/
+/results/gazebo_transport_presentation/px4_*/
+/results/gazebo_transport_presentation/ros_home/
+/results/gazebo_transport_presentation/ros_logs/
+/results/gazebo_transport_dashboard/etc/
+/results/gazebo_transport_dashboard/px4_*/
+/results/gazebo_transport_dashboard/ros_home/
+/results/gazebo_transport_dashboard/ros_logs/
+/results/gazebo_transport_2x/
+/results/gazebo_transport_2x_verified/etc/
+/results/gazebo_transport_2x_verified/px4_*/
+/results/gazebo_transport_2x_verified/ros_home/
+/results/gazebo_transport_2x_verified/ros_logs/
+
 # Future ROS build products and large flight recordings.
 /build/
 /devel/

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>gazebo_sling</name><version>0.1.0</version>
+  <description>Gazebo Classic unilateral cables and synchronized PX4 trajectory execution.</description>
+  <maintainer email="local@example.invalid">Project maintainer</maintainer>
+  <license>Proprietary</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend><depend>rospy</depend><depend>std_msgs</depend>
+  <exec_depend>gazebo_ros</exec_depend><exec_depend>mavros</exec_depend>
+  <exec_depend>mavros_msgs</exec_depend><exec_depend>sensor_msgs</exec_depend>
+</package>

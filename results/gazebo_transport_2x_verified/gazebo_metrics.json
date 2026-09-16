@@ -1,0 +1,125 @@
+{
+  "execution": {
+    "status": "completed",
+    "transport_duration_s": 44.0,
+    "video_frames": 880,
+    "video_start_sim_s": 5.136,
+    "video_end_sim_s": 93.036,
+    "all_disarmed": true
+  },
+  "engine": "Gazebo Classic 11 / ODE + three PX4 SITL 1.13.2 + ROS Noetic / MAVROS",
+  "measurement": "ideal UAV pose at 50 Hz through MAVROS vision_pose / EKF2; no load or tension controller feedback",
+  "task_speed_factor": 2.0,
+  "reference_duration_s": 44.0,
+  "transport_clock_start_s": 33.146,
+  "transport_logged_duration_s": 44.0,
+  "bodies": {
+    "payload": {
+      "position_RMSE_m": 0.05326584295284885,
+      "position_peak_m": 0.13416171948725764,
+      "tilt_peak_deg": 1.4209508317006365,
+      "final_hold_tilt_peak_deg": 0.3523504891985699,
+      "final_hold_RMSE_m": 0.006366891951774308,
+      "position_min_m": [
+        -3.0070669929326126,
+        -1.1231626307703562,
+        0.8621939675675241
+      ],
+      "position_max_m": [
+        3.008186887144574,
+        1.1302278778723973,
+        0.8839796553064798
+      ]
+    },
+    "uav1": {
+      "position_RMSE_m": 0.026592269990417618,
+      "position_peak_m": 0.06292452005612979,
+      "tilt_peak_deg": 8.001338068355853,
+      "final_hold_tilt_peak_deg": 6.030867687602895,
+      "final_hold_RMSE_m": 0.006790434656142867,
+      "position_min_m": [
+        -2.138240809247647,
+        -1.0228160412252738,
+        2.6735275504384863
+      ],
+      "position_max_m": [
+        3.8812453654417047,
+        1.0262295734308604,
+        2.70215057910533
+      ]
+    },
+    "uav2": {
+      "position_RMSE_m": 0.03096254457369168,
+      "position_peak_m": 0.0731533075710786,
+      "tilt_peak_deg": 10.124919326728051,
+      "final_hold_tilt_peak_deg": 5.995269844982381,
+      "final_hold_RMSE_m": 0.005449965490043349,
+      "position_min_m": [
+        -3.440158501733917,
+        -0.29423271162993375,
+        2.6692658395606434
+      ],
+      "position_max_m": [
+        2.5742543350036264,
+        1.8047025363725155,
+        2.7098056937000683
+      ]
+    },
+    "uav3": {
+      "position_RMSE_m": 0.030942799307253046,
+      "position_peak_m": 0.07317074920973454,
+      "tilt_peak_deg": 9.397468246508843,
+      "final_hold_tilt_peak_deg": 6.0028756694797165,
+      "final_hold_RMSE_m": 0.00467259000358449,
+      "position_min_m": [
+        -3.440071652769321,
+        -1.7962103047593736,
+        2.662374712259707
+      ],
+      "position_max_m": [
+        2.5749874352236963,
+        0.29893564239111137,
+        2.718492206383213
+      ]
+    }
+  },
+  "tension_min_N": 9.32248154135017,
+  "tension_max_N": 11.64651691699438,
+  "rope_extension_peak_m": 0.002329027319883048,
+  "minimum_uav_center_distance_m": 1.484043779904253,
+  "minimum_assumed_surface_clearance_m": 0.524043779904253,
+  "sampling_hz": 50,
+  "cable_model": "unilateral Kelvin-Voigt, massless; slack transmits zero force; no segmented rope/contact",
+  "physics_dt_s": 0.001,
+  "flight_ready": false,
+  "independent_load_Newton_balance_RMS_N": 0.02028581308208096,
+  "source_sha256": {
+    "gazebo_sling/CMakeLists.txt": "ad7c534e716fc2cd23fd98caaa5bc744ebd4194bbf9d009ca5f2d4bbc437cbb1",
+    "gazebo_sling/analyze.py": "31a7300f980649dae064a88265b8b3e59a0378b3b5e1dbeff0bbca2237982f51",
+    "gazebo_sling/execute.py": "fe3e10a1cddfb76554ba7041bc6998dcc3e5694a9e7f5890bfd607b30181a8cd",
+    "gazebo_sling/export_local_frames.py": "b9b80a75e543cfd9dd6241d90b71bbbf32a5dbba343d2f9fd75edcb676d1900e",
+    "gazebo_sling/localization.py": "afbb986c0eb2d6d7d1cca298cc252af47e1c7105b95a3fbe505820a7584a9376",
+    "gazebo_sling/package.xml": "0f0d4b02a2c0e2680b352ffa6e53f21a354698ec4802bcc315f7f4c7710414f1",
+    "gazebo_sling/prepare.py": "e69d879d88b4018d894bff5f7564b61624dc431aaca0a113b92d8e62eee1d21f",
+    "gazebo_sling/presentation.py": "409e7464e6cd4c929ea3aa98d6055e31f58fef6dc663e658c4aa3cc0a55694b8",
+    "gazebo_sling/run.py": "ff2d99d7497091018c8714f50de820256869c60684705bf1c76d89c7a4187926",
+    "gazebo_sling/scale_trajectory.py": "2da77a422110fd63fd46f2b9f6924c1af22c2a4dc71bf0e5a63d5166399a13fd",
+    "gazebo_sling/src/sling_cables.cpp": "87b364cc8ef8aeb5c8463209b7e09e736bd3ecc11f7aa0cd25fb9023b2cf9c5f"
+  },
+  "px4_binary_sha256": "f7d74d021e4f3be689e3d486145629d1f990e24389901014e92be82cd22ecd44",
+  "simulation_checks": {
+    "execution_completed": true,
+    "full_reference_duration": true,
+    "payload_peak_below_15cm": true,
+    "uav_peaks_below_10cm": true,
+    "payload_tilt_below_5deg": true,
+    "final_hold_tilt_below_1deg": true,
+    "tension_4_to_18N": true,
+    "assumed_uav_clearance_25cm": true,
+    "no_transport_slack": true,
+    "finite_positions": true,
+    "independent_Newton_balance_RMS_below_05N": true,
+    "camera_video_present": true
+  },
+  "simulation_screen_passed": true
+}

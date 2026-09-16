@@ -1,0 +1,34 @@
+{
+  "duration_s": 88.0,
+  "sampling_hz": 50,
+  "samples_per_uav": 4401,
+  "source_trajectory_sha256": "8c0d40a889478decac3863e14570afba2c5c06ba1d9e14c5bdc4267e42425d52",
+  "csv_sha256": {
+    "uav1_enu_50hz.csv": "4b90e551f2a1a2473b4f49a3a580c8230a599e27cc56bc71f7ab79fdfe23211e",
+    "uav2_enu_50hz.csv": "1ff27f18e25173897bdd9e4af83e69272ff12ac68ec557aaaee9129635500d4b",
+    "uav3_enu_50hz.csv": "6c060c24da0665e1caee4b528595028a72b1e51e413e71b9905b642d6851aff9"
+  },
+  "frame": "common map ENU (x east, y north, z up); yaw 0 relative to map x",
+  "units": "m, s, rad",
+  "interpolation": "quintic Hermite with p/v/a constraints",
+  "synchronization": "one shared clock and start trigger; all UAVs use the same progress",
+  "interface": "ROS 1 MAVROS setpoint_raw/local; ROS fields ENU, MAVROS converts to MAVLink LOCAL_NED once",
+  "physical_assumptions": {
+    "payload_mass": 3.0,
+    "uav_mass": 2.5,
+    "rope_length": 1.8,
+    "cable_stiffness_N_m": 5000.0,
+    "cable_damping_N_s_m": 35.0
+  },
+  "simulation_screen_passed": true,
+  "hardware_calibrated": false,
+  "flight_ready": false,
+  "phase_scope": "already airborne suspended transport only; actual takeoff/landing are separate procedures",
+  "hardware_requirements": [
+    "measured masses, rigging and thrust margin",
+    "actual attachment positions and rope properties",
+    "surveyed map-to-each-PX4-origin transforms and yaw offsets",
+    "validated localization noise/delay and clock synchronization",
+    "hardware-specific tracking and coordinated failsafe validation"
+  ]
+}

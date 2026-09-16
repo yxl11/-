@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "transport_duration_s": 88.0,
+  "video_frames": 1321,
+  "video_start_sim_s": 5.103,
+  "video_end_sim_s": 137.103,
+  "all_disarmed": true
+}

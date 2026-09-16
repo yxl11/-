@@ -1,0 +1,30 @@
+... logging to /home/yhr/Projects/codex-project/results/gazebo_transport_final/ros_logs/6524cf14-b161-11f1-bb20-2d0cd3d4b7c1/roslaunch-yhr-ASUS-TUF-Gaming-F15-FX507ZM-FX507ZM-28178.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;roscore
+[1mstarted roslaunch server http://localhost:33865/[0m
+ros_comm version 1.17.0
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.0
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [28189][0m
+[1mROS_MASTER_URI=http://localhost:11321/[0m
+]2;roscore http://localhost:11321/
+[1msetting /run_id to 6524cf14-b161-11f1-bb20-2d0cd3d4b7c1[0m
+[1mprocess[rosout-1]: started with pid [28199][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

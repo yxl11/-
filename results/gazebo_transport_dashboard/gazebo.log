@@ -1,0 +1,37 @@
+Gazebo multi-robot simulator, version 11.15.1
+Copyright (C) 2012 Open Source Robotics Foundation.
+Released under the Apache 2 License.
+http://gazebosim.org
+
+[1;33m
+#     # ####### ####### ###  #####  #######
+##    # #     #    #     #  #     # #
+# #   # #     #    #     #  #       #
+#  #  # #     #    #     #  #       #####
+#   # # #     #    #     #  #       #
+#    ## #     #    #     #  #     # #
+#     # #######    #    ###  #####  #######
+
+This version of Gazebo, now called Gazebo classic, reaches end-of-life
+in January 2025. Users are highly encouraged to migrate to the new Gazebo
+using our migration guides (https://gazebosim.org/docs/latest/gazebo_classic_migration/)
+
+
+[0m[ INFO] [1789518004.859048514]: Finished loading Gazebo ROS API Plugin.
+[ INFO] [1789518004.859697605]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...
+[1;32m[Msg] [0m[1;32mWaiting for master.[0m[1;32m
+[0m[1;32m[0m[1;32m[Msg] [0m[1;32mConnected to gazebo master @ [0m[1;32mhttp://127.0.0.1:11351[0m[1;32m
+[0m[1;32m[0m[1;32m[Msg] [0m[1;32mPublicized address: [0m[1;32m10.109.7.159[0m[1;32m
+[0m[1;32m[0m[1;33mWarning [parser.cc:833][0m XML Attribute[version] in element[sdf] not defined in SDF, ignoring.
+[1;33mWarning [parser.cc:833][0m XML Attribute[version] in element[sdf] not defined in SDF, ignoring.
+[1;33mWarning [parser.cc:833][0m XML Attribute[version] in element[sdf] not defined in SDF, ignoring.
+[1;32m[Msg] [0m[1;32mLoading world file [[0m[1;32m/home/yhr/Projects/codex-project/results/gazebo_transport_dashboard/transport.world[0m[1;32m][0m[1;32m
+[0m[1;32m[0m[ INFO] [1789518005.271955206]: waitForService: Service [/gazebo/set_physics_properties] is now available.
+[ INFO] [1789518005.319533462]: Physics dynamic reconfigure ready.
+[1;33m[Wrn] [gazebo_gps_plugin.cpp:78] [0m[1;33m[gazebo_gps_plugin]: uav1::gps0 using gps topic "[0m[1;33mgps0[0m[1;33m"
+[0m[1;33m[Wrn] [gazebo_gps_plugin.cpp:203] [0m[1;33m[gazebo_gps_plugin] Using default update rate of [0m[1;33m5[0m[1;33mhz 
+[0m[1;33m[Wrn] [gazebo_gps_plugin.cpp:78] [0m[1;33m[gazebo_gps_plugin]: uav2::gps0 using gps topic "[0m[1;33mgps0[0m[1;33m"
+[0m[1;33m[Wrn] [gazebo_gps_plugin.cpp:203] [0m[1;33m[gazebo_gps_plugin] Using default update rate of [0m[1;33m5[0m[1;33mhz 
+[0m[1;33m[Wrn] [gazebo_gps_plugin.cpp:78] [0m[1;33m[gazebo_gps_plugin]: uav3::gps0 using gps topic "[0m[1;33mgps0[0m[1;33m"
+[0m[1;33m[Wrn] [gazebo_gps_plugin.cpp:203] [0m[1;33m[gazebo_gps_plugin] Using default update rate of [0m[1;33m5[0m[1;33mhz 
+[0m../src/intel/isl/isl.c:2105: FINISHME: ../src/intel/isl/isl.c:isl_surf_supports_ccs: CCS for 3D textures is disabled, but a workaround is available.

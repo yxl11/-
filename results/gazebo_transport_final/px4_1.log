@@ -1,0 +1,89 @@
+Creating symlink /home/yhr/Projects/codex-project/results/gazebo_transport_final/etc -> /home/yhr/Projects/codex-project/resul
+
+______  __   __    ___ 
+| ___ \ \ \ / /   /   |
+| |_/ /  \ V /   / /| |
+|  __/   /   \  / /_| |
+| |     / /^\ \ \___  |
+\_|     \/   \/     |_/
+
+px4 starting.
+
+INFO  [px4] Calling startup script: /bin/sh etc/init.d-posix/rcS 1
+INFO  [init] found model autostart file as SYS_AUTOSTART=10016
+INFO  [param] selected parameter default file eeprom/parameters_10016
+[param] parameter file not found, creating eeprom/parameters_10016
+  SYS_AUTOCONFIG: curr: 0 -> new: 1
+* MAV_SYS_ID: curr: 1 -> new: 2
+  SYS_AUTOSTART: curr: 0 -> new: 10016
+  CAL_ACC0_ID: curr: 0 -> new: 1310988
+  CAL_GYRO0_ID: curr: 0 -> new: 1310988
+  CAL_ACC1_ID: curr: 0 -> new: 1310996
+  CAL_GYRO1_ID: curr: 0 -> new: 1310996
+  CAL_ACC2_ID: curr: 0 -> new: 1311004
+  CAL_GYRO2_ID: curr: 0 -> new: 1311004
+* CAL_MAG0_ID: curr: 0 -> new: 197388
+* CAL_MAG1_ID: curr: 0 -> new: 197644
+* SENS_BOARD_X_OFF: curr: 0.0000 -> new: 0.0000
+* SENS_DPRES_OFF: curr: 0.0000 -> new: 0.0010
+* SYS_AUTOCONFIG: curr: 1 -> new: 0
+* IMU_INTEG_RATE: curr: 200 -> new: 250
+* COM_RCL_EXCEPT: curr: 0 -> new: 4
+* NAV_RCL_ACT: curr: 2 -> new: 0
+* COM_OBL_RC_ACT: curr: 0 -> new: 4
+* COM_OF_LOSS_T: curr: 1.0000 -> new: 0.5000
+* MPC_THR_HOVER: curr: 0.5000 -> new: 0.7300
+* MPC_THR_MAX: curr: 1.0000 -> new: 0.9500
+* MPC_XY_VEL_MAX: curr: 12.0000 -> new: 1.0000
+* MPC_Z_VEL_MAX_UP: curr: 3.0000 -> new: 0.5000
+* MPC_Z_VEL_MAX_DN: curr: 1.0000 -> new: 0.4000
+* MPC_ACC_HOR_MAX: curr: 5.0000 -> new: 1.0000
+* MPC_TILTMAX_AIR: curr: 45.0000 -> new: 25.0000
+* MPC_XY_P: curr: 0.9500 -> new: 1.0000
+* MPC_XY_VEL_P_ACC: curr: 1.8000 -> new: 3.0000
+* MPC_XY_VEL_I_ACC: curr: 0.4000 -> new: 1.0000
+* MPC_XY_VEL_D_ACC: curr: 0.2000 -> new: 0.3000
+* EKF2_AID_MASK: curr: 1 -> new: 24
+* EKF2_HGT_MODE: curr: 0 -> new: 3
+* EKF2_EV_DELAY: curr: 175.0000 -> new: 0.0000
+* EKF2_EVP_NOISE: curr: 0.1000 -> new: 0.0100
+* EKF2_EVA_NOISE: curr: 0.0500 -> new: 0.0100
+INFO  [dataman] data manager file './dataman' size is 7866640 bytes
+PX4 SIM HOST: localhost
+INFO  [simulator] Waiting for simulator to accept connection on TCP port 4561
+INFO  [simulator] Simulator connected on TCP port 4561.
+INFO  [commander] LED: open /dev/led0 failed (22)
+* PWM_AUX_OUT: curr: 0 -> new: 1234
+* PWM_MAIN_OUT: curr: 0 -> new: 1234
+INFO  [init] Mixer: etc/mixers/quad_w.main.mix on /dev/pwm_output0
+INFO  [init] setting PWM_AUX_OUT none
+WARN  [mc_pos_control] Cruise speed has been constrained by max speed	
+WARN  [mc_pos_control] Manual speed has been constrained by max speed	
+WARN  [mc_pos_control] Ascent speed has been constrained by max speed	
+WARN  [mc_pos_control] Descent speed has been constrained by max speed	
+INFO  [mavlink] mode: Normal, data rate: 4000000 B/s on udp port 18571 remote port 14550
+WARN  [mavlink] Event dropped (65526, 65529)
+WARN  [mavlink] Dropped 3 events (seq=65529)
+INFO  [mavlink] mode: Onboard, data rate: 4000000 B/s on udp port 14581 remote port 14541
+INFO  [mavlink] mode: Onboard, data rate: 4000 B/s on udp port 14281 remote port 14031
+INFO  [mavlink] mode: Gimbal, data rate: 400000 B/s on udp port 13031 remote port 13281
+INFO  [logger] logger started (mode=all)
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2026-09-15/23_58_54.ulg	
+INFO  [logger] Opened full log file: ./log/2026-09-15/23_58_54.ulg
+INFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)
+INFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)
+INFO  [px4] Startup script returned successfully
+INFO  [mavlink] partner IP: 127.0.0.1
+INFO  [tone_alarm] home set
+INFO  [tone_alarm] notify negative
+INFO  [commander] Armed by external command	
+INFO  [tone_alarm] arming warning
+INFO  [commander] Takeoff detected	
+INFO  [commander] Landing detected	
+INFO  [commander] Disarmed by landing	
+INFO  [tone_alarm] notify neutral
+INFO  [logger] closed logfile, bytes written: 32590333
+
+PX4 Exiting...
+Exiting NOW.

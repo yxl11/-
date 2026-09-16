@@ -1,0 +1,12 @@
+[ERROR] [1789517545.606135]: bad callback: <function main.<locals>.callback at 0x7f5b0f610f70>
+Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/topics.py", line 750, in _invoke_callback
+    cb(msg)
+  File "/home/yhr/Projects/codex-project/gazebo_sling/localization.py", line 23, in callback
+    pose.pose=m.pose[m.name.index(name)];pub.publish(pose)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/topics.py", line 882, in publish
+    self.impl.publish(data)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/topics.py", line 1041, in publish
+    raise ROSException("publish() to a closed topic")
+rospy.exceptions.ROSException: publish() to a closed topic
+

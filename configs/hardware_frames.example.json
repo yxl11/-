@@ -1,0 +1,11 @@
+{
+  "hardware_calibrated": false,
+  "description": "Example only. Replace with measured origins and yaw before hardware execution.",
+  "units": "m, rad, s",
+  "transform_definition": "p_map = Rz(yaw_map_from_local_rad) p_local_enu + origin_in_map_m",
+  "uavs": [
+    {"id": 1, "namespace": "/uav1/mavros", "origin_in_map_m": [0, 0, 0], "yaw_map_from_local_rad": 0},
+    {"id": 2, "namespace": "/uav2/mavros", "origin_in_map_m": [0, 0, 0], "yaw_map_from_local_rad": 0},
+    {"id": 3, "namespace": "/uav3/mavros", "origin_in_map_m": [0, 0, 0], "yaw_map_from_local_rad": 0}
+  ]
+}

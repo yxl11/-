@@ -1,0 +1,15 @@
+{
+  "source_video_sha256": "49b3b3c8ff55994c49ba32ad378799692ad6c508e82e66970eb55632904989f0",
+  "source_run": "same Gazebo run, causal log samples at each original frame timestamp",
+  "replaced_regions": "right telemetry panel and bottom numeric/status panel only",
+  "skipped_diagnostic_lines": {
+    "gazebo_states.csv": 0,
+    "cables.csv": 0,
+    "estimates.csv": 4,
+    "commands.csv": 0
+  },
+  "frames": 880,
+  "fps": 10,
+  "output": "gazebo_transport_data.mp4",
+  "presentation_sha256": "0cf2e4398144812f90ea27ea18b9d3a08e419e21bd0049d13506e36805d1a4f8"
+}

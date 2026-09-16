@@ -1,0 +1,21 @@
+{
+  "world_minus_local": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "method": "absolute_map_enu_external_vision",
+  "real_hardware_calibrated": false
+}
