@@ -1,0 +1,297 @@
+{
+  "registered_utc": "2026-11-02T04:26:17.207294+00:00",
+  "before_any_evaluation_results": true,
+  "jobs": [
+    {
+      "id": "P_s33001",
+      "method": "P",
+      "seed": 33001,
+      "params": {}
+    },
+    {
+      "id": "RAS08_s33001",
+      "method": "RAS08",
+      "seed": 33001,
+      "params": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      }
+    },
+    {
+      "id": "MMD19_s33001",
+      "method": "MMD19",
+      "seed": 33001,
+      "params": {
+        "gamma": 20.0
+      }
+    },
+    {
+      "id": "P_s33002",
+      "method": "P",
+      "seed": 33002,
+      "params": {}
+    },
+    {
+      "id": "RAS08_s33002",
+      "method": "RAS08",
+      "seed": 33002,
+      "params": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      }
+    },
+    {
+      "id": "MMD19_s33002",
+      "method": "MMD19",
+      "seed": 33002,
+      "params": {
+        "gamma": 20.0
+      }
+    },
+    {
+      "id": "P_s33003",
+      "method": "P",
+      "seed": 33003,
+      "params": {}
+    },
+    {
+      "id": "RAS08_s33003",
+      "method": "RAS08",
+      "seed": 33003,
+      "params": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      }
+    },
+    {
+      "id": "MMD19_s33003",
+      "method": "MMD19",
+      "seed": 33003,
+      "params": {
+        "gamma": 20.0
+      }
+    },
+    {
+      "id": "P_s33004",
+      "method": "P",
+      "seed": 33004,
+      "params": {}
+    },
+    {
+      "id": "RAS08_s33004",
+      "method": "RAS08",
+      "seed": 33004,
+      "params": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      }
+    },
+    {
+      "id": "MMD19_s33004",
+      "method": "MMD19",
+      "seed": 33004,
+      "params": {
+        "gamma": 20.0
+      }
+    },
+    {
+      "id": "P_s33005",
+      "method": "P",
+      "seed": 33005,
+      "params": {}
+    },
+    {
+      "id": "RAS08_s33005",
+      "method": "RAS08",
+      "seed": 33005,
+      "params": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      }
+    },
+    {
+      "id": "MMD19_s33005",
+      "method": "MMD19",
+      "seed": 33005,
+      "params": {
+        "gamma": 20.0
+      }
+    },
+    {
+      "id": "P_s33006",
+      "method": "P",
+      "seed": 33006,
+      "params": {}
+    },
+    {
+      "id": "RAS08_s33006",
+      "method": "RAS08",
+      "seed": 33006,
+      "params": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      }
+    },
+    {
+      "id": "MMD19_s33006",
+      "method": "MMD19",
+      "seed": 33006,
+      "params": {
+        "gamma": 20.0
+      }
+    },
+    {
+      "id": "P_s33007",
+      "method": "P",
+      "seed": 33007,
+      "params": {}
+    },
+    {
+      "id": "RAS08_s33007",
+      "method": "RAS08",
+      "seed": 33007,
+      "params": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      }
+    },
+    {
+      "id": "MMD19_s33007",
+      "method": "MMD19",
+      "seed": 33007,
+      "params": {
+        "gamma": 20.0
+      }
+    },
+    {
+      "id": "P_s33008",
+      "method": "P",
+      "seed": 33008,
+      "params": {}
+    },
+    {
+      "id": "RAS08_s33008",
+      "method": "RAS08",
+      "seed": 33008,
+      "params": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      }
+    },
+    {
+      "id": "MMD19_s33008",
+      "method": "MMD19",
+      "seed": 33008,
+      "params": {
+        "gamma": 20.0
+      }
+    },
+    {
+      "id": "P_s33009",
+      "method": "P",
+      "seed": 33009,
+      "params": {}
+    },
+    {
+      "id": "RAS08_s33009",
+      "method": "RAS08",
+      "seed": 33009,
+      "params": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      }
+    },
+    {
+      "id": "MMD19_s33009",
+      "method": "MMD19",
+      "seed": 33009,
+      "params": {
+        "gamma": 20.0
+      }
+    },
+    {
+      "id": "P_s33010",
+      "method": "P",
+      "seed": 33010,
+      "params": {}
+    },
+    {
+      "id": "RAS08_s33010",
+      "method": "RAS08",
+      "seed": 33010,
+      "params": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      }
+    },
+    {
+      "id": "MMD19_s33010",
+      "method": "MMD19",
+      "seed": 33010,
+      "params": {
+        "gamma": 20.0
+      }
+    }
+  ],
+  "frozen_files": {
+    "output/reviews/mixed_sweep_orbit_paired_20261102/evaluation_protocol.json": "2f5591b3583616c372b615e814733fd5c3261237c57ffc6d6b7efc1fc27e5cfc",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/initial_manifest.json": "2dc04074e964a3806e5bcda5c20a8cfb6415fb114dec4de4e912e4f786a5b42b",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/campaign.py": "b8a3a84714e623f5739fe0b57dfc8e75f9aa65f17af55544740c071ae2835a04",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/runner_regression.py": "1b3a34801fa6197b6deea25429e690d547cb0526a3d0f24c7334bb9784abb62a",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/runner_regression.json": "37e03789a79c75fe3db2da0ea9796562a2dce551c8b1462c47f3cf538bbe4a26",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/worker.py": "914d79c87f9e4653507f158593e280c7bf35207f0cab4841c5a5ddbfe47bfbfa",
+    "output/reviews/mixed_sweep_orbit_calibration_20261102/selected_parameters.json": "7e4f2915a4c56a9ebbbcdbd2b6360657bdcd842dc81c162ac6111089e466a206",
+    "output/reviews/mixed_sweep_orbit_external_20261101/mission.py": "0ef82482104584b1ff1b9f172204521daf4421f1105aa694631d8193c1df5a85",
+    "output/reviews/mixed_sweep_orbit_external_20261101/engine.py": "e26ed803ebbf1af8186a0d3bb85b612a64e9105a6f250251391a0ed6049f9265",
+    "output/reviews/mixed_sweep_orbit_external_20261101/mission_engine.py": "7a332eafaf69b2fd9a6c008bad9e5ee897c5511188df754f8eefcd65ead294e0",
+    "output/reviews/mixed_sweep_orbit_external_20261101/shape_models.py": "9238d180da7041f8deb357f75dd1176624283c4e1ef63c14c8efa362f608340f",
+    "output/reviews/mixed_sweep_orbit_external_20261101/shape_feedback.py": "d88f55347c300254fe9aac00eccef73cc070c82bb8c21083377e9883b7dbf6aa",
+    "output/reviews/mixed_sweep_orbit_external_20261101/p_feedback.py": "e52d4359abf908136e7d3625b462ebffada01344198210191f07fedd00a15954",
+    "output/reviews/mixed_sweep_orbit_external_20261101/initial_state.npz": "962dc7230f295b8c339fbd192d84ba8d3a9736d7b56afe17205cbb7349a739f3",
+    "output/reviews/mixed_sweep_orbit_external_20261101/backup_geometry_check.json": "080d88712ed84086173d9428efd2c5af68f53c82a98730d653a98f7ce943ef2d",
+    "output/reviews/mixed_sweep_orbit_external_20261101/protocol.json": "043eec5fe847c2b19e6dface5e78257032fb2c3d9194302410578f0f7260f5de",
+    "output/reviews/mixed_sweep_orbit_external_20261101/runner.py": "f92004da8f3a2796fe9b6c23f39c263cfe0f2590b67539e1b1e0d0ee91d135fb",
+    "output/reviews/mixed_sweep_orbit_external_20261101/runner_setup.json": "222a12b66b291b4af79222d0cda15a62cbedfe9a8fc44df5121feb863c095c6e",
+    "output/reviews/mixed_sweep_orbit_external_20261101/external_adapters.py": "5367752d856257523be0c0953db46d1a2c902298f9c7bdd5bc1e7c6e26a516dd",
+    "output/reviews/mixed_sweep_orbit_external_20261101/prepare_external.py": "a3814bd3b0e5a9cd4407b5b8f4da7f70e08a377b50230c1e4b220872a9027795",
+    "output/reviews/mixed_sweep_orbit_external_20261101/targets.npz": "a00b46c250f9511eabe6c4e13a0918503e3f8086f517e5ab8bab1702f809601f",
+    "output/reviews/mixed_sweep_orbit_external_20261101/adapter_precheck.json": "f4ad24d80600872ecc5ad28020a4f0b1646645691e527612bf0f26da34cd010e",
+    "output/reviews/mixed_sweep_orbit_external_20261101/target_registration.json": "c946c7c2e602ea1f5b1ecaf057244c7cc9e9df108bcf7a7cc4f273d01de1ce46",
+    "output/reviews/mixed_sweep_orbit_external_20261101/target_checks.json": "81f01e6292b75b7f18135638b64bebbbc79ddb5657064daa77b67bd3658eda66",
+    "output/reviews/mixed_sweep_orbit_external_20261101/freeze_execution.py": "817dd67cdb7db2005373280f0be106d5815ed52b1f7c65cb6abcb30da47be1e6",
+    "output/simulations/three_group_moving_comparison_20261023/src/external_formation.py": "1d2c498d27f8201aa3ebb5025d92bdfec7c9b59fbcc79b0593ff70852c15afeb",
+    "output/simulations/three_group_moving_comparison_20261023/src/external_mmd.py": "65473095d3e90922c231e54b3b5c5236998410ff5853c038d21a80eafa236fb7",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/initials/seed33001.npz": "af471cad293d573a62d438f54908f579db7e81452c90fc7d65fe09f2ba509239",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/initials/seed33002.npz": "fb7101a42e421b63f33de7d3bdc48fb875da8e1af0b99f085f80ea17dce5f144",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/initials/seed33003.npz": "601b5bd1ac15a8a6062fe666a57efccabd07618239d6a78b09663c9c8cbb7718",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/initials/seed33004.npz": "9ee4971bb730541f348309fd915951802099d02d0c65a7263ea8e93aa52fac9a",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/initials/seed33005.npz": "ecda2637f69c31b164b96aaee5eeb8af294eb194cf0ab83fc3a455b38c5710b6",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/initials/seed33006.npz": "452dc94114d9d76a400d73300b2d8a093abddd23b8f5825e615fdcb22f0b9747",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/initials/seed33007.npz": "855cbb86f28d3271b0b9a14d548bee758dc523bcad760c85188efcdd27267483",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/initials/seed33008.npz": "a0869f20e97856462cda93d18af982cc4f6041f1be80cda5eefe6a8c881b185b",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/initials/seed33009.npz": "1d2ae8f3c1eebeb459ca01fa32b197077bba40843c3292e59c05f5288886c4a7",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/initials/seed33010.npz": "edbec79968df918a4965f04a1c2ab27060913684f1aea840124bc8469f72ac11"
+  },
+  "memory_before": {
+    "physical_total": 16763232256,
+    "physical_free": 2335416320,
+    "commit_total": 51872841728,
+    "commit_free": 23373996032
+  },
+  "free_disk_bytes": 122545614848,
+  "max_workers": 9,
+  "cpu_logical": 24,
+  "cpu_physical_from_local_CIM": 16,
+  "admission": "Stagger starts, up to 9 workers; require 720 MiB physical and 2 GiB of commit available before adding another concurrent job.",
+  "python": "C:\\Users\\31977\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+  "version": "3.11.6 (tags/v3.11.6:8b6ee5b, Oct  2 2023, 14:57:12) [MSC v.1935 64 bit (AMD64)]",
+  "blas_threads": 1,
+  "logical_sim_duration_s": 178,
+  "timeout_semantics": {
+    "closed_loops": 30,
+    "per_job_cpu_seconds": 2400,
+    "wall_watchdog_seconds": 14400,
+    "blas_threads_per_process": 1
+  },
+  "timing_scope": "Parallel-run times are operational diagnostics only."
+}

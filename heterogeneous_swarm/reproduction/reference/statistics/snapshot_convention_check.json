@@ -1,0 +1,64 @@
+{
+  "interpretation": "The plotter does not compute the textual SD. ddof=1 exactly reproduces archived manuscript rounded values; ddof=0 does not.",
+  "source_sha256": {
+    "output\\reviews\\mixed_sweep_orbit_paired_20261102\\runs\\P_s33001\\history.npz": "67cbdaebf7b5b780a6172fbd172aac5d4baeef94355f090bb4d336ee3aeef467",
+    "output\\reviews\\ppt_execution_error_derivation_20261014\\revision_figure2_unmarked_trails_20261102\\draw_figure2.py": "370be1a66926cb6349f6626281df06c1a322d57d24cc031fa79a3a501da6e178"
+  },
+  "old": {
+    "8": {
+      "ddof0": [
+        11.412315639516766,
+        7.919192010714512
+      ],
+      "ddof1": [
+        12.029636932544694,
+        8.34756132735547
+      ]
+    },
+    "24": {
+      "ddof0": [
+        4.114451116393901,
+        9.086502932759208
+      ],
+      "ddof1": [
+        4.33701228307576,
+        9.578015077772967
+      ]
+    }
+  },
+  "new": [
+    {
+      "method": "P",
+      "seed": 33001,
+      "time_s": 8,
+      "FW_x_std_ddof0_m": 11.48038564776287,
+      "FW_y_std_ddof0_m": 7.928723067456249,
+      "FW_z_std_ddof0_m": 0.23250476647267046,
+      "FW_x_std_ddof1_m": 12.101389021346073,
+      "FW_y_std_ddof1_m": 8.357607943292868,
+      "FW_z_std_ddof1_m": 0.24508154296639725
+    },
+    {
+      "method": "P",
+      "seed": 33001,
+      "time_s": 16,
+      "FW_x_std_ddof0_m": 7.432536754461285,
+      "FW_y_std_ddof0_m": 7.323141086569986,
+      "FW_z_std_ddof0_m": 0.03932312550790816,
+      "FW_x_std_ddof1_m": 7.834581645671104,
+      "FW_y_std_ddof1_m": 7.71926848677382,
+      "FW_z_std_ddof1_m": 0.04145021377388511
+    },
+    {
+      "method": "P",
+      "seed": 33001,
+      "time_s": 24,
+      "FW_x_std_ddof0_m": 4.12951849354607,
+      "FW_y_std_ddof0_m": 9.079682175818386,
+      "FW_z_std_ddof0_m": 0.03650628469018609,
+      "FW_x_std_ddof1_m": 4.352894693130971,
+      "FW_y_std_ddof1_m": 9.570825368673168,
+      "FW_z_std_ddof1_m": 0.038481002843840796
+    }
+  ]
+}

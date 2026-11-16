@@ -1,0 +1,363 @@
+{
+  "status": "PASS",
+  "worker_sha256": "914d79c87f9e4653507f158593e280c7bf35207f0cab4841c5a5ddbfe47bfbfa",
+  "script_sha256": "1b3a34801fa6197b6deea25429e690d547cb0526a3d0f24c7334bb9784abb62a",
+  "selection_sha256": "7e4f2915a4c56a9ebbbcdbd2b6360657bdcd842dc81c162ac6111089e466a206",
+  "cases": [
+    {
+      "source_run": "output\\reviews\\mixed_sweep_orbit_sparse_20261101\\runs\\P_seed31031",
+      "method": "P",
+      "parameters": {},
+      "frozen_history_sha256": "4d1708c0fd96632db9bfcd365cfc3b3004619746b2017877abe41def49928719",
+      "frozen_task_sha256": "53d16f71b501429f86081afb2fb7df0379c02d73b3c9f498f3b031dded6c010a",
+      "samples": [
+        {
+          "t_s": 0,
+          "recorded_fields": [
+            "nu",
+            "shape",
+            "projection_mean_command",
+            "projected_common_displacement",
+            "effective_displacement",
+            "zero_mean_error",
+            "affine_mean",
+            "affine_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 24,
+          "recorded_fields": [
+            "nu",
+            "shape",
+            "projection_mean_command",
+            "projected_common_displacement",
+            "effective_displacement",
+            "zero_mean_error",
+            "affine_mean",
+            "affine_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 77,
+          "recorded_fields": [
+            "nu",
+            "shape",
+            "projection_mean_command",
+            "projected_common_displacement",
+            "effective_displacement",
+            "zero_mean_error",
+            "affine_mean",
+            "affine_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 94,
+          "recorded_fields": [
+            "nu",
+            "shape",
+            "projection_mean_command",
+            "projected_common_displacement",
+            "effective_displacement",
+            "zero_mean_error",
+            "affine_mean",
+            "affine_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 138,
+          "recorded_fields": [
+            "nu",
+            "shape",
+            "projection_mean_command",
+            "projected_common_displacement",
+            "effective_displacement",
+            "zero_mean_error",
+            "affine_mean",
+            "affine_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 174,
+          "recorded_fields": [
+            "nu",
+            "shape",
+            "projection_mean_command",
+            "projected_common_displacement",
+            "effective_displacement",
+            "zero_mean_error",
+            "affine_mean",
+            "affine_velocity"
+          ],
+          "all_checks": "bitwise match"
+        }
+      ]
+    },
+    {
+      "source_run": "output\\reviews\\mixed_sweep_orbit_external_20261101\\runs\\RAS08_seed31031",
+      "method": "RAS08",
+      "parameters": {
+        "alpha": 0.2,
+        "coupling": 0.2
+      },
+      "frozen_history_sha256": "765aa877439100bd42f71fc147ce3066b724211c36b2d7122b9b85db2813c34a",
+      "frozen_task_sha256": "b294a6b81323fed9b3132845818cae88a35af8a4cfc78c74830f762a5cd229fc",
+      "samples": [
+        {
+          "t_s": 0,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity",
+            "controller_desired_position",
+            "controller_desired_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 24,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity",
+            "controller_desired_position",
+            "controller_desired_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 77,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity",
+            "controller_desired_position",
+            "controller_desired_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 94,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity",
+            "controller_desired_position",
+            "controller_desired_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 138,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity",
+            "controller_desired_position",
+            "controller_desired_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 174,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity",
+            "controller_desired_position",
+            "controller_desired_velocity"
+          ],
+          "all_checks": "bitwise match"
+        }
+      ]
+    },
+    {
+      "source_run": "output\\reviews\\mixed_sweep_orbit_calibration_20261102\\runs\\RAS08_c2_s32001",
+      "method": "RAS08",
+      "parameters": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      },
+      "frozen_history_sha256": "3533e50e2df77ca82154f1bc5d85ec707db51b30b141afcc9cfd76d2c8e8e116",
+      "frozen_task_sha256": "b5d419aaf2577de18244ff58c8c12591f72cc824478110114639d078cac7b06a",
+      "samples": [
+        {
+          "t_s": 0,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity",
+            "controller_desired_position",
+            "controller_desired_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 24,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity",
+            "controller_desired_position",
+            "controller_desired_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 77,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity",
+            "controller_desired_position",
+            "controller_desired_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 94,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity",
+            "controller_desired_position",
+            "controller_desired_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 138,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity",
+            "controller_desired_position",
+            "controller_desired_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 174,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity",
+            "controller_desired_position",
+            "controller_desired_velocity"
+          ],
+          "all_checks": "bitwise match"
+        }
+      ]
+    },
+    {
+      "source_run": "output\\reviews\\mixed_sweep_orbit_external_20261101\\runs\\MMD19_seed31031",
+      "method": "MMD19",
+      "parameters": {
+        "gamma": 10.0
+      },
+      "frozen_history_sha256": "9046fccc30201614de2430446e42a3de1243bfe600f4536ada8795ace37a8831",
+      "frozen_task_sha256": "592321e95062908efcfa5f3bd49bd24806a04e6e60f541335855e0556929ef88",
+      "samples": [
+        {
+          "t_s": 0,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 24,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 77,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 94,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 138,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 174,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity"
+          ],
+          "all_checks": "bitwise match"
+        }
+      ]
+    },
+    {
+      "source_run": "output\\reviews\\mixed_sweep_orbit_calibration_20261102\\runs\\MMD19_c2_s32001",
+      "method": "MMD19",
+      "parameters": {
+        "gamma": 20.0
+      },
+      "frozen_history_sha256": "a9d4020f546e2bbe735c70a99c2b7ab69d586ed3f4b2f09f07239df6d8e821ce",
+      "frozen_task_sha256": "b0f954922e6289513bd0b6c433dc940679379771f4dee139fb5fd1ac255f9ee9",
+      "samples": [
+        {
+          "t_s": 0,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 24,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 77,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 94,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 138,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity"
+          ],
+          "all_checks": "bitwise match"
+        },
+        {
+          "t_s": 174,
+          "recorded_fields": [
+            "controller_transport_velocity",
+            "controller_feedback_velocity"
+          ],
+          "all_checks": "bitwise match"
+        }
+      ]
+    }
+  ]
+}

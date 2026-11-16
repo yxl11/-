@@ -1,0 +1,160 @@
+{
+  "status": "completed",
+  "method": "P",
+  "seed": 33001,
+  "counts": [
+    10,
+    16,
+    20
+  ],
+  "completed_seconds": 178.0,
+  "requested_seconds": 178.0,
+  "completed_steps": 8900,
+  "wall_seconds": 885.7633604000148,
+  "failure": null,
+  "inputs_unchanged": true,
+  "changed_inputs": [],
+  "controller_identity_check": {
+    "identity": "P with registered kc/kf, frozen D/kappa, prescribed affine transport and unchanged role metrics",
+    "gain_study": {
+      "stage": "evaluation",
+      "candidate_id": "B",
+      "protocol_path": "output/reviews/p_gain_calibration_20261108/protocol.json",
+      "initial_manifest_path": "output/reviews/mixed_sweep_orbit_paired_20261102/initial_manifest.json",
+      "additional_input_paths": [
+        "output/reviews/p_gain_calibration_20261108/checks/worker_static.json",
+        "output/reviews/p_gain_calibration_20261108/checks/regression.json",
+        "output/reviews/p_gain_calibration_20261108/selection.json"
+      ],
+      "selection_sha256": "717f16d7d7b3d2f34a6c55df81efd38075eace1d4c8ba5996e8099aab05478d0",
+      "source_evaluation_protocol_role": "Execution provenance only; this study protocol defines gains and initial-state split"
+    },
+    "frozen_density_parameters": {
+      "D_m2ps": 2.5,
+      "kappa_m2ps": 10.0
+    },
+    "method": "P",
+    "parameters": {
+      "kc_per_s": 0.24,
+      "kf_per_s": 0.16
+    },
+    "external_adapter_sha256": "5367752d856257523be0c0953db46d1a2c902298f9c7bdd5bc1e7c6e26a516dd",
+    "scope": "One finite P kc/kf calibration, followed by at most one candidate on the three previously seen paired evaluation initials. Original paper, evidence and external gains remain unchanged.; evaluation",
+    "shape_feedback_sha256": "d88f55347c300254fe9aac00eccef73cc070c82bb8c21083377e9883b7dbf6aa",
+    "shape_models_sha256": "9238d180da7041f8deb357f75dd1176624283c4e1ef63c14c8efa362f608340f"
+  },
+  "actual_state_consistency": "bitwise equal at every committed step",
+  "bootstrap": {
+    "status": "certified",
+    "prediction_steps": 1,
+    "minimum_prefix_lower_m": 2.7716350005464547,
+    "minimum_sample_m": 2.7716367809464546,
+    "tail_lower_m": 2.7716350005464547,
+    "certificate_margin_m": 0.7716350005464547,
+    "tail_pair": [
+      15,
+      25
+    ],
+    "tail_path_max_m": 0.0,
+    "position_allowance_max_m": 8.902000000000002e-07,
+    "mapping": {
+      "changed_FW_count": 0,
+      "FW_below_floor_count": 0,
+      "FW_above_speed_cap_count": 0,
+      "FW_above_inclination_count": 0,
+      "FW_mapping_change_max_mps": 0.0,
+      "FW_mapping_change_rms_mps": 0.0,
+      "all_command_change_max_mps": 0.0
+    }
+  },
+  "retained_terminal_certificate": {
+    "status": "certified",
+    "prediction_steps": 94,
+    "minimum_prefix_lower_m": 2.563087146839345,
+    "minimum_sample_m": 2.5631338348898116,
+    "tail_lower_m": 2.009919377938058,
+    "certificate_margin_m": 0.009919377938058194,
+    "tail_pair": [
+      28,
+      36
+    ],
+    "tail_path_max_m": 0.8454473803890642,
+    "position_allowance_max_m": 8.995000000000009e-07,
+    "mapping": {
+      "changed_FW_count": 0,
+      "FW_below_floor_count": 0,
+      "FW_above_speed_cap_count": 0,
+      "FW_above_inclination_count": 0,
+      "FW_mapping_change_max_mps": 1.831026719408895e-15,
+      "FW_mapping_change_rms_mps": 1.000433542806631e-15,
+      "all_command_change_max_mps": 1.831026719408895e-15
+    },
+    "backup_mps": [
+      4.513596634435126,
+      7.786362785127333,
+      0.0
+    ],
+    "generation": 8900,
+    "created_step": 8899,
+    "consumed_segments": 1,
+    "saved_prefix_states": 95,
+    "prefix_sha256": "fd75088429456851417c852f23ea0acb103728866b8ef5133758384a888f77be",
+    "prefix_and_backup_sha256": "077802db6b482d53811054d17ae7dd5fb500359460208f64ad56c1a5dd1dccf0"
+  },
+  "terminal_fresh_backup_certificate": {
+    "status": "certified",
+    "prediction_steps": 93,
+    "minimum_prefix_lower_m": 2.563159534537807,
+    "minimum_sample_m": 2.563206996074485,
+    "tail_lower_m": 2.0004576304542043,
+    "certificate_margin_m": 0.00045763045420432746,
+    "tail_pair": [
+      28,
+      36
+    ],
+    "tail_path_max_m": 0.8370628375729792,
+    "position_allowance_max_m": 8.994000000000009e-07,
+    "mapping": {
+      "changed_FW_count": 0,
+      "FW_below_floor_count": 0,
+      "FW_above_speed_cap_count": 0,
+      "FW_above_inclination_count": 0,
+      "FW_mapping_change_max_mps": 8.881784197001252e-16,
+      "FW_mapping_change_rms_mps": 8.881784197001252e-16,
+      "all_command_change_max_mps": 8.881784197001252e-16
+    },
+    "terminal_trial_backup_mps": [
+      4.5000000000000036,
+      7.7942286340599445,
+      0.0
+    ]
+  },
+  "minimum_continuous_distance_lower_m": 2.3020526820870466,
+  "fallback_steps": 0,
+  "local_repair_steps": 0,
+  "total_certificate_calls": 8900,
+  "cpu_seconds": 867.515625,
+  "policy_branch_steps": {
+    "nominal": 8900,
+    "pair_escape": 0,
+    "local_cruise": 0,
+    "retained_backup": 0
+  },
+  "FW_speed_min_mps": 8.4351239842632,
+  "FW_speed_max_mps": 12.507850978061894,
+  "FW_inclination_max_deg": 4.018870682127402,
+  "FW_rate_max_mps2_deg_s": [
+    2.0,
+    8.786814398339803,
+    5.0
+  ],
+  "rotor_acceleration_max_mps2": [
+    1.5000000000000409,
+    1.0000000000000369
+  ],
+  "real_time_delays_simulated": false,
+  "backup_mode": "tangent",
+  "lifetime_reserve_m": 8.901000000000002e-07,
+  "controller_identity_scope": "P with registered kc/kf, frozen D/kappa, prescribed affine transport and unchanged role metrics",
+  "scope": "One finite P kc/kf calibration, followed by at most one candidate on the three previously seen paired evaluation initials. Original paper, evidence and external gains remain unchanged.; evaluation"
+}

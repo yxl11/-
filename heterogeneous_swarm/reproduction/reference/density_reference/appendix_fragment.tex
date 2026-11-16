@@ -1,0 +1,26 @@
+\paragraph{同规模目标采样的密度量级参照}
+为解释固定带宽密度指标的量级，在每个时刻令$X_{ik}$独立同分布于目标$\Pi_i=\mathcal N(q_i,\Sigma_i)$，并以与控制实验相同的$N_i$和$\beta_i$构造$\widehat p_i=N_i^{-1}\sum_kG_{\beta_i}(\cdot-X_{ik})$。在$\R^3$上对指标取采样期望，有
+\begin{equation}
+\begin{aligned}
+\mathbb E L_{\rho,i}&=\mathcal B_{\rho,i}+\mathcal V_{\rho,i},\\
+\mathcal B_{\rho,i}&=\sqrt{\frac{\det\Sigma_i}{\det(\Sigma_i+\beta_i^2I)}}-2\sqrt{\frac{\det(2\Sigma_i)}{\det(2\Sigma_i+\beta_i^2I)}}+1,\\
+\mathcal V_{\rho,i}&=\frac1{N_i}\left[\frac{\sqrt{\det\Sigma_i}}{\beta_i^3}-\sqrt{\frac{\det\Sigma_i}{\det(\Sigma_i+\beta_i^2I)}}\right].
+\end{aligned}
+\label{eq:iid-density-reference}
+\end{equation}
+其中$\mathcal B_{\rho,i}$为核平滑的归一化偏差平方，$\mathcal V_{\rho,i}$为有限IID样本的方差贡献。各量由高斯重叠积分解析求得，并按0.5~s时刻和梯形积分计算窗口均值，综合值按角色等权平均。
+\begin{table}[htbp]\centering\small
+\caption{同人数、同物理核带宽及同目标协方差下的IID采样期望参照。各项均为无量纲窗口均值，综合行按三角色等权平均。}\label{tab:iid-density-reference}
+\begin{tabular}{llrrr}\toprule
+窗口 (s) & 角色 & $\mathcal B_{\rho}$ & $\mathcal V_{\rho}$ & $\mathbb E L_{\rho}$\\\midrule
+8--86 & 固定翼 & 0.0098 & 8.2477 & 8.2574\\
+8--86 & 穿越机 & 0.0172 & 1.3240 & 1.3412\\
+8--86 & 四旋翼 & 0.0144 & 1.1876 & 1.2020\\
+8--86 & 等角色综合 & 0.0138 & 3.5864 & 3.6002\\
+\midrule
+86--178 & 固定翼 & 0.0097 & 8.2476 & 8.2573\\
+86--178 & 穿越机 & 0.0171 & 1.3240 & 1.3412\\
+86--178 & 四旋翼 & 0.0149 & 1.1877 & 1.2026\\
+86--178 & 等角色综合 & 0.0139 & 3.5865 & 3.6004\\
+\bottomrule\end{tabular}\end{table}
+固定翼归一化密度指标中的固定自核贡献$\sqrt{\det\Sigma_i}/(N_i\beta_i^3)$为8.3350；本任务保持目标体积不变，因此该项不随伸缩与转向改变。总指标还包含成员间核重叠、与目标的交叉项及目标平方范数。IID参照用于解释量级；受控成员通常具有相关性，因此不能将该期望作为受控点集的性能下界或控制误差。

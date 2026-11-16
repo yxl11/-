@@ -1,0 +1,195 @@
+{
+  "selected_before_evaluation": true,
+  "selected_utc": "2026-10-30T13:40:33.919806+00:00",
+  "methods": {
+    "RAS08": {
+      "candidates": [
+        {
+          "index": 0,
+          "parameters": {
+            "alpha": 0.1,
+            "coupling": 0.1
+          },
+          "eligible": true,
+          "per_seed": [
+            {
+              "seed": 901,
+              "score": 1.6414372491759255
+            },
+            {
+              "seed": 902,
+              "score": 1.5995494499952927
+            },
+            {
+              "seed": 903,
+              "score": 16.96334368958495
+            }
+          ],
+          "mean_native_score": 6.734776796252056
+        },
+        {
+          "index": 1,
+          "parameters": {
+            "alpha": 0.2,
+            "coupling": 0.2
+          },
+          "eligible": true,
+          "per_seed": [
+            {
+              "seed": 901,
+              "score": 1.3763487552125366
+            },
+            {
+              "seed": 902,
+              "score": 1.2757623887535636
+            },
+            {
+              "seed": 903,
+              "score": 16.948419428524552
+            }
+          ],
+          "mean_native_score": 6.533510190830217
+        },
+        {
+          "index": 2,
+          "parameters": {
+            "alpha": 0.4,
+            "coupling": 0.4
+          },
+          "eligible": true,
+          "per_seed": [
+            {
+              "seed": 901,
+              "score": 15.213119319221653
+            },
+            {
+              "seed": 902,
+              "score": 2.5237175885093834
+            },
+            {
+              "seed": 903,
+              "score": 16.96148839436417
+            }
+          ],
+          "mean_native_score": 11.566108434031735
+        }
+      ],
+      "selected": {
+        "index": 1,
+        "parameters": {
+          "alpha": 0.2,
+          "coupling": 0.2
+        },
+        "eligible": true,
+        "per_seed": [
+          {
+            "seed": 901,
+            "score": 1.3763487552125366
+          },
+          {
+            "seed": 902,
+            "score": 1.2757623887535636
+          },
+          {
+            "seed": 903,
+            "score": 16.948419428524552
+          }
+        ],
+        "mean_native_score": 6.533510190830217
+      }
+    },
+    "MMD19": {
+      "candidates": [
+        {
+          "index": 0,
+          "parameters": {
+            "gamma": 5.0
+          },
+          "eligible": true,
+          "per_seed": [
+            {
+              "seed": 901,
+              "score": 0.02909945460266171
+            },
+            {
+              "seed": 902,
+              "score": 0.030806309147035613
+            },
+            {
+              "seed": 903,
+              "score": 0.15401184823762334
+            }
+          ],
+          "mean_native_score": 0.07130587066244022
+        },
+        {
+          "index": 1,
+          "parameters": {
+            "gamma": 10.0
+          },
+          "eligible": true,
+          "per_seed": [
+            {
+              "seed": 901,
+              "score": 0.018777800162222323
+            },
+            {
+              "seed": 902,
+              "score": 0.02056204699837756
+            },
+            {
+              "seed": 903,
+              "score": 0.1324837689233039
+            }
+          ],
+          "mean_native_score": 0.05727453869463459
+        },
+        {
+          "index": 2,
+          "parameters": {
+            "gamma": 20.0
+          },
+          "eligible": true,
+          "per_seed": [
+            {
+              "seed": 901,
+              "score": 0.011960207074285134
+            },
+            {
+              "seed": 902,
+              "score": 0.03326084530966395
+            },
+            {
+              "seed": 903,
+              "score": 0.14611427622489187
+            }
+          ],
+          "mean_native_score": 0.06377844286961365
+        }
+      ],
+      "selected": {
+        "index": 1,
+        "parameters": {
+          "gamma": 10.0
+        },
+        "eligible": true,
+        "per_seed": [
+          {
+            "seed": 901,
+            "score": 0.018777800162222323
+          },
+          {
+            "seed": 902,
+            "score": 0.02056204699837756
+          },
+          {
+            "seed": 903,
+            "score": 0.1324837689233039
+          }
+        ],
+        "mean_native_score": 0.05727453869463459
+      }
+    }
+  },
+  "no_grid_extension": true
+}

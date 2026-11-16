@@ -1,0 +1,1159 @@
+\documentclass[UTF8,a4paper,11pt,fontset=none]{ctexart}
+% Bundled TrueType CJK fonts are compatible with the built-in PDF preview.
+\setCJKmainfont[AutoFakeBold=2,ItalicFont=gkai00mp.ttf]{gbsn00lp.ttf}
+\setCJKsansfont[AutoFakeBold=2]{gbsn00lp.ttf}
+\setCJKmonofont{gbsn00lp.ttf}
+\usepackage[margin=21mm,headheight=15pt,headsep=7mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,enumitem,xcolor,fancyhdr,lastpage,xurl,placeins}
+\usepackage{graphicx,tikz,pgfplots,pgfplotstable}
+\usetikzlibrary{arrows.meta,positioning}
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{plotmarks}
+\pgfplotsset{compat=1.18}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\definecolor{ink}{HTML}{173B5B}
+\definecolor{plotB}{HTML}{426B9A}
+\definecolor{plotQ}{HTML}{B57231}
+\definecolor{plotP}{HTML}{278675}
+\linespread{1.06}\setlength{\parskip}{3pt}\setlength{\emergencystretch}{3em}
+\setlist{leftmargin=1.8em,itemsep=1pt,topsep=3pt}
+\ctexset{section={format=\Large\sffamily\bfseries\color{ink},beforeskip=10pt,afterskip=4pt},
+subsection={format=\normalsize\sffamily\bfseries\color{ink},beforeskip=7pt,afterskip=3pt}}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small 异构无人机群的统一密度协同控制}
+\fancyhead[R]{\small 异构群体协同与受限执行}\fancyfoot[C]{\small\thepage\ / \pageref*{LastPage}}
+\renewcommand{\headrulewidth}{.3pt}\raggedbottom
+\setlength{\textfloatsep}{10pt}\setlength{\floatsep}{9pt}
+\newcommand{\R}{\mathbb R}\newcommand{\KL}{\operatorname{KL}}
+\newcommand{\diag}{\operatorname{diag}}\newcommand{\col}{\operatorname{col}}
+\newcommand{\capv}{\operatorname{cap}}\newcommand{\dd}{\,\mathrm dx}
+\newtheorem{proposition}{命题}\newtheorem{lemma}{引理}
+\hypersetup{pdftitle={基于密度反馈的异构无人机群统一协同控制}}
+\title{\bfseries\color{ink}基于密度反馈的异构无人机群统一协同控制}
+\author{}\date{}
+
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\method}{所提方法}
+\setcounter{topnumber}{3}\setcounter{bottomnumber}{2}\setcounter{totalnumber}{5}
+\renewcommand{\topfraction}{.9}\renewcommand{\bottomfraction}{.8}
+\renewcommand{\textfraction}{.08}\renewcommand{\floatpagefraction}{.75}
+
+
+
+\begin{document}
+\maketitle\vspace{-2em}
+\begin{abstract}
+多角色异构无人机群需要在不同空间尺度与执行能力下协调群级运动和内部部署。
+本文以偏微分密度概率模板描述移动群体目标，以角色相对熵和群间密度偏差耦合构造统一协同控制，
+将密度梯度分解为群均值与中心化形状反馈，并通过加权投影分别调节公共和相对运动。
+速度参考经采样保持、合成限速和基于制动轨迹的安全筛选后，输入异构内环。
+对满足正则条件的名义密度输运，建立能量耗散与相对熵稳定性，并刻画有限成员反馈的计算近似与实际执行偏差对任务能量和群间编队误差的作用。
+在采用高斯部署目标和共同执行模型的配对仿真中，与代表性的编队控制和密度控制方法相比，
+本文方法的全程归一化密度平方误差分别降低41.6\%和11.2\%，
+相较于后者，全程群心误差与群间编队误差的均方根分别降低30.5\%和51.6\%。
+该方法将各角色的空间分布需求转化为相互协调的速度参考，为不同机动能力无人机群的协同部署提供统一控制方式。
+
+\end{abstract}
+\noindent\textbf{关键词：}异构无人机集群；密度控制；群间协同；群均值投影；受限执行
+
+\section{引言}
+多角色异构无人机群的协同部署需要同时组织各群的位置、内部空间分布及群间相对关系。
+随着任务参考移动，各群既要实现各自的部署形状与尺度，又要协调运动以维持整体布局。
+不同平台的响应速度和机动能力使相同运动要求产生不同执行偏差，群内分布调整也会改变个体速度与机间距离。
+因此，控制器需要协调群级运动与内部部署，并将这些要求转化为各群能够执行的速度参考。
+
+将上述部署需求转化为运动反馈，首先需要选择任务的表示方式。个体编队与输出协同通常以成员目标及相对误差组织群体运动。
+将个体跟踪与邻居误差耦合，可以在跟随参考的同时协调成员间的运动关系\cite{ren2008}；
+针对动力学参数不同的无人机，分布式鲁棒反馈进一步处理平台异构性与外部扰动\cite{imran2024}。
+对于以部署范围和内部空间分布为目标的群体任务，密度模型则直接以分布描述所需的群体状态。
+
+密度反馈通过分布演化方程将宏观部署目标与个体运动联系起来。
+已有速度场方法利用核密度估计（kernel density estimation, KDE）构造速度反馈，使密度误差按热方程演化\cite{eren2017}；
+核梯度流通过分布差异生成粒子运动，提供了直接匹配目标分布的另一途径\cite{arbel2019}。
+当控制器使用估计密度及其梯度时，估计与运动形成反馈互联，相应研究已分析这种互联的稳定性\cite{zheng2022feedback}。
+
+针对群体相互作用，多物种密度输运将群体耦合纳入起终分布之间的有限时域优化\cite{chen2024}，
+反步平均场控制则将密度反馈衔接到异构高阶随机系统\cite{zheng2022backstep}。
+在梯度流结构方面，协方差预条件以及基于当前均值、协方差的标准化，为组织群体矩与分布形状提供了相应工具\cite{garbuno2020,burger2025}。
+
+这些研究为密度耦合、异构动力学衔接以及均值与形状调节提供了不同工具。
+本文关注任务给定角色尺度与固定目标模板下的移动部署：各群需要跟踪自己的分布目标，同时维持规定的物理相对布局。
+相应设计问题是如何将角色坐标中的分布偏差与物理群级运动组织为持续反馈，并衔接具有不同响应和能力约束的速度执行端。
+
+为此，本文在各角色的目标匹配之外，耦合相邻角色相对各自模板的密度偏差。
+各群达到各自模板时，耦合项同时为零，使协同反馈与角色之间的目标形状差异相容。
+有限成员分布采用固定带宽的高斯KDE表示，目标形状由各角色的光滑模板独立规定。
+按任务梯度的群均值与中心化部分组织群级平移和群内形状调节，
+再通过加权投影分别设置公共与相对运动的调节强度。
+生成的速度参考经采样保持和能力限幅后，进入与名义反馈分层的安全模块\cite{wang2016hetero,chen2021backup}；
+该模块检验候选指令及其后备制动轨迹，将通过间距检验的速度参考输入异构内环。
+
+本文的主要贡献为：
+\begin{enumerate}
+\item 构造面向不同固定角色密度模板及移动参考的统一协同反馈，将各群的目标匹配与密度偏差耦合连接到群级运动和群内形状调节。
+在同一任务能量下分别调节公共与相对群级反馈，群均值校正建立密度查询与群级参考之间的对应关系。
+\item 在正则解条件下建立名义密度反馈的能量耗散与相对熵稳定性，
+刻画有限成员计算近似及执行偏差对任务能量的影响，
+并在包含目标形状影响的合成驱动有界时给出群间编队误差响应界。
+\end{enumerate}
+通过高斯部署目标下的外部算法配对比较，评价控制实现的联合性能及其安全执行与计算代价。
+
+\section{任务描述与异构动力学模型}
+\subsection{角色任务与协同关系}
+考虑由$M$个角色群组成的无人机系统。群$i$的成员集合固定为$\mathcal I_i$，含$N_i$架无人机，
+总数$N=\sum_iN_i$。成员$k\in\mathcal I_i$在世界坐标中的位置和实际速度分别为$r_{ik},v_{ik}\in\R^3$。
+同群成员共用一组响应与能力参数，不同群的参数可不同；各群的角色任务由移动参考、空间尺度和目标分布共同规定。
+
+上层给定至少绝对连续的参考位置$q_i(t)$及其速度$\dot q_i(t)$。
+用固定可逆矩阵$S_i$规定角色坐标到世界坐标的尺度与方向，用固定概率密度$\psi_i(z)$规定角色内部的目标形状。
+各角色可采用不同模板，目标密度在某一区域上的积分规定期望分配到该区域的成员比例。
+目标密度、样本群心和群心跟踪误差为
+\begin{equation}
+\Pi_i(x,t)=\frac{\psi_i(S_i^{-1}(x-q_i(t)))}{|\det S_i|},\qquad
+m_i=\frac1{N_i}\sum_{k\in\mathcal I_i}r_{ik},\qquad a_i=m_i-q_i .
+\label{eq:target}
+\end{equation}
+其中$x\in\R^3$为空间位置，$S_i$具有长度单位，模板坐标$z$无量纲。
+共同角色坐标中的同一$z$表示任务约定的相对位置，在群$i$中对应物理位置$x=q_i+S_i z$。
+各群的分布偏差按这一对应关系比较，物理群间布局由参考相对位置规定。
+$a_i$衡量角色位置的偏差，成员相对群心的空间分布描述群内形状。
+取严格正、二阶连续可微的模板，满足
+\begin{equation}
+\int\psi_i\,\mathrm dz=1,\qquad
+\int z\psi_i\,\mathrm dz=0,\qquad
+\int\|z\|^2\psi_i\,\mathrm dz<\infty .
+\label{eq:template-moments}
+\end{equation}
+记$\Gamma_i=\int zz^\top\psi_i\,\mathrm dz$，物理目标协方差为$\Sigma_i=S_i\Gamma_iS_i^\top$。
+零均值模板使$q_i$恰为目标群心；模板协方差为$I$时，$\Sigma_i=S_iS_i^\top$。
+模板还满足附录\ref{app:template-conditions}给出的增长条件，以保证有限KDE反馈所需的积分和求导有定义。
+本文主模型采用全空间正的平滑密度，$q_i$移动而$S_i,\psi_i$固定。
+
+各群跟踪自身目标的同时，还需维持角色之间规定的相对布局。
+以固定无向任务图$\mathcal G=(\{1,\ldots,M\},E)$表示这些关系：节点$i$对应角色群$i$，
+边$\{i,j\}\in E$标识需要协调的角色对。
+对每条任务边，期望的群心相对位置为$q_i-q_j$，实际相对位置为$m_i-m_j$，两者之差为
+\[
+a_i-a_j=(m_i-m_j)-(q_i-q_j).
+\]
+这一群间编队误差与各群自身的群心跟踪误差共同刻画群级协同状态。
+任务边的对称非负权重$\gamma_{ij}=\gamma_{ji}\ge0$用于第三章的密度偏差耦合；
+非边及对角权重为0，相应能量求和中每条无向边计一次。
+
+\subsection{连续密度与有限成员表示}
+在无障碍全空间$\R^3$中，以概率密度$p_i(x,t)$描述群$i$的名义连续部署。
+$p_i$与目标密度$\Pi_i$的质量均为1，密度规定空间分配，人数由$N_i$单独表示。
+给定理想速度场$u_i(x,t)$，密度输运满足连续性偏微分方程（partial differential equation, PDE）
+\begin{equation}
+\partial_t p_i+\nabla\cdot(p_i u_i)=0.
+\label{eq:pde}
+\end{equation}
+$u_i$用于描述名义密度的运动；实际成员的速度$v_{ik}$由下一小节的动力学产生。
+
+有限成员的空间分布固定采用高斯核构造KDE。群$i$使用固定物理带宽$\beta_i>0$：
+\begin{equation}
+\widehat p_i(x)=\frac1{N_i}\sum_{k\in\mathcal I_i}G_{\beta_i}(x-r_{ik}),\quad
+G_\beta(y)=\frac{\exp[-\|y\|^2/(2\beta^2)]}{(2\pi\beta^2)^{3/2}}.
+\label{eq:kde}
+\end{equation}
+$\widehat p_i$在全空间为正且质量为1，$\beta_i$具有长度单位并确定平滑尺度。
+式\eqref{eq:kde}中的高斯性属于单个平滑核，其有限混合可呈现非高斯分布,
+目标形状由满足前述条件的$\psi_i$独立规定,
+后续有限成员反馈及其分析均沿用这一固定高斯核表示。
+连续描述中的群心为密度的一阶矩$\int_{\R^3}xp_i(x,t)\dd$；有限成员反馈使用式\eqref{eq:target}的样本群心。
+由于该核归一化且均值为零，KDE的一阶矩恰好满足
+\[
+\int_{\R^3}x\widehat p_i(x,t)\dd
+=\frac1{N_i}\sum_{k\in\mathcal I_i}r_{ik}(t)=m_i(t).
+\]
+这一关系使KDE表示与样本群心一致。$p_i$的演化用于名义连续分析，
+$\widehat p_i$随实际成员位置更新，用于有限成员反馈及其误差分析。
+
+\subsection{异构速度动力学与控制目标}
+平台以位置和速度为状态，通过速度参考驱动运动。
+群$i$的响应时间$\tau_i$、速度界$V_i$和加速度界$A_i^{\max}$均为正，且在任务期间固定。
+较小的$\tau_i$表示较快的速度响应，$V_i$和$A_i^{\max}$分别规定三维速度与加速度的合成幅值上限。
+
+记$c_{ik}$为经限幅和安全筛选后实际接受的世界坐标速度参考。连续速度响应代理为
+$\dot r_{ik}=v_{ik}$、
+$\dot v_{ik}=\operatorname{sat}_{A_i^{\max}}((c_{ik}-v_{ik})/\tau_i)$，
+其中$\operatorname{sat}_{A}(y)=y\min\{1,A/\|y\|\}$，$\operatorname{sat}_{A}(0)=0$。
+该饱和按向量模缩放，保持请求加速度的方向。
+
+数值执行和安全预测采用相同的离散更新。令$t_n=nh$，执行步长满足$0<h\le\min_i\tau_i$，
+以$c_{ik,n}$表示第$n$步接受的参考，则
+\begin{equation}
+\begin{aligned}
+\alpha_{ik,n}&=\min\left\{h/\tau_i,\ A_i^{\max}h/\|c_{ik,n}-v_{ik,n}\|\right\},\\
+v_{ik,n+1}&=v_{ik,n}+\alpha_{ik,n}(c_{ik,n}-v_{ik,n}),\\
+r_{ik,n+1}&=r_{ik,n}+\tfrac h2(v_{ik,n}+v_{ik,n+1}).
+\end{aligned}
+\label{eq:step}
+\end{equation}
+零速度差按极限处理。每个执行区间内采用常加速度、线性速度及二次位置插值，
+其端点满足式\eqref{eq:step}；安全预测使用同一段内轨迹。
+取初速$\|v_{ik,0}\|\le V_i$，各步接受参考满足$\|c_{ik,n}\|\le V_i$。
+在上述步长条件下，速度更新为凸组合，因而保持速度界，且每步速度变化不超过$A_i^{\max}h$。
+
+名义反馈以周期$T_c$更新，安全筛选与状态更新以步长$h$进行，取$T_c/h\in\mathbb N_+$。
+在名义更新时间，控制模块依据实际状态及任务参考计算名义速度$c^{\rm nom}_{ik}$，
+并将其保存为$c^{\rm hold}_{ik}$，保持至下一次名义更新。
+在每个执行时刻，安全模块根据当前实际位置、速度和保持参考重新生成并检验限幅候选，
+将首个通过的参考作为$c_{ik,n}$输入式\eqref{eq:step}。
+因此，名义参考在$T_c$内保持，而实际接受输入可随安全筛选在各执行时刻更新。
+
+本文的控制问题是：给定集中式状态信息、角色参考、目标模板与尺度、任务图及各群能力参数，
+设计统一的速度反馈，协调角色位置、群间相对布局与群内空间分布，
+并通过能力限幅和制动轨迹安全检验处理逐机间距要求。
+第三章给出由密度反馈生成名义速度及接入执行端的具体控制结构。
+
+\section{统一密度协同控制设计与分析}\label{sec:control}
+本文控制器根据各角色的成员状态、移动参考和目标分布生成速度指令，整体流程如图\ref{fig:architecture}所示。
+成员位置用于构造密度反馈，并将反馈分为群均值与群内差异。
+名义速度由参考运动、群级协同修正和去均值的形状修正共同组成：参考运动跟随角色目标的移动，
+群级修正协调各群的公共运动与相对关系，形状修正调节成员在群内的空间分布。
+
+名义参考$c^{\rm nom}$按$T_c$周期更新并保存为保持参考$c^{\rm hold}$。
+安全模块在每个执行时刻利用当前位置、实际速度和能力参数，对保持参考限幅并检验候选轨迹，
+将通过检验的接受输入$c_n$送入异构内环。更新后的位置用于下一次密度反馈，位置与实际速度共同用于下一执行时刻的安全检验。
+
+\begin{figure}[!htbp]\centering
+\begin{tikzpicture}[node distance=5mm and 6mm,
+box/.style={draw=ink!60,rounded corners=1.5pt,fill=ink!3,
+align=center,font=\small,text width=43mm,minimum height=13mm},
+arr/.style={-{Latex[length=2mm]},thick,draw=ink!70}]
+\node[box] (input) {移动参考与分组位置\\$q,\dot q,r$};
+\node[box,right=of input] (density) {KDE查询与群均值校正\\目标梯度及图反馈};
+\node[box,right=of density] (law) {群级投影与形状反馈\\生成$c^{\rm nom}$};
+\node[box,below=9mm of law] (hold) {名义参考更新与保持\\$c^{\rm hold}$，周期$T_c$};
+\node[box,left=of hold] (safe) {限幅与安全候选检验\\接受输入$c_n$\\更新周期$h$};
+\node[box,left=of safe] (plant) {异构速度响应\\实际状态$r,v$\\执行步长$h$};
+\draw[arr] (input)--(density);\draw[arr] (density)--(law);
+\draw[arr] (law)--(hold);\draw[arr] (hold)--(safe);
+\draw[arr] (safe)--(plant);
+\draw[arr] (plant.west)--++(-5mm,0)|-(input.west);
+\draw[arr] (plant.south)--++(0,-5mm)-|node[pos=.28,below,font=\scriptsize]{当前位置与实际速度}(safe.south);
+\end{tikzpicture}
+\caption{统一密度控制的集中式信息流程。模板$\psi_i$、角色变换$S_i$和任务图$\mathcal G$为密度反馈提供固定任务配置；成员位置与移动参考在各名义更新时间输入。
+名义参考按$T_c$更新并保持；限幅、候选检验和执行按$h$推进。
+安全模块使用当前位置与实际速度，以各群能力参数预测执行段与制动后备。}
+\label{fig:architecture}
+\end{figure}
+\FloatBarrier
+
+\subsection{任务能量与密度反馈}\label{sec:task-energy}\label{sec:finite-feedback}
+不同角色需要保持各自的目标形状，同时协调相对目标的部署偏差。
+为在任务规定的尺度下比较这些偏差，以参考$q_i$为原点，将物理密度变换到角色坐标：
+
+\begin{equation}
+z=S_i^{-1}(x-q_i),\qquad
+\rho_i(z)=|\det S_i|p_i(q_i+S_i z),\qquad \eta_i=\rho_i-\psi_i .
+\label{eq:role-coordinates}
+\end{equation}
+以规定参考$q_i$为原点，使群心平移偏差也进入$\eta_i$；$S_i,\psi_i$分别保留角色尺度和目标形状。
+
+采用固定高斯图核$K_0(z)=\exp(-\|z\|^2/(2\ell_0^2))$度量密度偏差，
+将相对熵（Kullback--Leibler divergence, KL）与任务边上的偏差耦合组成任务能量
+
+\begin{equation}
+\mathcal F_T=D\sum_i\omega_i\KL(\rho_i\Vert\psi_i)
++\frac\kappa2\sum_{\{i,j\}\in E}\gamma_{ij}\|\eta_i-\eta_j\|_{K_0}^2,
+\qquad D,\omega_i>0,\quad\kappa\ge0,\quad\ell_0>0.
+\label{eq:energy}
+\end{equation}
+其中，KL散度定义为
+\[
+\KL(\rho_i\Vert\psi_i)
+=\int_{\R^3}\rho_i(z)\log\frac{\rho_i(z)}{\psi_i(z)}\,\mathrm dz .
+\]
+$\log$为自然对数，$\rho_i(z)=0$处的被积函数按连续延拓取0。
+图项中的$\|\eta\|_{K_0}^2=\iint K_0(z-z')\,\mathrm d\eta(z)\mathrm d\eta(z')$
+为有符号测度的核均值嵌入范数的平方。
+式\eqref{eq:energy}以KL项锚定各群自己的目标，以图项协调相邻角色的分布偏差。
+各群达到各自模板时，两项同时为零；若所有模板相同，则$\eta_i-\eta_j=\rho_i-\rho_j$。
+这一耦合保留了不同角色的目标形状，物理群间布局仍由第二章的$a_i-a_j$评价。
+
+$\omega_i$是固定正任务权重，$D$与$\kappa$分别设置目标匹配和密度耦合的尺度；
+$z,\omega_i,\ell_0$无量纲，$\mathcal F_T,D,\kappa$的单位为m$^2$/s。
+平台能力由$\tau_i,V_i,A_i^{\max}$另行描述。
+为将任务能量转化为速度反馈，记$*$为角色坐标上的卷积，计算变分梯度
+
+\begin{equation}
+\begin{aligned}
+\Phi_i&=D\omega_i\left(\log\frac{\rho_i}{\psi_i}+1\right)
++\kappa\sum_j\gamma_{ij}K_0*(\eta_i-\eta_j),\\
+\xi_i(x)&=\omega_i^{-1}S_i^{-T}\nabla_z\Phi_i\big(S_i^{-1}(x-q_i)\big).
+\end{aligned}
+\label{eq:variational-gradient}
+\end{equation}
+$\Phi_i=\delta\mathcal F_T/\delta\rho_i$，经$S_i^{-T}$变换后的$\xi_i$具有物理速度单位。
+不同目标产生的$K_0*(\psi_i-\psi_j)$保留在图反馈中。
+该梯度给出连续密度的反馈方向。
+
+在线控制沿用式\eqref{eq:kde}的固定高斯KDE。
+将$\widehat\rho_i(z)=|\det S_i|\widehat p_i(q_i+S_i z)$代入式\eqref{eq:energy}，得到有限位置上的任务能量$F_N(r,q)$。
+其精确粒子梯度记为
+$g_{ik}=(N_i/\omega_i)\partial_{r_{ik}}F_N=g^S_{ik}+g^G_{ik}$，
+其中$S,G$分别表示自KL项与密度图项，单位均为m/s。
+
+粒子处的密度对数梯度（score）查询可以减少自项卷积计算，但其样本平均一般不同于精确梯度均值。
+利用固定KDE自熵的平移不变性，以上横线表示群内样本平均，有
+
+\begin{equation}
+\begin{aligned}
+\bar g_i^S&=-D\int\widehat p_i(x)\nabla_x\log\Pi_i(x,t)\,\mathrm dx,\\
+h_i&=\omega_i\bar g_i=h_i^S+h_i^G,\qquad
+h_i^S=\omega_i\bar g_i^S,\quad h_i^G=\omega_i\bar g_i^G.
+\end{aligned}
+\label{eq:mean-general}
+\end{equation}
+为保留粒子查询中的群内差异，同时以式\eqref{eq:mean-general}校正群均值，
+对自项查询先减去样本平均，再补回精确自项均值并叠加图梯度。
+KDE查询包含本粒子自项，分母为正；图梯度由固定核重叠与目标卷积计算，
+共同模板下的目标卷积差逐边抵消，具体表达见附录\ref{app:graph-query}。
+实际计算按所选模板对均值积分和图梯度作解析或数值求值，所得在线梯度统一记为$\widetilde g$。
+由此得到用于控制的密度反馈：
+
+\begin{equation}
+\begin{aligned}
+s_{ik}&=D[\nabla\log\widehat p_i(r_{ik})-\nabla_x\log\Pi_i(r_{ik},t)],\\
+\widetilde g_{ik}&=s_{ik}-\bar s_i+\bar g_i^S+g^G_{ik}.
+\end{aligned}
+\label{eq:query}
+\end{equation}
+精确求值时，$\overline{\widetilde g}_i=\bar g_i$，查询近似误差的群均值为零，形状方向上的近似仍保留。
+实现中直接由所得反馈计算加权群均值
+
+\begin{equation}
+h_i^{\rm num}=\omega_i\overline{\widetilde g}_i .
+\label{eq:online-mean}
+\end{equation}
+精确求值时$h_i^{\rm num}=h_i$。式\eqref{eq:query}和\eqref{eq:online-mean}向下一节提供两个控制量：
+$h_i^{\rm num}$用于群级运动分配，$\widetilde g_{ik}-\overline{\widetilde g}_i$用于群内形状调节。
+
+\subsection{群级协同控制设计}\label{sec:velocity-law}
+将上一节的密度反馈转化为速度指令，需要分别组织群均值运动与群内形状修正。
+选取单位为s$^{-1}$的固定正定任务度量$K_i$，将各角色的均值梯度换算为物理位移尺度，并提取公共分量：
+
+\begin{equation}
+\chi_i=K_i^{-1}h_i^{\rm num},\qquad
+\chi_*=\left(\sum_iK_i\right)^{-1}\sum_iK_i\chi_i .
+\label{eq:displacement}
+\end{equation}
+可取$K_i=D\omega_iS_i^{-T}S_i^{-1}$，将角色尺度与任务权重纳入梯度换算；
+$\chi_i$具有长度单位，$\chi_*$为按任务度量加权的公共分量。
+
+以$\nu_i$表示群均值速度参考，在参考运动$\dot q_i$上叠加公共与相对修正。
+取$k_c>0,k_f\ge0$，两者单位为s$^{-1}$，按以下方式分配群级运动：
+
+\begin{equation}
+\nu_i-\dot q_i=-k_c\chi_*-(k_c+k_f)(\chi_i-\chi_*),\qquad
+\sum_iK_i(\chi_i-\chi_*)=0,
+\label{eq:mode-interpretation}
+\end{equation}
+公共项$-k_c\chi_*$对所有群施加相同的物理速度修正，
+相对项$-(k_c+k_f)(\chi_i-\chi_*)$调节各群修正之间的差异。
+因此，$k_c$控制公共分量，$k_f$增加相对分量的反馈强度。
+在同一状态下，这两个增益不改变去均值形状指令；闭环中的群级运动仍会经限幅、安全改写和位置变化影响后续形状反馈。
+
+群内形状采用上一节得到的去均值梯度调节，其样本平均为零，因而保持群均值参考$\nu_i$。
+图反馈通过$\widetilde g$及其均值同时参与群级运动与形状调节。
+将两部分组合，得到本文的完整名义速度控制律：
+
+\begin{equation}
+\boxed{\nu_i=\dot q_i-k_c\chi_i-k_f(\chi_i-\chi_*),\qquad
+c^{\rm nom}_{ik}=\nu_i-(\widetilde g_{ik}-\overline{\widetilde g}_i).}
+\label{eq:command}
+\end{equation}
+每次名义更新先由式\eqref{eq:displacement}计算$\chi_i,\chi_*$，再由式\eqref{eq:command}生成逐机参考，
+其群内平均恰为$\nu_i$。所得$c^{\rm nom}$保存为保持参考，并交由下一节确定实际接受输入。
+
+\subsection{速度参考的安全执行}\label{sec:safe-execution}
+安全模块以保持参考为基础生成有序候选，依据全部同群与跨群机对的预测轨迹确定接受输入。
+以全局编号$k,l$表示无人机，能力参数取自所属群。
+令$\capv_k(c)=c\min\{1,V_k/\|c\|\}$，$\capv_k(0)=0$，
+将保持参考限幅为$n_k=\capv_k(c_k^{\rm hold})$。
+根据模型间距$d_{\rm safe}>0$、分离扩张量$\delta_s>0$、当前距离及零参考制动路程，
+构造附录\ref{app:separation}中的分离场$s_k^{\rm sep}$，得到有序候选
+
+\begin{equation}
+c_k^\lambda=\capv_k(\lambda n_k+s_k^{\rm sep}),\quad
+\lambda\in\Lambda,
+\label{eq:candidates}
+\end{equation}
+$\Lambda\subset[0,1]$按降序排列并包含1和0，列表末尾另加纯零参考。
+式\eqref{eq:candidates}逐步缩小任务运动，同时保留分离作用：首候选已含分离场，
+$\lambda=0$的候选也区别于末尾的纯零制动参考。
+
+候选需通过当前执行段及下一状态的完整零参考制动检验。
+后备在$T_b/h\in\mathbb N_+$的窗口内逐段展开，再以剩余路程界覆盖无限尾部，详见附录\ref{app:braking}。
+预测、执行及参数一致时，通过检验并原样执行的候选满足相应模型间距条件；持续执行还要求每步存在可认证候选。
+密度反馈使用群内及任务相邻群间的核计算，群级投影另需汇总$\sum_i h_i^{\rm num}$和$\sum_iK_i$。
+直接粒子核和为$O(N^2)$运算，群级分配增加小矩阵运算与$O(M)$汇总；均值积分和目标卷积的成本由模板及求值方式决定。
+安全检验覆盖全部$N(N-1)/2$机对，远对可由解析路程界筛除。
+第四章高斯目标的具体求值见附录\ref{app:gaussian-implementation}。
+
+上述候选构造与检验通过算法1确定实际接受输入。每个执行时刻选取首个通过检验的候选；
+全部候选失败时返回认证失败，接受输入则原样送入动力学更新。
+
+
+\begin{center}\fbox{\begin{minipage}{.94\linewidth}\small
+\textbf{算法1：统一协同控制的单步执行}\\
+\textbf{输入：}当前$r_n,v_n$，角色、任务和能力参数，规定$q,\dot q$及上一执行步保留的$c^{\rm hold}$。
+\begin{enumerate}
+\item 到达名义更新时间时，按式\eqref{eq:query}及所选模板计算梯度$\widetilde g$，
+由式\eqref{eq:online-mean}求加权群均值$h^{\rm num}$。
+由式\eqref{eq:command}生成并保存$c^{\rm hold}$；其余执行时刻沿用保持参考。
+\item 检查当前速度是否满足$\|v_k\|\le V_k$；超速时返回接口错误。
+对保持参考限幅，按当前状态计算分离场，生成式\eqref{eq:candidates}的有序候选及末尾纯零参考。
+\item 依次检验全部机对的当前段与完整制动后备，选取首个通过的$c_n$。
+全部候选失败时返回认证失败，本步不执行未经认证的输入。
+\item 将接受输入$c_n$原样送入式\eqref{eq:step}，更新状态并保存参考改写和认证记录。
+\end{enumerate}
+\textbf{输出：}下一状态$r_{n+1},v_{n+1}$、保持参考及本步认证记录；失败时输出相应状态。
+\end{minipage}}\end{center}
+
+\subsection{稳定性与执行误差分析}\label{sec:nominal-properties}\label{sec:execution-errors}\label{sec:formation-response}
+先由群级控制律建立名义密度的稳定性，再考察有限成员在实际执行下的能量变化和群间响应。
+为分析式\eqref{eq:command}的群级反馈，令$K=\diag(K_i)$、$T=\mathbf1_M\otimes I_3$，
+定义相对分量投影$P_K$及群级反馈矩阵$L_c$：
+
+\begin{equation}
+P_K=I-T(T^\top KT)^{-1}T^\top K,\qquad
+L_c=(k_cI+k_fP_K)K^{-1}.
+\label{eq:mobility}
+\end{equation}
+对堆叠位移$\chi=\col(\chi_i)$，有$P_K\chi=\col(\chi_i-\chi_*)$，
+即在$K$加权内积下取出相对公共位移的部分。
+令$\nu=\col(\nu_i)$、$\dot q=\col(\dot q_i)$、$\mathbf h^{\rm num}=\col(h_i^{\rm num})$，
+群均值律写为$\nu-\dot q=-L_c\mathbf h^{\rm num}$。
+$L_c$将均值梯度换算为群级速度修正，该矩阵对称正定且无量纲。
+
+在理想连续密度层面，定义$\bar\xi_i=\int p_i\xi_i\,\mathrm dx$、$h_i=\omega_i\bar\xi_i$、$\mathbf h=\col(h_i)$，
+取理想场$u_i=\dot q_i-(L_c\mathbf h)_i-(\xi_i-\bar\xi_i)$。
+此处使用连续密度的精确均值，并以该$h_i$计算式\eqref{eq:displacement}中的$\chi_i,\chi_*$。
+固定模板下，连续解满足附录\ref{app:nominal-conditions}的正则性、可积性及通量条件时，几乎处处有
+
+\begin{equation}
+\dot{\mathcal F}_T=-\mathbf h^\top L_c\mathbf h
+-\sum_i\omega_i\int p_i\|\xi_i-\bar\xi_i\|^2\dd .
+\label{eq:pde-dissipation}
+\end{equation}
+右侧第一项来自群均值运动，第二项来自去均值的群内形状运动。
+由$L_c\succ0$及$\omega_i>0$，两项均非正，故统一任务能量$\mathcal F_T$不增。
+
+为进一步说明两个群级增益的作用，利用式\eqref{eq:mode-interpretation}的加权零均值关系，将群级耗散分成公共与相对两部分：
+
+\begin{equation}
+\begin{aligned}
+\mathbf h^\top L_c\mathbf h
+={}&k_c\chi_*^\top\left(\sum_iK_i\right)\chi_*\\
+&+(k_c+k_f)\sum_i(\chi_i-\chi_*)^\top K_i(\chi_i-\chi_*).
+\end{aligned}
+\label{eq:positive-mean}
+\end{equation}
+第一项对应各群共有的位移分量，权重为$k_c$；第二项对应各群相对公共分量的差异，权重为$k_c+k_f$。
+因此，在同一密度状态下，增大$k_f$增加相对分量的名义耗散，而公共分量的权重保持不变；
+$k_c>0$则使任一非零群级梯度产生严格正的耗散。
+上述耗散恒等式的完整条件与证明见附录\ref{app:nominal-conditions}。
+
+能量不增进一步给出以相对熵衡量的目标偏差界。定义总相对熵及由任务权重和图耦合确定的常数
+\[
+\mathcal H(t)=\sum_i\omega_i\KL(\rho_i(t)\Vert\psi_i),\qquad
+C_H=1+\frac{2\kappa}{D}\max_i\frac{\sum_j\gamma_{ij}}{\omega_i}.
+\]
+各角色达到自身目标时，$\mathcal H=0$，且理想速度场退化为目标平移速度$\dot q_i$。
+利用高斯图核的有界性，可将总任务能量夹在$D\mathcal H$与$DC_H\mathcal H$之间；
+再结合式\eqref{eq:pde-dissipation}，得到下述稳定性结论，完整证明见附录\ref{app:nominal-conditions}。
+
+\begin{proposition}[名义密度反馈的相对熵稳定性]\label{prop:entropy-stability}
+设目标模板、角色变换及任务参数固定，$K_i\succ0$、$k_c>0$、$k_f\ge0$。
+在任一存在上述理想场正则概率解、并满足附录\ref{app:nominal-conditions}条件的区间$[t_0,T_f]$上，有
+\begin{equation}
+\begin{aligned}
+\mathcal H(t)&\le C_H\mathcal H(t_0),\\
+\sum_i\omega_i\|\rho_i(t)-\psi_i\|_{L^1(\R^3)}^2
+&\le 2C_H\mathcal H(t_0),\qquad t\in[t_0,T_f].
+\end{aligned}
+\label{eq:entropy-stability}
+\end{equation}
+因此，对任意$\varepsilon_H>0$，取$\delta_H=\varepsilon_H/C_H$，
+初始条件$\mathcal H(t_0)<\delta_H$可保证该区间内$\mathcal H(t)<\varepsilon_H$。
+\end{proposition}
+
+对于有限成员，回到第\ref{sec:finite-feedback}节定义的KDE能量$F_N$、精确粒子梯度$g$及其加权群均值$h_i=\omega_i\bar g_i$，考察数值求值与实际执行对能量变化的影响。
+令$c^{\rm fresh}$为按当前状态与任务参考、沿用同一梯度求值规则连续重算式\eqref{eq:command}所得的分析参考，
+并定义$d=v-c^{\rm fresh}$。
+在线控制仍执行算法1；$d$汇集内环滞后、加速度饱和、采样保持、限速及安全改写造成的执行偏差。
+
+梯度求值误差也按群均值和中心化部分区分：
+
+\begin{equation}
+\begin{aligned}
+h_i^{\rm num}&=\omega_i\overline{\widetilde g}_i=h_i+\delta h_i,\qquad
+g^\perp_{ik}=g_{ik}-\bar g_i,\\
+e^{Q,\perp}_{ik}&=(\widetilde g_{ik}-\overline{\widetilde g}_i)-g^\perp_{ik},
+\qquad\overline{e^{Q,\perp}}_i=0.
+\end{aligned}
+\label{eq:gradient-errors}
+\end{equation}
+$\delta h_i$记录均值积分及图梯度求值带来的均值误差，$e^{Q,\perp}$保留中心化后的梯度偏差。
+均值精确求值时$\delta h_i=0$，此时$e^{Q,\perp}=\widetilde g-g$。
+对有限KDE任务能量，令$\mathbf h=\col(h_i)$、$\delta\mathbf h=\col(\delta h_i)$，
+定义$\langle f,g\rangle_w=\sum_i(\omega_i/N_i)\sum_kf_{ik}\cdot g_{ik}$。
+沿式\eqref{eq:step}规定的分段二次位置插值，取$v=\dot r$。
+固定模板下，有限成员在实际执行中的任务能量变化由以下关系给出，几乎处处成立：
+
+\begin{equation}
+\begin{aligned}
+\dot F_N={}&-\mathbf h^\top L_c\mathbf h-\|g^\perp\|_w^2
+-\mathbf h^\top L_c\delta\mathbf h\\
+&-\langle g^\perp,e^{Q,\perp}\rangle_w+\langle g,d\rangle_w .
+\end{aligned}
+\label{eq:actual-supply}
+\end{equation}
+式\eqref{eq:actual-supply}的前两项为精确群级与形状反馈的耗散，后三项依次来自均值计算、中心化梯度近似及实际执行。
+这些偏差通过内积改变能量导数，作用取决于它们与任务梯度的方向关系；相同大小的偏差可以促进或抵消耗散。
+该能量关系的推导见附录\ref{app:interfaces}。
+
+上述能量关系刻画分布匹配的变化，角色间的物理布局则由样本群心误差$a_i$决定。
+为把密度反馈与这一物理量联系起来，将精确均值分解为所选线性位移项、自项均值的剩余作用与图反馈：
+
+\begin{equation}
+\begin{aligned}
+r_i^\psi&=h_i^S-K_i a_i,\qquad \mathbf h=Ka+\mathbf r^\psi+\mathbf h^G,\\
+a&=\col(a_i),\qquad \mathbf r^\psi=\col(r_i^\psi),\qquad\mathbf h^G=\col(h_i^G).
+\end{aligned}
+\label{eq:shape-drive}
+\end{equation}
+$r_i^\psi$表示自项均值与$K_i a_i$之间的差异。
+目标score非线性时，该项可随群内分布变化，因而群心位置相同也未必产生相同的群级修正。
+取任务图关联矩阵$C_B$，每行两端点分别为$+1,-1$，令$C=C_B\otimes I_3$、$e=Ca$。
+由$CP_K=C$及样本均值关系得到
+
+\begin{equation}
+\begin{aligned}
+\dot e&=-\alpha e+b,\qquad\alpha=k_c+k_f,\\
+b&=-\alpha CK^{-1}(\mathbf r^\psi+\mathbf h^G+\delta\mathbf h)+C\bar d,
+\qquad\bar d=\col(\bar d_i).
+\end{aligned}
+\label{eq:edge-response}
+\end{equation}
+其中$\bar d_i=N_i^{-1}\sum_kd_{ik}$。
+式\eqref{eq:edge-response}把群间响应写成衰减项与合成驱动：$\alpha=k_c+k_f$规定齐次部分的速率，
+自项均值的剩余作用、图反馈、均值求值误差及不同群的平均执行偏差共同进入$b$。
+对式\eqref{eq:edge-response}积分可得群间编队误差的条件响应界，推导见附录\ref{app:interfaces}。
+若在有限区间$[t_0,T_f]$上几乎处处满足$\|b(t)\|\le\varepsilon$，则
+
+\begin{equation}
+\|e(t)\|\le e^{-\alpha(t-t_0)}\|e(t_0)\|
++\frac\varepsilon\alpha\left(1-e^{-\alpha(t-t_0)}\right),\qquad t\in[t_0,T_f].
+\label{eq:conditional-bound}
+\end{equation}
+式\eqref{eq:conditional-bound}将初始布局偏差的衰减与合成驱动的累计影响分开。
+式\eqref{eq:entropy-stability}给出名义密度的稳定性，式\eqref{eq:actual-supply}和\eqref{eq:conditional-bound}分别刻画实际执行中的能量变化与群间响应，
+对应第四章对分布匹配、群间编队误差及执行代价的评价。
+
+\FloatBarrier
+\section{仿真验证}\label{sec:experiments}
+\subsection{工程任务与比较设置}
+通过灾后道路沿线推进与侧方作业点部署任务，考察异构群体在移动目标下的空间分布、角色位置及群间布局。
+三群分别承担前方侦察、中部中继支援和后方物资运送角色，共80架，任务图为$1$--$2$--$3$。
+各角色通过不同的目标位置、部署尺度和运动能力参与协同，评价对象为部署与运动响应。
+本章选取高斯目标$\Pi_i(x,t)=\mathcal N(x;q_i(t),\Sigma_i)$，其中$\mathcal N$表示给定均值和协方差的高斯概率密度。
+各角色采用共同标准高斯模板及$S_i=\Sigma_i^{1/2}$，解析实现见附录\ref{app:gaussian-implementation}。
+
+任务观测时长为120 s：0--40 s初始部署，40--50 s平滑加速，50--60 s匀速直线推进，
+60--100 s在推进中转向侧方作业区并调整角色布局，100--120 s保持转换后布局继续运动。
+目标协方差保持世界坐标方向；120 s时三群参考速度均为$(1.4,0,0)^\top$ m/s，观测截止不触发减速。
+图\ref{fig:mission}给出世界坐标路线及相对布局，主参考沿道路方向推进105 m；解析参考见附录\ref{app:external}。
+三群参考峰值速度分别为1.871、1.685、1.723 m/s，均低于对应速度界。
+\begin{figure}[htbp]\centering
+\includegraphics[width=.98\linewidth]{authoring_20261023_moving_task/figures/mission_geometry.png}
+\caption{三角色道路推进与侧方部署任务。左图为世界坐标中的规定角色中心轨迹，起点与观测截止位置分别标记；参考高度均为50 m。右图为40 s与120 s相对中继目标的布局，椭圆表示目标$xy$边缘Gaussian的$2\sigma$轮廓。120 s时各参考仍沿道路方向运动。}
+\label{fig:mission}\end{figure}
+
+表\ref{tab:platforms}给出各群的目标尺度和能力配置，
+其中$\sigma_i=(\sigma_{i1},\sigma_{i2},\sigma_{i3})$、$\Sigma_i=\diag(\sigma_i^2)$。
+物资运送群具有最大的响应时间以及最低的速度、加速度能力界。
+表\ref{tab:parameter-origin}列出控制和执行参数；这些参数与平台能力共同构成固定研究基准，
+角色权重规定各群在任务能量中的相对比例，平台能力由$\tau_i,V_i,A_i^{\max}$独立描述。
+带宽相对尺度及群级增益的时间尺度说明见附录\ref{app:external}。
+\begin{table}[htbp]\centering\small
+\caption{三角色研究基准的固定配置；各群内部使用相同能力参数。$\sigma_i,\beta_i$单位为m，$\tau_i$为s，
+$V_i$为m/s，$A_i^{\max}$为m/s$^2$，$\omega_i$无量纲。}\label{tab:platforms}
+\begin{tabular}{@{}lrrrrrr@{}}\toprule
+角色/$N_i$ &$\sigma_i$&$\beta_i$&$\tau_i$&$V_i$&$A_i^{\max}$&$\omega_i$\\\midrule
+侦察/36 & $(5,8,3)$&1.70&.4&3.0&2.0&$3/7$\\
+中继支援/24 & $(4,5,3)$&1.50&.6&2.5&1.5&1\\
+物资运送/20 & $(4,4,2.5)$&1.35&.8&2.0&1.0&$2/3$\\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[htbp]\centering\small
+\caption{固定控制与执行参数。角色协方差、KDE带宽和权重见表\ref{tab:platforms}。}
+\label{tab:parameter-origin}
+\begin{tabular}{@{}lclc@{}}\toprule
+参数&取值&参数&取值\\\midrule
+$D$ (m$^2$/s)&2.5&$\kappa$ (m$^2$/s)&10\\
+$(k_c,k_f)$ (s$^{-1}$)&$(.12,.08)$&$(\ell_0,\gamma_{ij})$&$(1,1)$\\
+$(T_c,h)$ (s)&$(.1,.02)$&密度与形状指标采样周期 (s)&.5\\
+$(d_{\rm safe},\delta_s)$ (m)&$(2,.6)$&$\epsilon_{\rm num}$ (m)&$10^{-7}$\\
+$T_b$ (s)&8&$\Lambda$&$\{1,1/2,\ldots,1/128,0\}$\\\bottomrule
+\end{tabular}\end{table}
+
+
+外部比较采用Ren--Sorensen编队速度律适配（RAS08）\cite{ren2008}和基于最大均值差异
+（maximum mean discrepancy, MMD）的确定性粒子流适配（MMD19）\cite{arbel2019}。
+RAS08以固定安全点集表达角色分布，经一次性Hungarian成员分配后，用个体点位误差及邻居误差耦合生成参考；
+MMD19直接对各角色的连续Gaussian目标计算核分布梯度，目标核期望采用解析积分。
+两者分别提供个体目标点和直接分布匹配的比较，适配公式见附录\ref{app:external}。
+
+所有方法共享任务、完整初态、平台能力、100 ms名义更新与20 ms安全执行时钟，以及同一合成限速和机间安全检验流程。
+本文方法参数固定；两个外部方法分别在3组独立校准初态上评价3档预登记增益，共18条校准轨迹，按各自原生任务误差选取增益。
+随后使用10组共享初态完成30条正式轨迹。空间展示使用固定种子1001，全部初态用于汇总比较。
+
+主指标为角色群心误差$E_c$、群间编队误差$E_B$和归一化KDE平方误差$L_\rho$：
+\begin{equation}
+\begin{aligned}
+E_c^2&=\tfrac13\sum_i\|m_i-q_i\|^2,\qquad
+E_B^2=\tfrac12\sum_{\{i,j\}\in E}\|(m_i-q_i)-(m_j-q_j)\|^2,\\
+L_\rho&=\tfrac13\sum_i\frac{\int(\widehat p_i-\Pi_i)^2\,\mathrm dx}{\int\Pi_i^2\,\mathrm dx}.
+\end{aligned}\label{eq:physical-metrics}
+\end{equation}
+三者分别衡量角色位置、群间布局和三维平滑密度匹配，Gaussian重叠使密度积分可精确计算。
+另以目标三维$2\sigma$椭球为参考区域，定义区域部署率
+\[
+\mathcal R_i(t)=\{x:(x-q_i)^\top\Sigma_i^{-1}(x-q_i)\le4\},\qquad
+C_i(t)=\frac1{N_i}\sum_{k\in\mathcal I_i}\mathbf1_{\mathcal R_i(t)}(r_{ik}),\quad
+C(t)=\tfrac13\sum_iC_i(t).
+\]
+$C_i(t)$表示第$i$群成员位于对应参考区域内的比例，本节标量$C(t)$为三角色等权平均的区域部署率。该参考区域用于辅助部署评价，Gaussian分布目标的定义仍为全空间分布。
+全程、布局转换和转换后运动窗口分别为0--120、60--100和100--120 s。
+每条轨迹先计算窗口内$E_c,E_B$的均方根（root mean square, RMS）以及$L_\rho,C$的时间均值，
+再对10组初态取平均；相对变化按这些均值之比计算。中心化形状指标及采样规则见附录\ref{app:external}。
+
+\subsection{空间部署与群级协同}
+图\ref{fig:deployment}在世界坐标中展示部署变化与向前位移。
+40 s时三个角色群在初始参考附近部署；80 s处于侧方布局转换中，120 s时各群沿转换后的角色布局继续推进。
+群心轨迹显示实际运动，成员点集显示空间占据；附录图\ref{fig:relative-deployment}用随动坐标补充局部密度形态。
+\begin{figure}[htbp]\centering
+\includegraphics[width=.98\linewidth]{authoring_20261023_moving_task/figures/world_deployment.png}
+\caption{固定初态1001在世界坐标中的实际群心轨迹及40、80、120 s成员部署，依次对应初始部署结束、布局转换中和转换后运动。三种方法采用共同坐标范围；实线为实际群心轨迹，虚线为角色参考，十字为快照目标中心。横纵坐标使用不同尺度以展示推进范围，局部等比例部署及边缘密度见附录图\ref{fig:relative-deployment}；120 s表示运动中的观测截止位置。}
+\label{fig:deployment}\end{figure}
+
+
+图\ref{fig:performance}和表\ref{tab:main-results}给出全部配对初态的联合性能。
+本文方法的全程$L_\rho$为0.362，相对RAS08的0.620和MMD19的0.407分别降低41.6\%和11.2\%，
+对两个对照均在全部10组配对初态中更小。
+相对MMD19，本文方法的全程群心误差与群间编队误差的RMS分别降低30.5\%和51.6\%；
+RAS08的两项误差为0.592和0.690 m，均小于本文方法。
+\begin{figure}[htbp]\centering
+\includegraphics[width=.98\linewidth]{figure_stage_markers_20261026_151158/figures/joint_performance.png}
+\caption{10组配对初态的密度、群级误差及区域部署率。曲线为逐时刻均值，阴影为最小--最大范围。灰色竖虚线标出40、50、60和100 s；I--V依次为初始部署、平滑加速、匀速推进、布局转换与转换后运动。主表窗口为全程0--120 s、布局转换60--100 s及转换后运动100--120 s。}
+\label{fig:performance}\end{figure}
+
+\begin{table}[htbp]\centering\small
+\caption{移动部署的联合性能。$L_\rho$和区域部署率$C$取窗口时间均值，群心误差$E_c$和群间编队误差$E_B$取时间RMS（m）；各量先按单条轨迹计算，再对10个初态取平均。}
+\label{tab:main-results}
+\begin{tabular}{@{}llrrrr@{}}\toprule
+窗口&方法&$L_\rho$&$E_c$ (m)&$E_B$ (m)&平均区域部署率$C$\\\midrule
+全程 & 本文方法 & 0.362 & 1.166 & 1.007 & 96.16\%\\
+全程 & RAS08 & 0.620 & 0.592 & 0.690 & 62.31\%\\
+全程 & MMD19 & 0.407 & 1.678 & 2.078 & 75.60\%\\
+布局转换 & 本文方法 & 0.284 & 1.371 & 1.110 & 92.77\%\\
+布局转换 & RAS08 & 0.613 & 0.283 & 0.315 & 59.52\%\\
+布局转换 & MMD19 & 0.441 & 1.106 & 1.329 & 72.45\%\\
+转换后运动 & 本文方法 & 0.266 & 1.112 & 0.748 & 94.15\%\\
+转换后运动 & RAS08 & 0.595 & 0.066 & 0.107 & 61.67\%\\
+转换后运动 & MMD19 & 0.365 & 0.812 & 1.117 & 80.25\%\\
+\bottomrule\end{tabular}\end{table}
+
+
+相对MMD19的全程群心收益主要来自初始部署。
+在40--120 s运动阶段，本文方法与MMD19的群心RMS分别为1.148和1.156 m，数值接近；
+同期群间编队误差RMS分别为0.877和1.366 m，本文方法保持较小的群间布局偏差。
+
+布局转换中，本文方法的密度偏差低于两个对照，较大的群心跟踪误差主要集中在物资运送群。
+该群的群心RMS为2.199 m，RAS08和MMD19分别为0.473和0.868 m，逐角色结果见表\ref{tab:role-results}。
+进入转换后运动窗口，本文方法的密度偏差与群间编队误差均减小，群心RMS降至1.112 m。
+在这一窗口内，群心误差高于两个对照，群间编队误差介于二者之间。
+
+本文方法的全程平均区域部署率为96.16\%，高于RAS08的62.31\%和MMD19的75.60\%；
+布局转换及转换后运动的结果见表\ref{tab:main-results}。
+RAS08固定目标点自身的区域部署率为65.00\%，静态$L_\rho=0.646610$，其比较同时包含点集表示和执行响应的影响。
+三维Gaussian目标约有73.85\%的概率质量位于该参考区域，区域部署率描述其中的成员比例。
+中心化形状指标则去除群心平移，在64个固定方向上比较成员排序投影与目标Gaussian的对应分位位置，定义见附录\ref{app:external}。
+本文方法的全程中心化形状RMS为1.411 m，RAS08和MMD19分别为1.027和0.805 m。
+$L_\rho$衡量固定核带宽下的平滑密度匹配，区域部署率统计成员位置，中心化形状指标刻画去除平移后的几何分布；
+因此，较小的$L_\rho$与较高的区域部署率可以和较大的几何形状误差同时出现。
+
+三种方法的30条轨迹均完成120 s观测，速度、加速度及认证记录满足共同离散模型的约束，实际段距离下界均高于2 m。
+本文方法的安全改写占比为65.54\%（按无人机--时间累计），高于两个对照。
+该统计包含首个候选中的分离反馈；本文方法的任务缩放与纯零参考累计时长均为0。
+共同状态计时中，本文方法的名义更新中位数为0.917 ms，对应100 ms更新周期；
+三种方法的安全调用耗时接近，对应20 ms执行周期。完整安全执行统计与计时结果见附录\ref{app:execution-statistics}。
+
+\FloatBarrier
+\section{结论}
+本文以各角色的固定光滑密度模板及移动参考描述异构无人机群的部署任务，将目标匹配与群间密度偏差耦合组织为统一反馈。
+控制结构按群均值与中心化梯度分离群级运动和内部形状调节，在任务度量下分别调节公共与相对分量，
+并通过能力限幅和制动轨迹检验衔接速度执行。
+对满足正则条件的名义密度输运，建立了能量耗散与相对熵稳定性；有限成员分析区分均值计算、中心化梯度近似与执行偏差的作用，
+并在包含目标形状影响的合成驱动有界时给出群间编队误差响应界。
+
+在所设高斯目标的道路推进与侧方部署任务中，本文方法的全程归一化密度平方误差低于两种外部对照，
+相对密度控制对照的全程群心误差与群间编队误差也更小，并在参考区域内保持更高的成员比例。
+布局转换阶段，密度匹配优势与较大的群心跟踪误差同时出现，主要机动偏差集中于物资运送群。
+这一结构以角色目标组织分布反馈，将群级协同与受约束的速度执行连接起来。
+
+\appendix
+\section{有限成员反馈与控制性质证明}\label{app:interfaces}
+
+\subsection{有限成员梯度与链式关系}\label{app:graph-query}\label{app:template-conditions}
+有限成员分析采用式\eqref{eq:kde}的高斯KDE核及式\eqref{eq:energy}所用的高斯图核；
+固定目标模板$\psi_i$、角色尺度$S_i$、人数、正带宽及权重。
+本附录采用以下便于核验的目标条件：$\psi_i\in C^2(\R^3)$严格为正，质量为1，
+一阶矩为零且二阶矩有限；存在常数$C_i^\psi>0$及有限$n_i^\psi\ge0$，使
+\[
+|\log\psi_i(z)|+\|\nabla\log\psi_i(z)\|+\|\nabla^2\log\psi_i(z)\|
+\le C_i^\psi(1+\|z\|^{n_i^\psi}).
+\]
+这些条件允许不同角色采用不同的光滑目标形状，并保证固定Gaussian KDE下的目标积分及粒子求导有定义。
+
+每条无向边计一次，对式\eqref{eq:energy}作密度变分，得到式\eqref{eq:variational-gradient}的$\Phi_i$。
+由$\delta\rho_i(z)=|\det S_i|\delta p_i(q_i+S_i z)$换元，
+$\delta\mathcal F_T/\delta p_i(x)=\Phi_i(S_i^{-1}(x-q_i))$，
+故物理坐标中的反馈梯度为式\eqref{eq:variational-gradient}。
+
+令$z_{ik}=S_i^{-1}(r_{ik}-q_i)$、$H_i=\beta_i^2S_i^{-1}S_i^{-T}$，
+以$G_{H_i}$表示协方差为$H_i$的归一化零均值Gaussian核。
+将$\widehat\rho_i=N_i^{-1}\sum_kG_{H_i}(\cdot-z_{ik})$代入能量，其精确图梯度为
+\begin{equation}
+g^G_{ik}=\frac{\kappa}{\omega_i}S_i^{-T}\sum_j\gamma_{ij}
+\int G_{H_i}(z-z_{ik})\nabla\big[K_0*(\widehat\eta_i-\widehat\eta_j)\big](z)\,\mathrm dz,
+\qquad \widehat\eta_i=\widehat\rho_i-\psi_i .
+\label{eq:graph-gradient-general}
+\end{equation}
+该式对粒子位置求导时保持目标模板固定。
+对Gaussian图核，定义粒子核重叠与目标核均值
+\begin{align}
+\mathcal K_{ij}(\zeta)&=
+\det\!\left(I+\frac{H_i+H_j}{\ell_0^2}\right)^{-1/2}
+\exp\!\left[-\frac12\zeta^\top(\ell_0^2I+H_i+H_j)^{-1}\zeta\right],
+\label{eq:kernel-overlap-general}\\
+\mathcal T_{i|j}(z)&=(G_{H_i}*K_0*\psi_j)(z).
+\nonumber
+\end{align}
+则一般目标模板下的图梯度也可写为
+\begin{equation}
+\begin{split}
+g^G_{ik}=\frac{\kappa}{\omega_i}S_i^{-T}\sum_j\gamma_{ij}\Big[
+&\frac1{N_i}\sum_l\nabla\mathcal K_{ii}(z_{ik}-z_{il})
+-\frac1{N_j}\sum_l\nabla\mathcal K_{ij}(z_{ik}-z_{jl})\\
+&-\nabla\mathcal T_{i|i}(z_{ik})+\nabla\mathcal T_{i|j}(z_{ik})\Big].
+\end{split}
+\label{eq:graph-target-correction}
+\end{equation}
+目标核均值可由目标的解析表达或数值积分计算；采用数值积分时，其误差进入式\eqref{eq:gradient-errors}。
+当所有角色共用同一模板时，最后两项逐边抵消，这一抵消对共同的非高斯模板同样成立。
+粒子核重叠的闭式来自所选Gaussian KDE核与图核的卷积；目标形状通过$\mathcal T_{i|j}$单独进入。
+$S_i^{-T}$将角色梯度变换到物理坐标，
+固定正定$H_i$使矩阵逆和行列式有定义。
+
+固定KDE随成员位置和参考平移时，群均值与任务能量的链式关系如下。
+\begin{lemma}[固定目标与KDE的参考平移]\label{lem:kde-chain}
+在本附录目标条件及固定参数下，$F_N$对有限位置和参考$(r,q)$连续可微，并有
+\begin{align*}
+\partial_{q_i}F_N&=-\sum_k\partial_{r_{ik}}F_N,\\
+\bar g_i^S&=-D S_i^{-T}\int\widehat\rho_i(z)\nabla\log\psi_i(z)\,\mathrm dz,\\
+\dot F_N&=\sum_i\frac{\omega_i}{N_i}\sum_k g_{ik}\cdot(v_{ik}-\dot q_i).
+\end{align*}
+最后一式沿绝对连续位置和参考几乎处处成立。
+\end{lemma}
+\begin{proof}[证明]
+有限位置紧集上的Gaussian KDE及其位置导数具有多项式乘Gaussian的可积支配，
+目标对数及score的增长条件保证KL项可以对位置求导。
+$K_0$及其梯度有界，目标质量有限，故图项中的目标卷积同样可以求导。
+将群$i$的所有$r_{ik}$与$q_i$同时平移，其角色坐标及$\widehat\rho_i$不变，
+得到参考偏导恒等式。
+自项精确梯度为
+\[
+g^S_{ik}=D S_i^{-T}\int G_{H_i}(z-z_{ik})
+\big[\nabla\log\widehat\rho_i(z)-\nabla\log\psi_i(z)\big]\,\mathrm dz.
+\]
+对粒子取平均后，熵项为$\int\nabla\widehat\rho_i\,\mathrm dz=0$，
+得到自项群均值；有限维绝对连续链式法则与参考偏导恒等式给出最后一式。
+\end{proof}
+式\eqref{eq:step}在$t\in[t_n,t_n+h]$上的段内插值为
+\[
+v(t)=v_n+\frac{t-t_n}{h}(v_{n+1}-v_n),\qquad
+r(t)=r_n+(t-t_n)v_n+\frac{(t-t_n)^2}{2h}(v_{n+1}-v_n).
+\]
+其导数满足$v(t)=\dot r(t)$；有限成员链式关系与安全预测均沿此轨迹计算。
+
+\subsection{名义耗散与相对熵稳定性}\label{app:nominal-conditions}
+对第\ref{sec:nominal-properties}节的理想速度场及式\eqref{eq:pde}，
+在任一有限时间区间内，设存在严格正的正则概率解，其能量和二阶矩有限，
+$\int\!\int p_i\|\xi_i\|^2\,\mathrm dx\mathrm dt<\infty$；
+并设能量沿该解绝对连续、输运链式法则成立，且全空间积分分部的边界通量消失。
+任务图与$K=\diag(K_i)$固定，各$K_i\succ0$，且$k_c>0,k_f\ge0$。
+以下验证式\eqref{eq:mobility}的投影性质、名义耗散及命题\ref{prop:entropy-stability}。
+\begin{proof}[投影性质与名义耗散]
+由$T$列满秩及$K\succ0$，$T^\top KT$可逆，直接计算得
+$P_K^2=P_K$、$P_K^\top K=KP_K$；由$CT=0$得$CP_K=C$，
+进而有$L_cK=k_cI+k_fP_K$及$CL_c=(k_c+k_f)CK^{-1}$。
+又因$P_KK^{-1}=K^{-1}-T(T^\top KT)^{-1}T^\top$对称，$L_c$对称。
+取连续密度的精确均值$\mathbf h$，记$\chi=K^{-1}\mathbf h$。
+分解$\chi=T\chi_*+P_K\chi$的两部分在$K$内积下正交，故
+$\mathbf h^\top L_c\mathbf h=k_c\chi^\top K\chi+k_f(P_K\chi)^\top K(P_K\chi)$，
+即式\eqref{eq:positive-mean}。当$\mathbf h\ne0$时第一项严格为正，故$L_c\succ0$。
+
+固定$S_i$时，角色坐标中的连续性方程为
+\[
+\partial_t\rho_i+\nabla_z\cdot\{\rho_i S_i^{-1}
+[u_i(q_i+S_i z,t)-\dot q_i]\}=0 .
+\]
+固定目标模板使角色坐标泛函无显式时间依赖。
+按链式法则及通量条件积分分部，得
+\[
+\dot{\mathcal F}_T=\sum_i\omega_i\int p_i\xi_i\cdot(u_i-\dot q_i)\,\mathrm dx.
+\]
+代入理想场，利用$h_i=\omega_i\bar\xi_i$及
+$\int p_i(\xi_i-\bar\xi_i)\,\mathrm dx=0$，得到式\eqref{eq:pde-dissipation}。
+平方可积条件保证均值及耗散积分有定义。证明适用于上述一般固定模板。
+\end{proof}
+
+\begin{proof}[命题\ref{prop:entropy-stability}的证明]
+记$\KL_i=\KL(\rho_i\Vert\psi_i)$。
+对质量均为1的概率密度，自然对数下的Pinsker不等式\cite{sason2016}给出
+$\|\eta_i\|_{L^1}^2\le2\KL_i$。
+由于图核满足$|K_0|\le1$，对每条任务边有
+\[
+\begin{aligned}
+\|\eta_i-\eta_j\|_{K_0}^2
+&\le\|\eta_i-\eta_j\|_{L^1}^2\\
+&\le2\|\eta_i\|_{L^1}^2+2\|\eta_j\|_{L^1}^2
+\le4(\KL_i+\KL_j).
+\end{aligned}
+\]
+无向边各计一次，因此
+\[
+\frac{\kappa}{2}\sum_{\{i,j\}\in E}\gamma_{ij}\|\eta_i-\eta_j\|_{K_0}^2
+\le2\kappa\sum_i\Big(\sum_j\gamma_{ij}\Big)\KL_i
+\le D(C_H-1)\mathcal H.
+\]
+结合图核正定性所保证的非负图能量，得到
+\[
+D\mathcal H\le\mathcal F_T\le DC_H\mathcal H.
+\]
+在所述正则解区间内，能量绝对连续且几乎处处满足式\eqref{eq:pde-dissipation}，
+故
+\[
+\mathcal H(t)\le\frac{\mathcal F_T(t)}{D}
+\le\frac{\mathcal F_T(t_0)}{D}\le C_H\mathcal H(t_0).
+\]
+再次应用Pinsker不等式并按$\omega_i$加权求和，得到式\eqref{eq:entropy-stability}的第二个界。
+代入$\delta_H=\varepsilon_H/C_H$即得相对熵稳定性结论。
+\end{proof}
+
+\subsection{实际执行能量与群间响应}
+由式\eqref{eq:gradient-errors}，中心化误差满足$\bar e_i^{Q,\perp}=0$，
+实际梯度可分为群均值$(h_i+\delta h_i)/\omega_i$与中心化部分$g_{ik}^{\perp}+e_{ik}^{Q,\perp}$。
+
+在引理\ref{lem:kde-chain}的条件下，取第\ref{sec:execution-errors}节的当前状态分析参考及
+$d=v-c^{\rm fresh}$。由名义参考的数值实现，有
+\[
+v_{ik}-\dot q_i
+=-[L_c(\mathbf h+\delta\mathbf h)]_i-g^\perp_{ik}-e^{Q,\perp}_{ik}+d_{ik} .
+\]
+将其代入链式关系，利用群内中心化消去均值与形状交叉项，得到式\eqref{eq:actual-supply}。
+均值误差贡献为$-\mathbf h^\top L_c\delta\mathbf h$，与形状误差的中心化内积分别计算。
+
+样本中心化给$\dot a=-L_c(\mathbf h+\delta\mathbf h)+\bar d$。
+代入式\eqref{eq:shape-drive}的均值分解，左乘$C$并使用$CL_c=\alpha CK^{-1}$，
+得到式\eqref{eq:edge-response}，其中$\alpha=k_c+k_f$。
+若研究区间$[t_0,T_f]$上几乎处处有$\|b(t)\|\le\varepsilon$，积分因子给
+\[
+e(t)=e^{-\alpha(t-t_0)}e(t_0)+\int_{t_0}^t e^{-\alpha(t-s)}b(s)\,\mathrm ds,
+\]
+再由三角不等式得到式\eqref{eq:conditional-bound}。
+该条件覆盖完整驱动$b$中的目标形状、密度图反馈、数值均值及执行偏差各项。
+式\eqref{eq:conditional-bound}中的$\varepsilon$为整个研究区间上的几乎处处上界；离散采样最大值描述已记录时刻的驱动幅值。
+当$|E|>0$时，边向量范数转换为瞬时边RMS需除以$\sqrt{|E|}$。
+
+\section{制动轨迹安全检验}\label{app:braking}
+
+\subsection{分离候选与制动路程}\label{app:separation}
+以全局编号$k,l$表示无人机，速度界及制动参数取自所属群。
+由模型间距$d_{\rm safe}$、扩张量$\delta_s$及当前零参考制动路程，定义
+\begin{equation}
+\begin{aligned}
+R_{kl}&=d_{\rm safe}+\delta_s+B_k(\|v_k\|)+B_l(\|v_l\|),\\
+w_{kl}&=\operatorname{clip}_{[0,1]}\frac{R_{kl}-\|r_k-r_l\|}{R_{kl}-d_{\rm safe}},\\
+s_k^{\rm sep}&=V_k\sum_{l\ne k}w_{kl}\frac{r_k-r_l}{\|r_k-r_l\|},
+\end{aligned}
+\label{eq:separation}
+\end{equation}
+其中$B_k$为式\eqref{eq:braking-path}给出的完整零参考制动路程。
+机对距离进入扩张半径后，其分离权重随距离减小而增大；
+各机对贡献求和，并经式\eqref{eq:candidates}的合成限幅形成候选输入。
+
+对零参考，速度方向保持，设当前速度模为$s\ge0$，能力为$\tau,A>0$，$0<h\le\tau$。
+标量速度递推为$s_{n+1}=s_n-\min\{hs_n/\tau,Ah\}$。
+饱和阶段步数和剩余速度为
+\[
+m_b=\left\lceil\frac{(s-A\tau)_+}{Ah}\right\rceil,\qquad s_*=s-m_bAh .
+\]
+由式\eqref{eq:step}求和，完整无限制动路程为
+\begin{equation}
+B(s)=h\left(m_bs-\frac12Ahm_b^2\right)+(\tau-h/2)s_* .
+\label{eq:braking-path}
+\end{equation}
+前项为饱和阶段梯形累计，后项由比例阶段的公比$1-h/\tau\in[0,1)$求和得到。
+$h=\tau$时末个比例段仍有路程$hs_*/2$，$s=0$时$B(0)=0$。
+
+\subsection{全程距离检验}
+对一个执行段，记相对起点 $p$、端点差 $\Delta p$、
+实际相对加速度 $a_{\rm rel}$，则
+\begin{equation}
+\underline d=\min_{\theta\in[0,1]}\|p+\theta\Delta p\|
+-\frac{h^2}{8}\|a_{\rm rel}\|
+\label{eq:segment-bound}
+\end{equation}
+是二次相对轨迹全段的距离下界。
+因为该轨迹与端点连线之差为
+$\frac12a_{\rm rel}t(t-h)$，其最大模不超过 $h^2\|a_{\rm rel}\|/8$，
+三角不等式给式\eqref{eq:segment-bound}。
+曲率扣除使用每段实际相对加速度。
+
+认证首先要求候选首段 $\underline d\ge d_{\rm safe}+\epsilon_{\rm num}$，
+然后由下一状态展开纯零参考后备。
+能由当前距离减两机全部剩余路程直接认证的机对可提前通过；
+对尚未由剩余路程界认证的机对，在预测窗$T_b$内展开零参考段，每段均检验式\eqref{eq:segment-bound}，
+要求$\underline d\ge d_{\rm safe}+\epsilon_{\rm num}$；任一段失败即拒绝候选，并在末端要求
+\[
+\|r_k-r_l\|-B_k(\|v_k\|)-B_l(\|v_l\|)
+\ge d_{\rm safe}+\epsilon_{\rm num},\qquad\epsilon_{\rm num}>0.
+\]
+剩余路程覆盖全部无限尾部，故有限预测窗不省略后续运动。
+在当前$\|v_k\|\le V_k$且候选已限幅时，凸组合更新保持速度界。
+每机首段路程至多$hV_k$，后备路程由$B_k$的单调性界为$B_k(V_k)$，故远对解析筛选半径为
+$d_{\rm safe}+\epsilon_{\rm num}+h(V_k+V_l)+B_k(V_k)+B_l(V_l)$，
+覆盖首段和后备的可能相对移动，筛除不依赖任务图是否有边。
+
+在式\eqref{eq:step}的预测、执行和参数一致且接受输入不再改写时，
+通过检验的候选满足首段及零参考后备的模型间距要求。
+持续逐步执行以每步存在可认证候选为条件；候选列表包含零参考不自动给出递归可行性。
+
+\section{仿真复现与外部方法适配}\label{app:external}
+本附录的任务、参数和外部适配均对应第四章的高斯部署目标。
+\subsection{高斯目标的解析实现}\label{app:gaussian-implementation}
+第四章的解析实现进一步选取共同标准高斯目标模板
+$\phi_0(z)=(2\pi)^{-3/2}\exp(-\|z\|^2/2)$、$\psi_i=\phi_0$及$S_i=\Sigma_i^{1/2}$，
+从而$\Pi_i(x,t)=\mathcal N(x;q_i(t),\Sigma_i)$。
+此时目标对数梯度为$-\Sigma_i^{-1}(x-q_i)$。
+由$\nabla\log\phi_0=-z$和$\int z\widehat\rho_i(z)\,\mathrm dz=S_i^{-1}a_i$，
+式\eqref{eq:mean-general}的自项均值及所选任务度量为
+\begin{equation}
+\bar g_i^S=D\Sigma_i^{-1}a_i,\qquad
+K_i=D\omega_i\Sigma_i^{-1},\qquad h_i=K_i a_i+h_i^G .
+\label{eq:exact-mean}
+\end{equation}
+将上述目标对数梯度和均值代入式\eqref{eq:query}，即可计算在线查询反馈。
+图梯度由式\eqref{eq:graph-target-correction}计算，其中核重叠采用式\eqref{eq:kernel-overlap-general}；
+共同目标模板使$\mathcal T_{i|i}=\mathcal T_{i|j}$，两个目标卷积梯度逐边抵消。
+均值与图梯度均采用解析求值，故$h_i^{\rm num}=h_i$、$\delta h_i=0$，
+且$e^{Q,\perp}=\widetilde g-g$。
+线性目标对数梯度与式\eqref{eq:exact-mean}还给出$r_i^\psi=0$；
+将这些关系代入式\eqref{eq:actual-supply}和\eqref{eq:edge-response}，即可得到本实现的能量与群间响应关系。
+逐机参考仍由式\eqref{eq:command}生成，并按算法1执行。
+
+\subsection{解析参考与参数依据}
+固定世界坐标$z$轴向上，令$S_{ab}=10u^3-15u^4+6u^5$，
+$u=\operatorname{clip}_{[0,1]}[(t-a)/(b-a)]$，$I_{ab}(t)=\int_0^tS_{ab}(s)\,\mathrm ds$。
+规定参考为
+\begin{equation}
+\begin{aligned}
+q_0&=(1.4I_{40,50},20S_{60,100},50)^\top,\\
+o&=(18-6S_{60,100},12S_{60,100},0)^\top,\qquad
+q_1=q_0+o,\ q_2=q_0,\ q_3=q_0-o .
+\end{aligned}\label{eq:engineering-reference}
+\end{equation}
+
+表\ref{tab:platforms}和表\ref{tab:parameter-origin}中的权重、带宽与反馈增益均为配对评价前固定的研究基准设计值。
+权重以$\omega_2=1$归一化，三群带宽分别为最小目标标准差的0.57、0.50和0.54倍。
+当密度图反馈与执行偏差输入为零时，公共与相对群均值分量的时间尺度分别为$1/k_c=8.33$ s和$1/(k_c+k_f)=5.00$ s；
+实际响应还受到密度图反馈、异构内环及安全改写的影响。
+
+\subsection{初态、校准与外部反馈}
+复现材料以P标识本文方法，外部方法标识分别为RAS08和MMD19。
+初速为零，位置以$0.68\sigma_i$尺度的截断Gaussian生成，叠加三轴范围为$[-6,6]$、$[-4,4]$、$[-1,1]$ m的群心扰动，
+并按2.7 m间距拒绝采样。校准种子为901--903，评价种子为1001--1010。
+RAS08的候选$(\alpha_R,k_R)=(.1,.1),(.2,.2),(.4,.4)$ s$^{-1}$按个体目标点RMS选择；
+MMD19的$\eta=5,10,20$ m$^2$/s按原生MMD平方选择。
+本任务校准选得$(\alpha_R,k_R)=(.4,.4)$ s$^{-1}$及$\eta=20$ m$^2$/s。
+共同执行参数见表\ref{tab:parameter-origin}。
+
+对RAS08，成员$a$的目标为$r_a^d=q_{i(a)}+\delta_a$，$e_a^d=r_a-r_a^d$，速度参考为
+\begin{equation}
+c_a^{\rm R}=\dot r_a^d-\alpha_R e_a^d
+-k_R\sum_b\bar a_{ab}(e_a^d-e_b^d).
+\label{eq:ras08}
+\end{equation}
+图包含群内完全连接及相邻角色之间的连接，共2440条无向边；边权按该图拉普拉斯最大特征值80归一化。
+边权满足原文正权条件；全体节点直接获得规定参考，原参考估计误差恒为零。
+固定目标点逐群均值为零，使用对称Gaussian候选和控制器无关的间距拒绝规则生成；
+整个连续布局转换中的最小目标点间距为2.728 m，高于2 m安全距离。
+该点集的等角色中心化形状RMS为1.001 m，静态$L_\rho=0.646610$，区域部署率为65.00\%；
+这些表示误差与式\eqref{eq:ras08}的个体目标点跟踪误差分别评价。
+
+MMD19采用$\mu_i^N=N_i^{-1}\sum_k\delta_{r_{ik}}$，
+$k_i(x,y)=\exp[-\|x-y\|^2/(2\ell_i^2)]$，其中
+$\ell_i=\sqrt{\operatorname{tr}(\Sigma_i)/3}$，取值为5.715、4.082和3.571 m。
+原生损失为$\mathcal J_i=\frac12\operatorname{MMD}_{k_i}^2(\mu_i^N,\Pi_i)$。
+采用确定性见证函数负梯度反馈，并加入移动目标前馈$\dot q_i$。
+令$y=x-q_i$，目标核均值$T_i(y)=\int k_i(x,x')\Pi_i(x',t)\,\mathrm dx'$及速度参考的闭式为
+\begin{equation}
+\begin{aligned}
+T_i(y)&=\prod_{a=1}^3\frac{\ell_i}{\sqrt{\ell_i^2+\sigma_{ia}^2}}
+\exp\left[-\tfrac12\sum_a\frac{y_a^2}{\ell_i^2+\sigma_{ia}^2}\right],\\
+c_{ik}^{\rm M}&=\dot q_i+\eta\left[\frac1{N_i}\sum_l k_i(r_{ik},r_{il})\frac{r_{ik}-r_{il}}{\ell_i^2}
+-T_i(r_{ik}-q_i)(\ell_i^2I+\Sigma_i)^{-1}(r_{ik}-q_i)\right].
+\end{aligned}\label{eq:mmd19}
+\end{equation}
+RAS08的原结论对应单积分器，MMD19的理想流结论依赖其相应假设；
+两者接入共同限幅、安全筛选与异构内环后的响应由配对轨迹评价。
+
+\subsection{指标与统计口径}\label{app:metrics}
+中心化形状指标采用64个固定单位方向$d_b$上的排序投影。
+令$z_{i(k),b}$为$r_{ik}^\top d_b$的排序值，$u_k=(k-1/2)/N_i$，
+$s_{ib}=\sqrt{d_b^\top\Sigma_i d_b}$，则
+\[
+E_{s,i}^2=\frac1{64N_i}\sum_{b,k}
+\left[z_{i(k),b}-m_i^\top d_b-s_{ib}\Phi^{-1}(u_k)\right]^2,
+\qquad E_s^2=\tfrac13\sum_iE_{s,i}^2.
+\]
+$\Phi^{-1}$为标准正态分位函数，$E_s$的单位为m。
+群心误差、群间编队误差及区域部署率按20 ms状态积分，密度及形状指标每0.5 s采样计算，窗口统计采用梯形积分；名义密度反馈仍按100 ms更新。
+40--120 s运动阶段由已登记的40--60、60--100及100--120 s窗口合并：
+逐初态将各窗口RMS的平方乘以相应时长并求和，除以80 s后开方，再对10组初态取平均。
+限速按保持参考的合成速度超过能力界$10^{-9}$ m/s识别，安全改写按接受参考与限速参考之差的范数超过$10^{-9}$ m/s识别，
+加速度饱和按请求加速度的范数超过能力界$10^{-9}$ m/s$^2$识别。
+各占比的分母均为单条轨迹中全部80架无人机的累计观测时间$80\times120$ s，分子为对应事件的累计无人机--时间；汇总时再对10组初态取平均。
+
+窗口聚合及相对变化沿用第\ref{sec:experiments}节的口径；逐初态差值用于统计配对方向。
+任务配置、实现、原始轨迹及派生统计的路径集中列于与本文源文件同目录的\path{reproduction_index.json}。
+
+\section{补充结果}\label{app:supplement}
+\subsection{逐角色响应与局部部署}
+表\ref{tab:role-results}给出全程和布局转换的逐角色群心误差。
+相对MMD19，本文方法的全程群心误差与群间编队误差RMS分别在9组和10组配对初态中较小。
+\begin{table}[htbp]\centering\small
+\caption{逐角色群心RMS（m）。先对单条轨迹的$\|a_i\|^2$作窗口时间平均并开方，再对10个初态取平均。}
+\label{tab:role-results}
+\begin{tabular}{@{}lrrrrrr@{}}\toprule
+&\multicolumn{3}{c}{全程（0--120 s）}&\multicolumn{3}{c}{布局转换（60--100 s）}\\
+\cmidrule(lr){2-4}\cmidrule(l){5-7}
+角色&本文方法&RAS08&MMD19&本文方法&RAS08&MMD19\\\midrule
+侦察 & 0.926 & 0.626 & 2.101 & 0.618 & 0.086 & 1.471\\
+中继支援 & 0.817 & 0.545 & 1.380 & 0.649 & 0.096 & 0.679\\
+物资运送 & 1.588 & 0.548 & 1.192 & 2.199 & 0.473 & 0.868\\
+\bottomrule\end{tabular}\end{table}
+RAS08全程原生点位RMS为0.940 m，MMD19全程原生MMD平方均值为0.01025。
+图\ref{fig:relative-deployment}补充各阶段的局部边缘密度。
+\begin{figure}[htbp]\centering
+\includegraphics[width=.98\linewidth]{authoring_20261023_moving_task/figures/relative_deployment.png}
+\caption{固定初态1001在40、80和120 s的局部部署与$xy$边缘密度。面板以中继目标为原点，使用共同局部坐标范围；圆点为成员，十字和菱形分别为目标中心、实际群心。虚线为目标$2\sigma$轮廓，实线为KDE边缘密度等值线，各角色的水平固定为$e^{-2}/(2\pi\sigma_{i1}\sigma_{i2})$。绝对运动见图\ref{fig:deployment}。}
+\label{fig:relative-deployment}\end{figure}
+
+\FloatBarrier
+\subsection{补充指标与执行统计}\label{app:execution-statistics}
+表\ref{tab:supplement}汇总分阶段形状、执行事件及计算耗时，指标定义与积分口径见附录\ref{app:metrics}。
+串行计时从三种方法种子1001轨迹的0、40、60、80和120 s各取快照，形成15个共同检查状态。
+在每个状态上交叉评价各控制器，每状态预热3次、计时10次，即每种方法记录150次名义更新及安全调用耗时。
+主机为Intel Core i7-14650HX，Python 3.11、NumPy 2.4.6，数值线程为1；报告值为固定状态集上的观测计时。
+名义更新与安全调用分别对应100 ms和20 ms周期，两类耗时独立串行测量。
+\begin{table}[htbp]\centering\small
+\caption{补充部署、执行与计算统计。误差、占比及累计时长取10组平均，距离下界与认证裕量取全部轨迹最小值；
+耗时来自共同固定状态的串行测量。P95为第95百分位数（95th percentile），全程形状RMS见第\ref{sec:experiments}节。}
+\label{tab:supplement}\label{tab:execution-cost}
+\begin{tabular}{@{}lrrr@{}}\toprule
+量&本文方法&RAS08&MMD19\\\midrule
+\multicolumn{4}{@{}l}{\textit{空间部署}}\\
+转换形状RMS (m) & 1.177 & 1.058 & 0.806\\
+转换后运动形状RMS (m) & 1.252 & 1.020 & 0.730\\
+$E_c>1$ m累计时长 (s) & 47.88 & 4.21 & 87.30\\
+$E_B>2$ m累计时长 (s) & 2.58 & 2.47 & 41.22\\
+\addlinespace[3pt]
+\multicolumn{4}{@{}l}{\textit{安全与执行}}\\
+最小段距离下界 (m) & 2.501 & 2.173 & 2.605\\
+最小认证裕量 (m) & $1.59\times10^{-7}$ & $4.03\times10^{-7}$ & $1.25\times10^{-7}$\\
+合成限速占比 & 8.69\% & 4.32\% & 0.27\%\\
+加速度饱和占比 & 0.69\% & 1.26\% & 0.03\%\\
+安全改写占比 & 65.54\% & 48.86\% & 37.80\%\\
+安全改写RMS (m/s) & 0.548 & 0.335 & 0.123\\
+\addlinespace[3pt]
+\multicolumn{4}{@{}l}{\textit{计算耗时}}\\
+名义更新中位数 (ms) & 0.917 & 0.089 & 0.267\\
+名义更新P95 (ms) & 1.530 & 0.171 & 0.402\\
+安全调用中位数 (ms) & 0.916 & 0.940 & 0.898\\
+安全调用P95 (ms) & 3.297 & 3.257 & 3.468\\
+\bottomrule\end{tabular}\end{table}
+
+表中的阈值描述误差持续时间，工程合格判断需结合实际作业容忍要求；认证裕量为给定预测模型的数值余量。
+三种方法各自10条轨迹的全程最大群心误差均为5.275 m，最大群间编队误差均为10.211 m，纯零参考累计时长均为0；
+本文方法、RAS08和MMD19的平均任务缩放时长分别为0、0.04和0 s。
+安全候选在$\lambda=1$时已包含分离反馈，安全改写占比也包含这一作用。
+各方法名义更新与一次安全调用合计的观测最大值为5.602、4.254、4.246 ms。
+RAS08复用固定目标点集，共同状态串行检查中的一次性成员分配耗时为0.368--1.330 ms，单列为预处理成本。
+
+\begin{thebibliography}{99}\footnotesize
+\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+\bibitem{ren2008} W. Ren, N. Sorensen. Distributed coordination architecture for multi-robot formation control.
+\emph{Robotics and Autonomous Systems}, 56(4):324--333, 2008.
+\href{https://doi.org/10.1016/j.robot.2007.08.005}{doi:10.1016/j.robot.2007.08.005}.
+\bibitem{imran2024} I. H. Imran, D. F. Kurtulus, A. M. Memon, S. Goli, T. Kouser, L. M. Alhems.
+Distributed Robust Formation Control of Heterogeneous Multi-UAVs With Disturbance Rejection.
+\emph{IEEE Access}, 12:55326--55341, 2024.
+\href{https://doi.org/10.1109/ACCESS.2024.3390183}{doi:10.1109/ACCESS.2024.3390183}.
+\bibitem{eren2017} U. Eren, B. Açıkmeşe.
+Velocity Field Generation for Density Control of Swarms using Heat Equation and Smoothing Kernels.
+\emph{IFAC-PapersOnLine}, 50(1):9405--9411, 2017.
+\href{https://doi.org/10.1016/j.ifacol.2017.08.1454}{doi:10.1016/j.ifacol.2017.08.1454}.
+\bibitem{zheng2022feedback} T. Zheng, Q. Han, H. Lin.
+Feedback Interconnected Mean-Field Density Estimation and Control.
+\emph{2022 American Control Conference}, 3445--3450, 2022.
+\href{https://doi.org/10.23919/ACC53348.2022.9867610}{doi:10.23919/ACC53348.2022.9867610}.
+\bibitem{chen2024} Y. Chen. Density Control of Interacting Agent Systems.
+\emph{IEEE Transactions on Automatic Control}, 69(1):246--260, 2024.
+\href{https://doi.org/10.1109/TAC.2023.3271226}{doi:10.1109/TAC.2023.3271226}.
+\bibitem{arbel2019} M. Arbel, A. Korba, A. Salim, A. Gretton.
+Maximum Mean Discrepancy Gradient Flow.
+\emph{Advances in Neural Information Processing Systems}, 32:6481--6491, 2019.
+\url{https://arxiv.org/abs/1906.04370}.
+\bibitem{garbuno2020} A. Garbuno-Inigo, F. Hoffmann, W. Li, A. M. Stuart.
+Interacting Langevin Diffusions: Gradient Structure and Ensemble Kalman Sampler.
+\emph{SIAM Journal on Applied Dynamical Systems}, 19(1):412--441, 2020.
+\href{https://doi.org/10.1137/19M1251655}{doi:10.1137/19M1251655}.
+\bibitem{burger2025} M. Burger, M. Erbar, F. Hoffmann, D. Matthes, A. Schlichting.
+Covariance-Modulated Optimal Transport and Gradient Flows.
+\emph{Archive for Rational Mechanics and Analysis}, 249:7, 2025.
+\href{https://doi.org/10.1007/s00205-024-02065-w}{doi:10.1007/s00205-024-02065-w}.
+\bibitem{wang2016hetero} L. Wang, A. Ames, M. Egerstedt.
+Safety Barrier Certificates for Heterogeneous Multi-Robot Systems.
+\emph{2016 American Control Conference}, 5213--5218, 2016.
+\href{https://doi.org/10.1109/ACC.2016.7526486}{doi:10.1109/ACC.2016.7526486}.
+\bibitem{chen2021backup} Y. Chen, M. Jankovic, M. Santillo, A. D. Ames.
+Backup Control Barrier Functions: Formulation and Comparative Study.
+\emph{2021 IEEE Conference on Decision and Control}, 6835--6841, 2021.
+\href{https://doi.org/10.1109/CDC45484.2021.9683111}{doi:10.1109/CDC45484.2021.9683111}.
+\bibitem{zheng2022backstep} T. Zheng, Q. Han, H. Lin.
+Backstepping Mean-Field Density Control for Large-Scale Heterogeneous Nonlinear Stochastic Systems.
+\emph{2022 American Control Conference}, 4832--4837, 2022.
+\href{https://doi.org/10.23919/ACC53348.2022.9867882}{doi:10.23919/ACC53348.2022.9867882}.
+\bibitem{sason2016} I. Sason, S. Verd\'u.
+$f$-Divergence Inequalities.
+\emph{IEEE Transactions on Information Theory}, 62(11):5973--6006, 2016.
+\href{https://doi.org/10.1109/TIT.2016.2603151}{doi:10.1109/TIT.2016.2603151}.
+\end{thebibliography}
+\end{document}

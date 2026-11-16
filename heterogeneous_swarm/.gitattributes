@@ -1,0 +1,5 @@
+# Frozen checksums refer to exact bytes, including original line endings.
+reproduction/** -text
+paper_context/** -text
+media/** -text
+*.sh text eol=lf

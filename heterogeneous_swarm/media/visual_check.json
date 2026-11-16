@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "single_frame_before_full_encoding": true,
+  "visually_inspected": {
+    "preflight_24s.png": "eb34ed26caba5e504e71033fc3d32c5365f8c5cedb45b77a717c4edffefc0e1f",
+    "snapshots/t000s.png": "87aed6dd3192a57e0bca3dc03e954b1ba6330468832ac238c74431baac989720",
+    "snapshots/t089s.png": "10ac5e4f80c6b08cabf4aff4a9f0d3f9084fdfb9fccee0e72241da837b6321e4",
+    "snapshots/t178s.png": "fb52eff232760b079f0651a76cbc9987a6b4c8c8bbd7f1387c3b5c6fbe4f6271",
+    "stage_contact_sheet.png": "74485fa49746cdecb72374e2235b12e5842a6fc1d45fd33efe4f63a07ace6b4a"
+  },
+  "findings": "Current parameter/seed labels clear; role legend and phase bar readable; first/middle/last and stage layout checked; x-axis labels preserved in final version. Equal horizontal scales and aspect ratio preserved.",
+  "video_decode": "Entire MP4 and all GIF frames decoded successfully by render_current.py.",
+  "source_manifest_sha256": "e42c818ccba7e8eae87793ece27b4b67c7e64293c2e73f3718dca528f9a43dff",
+  "no_new_trajectory": true
+}

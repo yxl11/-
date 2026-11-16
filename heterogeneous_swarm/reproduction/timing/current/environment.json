@@ -1,0 +1,24 @@
+{
+  "observed_utc": "2026-11-08T15:51:56.011026+00:00",
+  "hardware": {
+    "cpu": [
+      {
+        "Name": "Intel(R) Core(TM) i7-14650HX",
+        "Manufacturer": "GenuineIntel",
+        "NumberOfCores": 16,
+        "NumberOfLogicalProcessors": 24
+      }
+    ],
+    "memory_bytes": 16763232256,
+    "model": "TX Gaming FX608JMR_FX608JMR"
+  },
+  "python": "3.11.6 (tags/v3.11.6:8b6ee5b, Oct  2 2023, 14:57:12) [MSC v.1935 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "thread_environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "registered_utc": "2026-11-08T09:04:53.239689+00:00",
+  "stage": "evaluation",
+  "candidate_id": "B",
+  "method": "P",
+  "parameters": {
+    "kc_per_s": 0.24,
+    "kf_per_s": 0.16
+  },
+  "seed": 33001,
+  "protocol_sha256": "b9287417afadae30cef227d0e424733bf6cab398b4ce635d36c3435855f5a896",
+  "selection_sha256": "717f16d7d7b3d2f34a6c55df81efd38075eace1d4c8ba5996e8099aab05478d0",
+  "entry_sha256": "ae8cfeb78945c921d6c37b4fa4c6ce7fac57d98f52fc427ef82b4f57e7b3186d",
+  "derived_worker_sha256": "199b9e3bf1bc8ad4ff3d5fa20168202034c4161d4976e5e04abe8b52c42989f2",
+  "source_worker_sha256": "914d79c87f9e4653507f158593e280c7bf35207f0cab4841c5a5ddbfe47bfbfa",
+  "initial_sha256": "af471cad293d573a62d438f54908f579db7e81452c90fc7d65fe09f2ba509239",
+  "original_initial_path": "output/reviews/mixed_sweep_orbit_paired_20261102/initials/seed33001.npz",
+  "initial_manifest_sha256": "2dc04074e964a3806e5bcda5c20a8cfb6415fb114dec4de4e912e4f786a5b42b",
+  "frozen_density_parameters": {
+    "D_m2ps": 2.5,
+    "kappa_m2ps": 10.0
+  },
+  "local_repair_enabled": true
+}

@@ -1,0 +1,54 @@
+{
+  "copied_existing_files": true,
+  "new_compilation": false,
+  "files": [
+    {
+      "source": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\reviews\\ppt_execution_error_derivation_20261014\\execution_error_derivation.tex",
+      "destination": "paper_context/execution_error_derivation.tex",
+      "bytes": 89944,
+      "sha256": "f3d2eef6d8d105c7be2487ba167db2734b6a865213113dee196d8fece24f4d6f"
+    },
+    {
+      "source": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\reviews\\ppt_execution_error_derivation_20261014\\execution_error_derivation.pdf",
+      "destination": "paper_context/execution_error_derivation.pdf",
+      "bytes": 1487797,
+      "sha256": "5abe23e1bdb4698676c0d0a0f709054cbd475ecd3bc67643530e751973891256"
+    },
+    {
+      "source": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\reviews\\ppt_execution_error_derivation_20261014\\calibrated_comparison_20261108\\figures\\figure2_english.png",
+      "destination": "paper_context/calibrated_comparison_20261108/figures/figure2_english.png",
+      "bytes": 544860,
+      "sha256": "443277162d72f78200e48b135f1280a1ae72d9bf0d25f93dadc52556592df109"
+    },
+    {
+      "source": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\reviews\\ppt_execution_error_derivation_20261014\\calibrated_comparison_20261108\\figures\\figure3_two_phase.png",
+      "destination": "paper_context/calibrated_comparison_20261108/figures/figure3_two_phase.png",
+      "bytes": 436363,
+      "sha256": "748cb7e0d5804fdda29911ff49f14e0bece93b36759fb61bac0995648410edf4"
+    },
+    {
+      "source": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\presentations\\simulation_explainer_20261109\\animation\\P_B_s33001_sweep_orbit.mp4",
+      "destination": "media/P_B_s33001_sweep_orbit.mp4",
+      "bytes": 3116997,
+      "sha256": "c472ab515ac864190260136b13329bc36e76feb869bf720192a66b80c418da43"
+    },
+    {
+      "source": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\presentations\\simulation_explainer_20261109\\animation\\source_manifest.json",
+      "destination": "media/source_manifest.json",
+      "bytes": 16913,
+      "sha256": "e42c818ccba7e8eae87793ece27b4b67c7e64293c2e73f3718dca528f9a43dff"
+    },
+    {
+      "source": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\presentations\\simulation_explainer_20261109\\animation\\stage_contact_sheet.png",
+      "destination": "media/stage_contact_sheet.png",
+      "bytes": 151687,
+      "sha256": "74485fa49746cdecb72374e2235b12e5842a6fc1d45fd33efe4f63a07ace6b4a"
+    },
+    {
+      "source": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\presentations\\simulation_explainer_20261109\\animation\\visual_check.json",
+      "destination": "media/visual_check.json",
+      "bytes": 1037,
+      "sha256": "926a0ebf511ddce7c481f1e697af01d618bd312328e598706064fa1a10b3d4e9"
+    }
+  ]
+}

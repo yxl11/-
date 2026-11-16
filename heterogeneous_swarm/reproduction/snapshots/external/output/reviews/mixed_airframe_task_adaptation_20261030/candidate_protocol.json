@@ -1,0 +1,32 @@
+{
+  "status": "proposed_task_not_frozen_flight_protocol",
+  "purpose": "Moderate mission adaptation for fixed-wing and rotorcraft cooperation, retaining density templates and lateral deployment while increasing forward scouting standoff",
+  "task_revision": "v2: replace forward compression by forward extension; v1 source and numeric checks retained. Selected on role/kinematic feasibility before any controller performance run.",
+  "duration_s": 60,
+  "nominal_cruise_test_point_mps": 9.0,
+  "cruise_status": "Illustrative engineering design point, not validated Bixler safe airspeed",
+  "phases_s": [[0,15],[15,40],[40,60]],
+  "role_counts": [36,24,20],
+  "roles": ["forward reconnaissance fixed wing", "middle relay/support FPV quadrotor", "rear accompanying support quadrotor"],
+  "role_graph": [[0,1],[1,2]],
+  "requested_caps_mps": [15,12,10],
+  "altitude_m": 50,
+  "fixed_target_sigma_m": [[5,8,3],[4,5,3],[4,4,2.5]],
+  "fixed_KDE_bandwidth_m": [1.7,1.5,1.35],
+  "initial_offset_m": [18,0,0],
+  "final_offset_m": [24,12,0],
+  "base_lateral_shift_m": 20,
+  "reference_rule": "q0=(Vc*t,20*S(t;15,40),50); o=(18+6*S,12*S,0); q=(q0+o,q0,q0-o); S=10*u^3-15*u^4+6*u^5 clipped outside [0,1]",
+  "initialization_intent": "Already airborne; nonzero forward actual velocities consistent with the selected airframe. Existing position perturbation concept retained, but no initial state is claimed flight-feasible or safety-certified yet.",
+  "reference_only_checks": ["positive forward speed", "speed bounds", "acceleration", "heading/heading-rate/curvature", "equivalent level coordinated-turn bank", "C2 stage joins", "target-center spacing", "unmodified input hashes"],
+  "sampling_dt_s": 0.001,
+  "no_new_controller_or_plant": true,
+  "no_full_trajectory_simulation": true,
+  "conditions_before_formal_run": [
+    "Confirm exact fixed-wing safe airspeed and turn/climb envelope under stated wind",
+    "Check individual P and external commands including feedback, not only center feedforward",
+    "Define and verify fixed-wing continuous-flight backup and mixed-pair safety interface",
+    "Confirm platform response/acceleration parameters and nonzero-speed initial feasibility",
+    "Register final task once, before comparing controller performance"
+  ]
+}

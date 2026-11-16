@@ -1,0 +1,10 @@
+method,seed,complete,terminal_in_region,complete_role0,terminal_in_region_role0,complete_role1,terminal_in_region_role1,complete_role2,terminal_in_region_role2
+P,33001,46,46,10,10,16,16,20,20
+P,33002,46,46,10,10,16,16,20,20
+P,33003,46,46,10,10,16,16,20,20
+RAS04,33001,46,32,10,9,16,7,20,16
+RAS04,33002,46,32,10,9,16,7,20,16
+RAS04,33003,46,32,10,9,16,7,20,16
+MMD19,33001,30,6,4,0,15,3,11,3
+MMD19,33002,32,7,5,0,16,4,11,3
+MMD19,33003,30,7,5,0,16,3,9,4

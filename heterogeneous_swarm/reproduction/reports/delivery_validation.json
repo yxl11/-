@@ -1,0 +1,191 @@
+{
+  "status": "PASS",
+  "completed_utc": "2026-11-08T16:02:37.126797+00:00",
+  "relocation": "Copied package to migration_probe and launched its scripts from another working directory; all inputs resolved within copied package.",
+  "recomputed_results": {
+    "status": "PASS",
+    "checks": 351,
+    "maximum_error": 0.0,
+    "figure_arrays": 37,
+    "output": "\\\\?\\E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\reviews\\two_round_revision_20261108\\reproducibility\\migration_probe\\recomputed_after_move",
+    "new_trajectories": 0,
+    "reused_completed_relocation_recomputation": true
+  },
+  "preflights": [
+    {
+      "status": "PASS",
+      "method": "P",
+      "seed": 33001,
+      "parameters": {
+        "kc_per_s": 0.24,
+        "kf_per_s": 0.16
+      },
+      "source_root": "\\\\?\\E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\reviews\\two_round_revision_20261108\\reproducibility\\migration_probe\\snapshots\\P",
+      "initial_sha256": "af471cad293d573a62d438f54908f579db7e81452c90fc7d65fe09f2ba509239",
+      "raw_command_sha256": "08b868dfae09c954ae6195fc312d8523c77b181ad9b19a44ffb13ec6511d5c45",
+      "historical_manuscript_sha256": "195ab437300ab44339dfda33f169d41a2984a6315550a6cc367dfa46cb8091fd",
+      "controller_constructed": true,
+      "initial_assignment_verified": false,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "initial_nominal_command_matches_original_bitwise": true
+    },
+    {
+      "status": "PASS",
+      "method": "P",
+      "seed": 33002,
+      "parameters": {
+        "kc_per_s": 0.24,
+        "kf_per_s": 0.16
+      },
+      "source_root": "\\\\?\\E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\reviews\\two_round_revision_20261108\\reproducibility\\migration_probe\\snapshots\\P",
+      "initial_sha256": "fb7101a42e421b63f33de7d3bdc48fb875da8e1af0b99f085f80ea17dce5f144",
+      "raw_command_sha256": "4733a23987d76ca2fea5fe3ccf431139783125b78b1c68313a94f75a6c7b7686",
+      "historical_manuscript_sha256": "195ab437300ab44339dfda33f169d41a2984a6315550a6cc367dfa46cb8091fd",
+      "controller_constructed": true,
+      "initial_assignment_verified": false,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "initial_nominal_command_matches_original_bitwise": true
+    },
+    {
+      "status": "PASS",
+      "method": "P",
+      "seed": 33003,
+      "parameters": {
+        "kc_per_s": 0.24,
+        "kf_per_s": 0.16
+      },
+      "source_root": "\\\\?\\E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\reviews\\two_round_revision_20261108\\reproducibility\\migration_probe\\snapshots\\P",
+      "initial_sha256": "601b5bd1ac15a8a6062fe666a57efccabd07618239d6a78b09663c9c8cbb7718",
+      "raw_command_sha256": "268b46799f7f23552e5c3c9e515de81623fff7b85ae7564bef144d7cf3f238e4",
+      "historical_manuscript_sha256": "195ab437300ab44339dfda33f169d41a2984a6315550a6cc367dfa46cb8091fd",
+      "controller_constructed": true,
+      "initial_assignment_verified": false,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "initial_nominal_command_matches_original_bitwise": true
+    },
+    {
+      "status": "PASS",
+      "method": "RAS04",
+      "seed": 33001,
+      "parameters": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      },
+      "source_root": "\\\\?\\E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\reviews\\two_round_revision_20261108\\reproducibility\\migration_probe\\snapshots\\external",
+      "initial_sha256": "af471cad293d573a62d438f54908f579db7e81452c90fc7d65fe09f2ba509239",
+      "raw_command_sha256": "2b842985c4423edd1fe13559360c1ab695b709b0a301572cecda47b13f3ffa39",
+      "historical_manuscript_sha256": "9b1aae95ce0620415e95be64f79067cc7e48a2b0a1d13f613558437fa376d105",
+      "controller_constructed": true,
+      "initial_assignment_verified": true,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "initial_nominal_command_matches_original_bitwise": true
+    },
+    {
+      "status": "PASS",
+      "method": "RAS04",
+      "seed": 33002,
+      "parameters": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      },
+      "source_root": "\\\\?\\E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\reviews\\two_round_revision_20261108\\reproducibility\\migration_probe\\snapshots\\external",
+      "initial_sha256": "fb7101a42e421b63f33de7d3bdc48fb875da8e1af0b99f085f80ea17dce5f144",
+      "raw_command_sha256": "a875590824651cd46d3c9f27ea4952f287619617401052a6a8db743200a284be",
+      "historical_manuscript_sha256": "9b1aae95ce0620415e95be64f79067cc7e48a2b0a1d13f613558437fa376d105",
+      "controller_constructed": true,
+      "initial_assignment_verified": true,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "initial_nominal_command_matches_original_bitwise": true
+    },
+    {
+      "status": "PASS",
+      "method": "RAS04",
+      "seed": 33003,
+      "parameters": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      },
+      "source_root": "\\\\?\\E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\reviews\\two_round_revision_20261108\\reproducibility\\migration_probe\\snapshots\\external",
+      "initial_sha256": "601b5bd1ac15a8a6062fe666a57efccabd07618239d6a78b09663c9c8cbb7718",
+      "raw_command_sha256": "504bcec2e4866c2e8d8dc90f94678fcb73596ae9405a26d9e42b44bb95465ed6",
+      "historical_manuscript_sha256": "9b1aae95ce0620415e95be64f79067cc7e48a2b0a1d13f613558437fa376d105",
+      "controller_constructed": true,
+      "initial_assignment_verified": true,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "initial_nominal_command_matches_original_bitwise": true
+    },
+    {
+      "status": "PASS",
+      "method": "MMD19",
+      "seed": 33001,
+      "parameters": {
+        "gamma": 20.0
+      },
+      "source_root": "\\\\?\\E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\reviews\\two_round_revision_20261108\\reproducibility\\migration_probe\\snapshots\\external",
+      "initial_sha256": "af471cad293d573a62d438f54908f579db7e81452c90fc7d65fe09f2ba509239",
+      "raw_command_sha256": "6d5d9bbf63e8fe48ae2d5deacd5f13544dd856c61ddc6e1f7082ed87caacd5d0",
+      "historical_manuscript_sha256": "9b1aae95ce0620415e95be64f79067cc7e48a2b0a1d13f613558437fa376d105",
+      "controller_constructed": true,
+      "initial_assignment_verified": false,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "initial_nominal_command_matches_original_bitwise": true
+    },
+    {
+      "status": "PASS",
+      "method": "MMD19",
+      "seed": 33002,
+      "parameters": {
+        "gamma": 20.0
+      },
+      "source_root": "\\\\?\\E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\reviews\\two_round_revision_20261108\\reproducibility\\migration_probe\\snapshots\\external",
+      "initial_sha256": "fb7101a42e421b63f33de7d3bdc48fb875da8e1af0b99f085f80ea17dce5f144",
+      "raw_command_sha256": "6a778729c644e90a7c45c34483fd6813ae248decf4ad1fe71752af3357abd6fa",
+      "historical_manuscript_sha256": "9b1aae95ce0620415e95be64f79067cc7e48a2b0a1d13f613558437fa376d105",
+      "controller_constructed": true,
+      "initial_assignment_verified": false,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "initial_nominal_command_matches_original_bitwise": true
+    },
+    {
+      "status": "PASS",
+      "method": "MMD19",
+      "seed": 33003,
+      "parameters": {
+        "gamma": 20.0
+      },
+      "source_root": "\\\\?\\E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\reviews\\two_round_revision_20261108\\reproducibility\\migration_probe\\snapshots\\external",
+      "initial_sha256": "601b5bd1ac15a8a6062fe666a57efccabd07618239d6a78b09663c9c8cbb7718",
+      "raw_command_sha256": "00d474d612cf4e80e02ce6bb207af949360ae5fedccff019d6a763476969db68",
+      "historical_manuscript_sha256": "9b1aae95ce0620415e95be64f79067cc7e48a2b0a1d13f613558437fa376d105",
+      "controller_constructed": true,
+      "initial_assignment_verified": false,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "initial_nominal_command_matches_original_bitwise": true
+    }
+  ],
+  "new_closed_loop_trajectories": 0,
+  "total_model_propagation_steps": 0,
+  "full_rerun_execution": "Not run. Original complete 178-second entry points are supplied; source/hash/initial/assignment/controller construction and initial nominal command preflights passed.",
+  "copied_package_integrity": {
+    "status": "PASS",
+    "checked_copied_files": 297,
+    "new_trajectories": 0,
+    "current_timing_results": "PASS; hash verification only, not repeated timing"
+  },
+  "original_package_integrity": {
+    "status": "PASS",
+    "checked_copied_files": 297,
+    "new_trajectories": 0,
+    "current_timing_results": "PASS; hash verification only, not repeated timing"
+  },
+  "probe_cleanup": "The copied migration_probe directory may be removed after retaining this report; it is redundant delivery-test material."
+}

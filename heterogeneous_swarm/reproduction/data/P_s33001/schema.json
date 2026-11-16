@@ -1,0 +1,33 @@
+{
+  "state": "t=k*h; command sample k applies to [t,t+h); no terminal command",
+  "metric_periods_s": {
+    "fast": 0.02,
+    "slow": 0.5,
+    "nominal": 0.1
+  },
+  "diagnostic_columns": [
+    "continuous_distance_lower_m",
+    "sample_min_m",
+    "retained_backup_flag",
+    "candidate_prediction_steps",
+    "certificate_generation",
+    "certificate_age_before_action_steps",
+    "inherited_margin_m",
+    "world_cap_agent_fraction",
+    "FW_envelope_map_fraction",
+    "safety_rewrite_agent_fraction",
+    "safety_rewrite_rms_mps",
+    "local_repair_flag",
+    "local_repair_member_count",
+    "certificate_calls"
+  ],
+  "timing_columns": [
+    "nominal_time_s_zero_when_held",
+    "candidate_search_s",
+    "independent_step_and_audit_s"
+  ],
+  "nearest": "Slow arrays: Euclidean nearest other member within its own role, aligned with global member row; 3D and horizontal separately",
+  "shape": "64 fixed directions and centered projected quantile errors; density = normalized squared physical KDE L2",
+  "region": "Fraction inside the instantaneous 3D task ellipsoid radius 2 per role.",
+  "backup": "Trial backup follows the normalized horizontal relay-reference velocity; each accepted certificate stores its own frozen backup direction, including past its explicit prefix."
+}

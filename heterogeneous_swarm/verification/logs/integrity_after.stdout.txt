@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "checked_copied_files": 307,
+  "new_trajectories": 0,
+  "current_timing_results": "PASS; hash verification only, not repeated timing"
+}

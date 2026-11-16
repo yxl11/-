@@ -1,0 +1,1 @@
+{"status": "PASS", "checks": 351, "maximum_error": 0.0, "figure_arrays": 37, "output": "\\\\?\\E:\\swarm-git-20261116\\heterogeneous_swarm\\verification\\recomputed", "new_trajectories": 0}

@@ -1,0 +1,505 @@
+{
+  "status": "PASS",
+  "generation_seconds": 0.5806669999146834,
+  "rejections": {
+    "truncation": 1,
+    "kinematic": 0,
+    "geometry": 6
+  },
+  "attempts": [
+    {
+      "role": 0,
+      "pair": 0,
+      "proposals": 1
+    },
+    {
+      "role": 0,
+      "pair": 1,
+      "proposals": 1
+    },
+    {
+      "role": 0,
+      "pair": 2,
+      "proposals": 1
+    },
+    {
+      "role": 0,
+      "pair": 3,
+      "proposals": 1
+    },
+    {
+      "role": 0,
+      "pair": 4,
+      "proposals": 1
+    },
+    {
+      "role": 1,
+      "pair": 0,
+      "proposals": 1
+    },
+    {
+      "role": 1,
+      "pair": 1,
+      "proposals": 1
+    },
+    {
+      "role": 1,
+      "pair": 2,
+      "proposals": 1
+    },
+    {
+      "role": 1,
+      "pair": 3,
+      "proposals": 1
+    },
+    {
+      "role": 1,
+      "pair": 4,
+      "proposals": 1
+    },
+    {
+      "role": 1,
+      "pair": 5,
+      "proposals": 1
+    },
+    {
+      "role": 1,
+      "pair": 6,
+      "proposals": 1
+    },
+    {
+      "role": 1,
+      "pair": 7,
+      "proposals": 1
+    },
+    {
+      "role": 2,
+      "pair": 0,
+      "proposals": 2
+    },
+    {
+      "role": 2,
+      "pair": 1,
+      "proposals": 2
+    },
+    {
+      "role": 2,
+      "pair": 2,
+      "proposals": 1
+    },
+    {
+      "role": 2,
+      "pair": 3,
+      "proposals": 1
+    },
+    {
+      "role": 2,
+      "pair": 4,
+      "proposals": 1
+    },
+    {
+      "role": 2,
+      "pair": 5,
+      "proposals": 3
+    },
+    {
+      "role": 2,
+      "pair": 6,
+      "proposals": 1
+    },
+    {
+      "role": 2,
+      "pair": 7,
+      "proposals": 3
+    },
+    {
+      "role": 2,
+      "pair": 8,
+      "proposals": 2
+    },
+    {
+      "role": 2,
+      "pair": 9,
+      "proposals": 1
+    }
+  ],
+  "minimum_continuous_target_distance_lower_m": 2.7029736024138167,
+  "target_kinematics_by_member": [
+    {
+      "speed_lower_mps": 8.967491693440376,
+      "speed_upper_mps": 11.279820171327916,
+      "acceleration_global_bound_mps2": 1.8993204740516643,
+      "jerk_global_bound_mps3": 0.9013434194003129,
+      "tangential_acceleration_upper_mps2": 0.4903570297511222,
+      "yaw_rate_upper_deg_s": 5.858447025219782,
+      "inclination_deg": 0.0,
+      "inclination_rate_deg_s": 0.0
+    },
+    {
+      "speed_lower_mps": 8.76155661616991,
+      "speed_upper_mps": 11.42778262358879,
+      "acceleration_global_bound_mps2": 1.8993204740516643,
+      "jerk_global_bound_mps3": 0.9013434194003129,
+      "tangential_acceleration_upper_mps2": 0.5009671337029661,
+      "yaw_rate_upper_deg_s": 5.365467522352134,
+      "inclination_deg": 0.0,
+      "inclination_rate_deg_s": 0.0
+    },
+    {
+      "speed_lower_mps": 8.434860400132045,
+      "speed_upper_mps": 11.628560114545657,
+      "acceleration_global_bound_mps2": 1.8202278550309645,
+      "jerk_global_bound_mps3": 0.849183254487329,
+      "tangential_acceleration_upper_mps2": 0.54710975119326,
+      "yaw_rate_upper_deg_s": 5.208833792863083,
+      "inclination_deg": 0.0,
+      "inclination_rate_deg_s": 0.0
+    },
+    {
+      "speed_lower_mps": 8.981792429621894,
+      "speed_upper_mps": 11.165345858542551,
+      "acceleration_global_bound_mps2": 1.8202278550309645,
+      "jerk_global_bound_mps3": 0.849183254487329,
+      "tangential_acceleration_upper_mps2": 0.4880572323234418,
+      "yaw_rate_upper_deg_s": 6.22699406856733,
+      "inclination_deg": 0.0,
+      "inclination_rate_deg_s": 0.0
+    },
+    {
+      "speed_lower_mps": 8.623926898056785,
+      "speed_upper_mps": 11.388455634905435,
+      "acceleration_global_bound_mps2": 1.9371415674802726,
+      "jerk_global_bound_mps3": 0.9262857527665816,
+      "tangential_acceleration_upper_mps2": 0.4974271610710763,
+      "yaw_rate_upper_deg_s": 5.284724504889875,
+      "inclination_deg": 0.0,
+      "inclination_rate_deg_s": 0.0
+    },
+    {
+      "speed_lower_mps": 8.976024278526122,
+      "speed_upper_mps": 11.396993551202407,
+      "acceleration_global_bound_mps2": 1.9371415674802726,
+      "jerk_global_bound_mps3": 0.9262857527665816,
+      "tangential_acceleration_upper_mps2": 0.5315936340291157,
+      "yaw_rate_upper_deg_s": 6.116213806795323,
+      "inclination_deg": 0.0,
+      "inclination_rate_deg_s": 0.0
+    },
+    {
+      "speed_lower_mps": 8.971139848079384,
+      "speed_upper_mps": 10.98155693749294,
+      "acceleration_global_bound_mps2": 1.6068585829235005,
+      "jerk_global_bound_mps3": 0.7084700430867058,
+      "tangential_acceleration_upper_mps2": 0.4146174909471664,
+      "yaw_rate_upper_deg_s": 5.747656360860096,
+      "inclination_deg": 0.0,
+      "inclination_rate_deg_s": 0.0
+    },
+    {
+      "speed_lower_mps": 8.764887165737063,
+      "speed_upper_mps": 11.690689953703515,
+      "acceleration_global_bound_mps2": 1.6068585829235005,
+      "jerk_global_bound_mps3": 0.7084700430867058,
+      "tangential_acceleration_upper_mps2": 0.5475416896033609,
+      "yaw_rate_upper_deg_s": 5.397323911094351,
+      "inclination_deg": 0.0,
+      "inclination_rate_deg_s": 0.0
+    },
+    {
+      "speed_lower_mps": 8.977262205211789,
+      "speed_upper_mps": 10.88671167804074,
+      "acceleration_global_bound_mps2": 1.8879713942374876,
+      "jerk_global_bound_mps3": 0.8938589046371446,
+      "tangential_acceleration_upper_mps2": 0.40413044911869767,
+      "yaw_rate_upper_deg_s": 5.869868022658359,
+      "inclination_deg": 0.0,
+      "inclination_rate_deg_s": 0.0
+    },
+    {
+      "speed_lower_mps": 8.675432979127956,
+      "speed_upper_mps": 11.795217625811636,
+      "acceleration_global_bound_mps2": 1.8879713942374876,
+      "jerk_global_bound_mps3": 0.8938589046371446,
+      "tangential_acceleration_upper_mps2": 0.5731048084448606,
+      "yaw_rate_upper_deg_s": 5.4806521692113686,
+      "inclination_deg": 0.0,
+      "inclination_rate_deg_s": 0.0
+    },
+    {
+      "speed_lower_mps": 8.752452077254324,
+      "speed_upper_mps": 9.400407692837922,
+      "acceleration_global_bound_mps2": 0.9079379405690511,
+      "jerk_global_bound_mps3": 0.19704698104551485,
+      "acceleration_upper_mps2": 0.8215184708362473
+    },
+    {
+      "speed_lower_mps": 8.600323629892646,
+      "speed_upper_mps": 9.241708032249889,
+      "acceleration_global_bound_mps2": 0.9079379405690511,
+      "jerk_global_bound_mps3": 0.19704698104551485,
+      "acceleration_upper_mps2": 0.7532936475913943
+    },
+    {
+      "speed_lower_mps": 8.67241006283094,
+      "speed_upper_mps": 9.474623243383402,
+      "acceleration_global_bound_mps2": 0.9408793756968644,
+      "jerk_global_bound_mps3": 0.20685072220961326,
+      "acceleration_upper_mps2": 0.8280642899887173
+    },
+    {
+      "speed_lower_mps": 8.534067376529036,
+      "speed_upper_mps": 9.205174808793767,
+      "acceleration_global_bound_mps2": 0.9408793756968644,
+      "jerk_global_bound_mps3": 0.20685072220961326,
+      "acceleration_upper_mps2": 0.7480568458121718
+    },
+    {
+      "speed_lower_mps": 8.34989713673194,
+      "speed_upper_mps": 9.641883302003372,
+      "acceleration_global_bound_mps2": 1.0377234235189408,
+      "jerk_global_bound_mps3": 0.23567259880507385,
+      "acceleration_upper_mps2": 0.7724996093994334
+    },
+    {
+      "speed_lower_mps": 8.843901526681691,
+      "speed_upper_mps": 9.325201725581586,
+      "acceleration_global_bound_mps2": 1.0377234235189408,
+      "jerk_global_bound_mps3": 0.23567259880507385,
+      "acceleration_upper_mps2": 0.8262714342973545
+    },
+    {
+      "speed_lower_mps": 8.7199241523503,
+      "speed_upper_mps": 9.30500529655751,
+      "acceleration_global_bound_mps2": 1.056815392034121,
+      "jerk_global_bound_mps3": 0.24135458311783098,
+      "acceleration_upper_mps2": 0.8124255485837051
+    },
+    {
+      "speed_lower_mps": 8.710342520927831,
+      "speed_upper_mps": 9.211637655051536,
+      "acceleration_global_bound_mps2": 1.056815392034121,
+      "jerk_global_bound_mps3": 0.24135458311783098,
+      "acceleration_upper_mps2": 0.763535633690891
+    },
+    {
+      "speed_lower_mps": 8.75550238716228,
+      "speed_upper_mps": 9.282240122022666,
+      "acceleration_global_bound_mps2": 1.0502183406914356,
+      "jerk_global_bound_mps3": 0.23939122652577566,
+      "acceleration_upper_mps2": 0.7960372884405693
+    },
+    {
+      "speed_lower_mps": 8.826713439037526,
+      "speed_upper_mps": 9.23167599525537,
+      "acceleration_global_bound_mps2": 1.0502183406914356,
+      "jerk_global_bound_mps3": 0.23939122652577566,
+      "acceleration_upper_mps2": 0.7796240921216725
+    },
+    {
+      "speed_lower_mps": 8.454787092147201,
+      "speed_upper_mps": 9.559685697725104,
+      "acceleration_global_bound_mps2": 0.9920611481562543,
+      "jerk_global_bound_mps3": 0.22208299267884912,
+      "acceleration_upper_mps2": 0.7623009548650728
+    },
+    {
+      "speed_lower_mps": 8.845910742318155,
+      "speed_upper_mps": 9.384509140572156,
+      "acceleration_global_bound_mps2": 0.9920611481562543,
+      "jerk_global_bound_mps3": 0.22208299267884912,
+      "acceleration_upper_mps2": 0.8258309629007412
+    },
+    {
+      "speed_lower_mps": 8.58972141095559,
+      "speed_upper_mps": 9.422691319019435,
+      "acceleration_global_bound_mps2": 1.0295803378704647,
+      "jerk_global_bound_mps3": 0.23324912503518513,
+      "acceleration_upper_mps2": 0.7952805465139187
+    },
+    {
+      "speed_lower_mps": 8.845535550421014,
+      "speed_upper_mps": 9.206061818415504,
+      "acceleration_global_bound_mps2": 1.0295803378704647,
+      "jerk_global_bound_mps3": 0.23324912503518513,
+      "acceleration_upper_mps2": 0.7842451623834801
+    },
+    {
+      "speed_lower_mps": 8.65717865869421,
+      "speed_upper_mps": 9.360963087246958,
+      "acceleration_global_bound_mps2": 0.8769996882442195,
+      "jerk_global_bound_mps3": 0.187839409587703,
+      "acceleration_upper_mps2": 0.8039738686737896
+    },
+    {
+      "speed_lower_mps": 8.811966977210792,
+      "speed_upper_mps": 9.204536011919242,
+      "acceleration_global_bound_mps2": 0.8769996882442195,
+      "jerk_global_bound_mps3": 0.187839409587703,
+      "acceleration_upper_mps2": 0.7721858647671462
+    },
+    {
+      "speed_lower_mps": 8.2305534961073,
+      "speed_upper_mps": 9.345315430542593,
+      "acceleration_global_bound_mps2": 1.3041925621020987,
+      "jerk_global_bound_mps3": 0.3149768080100892,
+      "acceleration_upper_mps2": 0.7225391796375499
+    },
+    {
+      "speed_lower_mps": 7.858160976024812,
+      "speed_upper_mps": 9.345315430542593,
+      "acceleration_global_bound_mps2": 1.3041925621020987,
+      "jerk_global_bound_mps3": 0.3149768080100892,
+      "acceleration_upper_mps2": 0.6900418017113572
+    },
+    {
+      "speed_lower_mps": 7.8956684978277085,
+      "speed_upper_mps": 9.34573665227266,
+      "acceleration_global_bound_mps2": 1.3463147351086886,
+      "jerk_global_bound_mps3": 0.32751283990498714,
+      "acceleration_upper_mps2": 0.6934770693092797
+    },
+    {
+      "speed_lower_mps": 8.19276011973992,
+      "speed_upper_mps": 9.34573665227266,
+      "acceleration_global_bound_mps2": 1.3463147351086886,
+      "jerk_global_bound_mps3": 0.32751283990498714,
+      "acceleration_upper_mps2": 0.7194032042215708
+    },
+    {
+      "speed_lower_mps": 7.485705302465956,
+      "speed_upper_mps": 9.34654818261761,
+      "acceleration_global_bound_mps2": 1.427467769603755,
+      "jerk_global_bound_mps3": 0.3516648946586379,
+      "acceleration_upper_mps2": 0.6580133713840157
+    },
+    {
+      "speed_lower_mps": 8.604022200852459,
+      "speed_upper_mps": 9.34654818261761,
+      "acceleration_global_bound_mps2": 1.427467769603755,
+      "jerk_global_bound_mps3": 0.3516648946586379,
+      "acceleration_upper_mps2": 0.7556049311716926
+    },
+    {
+      "speed_lower_mps": 7.933295756849259,
+      "speed_upper_mps": 9.482239225188447,
+      "acceleration_global_bound_mps2": 1.4480716517123449,
+      "jerk_global_bound_mps3": 0.3577968414419055,
+      "acceleration_upper_mps2": 0.6971523067783534
+    },
+    {
+      "speed_lower_mps": 8.26716568463058,
+      "speed_upper_mps": 9.346754221438696,
+      "acceleration_global_bound_mps2": 1.4480716517123449,
+      "jerk_global_bound_mps3": 0.3577968414419055,
+      "acceleration_upper_mps2": 0.7262879543442522
+    },
+    {
+      "speed_lower_mps": 8.205707675720458,
+      "speed_upper_mps": 9.345851204412195,
+      "acceleration_global_bound_mps2": 1.3577699490622643,
+      "jerk_global_bound_mps3": 0.330922040267524,
+      "acceleration_upper_mps2": 0.72057718019493
+    },
+    {
+      "speed_lower_mps": 7.940671547263402,
+      "speed_upper_mps": 9.409934977772613,
+      "acceleration_global_bound_mps2": 1.3577699490622643,
+      "jerk_global_bound_mps3": 0.330922040267524,
+      "acceleration_upper_mps2": 0.6974484148033586
+    },
+    {
+      "speed_lower_mps": 8.474387249096116,
+      "speed_upper_mps": 9.345944449854965,
+      "acceleration_global_bound_mps2": 1.3670944933392741,
+      "jerk_global_bound_mps3": 0.3336971293979849,
+      "acceleration_upper_mps2": 0.7440597842274734
+    },
+    {
+      "speed_lower_mps": 7.621900612500647,
+      "speed_upper_mps": 9.345944449854965,
+      "acceleration_global_bound_mps2": 1.3670944933392741,
+      "jerk_global_bound_mps3": 0.3336971293979849,
+      "acceleration_upper_mps2": 0.6696662910382567
+    },
+    {
+      "speed_lower_mps": 8.16199116689927,
+      "speed_upper_mps": 9.345610209535778,
+      "acceleration_global_bound_mps2": 1.3336704614206556,
+      "jerk_global_bound_mps3": 0.32374976200736294,
+      "acceleration_upper_mps2": 0.7166694415599245
+    },
+    {
+      "speed_lower_mps": 7.931614836796599,
+      "speed_upper_mps": 9.345610209535778,
+      "acceleration_global_bound_mps2": 1.3336704614206556,
+      "jerk_global_bound_mps3": 0.32374976200736294,
+      "acceleration_upper_mps2": 0.6965653141651599
+    },
+    {
+      "speed_lower_mps": 7.310238094863682,
+      "speed_upper_mps": 9.34656652280534,
+      "acceleration_global_bound_mps2": 1.4293017883767944,
+      "jerk_global_bound_mps3": 0.35221071924919417,
+      "acceleration_upper_mps2": 0.6427080276035273
+    },
+    {
+      "speed_lower_mps": 8.77491697887315,
+      "speed_upper_mps": 9.34656652280534,
+      "acceleration_global_bound_mps2": 1.4293017883767944,
+      "jerk_global_bound_mps3": 0.35221071924919417,
+      "acceleration_upper_mps2": 0.770525372655534
+    },
+    {
+      "speed_lower_mps": 8.023039134165401,
+      "speed_upper_mps": 9.34537514384373,
+      "acceleration_global_bound_mps2": 1.3101638922158325,
+      "jerk_global_bound_mps3": 0.31675394293494263,
+      "acceleration_upper_mps2": 0.7044531176500519
+    },
+    {
+      "speed_lower_mps": 8.087762822342574,
+      "speed_upper_mps": 9.34537514384373,
+      "acceleration_global_bound_mps2": 1.3101638922158325,
+      "jerk_global_bound_mps3": 0.31675394293494263,
+      "acceleration_upper_mps2": 0.7101013249636811
+    },
+    {
+      "speed_lower_mps": 7.7547323918766065,
+      "speed_upper_mps": 9.345346618615466,
+      "acceleration_global_bound_mps2": 1.3073113693893208,
+      "jerk_global_bound_mps3": 0.31590500009601363,
+      "acceleration_upper_mps2": 0.6810279586347002
+    },
+    {
+      "speed_lower_mps": 8.336927101700416,
+      "speed_upper_mps": 9.345346618615466,
+      "acceleration_global_bound_mps2": 1.3073113693893208,
+      "jerk_global_bound_mps3": 0.31590500009601363,
+      "acceleration_upper_mps2": 0.7318340315052927
+    }
+  ],
+  "role_material_means": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "target_region_fraction_by_role": [
+    0.8,
+    0.5,
+    0.7
+  ],
+  "targets_sha256": "a00b46c250f9511eabe6c4e13a0918503e3f8086f517e5ab8bab1702f809601f",
+  "continuity_scope": "Nearest endpoint grid radius 0.01 s with global analytic acceleration/jerk bounds; all phases included. Targets stay at fixed individual altitudes."
+}

@@ -1,0 +1,16 @@
+{
+  "identical_common_files": {
+    "mission.py": "0ef82482104584b1ff1b9f172204521daf4421f1105aa694631d8193c1df5a85",
+    "engine.py": "e26ed803ebbf1af8186a0d3bb85b612a64e9105a6f250251391a0ed6049f9265",
+    "mission_engine.py": "7a332eafaf69b2fd9a6c008bad9e5ee897c5511188df754f8eefcd65ead294e0",
+    "shape_models.py": "9238d180da7041f8deb357f75dd1176624283c4e1ef63c14c8efa362f608340f",
+    "shape_feedback.py": "d88f55347c300254fe9aac00eccef73cc070c82bb8c21083377e9883b7dbf6aa",
+    "p_feedback.py": "e52d4359abf908136e7d3625b462ebffada01344198210191f07fedd00a15954",
+    "initial_state.npz": "962dc7230f295b8c339fbd192d84ba8d3a9736d7b56afe17205cbb7349a739f3",
+    "backup_geometry_check.json": "080d88712ed84086173d9428efd2c5af68f53c82a98730d653a98f7ce943ef2d"
+  },
+  "parent_pilot_sha256": "f373abaa7ee23858e38c8ed6a5838b0d088002aaf4c990a01bb18045f233a392",
+  "adaptation": "Only task-controller factory, generic task fields, native metrics, method CLI and manifests differ from pilot loop.",
+  "protocol_sha256": "043eec5fe847c2b19e6dface5e78257032fb2c3d9194302410578f0f7260f5de",
+  "runner_sha256": "f92004da8f3a2796fe9b6c23f39c263cfe0f2590b67539e1b1e0d0ee91d135fb"
+}

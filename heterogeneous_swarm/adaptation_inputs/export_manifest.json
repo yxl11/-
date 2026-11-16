@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "purpose": "task and initial-state export; no trajectory propagation",
+  "frozen_package_integrity": {
+    "status": "PASS",
+    "checked_copied_files": 307,
+    "new_trajectories": 0,
+    "current_timing_results": "PASS; hash verification only, not repeated timing"
+  },
+  "script_sha256": "bff73acf27d706ee314f5586c4b69b7ae336a0d780370b9782ea1cdca80562c0",
+  "source_files": {
+    "reproduction/snapshots/P/output/reviews/mixed_sweep_orbit_external_20261101/mission.py": "0ef82482104584b1ff1b9f172204521daf4421f1105aa694631d8193c1df5a85",
+    "reproduction/snapshots/P/output/reviews/mixed_sweep_orbit_external_20261101/shape_models.py": "9238d180da7041f8deb357f75dd1176624283c4e1ef63c14c8efa362f608340f",
+    "reproduction/snapshots/P/output/reviews/mixed_sweep_orbit_paired_20261102/initial_manifest.json": "2dc04074e964a3806e5bcda5c20a8cfb6415fb114dec4de4e912e4f786a5b42b",
+    "reproduction/data/P_s33001/configuration.json": "ed3fa381840a6e223be5fc42456948d11d0c1bfe81f561c28b7f0ea34be1c9da",
+    "reproduction/snapshots/P/output/reviews/p_gain_calibration_20261108/protocol.json": "b9287417afadae30cef227d0e424733bf6cab398b4ce635d36c3435855f5a896",
+    "reproduction/snapshots/P/output/reviews/mixed_role_corridor_demo_20261031/mission.py": "30dd9e31c80ceb715db4b23c6f171ef5128b045656008d42c49f5c4c98379d9d",
+    "reproduction/snapshots/P/output/reviews/mixed_role_corridor_demo_20261031/artifact_manifest.json": "87cee249c49519d77f62207bcf23fb89d88a3506fb9fd58c34f8194283e3b1c0",
+    "reproduction/snapshots/P/output/reviews/mixed_sweep_orbit_paired_20261102/initials/seed33001.npz": "af471cad293d573a62d438f54908f579db7e81452c90fc7d65fe09f2ba509239",
+    "reproduction/snapshots/P/output/reviews/mixed_sweep_orbit_paired_20261102/initials/seed33002.npz": "fb7101a42e421b63f33de7d3bdc48fb875da8e1af0b99f085f80ea17dce5f144",
+    "reproduction/snapshots/P/output/reviews/mixed_sweep_orbit_paired_20261102/initials/seed33003.npz": "601b5bd1ac15a8a6062fe666a57efccabd07618239d6a78b09663c9c8cbb7718"
+  },
+  "time_samples": 1781,
+  "time_step_s": 0.1,
+  "time_range_s": [
+    0.0,
+    178.0
+  ],
+  "role_counts": [
+    10,
+    16,
+    20
+  ],
+  "seeds": [
+    33001,
+    33002,
+    33003
+  ],
+  "model_propagation_steps": 0,
+  "outputs": {
+    "configuration_P.json": {
+      "sha256": "ccb1ebc08aa165da838ade8975a54270461906d855565d19719c5aece520d235",
+      "bytes": 2456
+    },
+    "initial_s33001.json": {
+      "sha256": "7264775b868eaf6eb6ba7a088c2f67d6eb1ef94d6e2ccb1d6a32a1edbde151ee",
+      "bytes": 15425
+    },
+    "initial_s33001.npz": {
+      "sha256": "1239eb3dff8a1a2623a2ff2e0fd1043099eb1724ef7e1d1f23242402e168c130",
+      "bytes": 2342
+    },
+    "initial_s33002.json": {
+      "sha256": "3cdd138a9e2418d2a5e66b5671fa30da2a03f321dddd6da874a032654942bf0c",
+      "bytes": 15424
+    },
+    "initial_s33002.npz": {
+      "sha256": "fe85da561827caf07a138ffc60872e1560c50af8db8a8d1e8a354545bf308d73",
+      "bytes": 2337
+    },
+    "initial_s33003.json": {
+      "sha256": "1ddc83cac7caf14828c3d8a60a2e68d12276d91c930e86df9f4f46078bab3323",
+      "bytes": 15441
+    },
+    "initial_s33003.npz": {
+      "sha256": "e88a2e089e1f7a44dc466d851d0e7f6d4fc0b06efad918929884f3dc6d57b7fa",
+      "bytes": 2338
+    },
+    "README.md": {
+      "sha256": "c1744d455edd34fee8e41a26be7a58550b837d85ee836572a636a5f80c09d905",
+      "bytes": 1246
+    },
+    "task_samples_10hz.npz": {
+      "sha256": "88dec67a8c13b1097f80df7fc0eb5e090b9d37a3581024a181386b2c1c9f2c56",
+      "bytes": 335253
+    },
+    "vehicle_map.template.json": {
+      "sha256": "2d53b470d24e3fdbcd61cbfcfd5d6eb8c7bf0cbbc86ab4111eeaca5984fc1b4e",
+      "bytes": 13370
+    }
+  }
+}

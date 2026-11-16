@@ -1,0 +1,26 @@
+{
+  "id": "mixed_local_escape_20261031",
+  "scope": "Developmental P closed loops on the two prior 80-member failure states; common execution interface, offline deterministic model.",
+  "closed_loop": {
+    "seeds": [
+      1008,
+      1010
+    ]
+  },
+  "duration_s": 60,
+  "task_period_s": 0.1,
+  "execution_period_s": 0.02,
+  "metric_period_s": 0.5,
+  "budget_s": 2400,
+  "workers": 2,
+  "native_threads": 1,
+  "max_certificate_calls": 29,
+  "max_changed_members": 16,
+  "geometry": "If the original nominal candidate fails, build from the previous local proposal and its unmodified certificate as fallback. For its original limiting pair, let n be the current unit separation and t a horizontal unit tangent to n, signed toward the nominal relative velocity (ascending member order resolves exact ties). Use 2 m safe distance / 1 s longest FW response time for radial/tangential relative speed floor (2 m/s). Preserve remaining component of the relative nominal velocity. Increase radial and horizontal tangent components to at least this floor, then split about the nominal pair mean. Try scale 1 and 0.5 about that mean; then scale 1 and 0.5 about common cruise. Scale multiplies the corrected relative velocity. Other previously locally repaired rows use b, all remaining rows keep the capped nominal. Apply speed caps and frozen mapping. First full certificate wins. No geometric result is a standalone safety proof.",
+  "scope_limits": "Old local candidate/retained certificate is fallback. No new gains in P, mission or platform change. No tuning to outcome. No selecting aircraft by seed in controller.",
+  "precheck": {
+    "states": "all 142 previous same states plus steps 0, first old local intervention, 250,750,1375,2000,2995 for each old local P trajectory (14 tagged states); repetitions across sources retained explicitly",
+    "gate": "Original successes unchanged, certified fallback baseline retained on checked states; all checked cert.command and next step consistent, unaffected mapped rows identical; noncruise pair candidate at first intervention and >=1 established-conflict state at t>=15 per seed. If gate fails stop new closed loops."
+  },
+  "success": "For each originally stuck member, inside its registered ellipsoid (normalized radius <=2) at every sample 40–60 s including terminal, both runs finish safely without global backup, and no newly introduced member in continuous forced cruise during 40–60 and outside at 60. Also test noncruise accepted motion -> actual velocity, and disclose whether nominal task feedback resumes, all other outlying members, group tradeoffs, spending and timing. These intervals are diagnostic, not field tolerances. Only two known seeds. No further parameter search."
+}

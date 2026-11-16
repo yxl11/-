@@ -1,0 +1,635 @@
+{
+  "registered_utc": "2026-10-23T05:08:02.998043+00:00",
+  "registered_before_controller_calibration": true,
+  "status": "new_task_frozen_before_calibration",
+  "config": {
+    "duration_s": 120.0,
+    "dt_s": 0.02,
+    "task_period_s": 0.1,
+    "metric_period_s": 0.5,
+    "counts": [
+      36,
+      24,
+      20
+    ],
+    "names": [
+      "scouting",
+      "relay_support",
+      "supply_transport"
+    ],
+    "sigma_m": [
+      [
+        5.0,
+        8.0,
+        3.0
+      ],
+      [
+        4.0,
+        5.0,
+        3.0
+      ],
+      [
+        4.0,
+        4.0,
+        2.5
+      ]
+    ],
+    "bandwidth_m": [
+      1.7,
+      1.5,
+      1.35
+    ],
+    "vmax_mps": [
+      3.0,
+      2.5,
+      2.0
+    ],
+    "amax_mps2": [
+      2.0,
+      1.5,
+      1.0
+    ],
+    "tau_s": [
+      0.4,
+      0.6,
+      0.8
+    ],
+    "D_m2ps": 2.5,
+    "kernel_length_m": 10.0,
+    "A_m2ps": [
+      [
+        0.0,
+        22.4,
+        0.0
+      ],
+      [
+        9.6,
+        0.0,
+        12.8
+      ],
+      [
+        0.0,
+        19.2,
+        0.0
+      ]
+    ],
+    "B": [
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ]
+    ],
+    "weights": [
+      0.42857142857142855,
+      1.0,
+      0.6666666666666666
+    ],
+    "kappa_m2ps": 10.0,
+    "role_kernel_length": 1.0,
+    "kc_per_s": 0.12,
+    "kf_per_s": 0.08,
+    "safe_distance_m": 2.0,
+    "initial_distance_m": 2.7,
+    "separation_buffer_m": 0.6,
+    "backup_horizon_s": 8.0,
+    "numerical_margin_m": 1e-07,
+    "candidate_levels": 8,
+    "initial_shape_scale": 0.68,
+    "test_slowdown_mps": 0.0,
+    "test_shape_gain_per_s": 0.0,
+    "test_shape_cap_mps": 0.8,
+    "metric_directions": 64,
+    "metric_direction_seed": 9127,
+    "thresholds": {
+      "center_m": 1.0,
+      "relative_m": 2.0,
+      "shape_proxy_m": 2.5,
+      "hold_s": 30.0,
+      "activation_mps": 0.02
+    },
+    "phase_windows_s": [
+      [
+        0,
+        40
+      ],
+      [
+        40,
+        60
+      ],
+      [
+        60,
+        100
+      ],
+      [
+        100,
+        120
+      ]
+    ],
+    "metric_windows_s": {
+      "whole": [
+        0,
+        120
+      ],
+      "maneuver": [
+        60,
+        100
+      ],
+      "final_motion": [
+        100,
+        120
+      ]
+    },
+    "snapshot_times_s": [
+      0,
+      40,
+      60,
+      80,
+      120
+    ]
+  },
+  "generation_registration_sha256": "4ed53d85ed1752dc62a1bf8d3a6afa2ebd71faea6c0d79afd530df7ea21bfb16",
+  "vendor_files": [
+    {
+      "source_path": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\simulations\\multigroup_closed_loop_20261012\\runs\\four_group_s401\\source_snapshot\\backup_governor.py",
+      "copied_path": "vendor/multigroup_closed_loop_20261012/runs/four_group_s401/source_snapshot/backup_governor.py",
+      "sha256": "dbf87dd35810fe2d8a63fe96f73794325febe4c881ce2baf2313b2ed89ad02e1"
+    },
+    {
+      "source_path": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\simulations\\multigroup_closed_loop_20261012\\runs\\four_group_s401\\source_snapshot\\local_avoidance_governor.py",
+      "copied_path": "vendor/multigroup_closed_loop_20261012/runs/four_group_s401/source_snapshot/local_avoidance_governor.py",
+      "sha256": "adab6a3810b0a914726dd3e8fff7dbeafc9d7dd7dfd746ebb9a14b2e812a21c8"
+    },
+    {
+      "source_path": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\simulations\\multigroup_closed_loop_20261012\\runs\\four_group_s401\\source_snapshot\\multigroup.py",
+      "copied_path": "vendor/multigroup_closed_loop_20261012/runs/four_group_s401/source_snapshot/multigroup.py",
+      "sha256": "40247f549fb44263864493aae587fb133ba57e0005e19d5f8daf877ff1e93a61"
+    },
+    {
+      "source_path": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\simulations\\multigroup_closed_loop_20261012\\runs\\four_group_s401\\source_snapshot\\run_simulation.py",
+      "copied_path": "vendor/multigroup_closed_loop_20261012/runs/four_group_s401/source_snapshot/run_simulation.py",
+      "sha256": "18412d1ed6faf34c374a4db84b4bb733bb7a9f624a2e9fb84b7853b1f70ff2f0"
+    },
+    {
+      "source_path": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\simulations\\projected_mobility_paired_20261014\\src\\point_controller.py",
+      "copied_path": "vendor/projected_mobility_paired_20261014/src/point_controller.py",
+      "sha256": "1979a39c38972a94a1a180d60cef2b605c3c465af6c691c6e2076e7fc03972af"
+    },
+    {
+      "source_path": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\simulations\\projected_mobility_paired_20261014\\src\\projected_controller.py",
+      "copied_path": "vendor/projected_mobility_paired_20261014/src/projected_controller.py",
+      "sha256": "67d417426ee0ff045ce2e3a4439de10f0ad82387751be9a95cf30fe28df6edb7"
+    },
+    {
+      "source_path": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\simulations\\unified_density_cooperation_20261014\\src\\task_density_controller.py",
+      "copied_path": "vendor/unified_density_cooperation_20261014/src/task_density_controller.py",
+      "sha256": "9bdd6de85dfdd3bd62dfb663e79b078802580acf26404204c278685d99f32b68"
+    }
+  ],
+  "mission_source_sha256": {
+    "src/mission.py": "762f3e31bdc348de1e38a1fc0c398371232547420fce6477884c3a164847646b",
+    "src/prepare.py": "497001c31dc686d37a2c30dbc03e16cddc30d4e878958e913395fd59127fbdf3"
+  },
+  "initials": {
+    "calibration_seeds": [
+      901,
+      902,
+      903
+    ],
+    "evaluation_seeds": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009,
+      1010
+    ],
+    "files": {
+      "901": {
+        "sha256": "98019e2467b827b0e426a0e501dfe7f5c646432a7c7f42e59dd5ba6c4714404f",
+        "minimum_initial_spacing_m": 2.7212794711773514,
+        "zero_backup_margin_m": 0.7212794711773514,
+        "actual_initial_center_error_vectors_m": [
+          [
+            2.0876274077417207,
+            4.676814705702635,
+            -0.5153654832964705
+          ],
+          [
+            3.9110113179106527,
+            0.19429014198178052,
+            -0.40299404182607645
+          ],
+          [
+            3.392155865625279,
+            -3.1119909148775617,
+            -0.17067808534609696
+          ]
+        ],
+        "particle_proposals": [
+          62,
+          83,
+          99
+        ],
+        "whole_state_retry": 0,
+        "assignment_seconds": 0.0006008999989717267
+      },
+      "902": {
+        "sha256": "dbd37ebef2b1f6f01a2bbd7e079f39c3139e5044403b8e01e41cc1b1e0f86ab4",
+        "minimum_initial_spacing_m": 2.7117363519169957,
+        "zero_backup_margin_m": 0.7117363519169957,
+        "actual_initial_center_error_vectors_m": [
+          [
+            -3.1297041623100768,
+            3.9748747997537373,
+            0.47747509778745467
+          ],
+          [
+            1.0277759250769762,
+            -3.605978831025896,
+            -0.13997629005516643
+          ],
+          [
+            -4.916324231908106,
+            -1.5800833572655109,
+            0.5927458114774851
+          ]
+        ],
+        "particle_proposals": [
+          90,
+          66,
+          77
+        ],
+        "whole_state_retry": 0,
+        "assignment_seconds": 0.00031820000003790483
+      },
+      "903": {
+        "sha256": "232df21bcc95c19647e899fa86897e7170347bc4b65d298c2d7f9c3e1bd886ef",
+        "minimum_initial_spacing_m": 2.7113613558325196,
+        "zero_backup_margin_m": 0.7113613558325196,
+        "actual_initial_center_error_vectors_m": [
+          [
+            -4.450591979976517,
+            1.8848908162651767,
+            0.7144783978091027
+          ],
+          [
+            3.3116794021326688,
+            3.1015391863005246,
+            -0.30470815731527523
+          ],
+          [
+            -6.387079837705567,
+            2.3454429380430395,
+            0.24223851099247895
+          ]
+        ],
+        "particle_proposals": [
+          92,
+          140,
+          105
+        ],
+        "whole_state_retry": 0,
+        "assignment_seconds": 0.0003828999979305081
+      },
+      "1001": {
+        "sha256": "4eb57c6eafad4480cbeaa10b79efc551538abe3eebc79bba02d05fbe6b23fa53",
+        "minimum_initial_spacing_m": 2.7209920221435806,
+        "zero_backup_margin_m": 0.7209920221435806,
+        "actual_initial_center_error_vectors_m": [
+          [
+            1.8628668591900386,
+            -3.7751326963751515,
+            -0.8533002687383728
+          ],
+          [
+            3.7273441520704047,
+            -3.3938982559138324,
+            -0.3637686146087731
+          ],
+          [
+            1.0629577677989737,
+            -3.8075948004247886,
+            -0.7736451154231432
+          ]
+        ],
+        "particle_proposals": [
+          109,
+          53,
+          51
+        ],
+        "whole_state_retry": 0,
+        "assignment_seconds": 0.0006410999994841404
+      },
+      "1002": {
+        "sha256": "6ed55ce2a57ee93a4895f71b4dffec25a8b22171a34d4e2b24e1ac8a0855a721",
+        "minimum_initial_spacing_m": 2.718207402613387,
+        "zero_backup_margin_m": 0.7182074026133871,
+        "actual_initial_center_error_vectors_m": [
+          [
+            -0.7528521446307082,
+            -2.2579265437855107,
+            0.4919896124625822
+          ],
+          [
+            -0.9366540354297829,
+            -2.4016580907897302,
+            -0.17135856084644274
+          ],
+          [
+            -3.7492671239037705,
+            -3.3541534734046237,
+            1.046001227297758
+          ]
+        ],
+        "particle_proposals": [
+          109,
+          81,
+          60
+        ],
+        "whole_state_retry": 0,
+        "assignment_seconds": 0.0005690000034519471
+      },
+      "1003": {
+        "sha256": "67a14079758852a28e1881c15694c501b76b5a585828c4263aeb7f1454c79718",
+        "minimum_initial_spacing_m": 2.7157754044098086,
+        "zero_backup_margin_m": 0.7157754044098086,
+        "actual_initial_center_error_vectors_m": [
+          [
+            -4.267260139091057,
+            -3.2563300522171734,
+            -0.4061803501078458
+          ],
+          [
+            2.0883202665544274,
+            2.2258599119796694,
+            -0.011876294193399417
+          ],
+          [
+            -1.9112984447832808,
+            1.0117231154102284,
+            1.182389205913907
+          ]
+        ],
+        "particle_proposals": [
+          103,
+          97,
+          72
+        ],
+        "whole_state_retry": 0,
+        "assignment_seconds": 0.0006074999982956797
+      },
+      "1004": {
+        "sha256": "e9fb158bcc37807ce21c3e8dd528d4db68c5f9023bc26f14e9770ff17aaa5ddb",
+        "minimum_initial_spacing_m": 2.7217203475105487,
+        "zero_backup_margin_m": 0.7217203475105487,
+        "actual_initial_center_error_vectors_m": [
+          [
+            -6.071318411148603,
+            -3.0325885958480083,
+            -0.8458746034293512
+          ],
+          [
+            -1.5607132933447658,
+            1.5946310626926827,
+            1.257037205137145
+          ],
+          [
+            -4.874512435360913,
+            1.0181298774258085,
+            -0.2792377020549708
+          ]
+        ],
+        "particle_proposals": [
+          72,
+          70,
+          73
+        ],
+        "whole_state_retry": 0,
+        "assignment_seconds": 0.0012681999942287803
+      },
+      "1005": {
+        "sha256": "be93864c40d79b37b28bd30acbc15ca9a06ed5202d18e7af083daca1ece6c896",
+        "minimum_initial_spacing_m": 2.705187561486629,
+        "zero_backup_margin_m": 0.7051875614866292,
+        "actual_initial_center_error_vectors_m": [
+          [
+            -6.1901577407252315,
+            3.771195391333473,
+            -0.680295057222132
+          ],
+          [
+            1.390946378351277,
+            2.078937140231519,
+            1.570795753662793
+          ],
+          [
+            -4.150806756725153,
+            0.3213810266437259,
+            1.2145083592781702
+          ]
+        ],
+        "particle_proposals": [
+          87,
+          65,
+          78
+        ],
+        "whole_state_retry": 0,
+        "assignment_seconds": 0.0006049000003258698
+      },
+      "1006": {
+        "sha256": "31bbcd29e59293df24b2495ff803838da6636a25a9ed6cd67f98a59d2cc8f4e0",
+        "minimum_initial_spacing_m": 2.7239045812501965,
+        "zero_backup_margin_m": 0.7239045812501965,
+        "actual_initial_center_error_vectors_m": [
+          [
+            -2.4663530097648767,
+            0.7256312144707242,
+            -0.7697930159143951
+          ],
+          [
+            -3.1199752210872127,
+            1.9495686457112782,
+            -0.6313088708506527
+          ],
+          [
+            -0.7827949349665353,
+            -0.9893419028896971,
+            0.2850954143221287
+          ]
+        ],
+        "particle_proposals": [
+          83,
+          77,
+          56
+        ],
+        "whole_state_retry": 0,
+        "assignment_seconds": 0.0006348999959300272
+      },
+      "1007": {
+        "sha256": "bbdd275f9b70104d319dd8a5be5279aa61c8310e4d1cb1f1f45ed8795d6e4b38",
+        "minimum_initial_spacing_m": 2.7206703071956455,
+        "zero_backup_margin_m": 0.7206703071956455,
+        "actual_initial_center_error_vectors_m": [
+          [
+            -4.407059043394538,
+            2.989073810668633,
+            0.25687176979846527
+          ],
+          [
+            -3.2891300341366496,
+            0.810457892354739,
+            0.8854662452517701
+          ],
+          [
+            -0.6927767112924847,
+            -2.462735291040665,
+            -0.09961611630992451
+          ]
+        ],
+        "particle_proposals": [
+          92,
+          63,
+          85
+        ],
+        "whole_state_retry": 0,
+        "assignment_seconds": 0.0004306999981054105
+      },
+      "1008": {
+        "sha256": "7d10b0bbbbd612165d98cbc99b6582ec10f03ab935c68e78b03e36840da67c8f",
+        "minimum_initial_spacing_m": 2.7092800439848825,
+        "zero_backup_margin_m": 0.7092800439848825,
+        "actual_initial_center_error_vectors_m": [
+          [
+            -4.622674121396775,
+            1.0307579259451916,
+            -0.36172092195216266
+          ],
+          [
+            4.843088463605037,
+            4.265931548229126,
+            0.8543119161250061
+          ],
+          [
+            -1.0188540736515783,
+            -4.1631821594054985,
+            -0.39811560768158216
+          ]
+        ],
+        "particle_proposals": [
+          101,
+          216,
+          46
+        ],
+        "whole_state_retry": 0,
+        "assignment_seconds": 0.0003032000022358261
+      },
+      "1009": {
+        "sha256": "9ee07e30b8abfb70a5f16bc1c50c5c723f94ab30fe86f157078778bc664675f0",
+        "minimum_initial_spacing_m": 2.707730844457046,
+        "zero_backup_margin_m": 0.7077308444570458,
+        "actual_initial_center_error_vectors_m": [
+          [
+            -5.294435590638132,
+            -0.8200190173798222,
+            -0.5458823147997478
+          ],
+          [
+            -2.7357274431261818,
+            2.8270695900824854,
+            -0.154861245592798
+          ],
+          [
+            0.7707415869609164,
+            0.8852766672568919,
+            -0.9783239571667579
+          ]
+        ],
+        "particle_proposals": [
+          97,
+          38,
+          112
+        ],
+        "whole_state_retry": 0,
+        "assignment_seconds": 0.0005002999969292432
+      },
+      "1010": {
+        "sha256": "f30ef499331ffd1b34604d1bc5fea917a80b9b178ddeeaa95c0f0077cbaefd1e",
+        "minimum_initial_spacing_m": 2.7006102452476313,
+        "zero_backup_margin_m": 0.7006102452476313,
+        "actual_initial_center_error_vectors_m": [
+          [
+            -4.936459310216678,
+            -0.7931635448037545,
+            0.6312067778493784
+          ],
+          [
+            4.981430991108589,
+            3.33986424347964,
+            0.14553191884282768
+          ],
+          [
+            -1.4548470923104375,
+            -0.3020542688847129,
+            -1.377642591162072
+          ]
+        ],
+        "particle_proposals": [
+          78,
+          170,
+          68
+        ],
+        "whole_state_retry": 0,
+        "assignment_seconds": 0.000563299996429123
+      }
+    }
+  },
+  "target_sha256": "4f1ce03647d8714d1118615ec42e3927d2a7f534faa1947424024a5ee5dbdcdb",
+  "no_internal_baselines_or_ablations": true,
+  "formal_run_gate": "at least two valid external methods and frozen_execution.json; no outcome-dependent P or mission changes",
+  "metrics": {
+    "sample_dt_s": 0.5,
+    "states_dt_s": 0.02,
+    "directions": 64,
+    "direction_seed": 9127,
+    "aggregate": "per-initial trapezoidal mean squared error then square root; report all pairs and arithmetic mean of per-initial results",
+    "descriptive_thresholds_only": {
+      "center_m": 1.0,
+      "relative_m": 2.0
+    },
+    "unknown_transient_engineering_tolerance": true
+  },
+  "P_adaptation": "three-role constructor replaces four-role guard and omega length; exact inherited online formulas preserved, graph1-2-3, new analytic reference, zero injected excitation",
+  "no_closed_loop_result_yet": true,
+  "parent_protocol": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\simulations\\three_group_external_comparison_20261018\\protocol\\frozen_mission.json",
+  "parent_protocol_sha256": "4e5be05b19d6c8a8ae52ac1df721b70491d902e63487c7aefd44dcc909d41e7e",
+  "new_reference": "No deceleration; q0=(1.4 I40,50,20 S60,100,50); offsets=(18-6 S60,100,12 S60,100,0). End at120s while moving.",
+  "old_evidence_retained_readonly": true,
+  "occupancy_region": "3D2sigma ellipsoid auxiliary occupancy; not a new hard constraint or area coverage",
+  "snapshot_and_timing_states_s": [
+    0,
+    40,
+    60,
+    80,
+    120
+  ],
+  "final_motion_window_s": [
+    100,
+    120
+  ],
+  "terminal_backup_semantics": "Optional hypothetical zero-reference check at cutoff; not an executed stopping phase"
+}

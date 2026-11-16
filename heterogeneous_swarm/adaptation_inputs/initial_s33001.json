@@ -1,0 +1,743 @@
+{
+  "seed": 33001,
+  "coordinates": "world ENU: x east, y north, z up; metres and metres/second",
+  "source_npz_sha256": "af471cad293d573a62d438f54908f579db7e81452c90fc7d65fe09f2ba509239",
+  "members": [
+    {
+      "member_id": 0,
+      "historical_member_id": 0,
+      "role": 0,
+      "role_name": "fixed_wing_scout",
+      "position_enu_m": [
+        19.756092332651452,
+        -5.35158980992286,
+        61.724336214024
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 1,
+      "historical_member_id": 1,
+      "role": 0,
+      "role_name": "fixed_wing_scout",
+      "position_enu_m": [
+        41.09313460923299,
+        -9.355356205344624,
+        58.47902101287284
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 2,
+      "historical_member_id": 2,
+      "role": 0,
+      "role_name": "fixed_wing_scout",
+      "position_enu_m": [
+        14.73543781128809,
+        7.4301867496131315,
+        56.317475413731806
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 3,
+      "historical_member_id": 3,
+      "role": 0,
+      "role_name": "fixed_wing_scout",
+      "position_enu_m": [
+        34.50066407885586,
+        -17.5168744506726,
+        59.59379225250984
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 4,
+      "historical_member_id": 4,
+      "role": 0,
+      "role_name": "fixed_wing_scout",
+      "position_enu_m": [
+        39.30731666503284,
+        0.7438340129526417,
+        63.156593589675424
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 5,
+      "historical_member_id": 5,
+      "role": 0,
+      "role_name": "fixed_wing_scout",
+      "position_enu_m": [
+        24.177152381393732,
+        3.5844686413819726,
+        62.47861097390107
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 6,
+      "historical_member_id": 6,
+      "role": 0,
+      "role_name": "fixed_wing_scout",
+      "position_enu_m": [
+        3.8649620716068256,
+        -8.547163101466491,
+        59.14476842645136
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 7,
+      "historical_member_id": 7,
+      "role": 0,
+      "role_name": "fixed_wing_scout",
+      "position_enu_m": [
+        16.645294785993997,
+        -14.895652967097785,
+        61.77190982552463
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 8,
+      "historical_member_id": 8,
+      "role": 0,
+      "role_name": "fixed_wing_scout",
+      "position_enu_m": [
+        4.042679790951404,
+        7.59838325223641,
+        58.34242695539953
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 9,
+      "historical_member_id": 9,
+      "role": 0,
+      "role_name": "fixed_wing_scout",
+      "position_enu_m": [
+        31.877265472992804,
+        16.309763878320204,
+        58.9910653359095
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 10,
+      "historical_member_id": 10,
+      "role": 1,
+      "role_name": "fpv_relay",
+      "position_enu_m": [
+        -5.187995068979577,
+        -4.346895518596422,
+        50.46558793494563
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 11,
+      "historical_member_id": 12,
+      "role": 1,
+      "role_name": "fpv_relay",
+      "position_enu_m": [
+        5.249438850312348,
+        1.6712651596615875,
+        51.65397843172793
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 12,
+      "historical_member_id": 13,
+      "role": 1,
+      "role_name": "fpv_relay",
+      "position_enu_m": [
+        2.5493493970011816,
+        3.4590365571557538,
+        54.93191419958155
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 13,
+      "historical_member_id": 15,
+      "role": 1,
+      "role_name": "fpv_relay",
+      "position_enu_m": [
+        1.8022158166038658,
+        -2.2003323427567185,
+        48.35409571402829
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 14,
+      "historical_member_id": 16,
+      "role": 1,
+      "role_name": "fpv_relay",
+      "position_enu_m": [
+        7.227938960436221,
+        -5.586732598415314,
+        53.87320731014424
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 15,
+      "historical_member_id": 18,
+      "role": 1,
+      "role_name": "fpv_relay",
+      "position_enu_m": [
+        -0.8623021718269324,
+        0.06367400612878438,
+        53.84341946583892
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 16,
+      "historical_member_id": 19,
+      "role": 1,
+      "role_name": "fpv_relay",
+      "position_enu_m": [
+        3.581038712934627,
+        -6.7002748343756835,
+        51.52696255469836
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 17,
+      "historical_member_id": 21,
+      "role": 1,
+      "role_name": "fpv_relay",
+      "position_enu_m": [
+        14.140150303624644,
+        3.376736387896835,
+        55.09863526947411
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 18,
+      "historical_member_id": 22,
+      "role": 1,
+      "role_name": "fpv_relay",
+      "position_enu_m": [
+        11.144899496986405,
+        -0.4825554951138471,
+        51.247947938850025
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 19,
+      "historical_member_id": 24,
+      "role": 1,
+      "role_name": "fpv_relay",
+      "position_enu_m": [
+        0.3548619967951292,
+        5.037094051433099,
+        55.74566179529227
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 20,
+      "historical_member_id": 25,
+      "role": 1,
+      "role_name": "fpv_relay",
+      "position_enu_m": [
+        4.304548447694751,
+        -12.895455604039594,
+        52.91983642380397
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 21,
+      "historical_member_id": 27,
+      "role": 1,
+      "role_name": "fpv_relay",
+      "position_enu_m": [
+        11.953346805051071,
+        -3.6174686369824327,
+        53.45384572019548
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 22,
+      "historical_member_id": 28,
+      "role": 1,
+      "role_name": "fpv_relay",
+      "position_enu_m": [
+        9.125024004475893,
+        -8.3182135479096,
+        52.340435438443286
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 23,
+      "historical_member_id": 30,
+      "role": 1,
+      "role_name": "fpv_relay",
+      "position_enu_m": [
+        -9.472212086100399,
+        -4.464263582487555,
+        55.11995750147446
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 24,
+      "historical_member_id": 31,
+      "role": 1,
+      "role_name": "fpv_relay",
+      "position_enu_m": [
+        2.6304468618668664,
+        0.46025688728264846,
+        53.13960876712352
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 25,
+      "historical_member_id": 33,
+      "role": 1,
+      "role_name": "fpv_relay",
+      "position_enu_m": [
+        -2.618755610015711,
+        -2.0790919154228895,
+        53.76996219658087
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 26,
+      "historical_member_id": 34,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -24.698817868393007,
+        5.357854960867544,
+        51.65150003843859
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 27,
+      "historical_member_id": 36,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -20.436650488877152,
+        -1.3164856615557912,
+        47.724909570188736
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 28,
+      "historical_member_id": 37,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -21.649645806767364,
+        5.8227956039713575,
+        53.703509972270524
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 29,
+      "historical_member_id": 39,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -25.767724880426435,
+        10.998757650165347,
+        47.09127206499171
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 30,
+      "historical_member_id": 40,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -25.018165191593447,
+        0.35299855646559886,
+        52.43593099389789
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 31,
+      "historical_member_id": 42,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -24.160292670083514,
+        -3.960465810219521,
+        48.76674945806167
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 32,
+      "historical_member_id": 43,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -30.48009484777382,
+        5.505427230895675,
+        47.30815817283279
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 33,
+      "historical_member_id": 45,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -18.209241040121736,
+        2.14563645041057,
+        45.716183800323
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 34,
+      "historical_member_id": 46,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -14.30588633550013,
+        5.32618828796782,
+        52.85685376763476
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 35,
+      "historical_member_id": 48,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -17.70053956620147,
+        -3.287712051438291,
+        48.42497632346879
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 36,
+      "historical_member_id": 49,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -21.60215304537617,
+        9.92992100394046,
+        53.384241992253976
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 37,
+      "historical_member_id": 51,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -29.5292951194783,
+        1.0700372413916264,
+        52.85516266697637
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 38,
+      "historical_member_id": 52,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -21.647652254289312,
+        -6.714291007097707,
+        50.08115761006519
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 39,
+      "historical_member_id": 54,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -28.340707531686274,
+        9.601704911870575,
+        51.794671437939336
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 40,
+      "historical_member_id": 55,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -31.573524039921793,
+        -1.347178221354215,
+        49.897375425651276
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 41,
+      "historical_member_id": 57,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -31.09783369584971,
+        -5.5880208407626775,
+        49.35773769726278
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 42,
+      "historical_member_id": 58,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -14.028841491116797,
+        -0.727726922914679,
+        48.46961308212549
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 43,
+      "historical_member_id": 60,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -16.90199336971661,
+        -0.528763080708107,
+        53.45390350872743
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 44,
+      "historical_member_id": 61,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -21.228625460082444,
+        12.637478424941582,
+        49.28746765018723
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "member_id": 45,
+      "historical_member_id": 63,
+      "role": 2,
+      "role_name": "quadrotor_support",
+      "position_enu_m": [
+        -27.96662979372756,
+        -2.2180509933185473,
+        44.627910178411334
+      ],
+      "velocity_enu_mps": [
+        9.0,
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}

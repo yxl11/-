@@ -1,0 +1,157 @@
+{
+  "status": "completed",
+  "method": "RAS08",
+  "seed": 33003,
+  "counts": [
+    10,
+    16,
+    20
+  ],
+  "completed_seconds": 178.0,
+  "requested_seconds": 178.0,
+  "completed_steps": 8900,
+  "wall_seconds": 613.6938313000137,
+  "failure": null,
+  "inputs_unchanged": true,
+  "changed_inputs": [],
+  "controller_identity_check": {
+    "method": "RAS08",
+    "identity": "Ren-Sorensen2008 Eq6 velocity-law adaptation with time-varying affine member targets; all-leader exact-reference specialization; 3D component extension",
+    "original_core_sha256": "1d2c498d27f8201aa3ebb5025d92bdfec7c9b59fbcc79b0593ff70852c15afeb",
+    "parameters": {
+      "alpha": 0.4,
+      "coupling": 0.4
+    },
+    "targets_sha256": "a00b46c250f9511eabe6c4e13a0918503e3f8086f517e5ab8bab1702f809601f",
+    "graph": {
+      "node_count": 46,
+      "undirected_edge_count": 835,
+      "binary_laplacian_max_eigenvalue": 46.00000000000005,
+      "binary_algebraic_connectivity": 16.000000000000007,
+      "normalized_max_eigenvalue": 0.9999999999999999,
+      "enabled_edge_weight_before_gain": 0.021739130434782584,
+      "definition": "complete within role and across role pairs (0,1),(1,2); no (0,2) edges"
+    },
+    "assignment_seconds": 0.0010179999517276883,
+    "no_P_feedback_added": true,
+    "theory_scope": "Affine shape change and mixed execution are adaptation conditions, not the source rigid-frame single-integrator guarantee.",
+    "external_adapter_sha256": "5367752d856257523be0c0953db46d1a2c902298f9c7bdd5bc1e7c6e26a516dd",
+    "scope": "Registered ten-seed paired evaluation",
+    "shape_feedback_sha256": "d88f55347c300254fe9aac00eccef73cc070c82bb8c21083377e9883b7dbf6aa",
+    "shape_models_sha256": "9238d180da7041f8deb357f75dd1176624283c4e1ef63c14c8efa362f608340f"
+  },
+  "actual_state_consistency": "bitwise equal at every committed step",
+  "bootstrap": {
+    "status": "certified",
+    "prediction_steps": 1,
+    "minimum_prefix_lower_m": 2.784600288765612,
+    "minimum_sample_m": 2.784602069165612,
+    "tail_lower_m": 2.784600288765612,
+    "certificate_margin_m": 0.784600288765612,
+    "tail_pair": [
+      33,
+      36
+    ],
+    "tail_path_max_m": 0.0,
+    "position_allowance_max_m": 8.902000000000002e-07,
+    "mapping": {
+      "changed_FW_count": 0,
+      "FW_below_floor_count": 0,
+      "FW_above_speed_cap_count": 0,
+      "FW_above_inclination_count": 0,
+      "FW_mapping_change_max_mps": 0.0,
+      "FW_mapping_change_rms_mps": 0.0,
+      "all_command_change_max_mps": 0.0
+    }
+  },
+  "retained_terminal_certificate": {
+    "status": "certified",
+    "prediction_steps": 78,
+    "minimum_prefix_lower_m": 3.2869088705217617,
+    "minimum_sample_m": 3.287060349418474,
+    "tail_lower_m": 2.028560380871076,
+    "certificate_margin_m": 0.028560380871076152,
+    "tail_pair": [
+      41,
+      42
+    ],
+    "tail_path_max_m": 1.489793100942774,
+    "position_allowance_max_m": 8.979000000000008e-07,
+    "mapping": {
+      "changed_FW_count": 0,
+      "FW_below_floor_count": 0,
+      "FW_above_speed_cap_count": 0,
+      "FW_above_inclination_count": 0,
+      "FW_mapping_change_max_mps": 1.837955691102267e-15,
+      "FW_mapping_change_rms_mps": 9.155554319619869e-16,
+      "all_command_change_max_mps": 1.837955691102267e-15
+    },
+    "backup_mps": [
+      4.513596634435126,
+      7.786362785127333,
+      0.0
+    ],
+    "generation": 8900,
+    "created_step": 8899,
+    "consumed_segments": 1,
+    "saved_prefix_states": 79,
+    "prefix_sha256": "3bd4d6c942c3dce52e463c7e20b957d9de16f1d4ffd886a55bbdfc7a62bf7757",
+    "prefix_and_backup_sha256": "02cd721b462c9600c3df010c28517a3378a1dd379236ae99597894c6ed369594"
+  },
+  "terminal_fresh_backup_certificate": {
+    "status": "certified",
+    "prediction_steps": 78,
+    "minimum_prefix_lower_m": 3.2869088707217617,
+    "minimum_sample_m": 3.2870606511217617,
+    "tail_lower_m": 2.0433297267028125,
+    "certificate_margin_m": 0.04332972670281254,
+    "tail_pair": [
+      41,
+      42
+    ],
+    "tail_path_max_m": 1.4450758340666559,
+    "position_allowance_max_m": 8.979000000000008e-07,
+    "mapping": {
+      "changed_FW_count": 0,
+      "FW_below_floor_count": 0,
+      "FW_above_speed_cap_count": 0,
+      "FW_above_inclination_count": 0,
+      "FW_mapping_change_max_mps": 8.881784197001252e-16,
+      "FW_mapping_change_rms_mps": 8.881784197001252e-16,
+      "all_command_change_max_mps": 8.881784197001252e-16
+    },
+    "terminal_trial_backup_mps": [
+      4.5000000000000036,
+      7.7942286340599445,
+      0.0
+    ]
+  },
+  "minimum_continuous_distance_lower_m": 2.2003285456788024,
+  "fallback_steps": 0,
+  "local_repair_steps": 0,
+  "total_certificate_calls": 8900,
+  "cpu_seconds": 606.328125,
+  "policy_branch_steps": {
+    "nominal": 8900,
+    "pair_escape": 0,
+    "local_cruise": 0,
+    "retained_backup": 0
+  },
+  "FW_speed_min_mps": 8.298779587457087,
+  "FW_speed_max_mps": 13.271355618563316,
+  "FW_inclination_max_deg": 9.91465476304036,
+  "FW_rate_max_mps2_deg_s": [
+    2.0,
+    10.0,
+    5.0
+  ],
+  "rotor_acceleration_max_mps2": [
+    1.5000000000000366,
+    1.00000000000003
+  ],
+  "real_time_delays_simulated": false,
+  "backup_mode": "tangent",
+  "lifetime_reserve_m": 8.901000000000002e-07,
+  "controller_identity_scope": "Ren-Sorensen2008 Eq6 velocity-law adaptation with time-varying affine member targets; all-leader exact-reference specialization; 3D component extension",
+  "scope": "Registered ten-seed paired evaluation"
+}

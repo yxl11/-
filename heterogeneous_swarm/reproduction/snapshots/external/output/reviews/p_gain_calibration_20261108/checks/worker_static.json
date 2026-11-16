@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "original_worker_sha256": "914d79c87f9e4653507f158593e280c7bf35207f0cab4841c5a5ddbfe47bfbfa",
+  "derived_worker_sha256": "199b9e3bf1bc8ad4ff3d5fa20168202034c4161d4976e5e04abe8b52c42989f2",
+  "build_script_sha256": "23b9c0e334d05c56a25e7970ccf3905526ad717792292101702c629d71a2e621",
+  "identical_function_AST": {
+    "read": true,
+    "save": true,
+    "stack_records": true,
+    "interval_count": true,
+    "check_local_record": true,
+    "JsonArrayLog": true,
+    "record_fields": true
+  },
+  "entire_execution_loop_AST_identical": true,
+  "allowed_control_change": "Only cfg kc_per_s/kf_per_s before ShapeFeedback construction; D and kappa frozen",
+  "other_changes": "Study paths, input provenance, identity, and removal of original fixed-gain CLI",
+  "no_original_file_written": true
+}

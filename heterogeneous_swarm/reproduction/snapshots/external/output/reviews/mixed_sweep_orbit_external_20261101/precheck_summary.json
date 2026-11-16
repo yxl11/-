@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "closed_loop_gate": true,
+  "frozen_utc": "2026-10-31T17:24:47.844605+00:00",
+  "inherited_shared_prechecks": {
+    "source": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\reviews\\mixed_sweep_orbit_sparse_20261101\\precheck_summary.json",
+    "scope": "Identical mission, shape, initial states, platform, directed backup and inheritance implementations. Shared checks reused by exact file hash; fresh bootstrap certification performed within each run."
+  },
+  "new_adapter_precheck": "E:\\工作\\论文3\\automatica_boundary_containment_short_captions\\output\\reviews\\mixed_sweep_orbit_external_20261101\\adapter_precheck.json",
+  "new_initial_controller_interface_checks": {
+    "RAS08": {
+      "initial_command_finite": true,
+      "nominal_shape": [
+        46,
+        3
+      ],
+      "native_keys": [
+        "assigned_position_error_m",
+        "assigned_position_rms_m",
+        "assigned_position_rms_by_role_m"
+      ],
+      "task_fields": {
+        "transport_velocity": [
+          46,
+          3
+        ],
+        "feedback_velocity": [
+          46,
+          3
+        ],
+        "desired_position": [
+          46,
+          3
+        ],
+        "desired_velocity": [
+          46,
+          3
+        ]
+      }
+    },
+    "MMD19": {
+      "initial_command_finite": true,
+      "nominal_shape": [
+        46,
+        3
+      ],
+      "native_keys": [
+        "mmd_squared_per_role",
+        "mmd_squared_equal_role_mean"
+      ],
+      "task_fields": {
+        "transport_velocity": [
+          46,
+          3
+        ],
+        "feedback_velocity": [
+          46,
+          3
+        ]
+      }
+    }
+  },
+  "sources_sha256": {
+    "output/reviews/mixed_sweep_orbit_external_20261101/mission.py": "0ef82482104584b1ff1b9f172204521daf4421f1105aa694631d8193c1df5a85",
+    "output/reviews/mixed_sweep_orbit_external_20261101/engine.py": "e26ed803ebbf1af8186a0d3bb85b612a64e9105a6f250251391a0ed6049f9265",
+    "output/reviews/mixed_sweep_orbit_external_20261101/mission_engine.py": "7a332eafaf69b2fd9a6c008bad9e5ee897c5511188df754f8eefcd65ead294e0",
+    "output/reviews/mixed_sweep_orbit_external_20261101/shape_models.py": "9238d180da7041f8deb357f75dd1176624283c4e1ef63c14c8efa362f608340f",
+    "output/reviews/mixed_sweep_orbit_external_20261101/shape_feedback.py": "d88f55347c300254fe9aac00eccef73cc070c82bb8c21083377e9883b7dbf6aa",
+    "output/reviews/mixed_sweep_orbit_external_20261101/p_feedback.py": "e52d4359abf908136e7d3625b462ebffada01344198210191f07fedd00a15954",
+    "output/reviews/mixed_sweep_orbit_external_20261101/initial_state.npz": "962dc7230f295b8c339fbd192d84ba8d3a9736d7b56afe17205cbb7349a739f3",
+    "output/reviews/mixed_sweep_orbit_external_20261101/backup_geometry_check.json": "080d88712ed84086173d9428efd2c5af68f53c82a98730d653a98f7ce943ef2d",
+    "output/reviews/mixed_sweep_orbit_external_20261101/protocol.json": "043eec5fe847c2b19e6dface5e78257032fb2c3d9194302410578f0f7260f5de",
+    "output/reviews/mixed_sweep_orbit_external_20261101/runner.py": "f92004da8f3a2796fe9b6c23f39c263cfe0f2590b67539e1b1e0d0ee91d135fb",
+    "output/reviews/mixed_sweep_orbit_external_20261101/runner_setup.json": "222a12b66b291b4af79222d0cda15a62cbedfe9a8fc44df5121feb863c095c6e",
+    "output/reviews/mixed_sweep_orbit_external_20261101/external_adapters.py": "5367752d856257523be0c0953db46d1a2c902298f9c7bdd5bc1e7c6e26a516dd",
+    "output/reviews/mixed_sweep_orbit_external_20261101/prepare_external.py": "a3814bd3b0e5a9cd4407b5b8f4da7f70e08a377b50230c1e4b220872a9027795",
+    "output/reviews/mixed_sweep_orbit_external_20261101/targets.npz": "a00b46c250f9511eabe6c4e13a0918503e3f8086f517e5ab8bab1702f809601f",
+    "output/reviews/mixed_sweep_orbit_external_20261101/adapter_precheck.json": "f4ad24d80600872ecc5ad28020a4f0b1646645691e527612bf0f26da34cd010e",
+    "output/reviews/mixed_sweep_orbit_external_20261101/target_registration.json": "c946c7c2e602ea1f5b1ecaf057244c7cc9e9df108bcf7a7cc4f273d01de1ce46",
+    "output/reviews/mixed_sweep_orbit_external_20261101/target_checks.json": "81f01e6292b75b7f18135638b64bebbbc79ddb5657064daa77b67bd3658eda66",
+    "output/reviews/mixed_sweep_orbit_external_20261101/freeze_execution.py": "817dd67cdb7db2005373280f0be106d5815ed52b1f7c65cb6abcb30da47be1e6",
+    "output/simulations/three_group_moving_comparison_20261023/src/external_formation.py": "1d2c498d27f8201aa3ebb5025d92bdfec7c9b59fbcc79b0593ff70852c15afeb",
+    "output/simulations/three_group_moving_comparison_20261023/src/external_mmd.py": "65473095d3e90922c231e54b3b5c5236998410ff5853c038d21a80eafa236fb7"
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "status": "PASS",
+  "definition": "E[||KDE-Pi||_2^2]/||Pi||_2^2 for target-IID samples",
+  "sampling_assumption": "At each time, N independent samples from the current target Gaussian; no trajectory model.",
+  "integration": "Existing 0.5 s samples, endpoint-inclusive trapezoid per fixed window; equal-role aggregation.",
+  "counts": [
+    10,
+    16,
+    20
+  ],
+  "bandwidth_m": [
+    1.7,
+    1.5,
+    1.35
+  ],
+  "windows": [
+    {
+      "window": "sweep_regrouping",
+      "start_s": 8.0,
+      "end_s": 86.0,
+      "role": "Fixed-wing",
+      "smoothing_bias_squared": 0.009763841137213366,
+      "finite_N_variance": 8.247676337867414,
+      "expected_normalized_L2": 8.257440179004636,
+      "fixed_diagonal_self_kernel": 8.335029513535552,
+      "expected_offdiagonal_overlap": 0.7861785810130762,
+      "minus_twice_expected_target_overlap": -1.8637679155439817,
+      "target_norm_normalized": 1.0
+    },
+    {
+      "window": "sweep_regrouping",
+      "start_s": 8.0,
+      "end_s": 86.0,
+      "role": "FPV",
+      "smoothing_bias_squared": 0.017175614227554318,
+      "finite_N_variance": 1.32403934238561,
+      "expected_normalized_L2": 1.3412149566131641,
+      "fixed_diagonal_self_kernel": 1.375,
+      "expected_offdiagonal_overlap": 0.7644098642158248,
+      "minus_twice_expected_target_overlap": -1.7981949076026542,
+      "target_norm_normalized": 1.0
+    },
+    {
+      "window": "sweep_regrouping",
+      "start_s": 8.0,
+      "end_s": 86.0,
+      "role": "Quadrotor",
+      "smoothing_bias_squared": 0.01443792641250032,
+      "finite_N_variance": 1.1875846672450991,
+      "expected_normalized_L2": 1.202022593657601,
+      "fixed_diagonal_self_kernel": 1.2290809327846337,
+      "expected_offdiagonal_overlap": 0.788429045251192,
+      "minus_twice_expected_target_overlap": -1.8154873843782338,
+      "target_norm_normalized": 1.0
+    },
+    {
+      "window": "sweep_regrouping",
+      "start_s": 8.0,
+      "end_s": 86.0,
+      "role": "Equal-role aggregate",
+      "smoothing_bias_squared": 0.013792460592422668,
+      "finite_N_variance": 3.5864334491660412,
+      "expected_normalized_L2": 3.6002259097584672,
+      "fixed_diagonal_self_kernel": 3.646370148773395,
+      "expected_offdiagonal_overlap": 0.7796724968266977,
+      "minus_twice_expected_target_overlap": -1.825816735841623,
+      "target_norm_normalized": 1.0
+    },
+    {
+      "window": "patrol",
+      "start_s": 86.0,
+      "end_s": 178.0,
+      "role": "Fixed-wing",
+      "smoothing_bias_squared": 0.00969486547816751,
+      "finite_N_variance": 8.247609722285361,
+      "expected_normalized_L2": 8.2573045877635,
+      "fixed_diagonal_self_kernel": 8.335029513535556,
+      "expected_offdiagonal_overlap": 0.7867781212515399,
+      "minus_twice_expected_target_overlap": -1.864503047023544,
+      "target_norm_normalized": 1.0
+    },
+    {
+      "window": "patrol",
+      "start_s": 86.0,
+      "end_s": 178.0,
+      "role": "FPV",
+      "smoothing_bias_squared": 0.017148465617686348,
+      "finite_N_variance": 1.3240325455969282,
+      "expected_normalized_L2": 1.3411810112146139,
+      "fixed_diagonal_self_kernel": 1.375,
+      "expected_offdiagonal_overlap": 0.7645118160461565,
+      "minus_twice_expected_target_overlap": -1.7983308048315505,
+      "target_norm_normalized": 1.0
+    },
+    {
+      "window": "patrol",
+      "start_s": 86.0,
+      "end_s": 178.0,
+      "role": "Quadrotor",
+      "smoothing_bias_squared": 0.014932442964071105,
+      "finite_N_variance": 1.187716526058572,
+      "expected_normalized_L2": 1.2026489690226447,
+      "fixed_diagonal_self_kernel": 1.2290809327846326,
+      "expected_offdiagonal_overlap": 0.785923727795279,
+      "minus_twice_expected_target_overlap": -1.812355691557282,
+      "target_norm_normalized": 1.0
+    },
+    {
+      "window": "patrol",
+      "start_s": 86.0,
+      "end_s": 178.0,
+      "role": "Equal-role aggregate",
+      "smoothing_bias_squared": 0.013925258019974988,
+      "finite_N_variance": 3.586452931313621,
+      "expected_normalized_L2": 3.600378189333586,
+      "fixed_diagonal_self_kernel": 3.6463701487733964,
+      "expected_offdiagonal_overlap": 0.7790712216976585,
+      "minus_twice_expected_target_overlap": -1.825063181137459,
+      "target_norm_normalized": 1.0
+    }
+  ],
+  "fixed_wing_scale_context": [
+    {
+      "window": "sweep_regrouping",
+      "proposed_existing_FW_mean": 6.780309295637135,
+      "proposed_existing_FW_per_seed": [
+        6.7982727021233655,
+        6.931744005891011,
+        6.6109111788970285
+      ],
+      "iid_FW_expectation": 8.257440179004636,
+      "fixed_diagonal_self_kernel_FW": 8.335029513535552,
+      "interpretation": "Scale context only; not a new controller comparison or error decomposition of controlled data."
+    },
+    {
+      "window": "patrol",
+      "proposed_existing_FW_mean": 6.725977315298297,
+      "proposed_existing_FW_per_seed": [
+        6.814581039898475,
+        6.702453260607782,
+        6.660897645388635
+      ],
+      "iid_FW_expectation": 8.2573045877635,
+      "fixed_diagonal_self_kernel_FW": 8.335029513535556,
+      "interpretation": "Scale context only; not a new controller comparison or error decomposition of controlled data."
+    }
+  ],
+  "scope": "Analytic scale reference; not a lower bound, optimum, controlled-data error, or algorithm baseline."
+}

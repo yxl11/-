@@ -1,0 +1,26 @@
+{
+  "method": "RAS08",
+  "identity": "Ren-Sorensen2008 Eq6 velocity-law adaptation with time-varying affine member targets; all-leader exact-reference specialization; 3D component extension",
+  "original_core_sha256": "1d2c498d27f8201aa3ebb5025d92bdfec7c9b59fbcc79b0593ff70852c15afeb",
+  "parameters": {
+    "alpha": 0.4,
+    "coupling": 0.4
+  },
+  "targets_sha256": "a00b46c250f9511eabe6c4e13a0918503e3f8086f517e5ab8bab1702f809601f",
+  "graph": {
+    "node_count": 46,
+    "undirected_edge_count": 835,
+    "binary_laplacian_max_eigenvalue": 46.00000000000005,
+    "binary_algebraic_connectivity": 16.000000000000007,
+    "normalized_max_eigenvalue": 0.9999999999999999,
+    "enabled_edge_weight_before_gain": 0.021739130434782584,
+    "definition": "complete within role and across role pairs (0,1),(1,2); no (0,2) edges"
+  },
+  "assignment_seconds": 0.0007192000048235059,
+  "no_P_feedback_added": true,
+  "theory_scope": "Affine shape change and mixed execution are adaptation conditions, not the source rigid-frame single-integrator guarantee.",
+  "external_adapter_sha256": "5367752d856257523be0c0953db46d1a2c902298f9c7bdd5bc1e7c6e26a516dd",
+  "scope": "Registered ten-seed paired evaluation",
+  "shape_feedback_sha256": "d88f55347c300254fe9aac00eccef73cc070c82bb8c21083377e9883b7dbf6aa",
+  "shape_models_sha256": "9238d180da7041f8deb357f75dd1176624283c4e1ef63c14c8efa362f608340f"
+}

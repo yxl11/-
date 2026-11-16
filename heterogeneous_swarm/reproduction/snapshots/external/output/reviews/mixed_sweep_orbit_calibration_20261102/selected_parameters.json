@@ -1,0 +1,491 @@
+{
+  "protocol_sha256": "d82504ff3d630cb77f903e6476e9bdc5182083e32fbd1a6a2a829c32c5266bdf",
+  "seeds": [
+    32001,
+    32002,
+    32003
+  ],
+  "methods": {
+    "RAS08": {
+      "candidates": [
+        {
+          "index": 0,
+          "parameters": {
+            "alpha": 0.1,
+            "coupling": 0.1
+          },
+          "eligible": true,
+          "mean_native_score": 3.5635859828322296,
+          "per_seed": [
+            {
+              "seed": 32001,
+              "run": "runs/RAS08_c0_s32001",
+              "status": "completed",
+              "summary_sha256": "419f4f6036119e451ed9c4d6e6db3f75a9f076dcc1297fbd4202acf2f3abdfa2",
+              "eligible": true,
+              "native_score": 3.5511536400776214,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 3.687636241318467,
+              "orbit_center_RMS_m": 5.260566918439776,
+              "whole_formation_RMS_m": 2.182039384641584,
+              "terminal_members_inside": [
+                6,
+                5,
+                14
+              ],
+              "members_completing_turn": 46,
+              "native_file_sha256": "ac0db83d0b6301aa8b21128abfc346edcdff59f7f68c4c2f0d1701ff52764ebc",
+              "min_segment_lower_m": 2.610544051020615,
+              "fallback_s": 0.0,
+              "local_repair_s": 0.0
+            },
+            {
+              "seed": 32002,
+              "run": "runs/RAS08_c0_s32002",
+              "status": "completed",
+              "summary_sha256": "052c1864b3f5f2a6982c7a4983ea3d2224d18b637e7c15c49317fbaa884f653d",
+              "eligible": true,
+              "native_score": 3.5555750645931115,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 3.6778183666550013,
+              "orbit_center_RMS_m": 5.260566686117319,
+              "whole_formation_RMS_m": 2.0909624769088966,
+              "terminal_members_inside": [
+                6,
+                5,
+                14
+              ],
+              "members_completing_turn": 46,
+              "native_file_sha256": "65874160ab6009289edfa817110e99075b5f659096a1e4c3abd52dd0d6504831",
+              "min_segment_lower_m": 2.69778834244235,
+              "fallback_s": 0.0,
+              "local_repair_s": 0.0
+            },
+            {
+              "seed": 32003,
+              "run": "runs/RAS08_c0_s32003",
+              "status": "completed",
+              "summary_sha256": "80f456698e44bef6736d42a10af77e425b23ba676078253ab31db7c8164c99a8",
+              "eligible": true,
+              "native_score": 3.5840292438259564,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 3.678231009090373,
+              "orbit_center_RMS_m": 5.260565989571871,
+              "whole_formation_RMS_m": 2.0547683764819666,
+              "terminal_members_inside": [
+                6,
+                5,
+                14
+              ],
+              "members_completing_turn": 46,
+              "native_file_sha256": "eee283161f69c8588c04b1ef888fde1244a7e80bdd045ac1f669a9a3777b21c4",
+              "min_segment_lower_m": 2.4243335500887464,
+              "fallback_s": 0.0,
+              "local_repair_s": 0.0
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "parameters": {
+            "alpha": 0.2,
+            "coupling": 0.2
+          },
+          "eligible": true,
+          "mean_native_score": 2.2340226578284788,
+          "per_seed": [
+            {
+              "seed": 32001,
+              "run": "runs/RAS08_c1_s32001",
+              "status": "completed",
+              "summary_sha256": "45d43914ef88f46d9eada1eeb9e54dabe9e09118c5da4937aaf6f4af93de99fc",
+              "eligible": true,
+              "native_score": 2.220050615100793,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 2.265608133405305,
+              "orbit_center_RMS_m": 3.1378642853842544,
+              "whole_formation_RMS_m": 1.4546366957864412,
+              "terminal_members_inside": [
+                8,
+                6,
+                15
+              ],
+              "members_completing_turn": 46,
+              "native_file_sha256": "220e0e236a3de8ab39900d88d4f7ee3ee5e05371072f1c657c4e78d2b199e804",
+              "min_segment_lower_m": 2.690995743840171,
+              "fallback_s": 0.0,
+              "local_repair_s": 0.0
+            },
+            {
+              "seed": 32002,
+              "run": "runs/RAS08_c1_s32002",
+              "status": "completed",
+              "summary_sha256": "afdb9834864261218487ad66fc7f327836d8eb2c1f7c645e16466e76d24f1cff",
+              "eligible": true,
+              "native_score": 2.222909895242947,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 2.255868315222555,
+              "orbit_center_RMS_m": 3.1378642853839875,
+              "whole_formation_RMS_m": 1.3619689598741647,
+              "terminal_members_inside": [
+                8,
+                6,
+                15
+              ],
+              "members_completing_turn": 46,
+              "native_file_sha256": "a382485ae467a26dbc61430b13ba4b3d12fe8e928173cc3b4a0bd9c60d342f6f",
+              "min_segment_lower_m": 2.4906614767128326,
+              "fallback_s": 0.0,
+              "local_repair_s": 0.0
+            },
+            {
+              "seed": 32003,
+              "run": "runs/RAS08_c1_s32003",
+              "status": "completed",
+              "summary_sha256": "a5d327b061b91c6d3217380cac5563f9dab17528c500987d95ec2bb4b21bafc3",
+              "eligible": true,
+              "native_score": 2.2591074631416954,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 2.2574238636845534,
+              "orbit_center_RMS_m": 3.13786428538272,
+              "whole_formation_RMS_m": 1.3254010570919783,
+              "terminal_members_inside": [
+                8,
+                6,
+                15
+              ],
+              "members_completing_turn": 46,
+              "native_file_sha256": "0be222d841959ba98834bdc9108ac09354388b049df1db168c295d602d94b38b",
+              "min_segment_lower_m": 2.357250257693677,
+              "fallback_s": 0.0,
+              "local_repair_s": 0.0
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "parameters": {
+            "alpha": 0.4,
+            "coupling": 0.4
+          },
+          "eligible": true,
+          "mean_native_score": 1.354731415498857,
+          "per_seed": [
+            {
+              "seed": 32001,
+              "run": "runs/RAS08_c2_s32001",
+              "status": "completed",
+              "summary_sha256": "fda6a3871fcd96056fff9971301c51e02f054c063bdf39edc512af499b0d8685",
+              "eligible": true,
+              "native_score": 1.3352705046544677,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 1.273364404649456,
+              "orbit_center_RMS_m": 1.6569268770362755,
+              "whole_formation_RMS_m": 1.038427991849311,
+              "terminal_members_inside": [
+                9,
+                7,
+                16
+              ],
+              "members_completing_turn": 46,
+              "native_file_sha256": "b232dc5fcc1ebec712ecf1c3d227a71784f82bdd3caa826b712ac3408275014a",
+              "min_segment_lower_m": 2.272005009367396,
+              "fallback_s": 0.0,
+              "local_repair_s": 0.0
+            },
+            {
+              "seed": 32002,
+              "run": "runs/RAS08_c2_s32002",
+              "status": "completed",
+              "summary_sha256": "e692a808f318a0e6571977f5ee4ea5585d866c96784008ec1fa8f88793d69ec5",
+              "eligible": true,
+              "native_score": 1.335268279279039,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 1.2562589807472055,
+              "orbit_center_RMS_m": 1.6569268770362762,
+              "whole_formation_RMS_m": 0.9172237050231239,
+              "terminal_members_inside": [
+                9,
+                7,
+                16
+              ],
+              "members_completing_turn": 46,
+              "native_file_sha256": "2b4b739c6b362c95d96f9539915252d4f09343e039b2f8fb6a14fd3a7bf81c91",
+              "min_segment_lower_m": 2.139174307923814,
+              "fallback_s": 0.0,
+              "local_repair_s": 0.0
+            },
+            {
+              "seed": 32003,
+              "run": "runs/RAS08_c2_s32003",
+              "status": "completed",
+              "summary_sha256": "79a27f903322d2aec20534d0afbe01d4510b274354f8c03c3e0170ec0c367d21",
+              "eligible": true,
+              "native_score": 1.3936554625630648,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 1.2598468064899697,
+              "orbit_center_RMS_m": 1.656926877036275,
+              "whole_formation_RMS_m": 0.8718260896172011,
+              "terminal_members_inside": [
+                9,
+                7,
+                16
+              ],
+              "members_completing_turn": 46,
+              "native_file_sha256": "e2b9b020107d77b5db0d3ba63e47e7c693a81b1ddd891d41bcf5d38df0ae1097",
+              "min_segment_lower_m": 2.004065289857823,
+              "fallback_s": 0.0,
+              "local_repair_s": 0.02
+            }
+          ]
+        }
+      ],
+      "selected_parameters": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      },
+      "selected_index": 2,
+      "selected_mean": 1.354731415498857,
+      "boundary": true
+    },
+    "MMD19": {
+      "candidates": [
+        {
+          "index": 0,
+          "parameters": {
+            "gamma": 5.0
+          },
+          "eligible": true,
+          "mean_native_score": 0.13136178602356846,
+          "per_seed": [
+            {
+              "seed": 32001,
+              "run": "runs/MMD19_c0_s32001",
+              "status": "completed",
+              "summary_sha256": "accbceb62fef30579141b4931686b3c1facc6bf797e5621c4b02e88fbc9572d2",
+              "eligible": true,
+              "native_score": 0.13351310494394505,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 29.785637135251967,
+              "orbit_center_RMS_m": 45.40849545571965,
+              "whole_formation_RMS_m": 20.41573505307133,
+              "terminal_members_inside": [
+                0,
+                0,
+                0
+              ],
+              "members_completing_turn": 26,
+              "native_file_sha256": "e6412e41612618de4fabbaecb5fd37036497221cb80963c4586dad50f2a743d0",
+              "min_segment_lower_m": 2.1456069528566517,
+              "fallback_s": 0.0,
+              "local_repair_s": 0.0
+            },
+            {
+              "seed": 32002,
+              "run": "runs/MMD19_c0_s32002",
+              "status": "completed",
+              "summary_sha256": "73ec15077e89edc1c22393a6734fdcd4b68b54e39a9b91706cecd9e59801e8d3",
+              "eligible": true,
+              "native_score": 0.1308501714622331,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 29.706998677617477,
+              "orbit_center_RMS_m": 45.32374770947946,
+              "whole_formation_RMS_m": 20.488861821964086,
+              "terminal_members_inside": [
+                0,
+                0,
+                0
+              ],
+              "members_completing_turn": 24,
+              "native_file_sha256": "88fdbb8883fdfdd30b748b15722f29b18aa622d66203e2cdc5be526b33c4b34d",
+              "min_segment_lower_m": 2.552935733549068,
+              "fallback_s": 0.0,
+              "local_repair_s": 0.0
+            },
+            {
+              "seed": 32003,
+              "run": "runs/MMD19_c0_s32003",
+              "status": "completed",
+              "summary_sha256": "8cbb91ebcecdd1f9e02edf1e1fda786354929d52cae792c84786981348f25880",
+              "eligible": true,
+              "native_score": 0.1297220816645272,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 29.838777444090248,
+              "orbit_center_RMS_m": 45.53842187419265,
+              "whole_formation_RMS_m": 20.85958682827648,
+              "terminal_members_inside": [
+                0,
+                0,
+                0
+              ],
+              "members_completing_turn": 25,
+              "native_file_sha256": "69b15056aaf5fc2fa4cc9920f9a31943fab67e0fc7f78302f0f9fce623489245",
+              "min_segment_lower_m": 2.4765738336156935,
+              "fallback_s": 0.0,
+              "local_repair_s": 0.0
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "parameters": {
+            "gamma": 10.0
+          },
+          "eligible": true,
+          "mean_native_score": 0.11206445258410881,
+          "per_seed": [
+            {
+              "seed": 32001,
+              "run": "runs/MMD19_c1_s32001",
+              "status": "completed",
+              "summary_sha256": "2ccde9abe2d8167ff23ca7dccbb531082a5e67ceb67e24e1e186b74312a6d467",
+              "eligible": true,
+              "native_score": 0.11273841393906263,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 28.32974832243657,
+              "orbit_center_RMS_m": 43.20811075416928,
+              "whole_formation_RMS_m": 20.389896316264494,
+              "terminal_members_inside": [
+                0,
+                0,
+                0
+              ],
+              "members_completing_turn": 30,
+              "native_file_sha256": "fb3058fe2bdeb9813a26142fcb39bb4a07c9796c033db5ba6feaa961c0f44007",
+              "min_segment_lower_m": 2.1302429899646764,
+              "fallback_s": 0.0,
+              "local_repair_s": 0.0
+            },
+            {
+              "seed": 32002,
+              "run": "runs/MMD19_c1_s32002",
+              "status": "completed",
+              "summary_sha256": "7292f41a3f87fabb3c7c978302c9a8f1bd47faded771fc88e3e32004a7952608",
+              "eligible": true,
+              "native_score": 0.11242456664426775,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 28.229937501201128,
+              "orbit_center_RMS_m": 43.07581449047345,
+              "whole_formation_RMS_m": 20.321247394301558,
+              "terminal_members_inside": [
+                0,
+                0,
+                0
+              ],
+              "members_completing_turn": 28,
+              "native_file_sha256": "d313e5c2771467ae767334fd93527d0063493139551c2bf5782d3d4575ab5d3f",
+              "min_segment_lower_m": 2.3931583801369256,
+              "fallback_s": 0.0,
+              "local_repair_s": 0.0
+            },
+            {
+              "seed": 32003,
+              "run": "runs/MMD19_c1_s32003",
+              "status": "completed",
+              "summary_sha256": "7290ab9267996a1ab36ee7c1f34b2b6f01aaf8222acf9747b11cf56af5b12d20",
+              "eligible": true,
+              "native_score": 0.11103037716899605,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 28.264635304031394,
+              "orbit_center_RMS_m": 43.13951111148611,
+              "whole_formation_RMS_m": 20.597346757723862,
+              "terminal_members_inside": [
+                0,
+                0,
+                0
+              ],
+              "members_completing_turn": 26,
+              "native_file_sha256": "c173cbfc5b018325a6bd1cf1401c503379925d1c9a1d7a8a0ba0add9c192e6c2",
+              "min_segment_lower_m": 2.4847525634229135,
+              "fallback_s": 0.0,
+              "local_repair_s": 0.0
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "parameters": {
+            "gamma": 20.0
+          },
+          "eligible": true,
+          "mean_native_score": 0.08326256000669927,
+          "per_seed": [
+            {
+              "seed": 32001,
+              "run": "runs/MMD19_c2_s32001",
+              "status": "completed",
+              "summary_sha256": "2c67c3749f477de9db15f21e4b1ac54c7af68ae8f6315a00290cf22520dc4899",
+              "eligible": true,
+              "native_score": 0.08446462107742368,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 25.762374316191124,
+              "orbit_center_RMS_m": 39.29920305304538,
+              "whole_formation_RMS_m": 20.14681097130263,
+              "terminal_members_inside": [
+                0,
+                3,
+                3
+              ],
+              "members_completing_turn": 31,
+              "native_file_sha256": "9220532d099b98477f27c3c5fce0f614c17f7b1dd942dd4e74b633e4b85c3cba",
+              "min_segment_lower_m": 2.0002116001798216,
+              "fallback_s": 0.02,
+              "local_repair_s": 2.2800000000000002
+            },
+            {
+              "seed": 32002,
+              "run": "runs/MMD19_c2_s32002",
+              "status": "completed",
+              "summary_sha256": "9904115b92ee176c2cf0e138d55827faf340fbbfb2017deeca71741dd85011f7",
+              "eligible": true,
+              "native_score": 0.08353850729800003,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 25.914773682746524,
+              "orbit_center_RMS_m": 39.54412242833281,
+              "whole_formation_RMS_m": 20.298058046853225,
+              "terminal_members_inside": [
+                0,
+                4,
+                3
+              ],
+              "members_completing_turn": 31,
+              "native_file_sha256": "7cb8ce04f0d7920ed7ca1aff418ced31259e6d5f91f65259be6e76fe81fd92df",
+              "min_segment_lower_m": 2.000692711669976,
+              "fallback_s": 0.44,
+              "local_repair_s": 1.46
+            },
+            {
+              "seed": 32003,
+              "run": "runs/MMD19_c2_s32003",
+              "status": "completed",
+              "summary_sha256": "16f8a436946a0ba572b2f30b6a0217bd3ca8331178db3c58443febf112208a2e",
+              "eligible": true,
+              "native_score": 0.0817845516446741,
+              "observed_s": 178.0,
+              "whole_center_RMS_m": 25.589397071308408,
+              "orbit_center_RMS_m": 39.0525976826112,
+              "whole_formation_RMS_m": 20.163511977273725,
+              "terminal_members_inside": [
+                0,
+                3,
+                3
+              ],
+              "members_completing_turn": 32,
+              "native_file_sha256": "c031ed17872d6a2e3d0909fdaf3cfb380c9440e5ceb891ff22d5e874ea2865b0",
+              "min_segment_lower_m": 2.0011924674545494,
+              "fallback_s": 0.0,
+              "local_repair_s": 1.56
+            }
+          ]
+        }
+      ],
+      "selected_parameters": {
+        "gamma": 20.0
+      },
+      "selected_index": 2,
+      "selected_mean": 0.08326256000669927,
+      "boundary": true
+    }
+  },
+  "scope": "Calibration only"
+}

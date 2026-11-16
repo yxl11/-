@@ -1,0 +1,45 @@
+{
+  "id":"fixedwing_local_repair_20261030",
+  "scope":"Mechanism development and focused closed-loop diagnosis of local command repair under the frozen mixed-airframe model; not a new independent external performance comparison",
+  "frozen":"Fixed-wing/FPV/quad models, P feedback and parameters, 60s task, all archived positions, 9m/s initial velocities,2m distance,0.1s nominal and0.02s execution clocks, fixed KDE and all original metrics unchanged",
+  "parent_directory":"../mixed_airframe_paper_comparison_20261030",
+  "model_sha256":"1d002b01827c8a1c39e73f83a961b47158e819f3ddf06ff7b10ea2b59e1bc8ac",
+  "model_protocol_sha256":"bb5d829aafe4b6a2b1bf41142844df365e4bd4074366cd88981ff7caeab2c7b1",
+  "certifier_source":"../mixed_airframe_paper_comparison_20261030/safety_interface.py",
+  "certifier_sha256":"0eb226594fbf4fcbd547a4a7a9e49190c39fa547582b624c52e15b51c8568892",
+  "duration_s":60,"task_period_s":0.1,"execution_period_s":0.02,"metric_period_s":0.5,
+  "extra_lifetime_position_allowance_m":0.0000003001,
+  "repair_rule":{
+    "max_rounds":8,"max_members":16,"max_certificate_calls":25,
+    "candidate":"Copy original speed-capped reference, replace selected member rows by commonb=(9,0,0); original certifier maps once and checks all3160pairs plus full common-cruise backup",
+    "order":"First nominal. For returned limiting_pair, try each unmasked endpoint separately, ascending norm(capped_k-b), ties by global0basedindex; if both fail try both endpoints. Carry the failed both-endpoint trial's new limiting_pair into the next round. One new endpoint means one trial, no duplicate double trial.",
+    "reset":"Mask starts empty at every20ms call; no persistent member blacklist",
+    "stop":"Missing limiting_pair, no new member, no distinct candidate, member/round budget, or unresolved tail without a pair: stop repair and use existing retained certificate",
+    "duplicates":"Skip a bitwise-identical previously tested candidate without recertifying; still try another distinct endpoint branch. Stop if no distinct candidate can advance the accumulated mask.",
+    "accept":"First fully certified candidate; replace certificate and return its exact command. No remapping or post-acceptance modification.",
+    "not_claimed":"No maximally permissive filter, optimal density tradeoff or task progress guarantee; norm determines candidate order only"
+  },
+  "same_state":{
+    "sources":"All30 archived formal runs:3methods x10seeds",
+    "steps":[0,750,1375,2000],
+    "extra":"First recorded nominal rejection per run, if any; deduplicate within method-seed",
+    "expected_count":142,"expected_old_nominal_pass":78,"expected_old_nominal_reject":64,
+    "input":"Saved actual positions/velocities and saved speed_capped at that exact step; never substitute fresh feedback for held input",
+    "fallback":"Do not bootstrap arbitrary historical states; original retained certificates were valid. Static checks assess new candidates without executing fallback.",
+    "checks":["Old nominal success returns same accepted command bitwise","Every new accepted candidate has whole-path certificate and bitwise one-step prediction/execution match","At most16member references changed, all other mapped rows exactly preserved","All outcomes and call counts retained"],
+    "closed_loop_gate":"No identity/safety audit errors; all78old successes unchanged; at least one certified local candidate at the first rejection of each P seed1008/1010 with no more than16modified members. Other states, including40s, remain fully reported; they are not a selected favorable subset."
+  },
+  "closed_loop":{
+    "seeds":[1008,1010],"method":"P","parameters":{},
+    "recompute":"Fresh P from new actual state every0.1s; original model executes every accepted command. This is closed-loop, not replay.",
+    "reference":"Compare each new run with its archived globally-replaced run on the same initial state and task",
+    "success":"Each complete certified run must lower whole-run global-backup time, whole-run Ec/EB RMS and terminal Ec/EB relative to its archived baseline to support reduced group-level stagnation. Report density/shape and member costs separately; this does not define engineering task acceptance.",
+    "member_check":"Record per-member repair time, longest consecutive repair, repair during40-60s, terminal world/role-coordinate target error and region status, and maximum member error. Report persistent local lag even if group means improve.",
+    "stop":"No code/protocol changes for unfavorable outcomes. Stop affected run on consistency/safety failure or registered budget; retain all evidence. No full30-run campaign, retuning or new scenario in this phase."
+  },
+  "budget_s":2400,"same_state_budget_s":1200,"total_budget_s":5400,
+  "workers":2,"native_threads":1,
+  "measurements":"Original phase windows0-15,15-40,40-60,0-60; per-seed integral-of-square RMS; native physicaldensity squaredL2 time mean; centeredshape and region separate; accepted-local fraction and calls/time additionally recorded",
+  "compute":"Offline logical clocks; certificate cost may increase. No CPU delay or real-time guarantee introduced.",
+  "protected":"Main manuscript, all old protocols, code and trajectories remain read-only. New implementation/records only in this directory. Fixed-wing is a required platform; a negative repair result rejects this interface candidate, not the fixed-wing research scope."
+}

@@ -1,0 +1,82 @@
+{
+  "id": "46_member_sweep_orbit_external_paired",
+  "registration_local_date": "2026-11-01",
+  "scope": "Single common-initial-condition comparison of current affine-template P with RAS08 and deterministic MMD19 adaptations. No new gain search or statistical superiority claim.",
+  "supersedes": "Two additional external trajectories on the frozen 46-member task; archived P trajectory is reused read-only.",
+  "seed": 31031,
+  "counts": [
+    10,
+    16,
+    20
+  ],
+  "duration_s": 178,
+  "dt_s": 0.02,
+  "task_period_s": 0.1,
+  "metric_period_s": 0.5,
+  "budget_s": 2400,
+  "sigma_m": [
+    [
+      13,
+      9,
+      3.5
+    ],
+    [
+      5.5,
+      4.5,
+      3
+    ],
+    [
+      4.8,
+      4.5,
+      2.8
+    ]
+  ],
+  "bandwidth_m": [
+    1.7,
+    1.5,
+    1.35
+  ],
+  "stage_boundaries_s": [
+    0,
+    8,
+    68,
+    86,
+    102,
+    178
+  ],
+  "stages": [
+    "沿线部署",
+    "前方往返扫掠",
+    "编队与群内重组",
+    "平滑转入",
+    "圆周巡查"
+  ],
+  "templates": "Time-varying ellipsoidal Gaussian roles with shared material frame. Smooth log-scale interpolations 8-24 and 68-86 s preserve horizontal target area; independent per-role axes. During the turn the shared frame follows survey-path orientation. Physical KDE bandwidths fixed. Affine material feedforward for actual member positions; fixed-time P metric/graph/center/shape decomposition evaluated in instantaneous axes.",
+  "backup": "Geometry precheck selected tangent via relay reference; certify whole fleet under fixed velocity vector for each new certificate. Inherited prefix and infinite suffix retain their original direction; dynamic direction is never substituted during fallback.",
+  "evidence": "Same initial positions/velocities, target dynamics, constraints and clocks. New adapter/geometry checks precede the two external trajectories.",
+  "criteria": "Role-level nominal 68m world lateral traversals at forward station; report actual successful left and right relative extrema; report actual complete survey revolution when cumulative unwrapped angle exceeds 360° for each role center on stable stage. Quantify observed vs target material-axis widths/ratios per role and shape error, not just visual rotation. Single deterministic demonstration.",
+  "methods": [
+    "P",
+    "RAS08",
+    "MMD19"
+  ],
+  "external_methods": [
+    "RAS08",
+    "MMD19"
+  ],
+  "method_parameters": {
+    "P": {},
+    "RAS08": {
+      "alpha": 0.2,
+      "coupling": 0.2
+    },
+    "MMD19": {
+      "gamma": 10.0
+    }
+  },
+  "parameter_source": "../mixed_airframe_paper_comparison_20261030/calibration_selection.json",
+  "current_task_calibration": false,
+  "parameter_scope": "Transferred gains previously selected on three independent initial conditions of an earlier task, not optimized on the current evaluation.",
+  "P_run": "../mixed_sweep_orbit_sparse_20261101/runs/P_seed31031",
+  "comparison": "One matched initial condition, same task and metric windows; all failure and intervention records retained."
+}

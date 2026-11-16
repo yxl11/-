@@ -1,0 +1,84 @@
+{
+  "per_run": {
+    "P_33001": {
+      "completed_steps": 8900,
+      "retained_certificate": "certified",
+      "minimum_distance_m": 2.3020526820870466,
+      "common_initial_and_reference_equal": true,
+      "center_max_absolute_error": 0.0,
+      "edge_max_absolute_error": 0.0
+    },
+    "P_33002": {
+      "completed_steps": 8900,
+      "retained_certificate": "certified",
+      "minimum_distance_m": 2.2089223325546534,
+      "common_initial_and_reference_equal": true,
+      "center_max_absolute_error": 0.0,
+      "edge_max_absolute_error": 0.0
+    },
+    "P_33003": {
+      "completed_steps": 8900,
+      "retained_certificate": "certified",
+      "minimum_distance_m": 2.381530701653819,
+      "common_initial_and_reference_equal": true,
+      "center_max_absolute_error": 0.0,
+      "edge_max_absolute_error": 0.0
+    },
+    "RAS04_33001": {
+      "completed_steps": 8900,
+      "retained_certificate": "certified",
+      "minimum_distance_m": 2.0019621006431687,
+      "common_initial_and_reference_equal": true,
+      "center_max_absolute_error": 0.0,
+      "edge_max_absolute_error": 0.0
+    },
+    "RAS04_33002": {
+      "completed_steps": 8900,
+      "retained_certificate": "certified",
+      "minimum_distance_m": 2.000462000509175,
+      "common_initial_and_reference_equal": true,
+      "center_max_absolute_error": 0.0,
+      "edge_max_absolute_error": 0.0
+    },
+    "RAS04_33003": {
+      "completed_steps": 8900,
+      "retained_certificate": "certified",
+      "minimum_distance_m": 2.2003285456788024,
+      "common_initial_and_reference_equal": true,
+      "center_max_absolute_error": 0.0,
+      "edge_max_absolute_error": 0.0
+    },
+    "MMD19_33001": {
+      "completed_steps": 8900,
+      "retained_certificate": "certified",
+      "minimum_distance_m": 2.0017143332648417,
+      "common_initial_and_reference_equal": true,
+      "center_max_absolute_error": 0.0,
+      "edge_max_absolute_error": 0.0
+    },
+    "MMD19_33002": {
+      "completed_steps": 8900,
+      "retained_certificate": "certified",
+      "minimum_distance_m": 2.000344026675395,
+      "common_initial_and_reference_equal": true,
+      "center_max_absolute_error": 0.0,
+      "edge_max_absolute_error": 0.0
+    },
+    "MMD19_33003": {
+      "completed_steps": 8900,
+      "retained_certificate": "certified",
+      "minimum_distance_m": 2.0005813188252866,
+      "common_initial_and_reference_equal": true,
+      "center_max_absolute_error": 0.0,
+      "edge_max_absolute_error": 0.0
+    }
+  },
+  "historical_hashes_verified": 140,
+  "aggregate_crosscheck_count": 108,
+  "aggregate_crosscheck_max_error": 0.0,
+  "role_crosscheck_count": 126,
+  "role_crosscheck_max_error": 0.0,
+  "stage_merge_count": 90,
+  "stage_merge_max_error": 3.325340003357269e-12,
+  "source_hashes_unchanged": true
+}

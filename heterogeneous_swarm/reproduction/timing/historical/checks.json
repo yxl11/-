@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "checks": {
+    "source_input_hashes_unchanged": true,
+    "protocol_hash_matches": true,
+    "state_manifest_hash_matches": true,
+    "state_pack_hash_matches": true,
+    "record_file_hash_matches": true,
+    "exact_call_counts": true,
+    "one_native_thread_each": true,
+    "effective_B_gains": true,
+    "deterministic_raw_at_each_state": true
+  },
+  "offline_preprocessing": {
+    "scope": "Frozen target point preparation is unchanged by P gains; generation time reused from original record, assignments measured in current constructor setup and excluded from online timing.",
+    "generation_seconds_archived": 0.5806669999146834,
+    "source_path": "output/reviews/mixed_sweep_orbit_external_20261101/target_checks.json",
+    "source_sha256": "81f01e6292b75b7f18135638b64bebbbc79ddb5657064daa77b67bd3658eda66",
+    "current_assignment_seconds_by_seed": {
+      "33001": 0.0018289000145159662,
+      "33002": 0.0007581000099889934,
+      "33003": 0.0005861999816261232,
+      "33004": 0.0005151999939698726,
+      "33005": 0.0005181999877095222,
+      "33006": 0.000519900000654161,
+      "33007": 0.0005344999954104424,
+      "33008": 0.0005574999959208071,
+      "33009": 0.0005174999823793769,
+      "33010": 0.0004974999756086618
+    }
+  }
+}

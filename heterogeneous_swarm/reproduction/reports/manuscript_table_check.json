@@ -1,0 +1,171 @@
+{
+  "status": "PASS",
+  "manuscript_sha256": "79931826c7e181fe82c94d1482f10cca3ed0c5712eb667d7f9bf877d902f7e20",
+  "checked_utc": "2026-11-08T16:08:00.868781+00:00",
+  "table_rows": [
+    {
+      "table": "tab:sweep-results",
+      "line": 576,
+      "expected_row": "本文方法 & 0.345 & 0.378 & 3.076 & 3.085 & 99.95 & 0.3197",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:sweep-results",
+      "line": 577,
+      "expected_row": "点位编队 & 0.644 & 0.707 & 3.335 & 2.061 & 69.82 & 0.3280",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:sweep-results",
+      "line": 578,
+      "expected_row": "核分布匹配 & 2.375 & 3.584 & 2.926 & 1.305 & 81.41 & 0.2971",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:patrol-results",
+      "line": 600,
+      "expected_row": "本文方法 & 2.676 & 1.158 & 3.217 & 3.087 & 100.00 & 0.7590",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:patrol-results",
+      "line": 601,
+      "expected_row": "点位编队 & 1.556 & 0.603 & 3.391 & 2.292 & 70.94 & 0.7531",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:patrol-results",
+      "line": 602,
+      "expected_row": "核分布匹配 & 35.669 & 27.565 & 3.842 & 7.532 & 35.64 & 0.8479",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:initial-deployment",
+      "line": 987,
+      "expected_row": "本文方法 & 1.730 & 0.637 & 2.946 & 1.582",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:initial-deployment",
+      "line": 988,
+      "expected_row": "点位编队 & 1.962 & 0.888 & 3.325 & 1.968",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:initial-deployment",
+      "line": 989,
+      "expected_row": "核分布匹配 & 3.604 & 0.083 & 3.153 & 1.533",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:role-results",
+      "line": 972,
+      "expected_row": "8--86 & 本文方法 & 0.572 & 0.102 & 0.143",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:phase-execution",
+      "line": 1017,
+      "expected_row": "8--86 & 本文方法 & 0 & 0 & 0.00 & 2.208922",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:role-results",
+      "line": 973,
+      "expected_row": "8--86 & 点位编队 & 1.084 & 0.154 & 0.211",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:phase-execution",
+      "line": 1018,
+      "expected_row": "8--86 & 点位编队 & 0.0120 & 0 & 0.00 & 2.700479",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:role-results",
+      "line": 974,
+      "expected_row": "8--86 & 核分布匹配 & 3.423 & 1.472 & 1.708",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:phase-execution",
+      "line": 1019,
+      "expected_row": "8--86 & 核分布匹配 & 0 & 0.0119 & 0.10 & 2.029419",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:role-density-stages",
+      "line": 1000,
+      "expected_row": "8--86 & 固定翼 & 6.780 & 7.729 & 7.283",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:role-density-stages",
+      "line": 1001,
+      "expected_row": "8--86 & 穿越机 & 1.338 & 1.531 & 0.787",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:role-density-stages",
+      "line": 1002,
+      "expected_row": "8--86 & 四旋翼 & 1.110 & 0.744 & 0.708",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:role-results",
+      "line": 976,
+      "expected_row": "86--178 & 本文方法 & 3.635 & 2.011 & 2.057",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:phase-execution",
+      "line": 1021,
+      "expected_row": "86--178 & 本文方法 & 0 & 0 & 0.00 & 2.418116",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:role-results",
+      "line": 977,
+      "expected_row": "86--178 & 点位编队 & 1.950 & 1.291 & 1.340",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:phase-execution",
+      "line": 1022,
+      "expected_row": "86--178 & 点位编队 & 0 & 0 & 0.00 & 3.269315",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:role-results",
+      "line": 978,
+      "expected_row": "86--178 & 核分布匹配 & 54.256 & 18.301 & 23.197",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:phase-execution",
+      "line": 1023,
+      "expected_row": "86--178 & 核分布匹配 & 0.9780 & 0.1076 & 3.02 & 2.000344",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:role-density-stages",
+      "line": 1004,
+      "expected_row": "86--178 & 固定翼 & 6.726 & 7.878 & 8.784",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:role-density-stages",
+      "line": 1005,
+      "expected_row": "86--178 & 穿越机 & 1.572 & 1.535 & 1.386",
+      "status": "PASS"
+    },
+    {
+      "table": "tab:role-density-stages",
+      "line": 1006,
+      "expected_row": "86--178 & 四旋翼 & 1.354 & 0.759 & 1.357",
+      "status": "PASS"
+    }
+  ],
+  "scope": "27 rows in six trajectory-derived tables. The new static target-sampling reference is checked by its separate analysis.",
+  "new_closed_loop_trajectories": 0
+}

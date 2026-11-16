@@ -1,0 +1,529 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-11-16T04:03:04.211288+00:00",
+  "package": "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction",
+  "verification_output": "E:\\swarm-git-20261116\\heterogeneous_swarm\\verification",
+  "child_working_directory": "E:\\swarm-git-20261116\\heterogeneous_swarm\\verification\\foreign_cwd",
+  "environment": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.6 (tags/v3.11.6:8b6ee5b, Oct  2 2023, 14:57:12) [MSC v.1935 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\31977\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "machine": "AMD64",
+    "cpu_count": 24,
+    "dependencies": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "matplotlib": "3.10.9"
+    }
+  },
+  "commands": [
+    {
+      "name": "integrity_before",
+      "argv": [
+        "C:\\Users\\31977\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\verify_package.py"
+      ],
+      "cwd": "E:\\swarm-git-20261116\\heterogeneous_swarm\\verification\\foreign_cwd",
+      "exit_code": 0,
+      "elapsed_wall_s": 0.47926779999397695,
+      "stdout": "logs\\integrity_before.stdout.txt",
+      "stderr": "logs\\integrity_before.stderr.txt"
+    },
+    {
+      "name": "recomputed",
+      "argv": [
+        "C:\\Users\\31977\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\reproduce.py",
+        "--out",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\verification\\recomputed"
+      ],
+      "cwd": "E:\\swarm-git-20261116\\heterogeneous_swarm\\verification\\foreign_cwd",
+      "exit_code": 0,
+      "elapsed_wall_s": 9.7945430999971,
+      "stdout": "logs\\recomputed.stdout.txt",
+      "stderr": "logs\\recomputed.stderr.txt"
+    },
+    {
+      "name": "preflight_P_33001",
+      "argv": [
+        "C:\\Users\\31977\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\preflight_context.py",
+        "--snapshot",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\P",
+        "--method",
+        "P",
+        "--seed",
+        "33001"
+      ],
+      "cwd": "E:\\swarm-git-20261116\\heterogeneous_swarm\\verification\\foreign_cwd",
+      "exit_code": 0,
+      "elapsed_wall_s": 2.2068782999995165,
+      "stdout": "logs\\preflight_P_33001.stdout.txt",
+      "stderr": "logs\\preflight_P_33001.stderr.txt"
+    },
+    {
+      "name": "preflight_P_33002",
+      "argv": [
+        "C:\\Users\\31977\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\preflight_context.py",
+        "--snapshot",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\P",
+        "--method",
+        "P",
+        "--seed",
+        "33002"
+      ],
+      "cwd": "E:\\swarm-git-20261116\\heterogeneous_swarm\\verification\\foreign_cwd",
+      "exit_code": 0,
+      "elapsed_wall_s": 1.7129129000240937,
+      "stdout": "logs\\preflight_P_33002.stdout.txt",
+      "stderr": "logs\\preflight_P_33002.stderr.txt"
+    },
+    {
+      "name": "preflight_P_33003",
+      "argv": [
+        "C:\\Users\\31977\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\preflight_context.py",
+        "--snapshot",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\P",
+        "--method",
+        "P",
+        "--seed",
+        "33003"
+      ],
+      "cwd": "E:\\swarm-git-20261116\\heterogeneous_swarm\\verification\\foreign_cwd",
+      "exit_code": 0,
+      "elapsed_wall_s": 1.865943500015419,
+      "stdout": "logs\\preflight_P_33003.stdout.txt",
+      "stderr": "logs\\preflight_P_33003.stderr.txt"
+    },
+    {
+      "name": "preflight_RAS04_33001",
+      "argv": [
+        "C:\\Users\\31977\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\preflight_context.py",
+        "--snapshot",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\external",
+        "--method",
+        "RAS04",
+        "--seed",
+        "33001"
+      ],
+      "cwd": "E:\\swarm-git-20261116\\heterogeneous_swarm\\verification\\foreign_cwd",
+      "exit_code": 0,
+      "elapsed_wall_s": 1.7897625000041444,
+      "stdout": "logs\\preflight_RAS04_33001.stdout.txt",
+      "stderr": "logs\\preflight_RAS04_33001.stderr.txt"
+    },
+    {
+      "name": "preflight_RAS04_33002",
+      "argv": [
+        "C:\\Users\\31977\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\preflight_context.py",
+        "--snapshot",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\external",
+        "--method",
+        "RAS04",
+        "--seed",
+        "33002"
+      ],
+      "cwd": "E:\\swarm-git-20261116\\heterogeneous_swarm\\verification\\foreign_cwd",
+      "exit_code": 0,
+      "elapsed_wall_s": 1.645673999999417,
+      "stdout": "logs\\preflight_RAS04_33002.stdout.txt",
+      "stderr": "logs\\preflight_RAS04_33002.stderr.txt"
+    },
+    {
+      "name": "preflight_RAS04_33003",
+      "argv": [
+        "C:\\Users\\31977\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\preflight_context.py",
+        "--snapshot",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\external",
+        "--method",
+        "RAS04",
+        "--seed",
+        "33003"
+      ],
+      "cwd": "E:\\swarm-git-20261116\\heterogeneous_swarm\\verification\\foreign_cwd",
+      "exit_code": 0,
+      "elapsed_wall_s": 1.597497700015083,
+      "stdout": "logs\\preflight_RAS04_33003.stdout.txt",
+      "stderr": "logs\\preflight_RAS04_33003.stderr.txt"
+    },
+    {
+      "name": "preflight_MMD19_33001",
+      "argv": [
+        "C:\\Users\\31977\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\preflight_context.py",
+        "--snapshot",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\external",
+        "--method",
+        "MMD19",
+        "--seed",
+        "33001"
+      ],
+      "cwd": "E:\\swarm-git-20261116\\heterogeneous_swarm\\verification\\foreign_cwd",
+      "exit_code": 0,
+      "elapsed_wall_s": 1.790953299991088,
+      "stdout": "logs\\preflight_MMD19_33001.stdout.txt",
+      "stderr": "logs\\preflight_MMD19_33001.stderr.txt"
+    },
+    {
+      "name": "preflight_MMD19_33002",
+      "argv": [
+        "C:\\Users\\31977\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\preflight_context.py",
+        "--snapshot",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\external",
+        "--method",
+        "MMD19",
+        "--seed",
+        "33002"
+      ],
+      "cwd": "E:\\swarm-git-20261116\\heterogeneous_swarm\\verification\\foreign_cwd",
+      "exit_code": 0,
+      "elapsed_wall_s": 1.6386801000044215,
+      "stdout": "logs\\preflight_MMD19_33002.stdout.txt",
+      "stderr": "logs\\preflight_MMD19_33002.stderr.txt"
+    },
+    {
+      "name": "preflight_MMD19_33003",
+      "argv": [
+        "C:\\Users\\31977\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\preflight_context.py",
+        "--snapshot",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\external",
+        "--method",
+        "MMD19",
+        "--seed",
+        "33003"
+      ],
+      "cwd": "E:\\swarm-git-20261116\\heterogeneous_swarm\\verification\\foreign_cwd",
+      "exit_code": 0,
+      "elapsed_wall_s": 1.644619500002591,
+      "stdout": "logs\\preflight_MMD19_33003.stdout.txt",
+      "stderr": "logs\\preflight_MMD19_33003.stderr.txt"
+    },
+    {
+      "name": "integrity_after",
+      "argv": [
+        "C:\\Users\\31977\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\verify_package.py"
+      ],
+      "cwd": "E:\\swarm-git-20261116\\heterogeneous_swarm\\verification\\foreign_cwd",
+      "exit_code": 0,
+      "elapsed_wall_s": 0.4180329999944661,
+      "stdout": "logs\\integrity_after.stdout.txt",
+      "stderr": "logs\\integrity_after.stderr.txt"
+    }
+  ],
+  "preflights": [
+    {
+      "status": "PASS",
+      "method": "P",
+      "seed": 33001,
+      "parameters": {
+        "kc_per_s": 0.24,
+        "kf_per_s": 0.16
+      },
+      "source_root": "\\\\?\\E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\P",
+      "initial_sha256": "af471cad293d573a62d438f54908f579db7e81452c90fc7d65fe09f2ba509239",
+      "raw_command_sha256": "08b868dfae09c954ae6195fc312d8523c77b181ad9b19a44ffb13ec6511d5c45",
+      "historical_manuscript_sha256": "195ab437300ab44339dfda33f169d41a2984a6315550a6cc367dfa46cb8091fd",
+      "controller_constructed": true,
+      "initial_assignment_verified": false,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "historical_held_reference_0_sha256": "08b868dfae09c954ae6195fc312d8523c77b181ad9b19a44ffb13ec6511d5c45",
+      "historical_held_reference_0_shape": [
+        46,
+        3
+      ],
+      "historical_held_reference_0_dtype": "float64",
+      "raw_command_bitwise_matches_saved_held_reference": true,
+      "bitwise_comparison_is_informational": true,
+      "history_path": "data\\P_s33001\\history.npz"
+    },
+    {
+      "status": "PASS",
+      "method": "P",
+      "seed": 33002,
+      "parameters": {
+        "kc_per_s": 0.24,
+        "kf_per_s": 0.16
+      },
+      "source_root": "\\\\?\\E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\P",
+      "initial_sha256": "fb7101a42e421b63f33de7d3bdc48fb875da8e1af0b99f085f80ea17dce5f144",
+      "raw_command_sha256": "4733a23987d76ca2fea5fe3ccf431139783125b78b1c68313a94f75a6c7b7686",
+      "historical_manuscript_sha256": "195ab437300ab44339dfda33f169d41a2984a6315550a6cc367dfa46cb8091fd",
+      "controller_constructed": true,
+      "initial_assignment_verified": false,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "historical_held_reference_0_sha256": "4733a23987d76ca2fea5fe3ccf431139783125b78b1c68313a94f75a6c7b7686",
+      "historical_held_reference_0_shape": [
+        46,
+        3
+      ],
+      "historical_held_reference_0_dtype": "float64",
+      "raw_command_bitwise_matches_saved_held_reference": true,
+      "bitwise_comparison_is_informational": true,
+      "history_path": "data\\P_s33002\\history.npz"
+    },
+    {
+      "status": "PASS",
+      "method": "P",
+      "seed": 33003,
+      "parameters": {
+        "kc_per_s": 0.24,
+        "kf_per_s": 0.16
+      },
+      "source_root": "\\\\?\\E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\P",
+      "initial_sha256": "601b5bd1ac15a8a6062fe666a57efccabd07618239d6a78b09663c9c8cbb7718",
+      "raw_command_sha256": "268b46799f7f23552e5c3c9e515de81623fff7b85ae7564bef144d7cf3f238e4",
+      "historical_manuscript_sha256": "195ab437300ab44339dfda33f169d41a2984a6315550a6cc367dfa46cb8091fd",
+      "controller_constructed": true,
+      "initial_assignment_verified": false,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "historical_held_reference_0_sha256": "268b46799f7f23552e5c3c9e515de81623fff7b85ae7564bef144d7cf3f238e4",
+      "historical_held_reference_0_shape": [
+        46,
+        3
+      ],
+      "historical_held_reference_0_dtype": "float64",
+      "raw_command_bitwise_matches_saved_held_reference": true,
+      "bitwise_comparison_is_informational": true,
+      "history_path": "data\\P_s33003\\history.npz"
+    },
+    {
+      "status": "PASS",
+      "method": "RAS04",
+      "seed": 33001,
+      "parameters": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      },
+      "source_root": "\\\\?\\E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\external",
+      "initial_sha256": "af471cad293d573a62d438f54908f579db7e81452c90fc7d65fe09f2ba509239",
+      "raw_command_sha256": "2b842985c4423edd1fe13559360c1ab695b709b0a301572cecda47b13f3ffa39",
+      "historical_manuscript_sha256": "9b1aae95ce0620415e95be64f79067cc7e48a2b0a1d13f613558437fa376d105",
+      "controller_constructed": true,
+      "initial_assignment_verified": true,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "historical_held_reference_0_sha256": "2b842985c4423edd1fe13559360c1ab695b709b0a301572cecda47b13f3ffa39",
+      "historical_held_reference_0_shape": [
+        46,
+        3
+      ],
+      "historical_held_reference_0_dtype": "float64",
+      "raw_command_bitwise_matches_saved_held_reference": true,
+      "bitwise_comparison_is_informational": true,
+      "history_path": "data\\RAS04_s33001\\history.npz"
+    },
+    {
+      "status": "PASS",
+      "method": "RAS04",
+      "seed": 33002,
+      "parameters": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      },
+      "source_root": "\\\\?\\E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\external",
+      "initial_sha256": "fb7101a42e421b63f33de7d3bdc48fb875da8e1af0b99f085f80ea17dce5f144",
+      "raw_command_sha256": "a875590824651cd46d3c9f27ea4952f287619617401052a6a8db743200a284be",
+      "historical_manuscript_sha256": "9b1aae95ce0620415e95be64f79067cc7e48a2b0a1d13f613558437fa376d105",
+      "controller_constructed": true,
+      "initial_assignment_verified": true,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "historical_held_reference_0_sha256": "a875590824651cd46d3c9f27ea4952f287619617401052a6a8db743200a284be",
+      "historical_held_reference_0_shape": [
+        46,
+        3
+      ],
+      "historical_held_reference_0_dtype": "float64",
+      "raw_command_bitwise_matches_saved_held_reference": true,
+      "bitwise_comparison_is_informational": true,
+      "history_path": "data\\RAS04_s33002\\history.npz"
+    },
+    {
+      "status": "PASS",
+      "method": "RAS04",
+      "seed": 33003,
+      "parameters": {
+        "alpha": 0.4,
+        "coupling": 0.4
+      },
+      "source_root": "\\\\?\\E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\external",
+      "initial_sha256": "601b5bd1ac15a8a6062fe666a57efccabd07618239d6a78b09663c9c8cbb7718",
+      "raw_command_sha256": "504bcec2e4866c2e8d8dc90f94678fcb73596ae9405a26d9e42b44bb95465ed6",
+      "historical_manuscript_sha256": "9b1aae95ce0620415e95be64f79067cc7e48a2b0a1d13f613558437fa376d105",
+      "controller_constructed": true,
+      "initial_assignment_verified": true,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "historical_held_reference_0_sha256": "504bcec2e4866c2e8d8dc90f94678fcb73596ae9405a26d9e42b44bb95465ed6",
+      "historical_held_reference_0_shape": [
+        46,
+        3
+      ],
+      "historical_held_reference_0_dtype": "float64",
+      "raw_command_bitwise_matches_saved_held_reference": true,
+      "bitwise_comparison_is_informational": true,
+      "history_path": "data\\RAS04_s33003\\history.npz"
+    },
+    {
+      "status": "PASS",
+      "method": "MMD19",
+      "seed": 33001,
+      "parameters": {
+        "gamma": 20.0
+      },
+      "source_root": "\\\\?\\E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\external",
+      "initial_sha256": "af471cad293d573a62d438f54908f579db7e81452c90fc7d65fe09f2ba509239",
+      "raw_command_sha256": "6d5d9bbf63e8fe48ae2d5deacd5f13544dd856c61ddc6e1f7082ed87caacd5d0",
+      "historical_manuscript_sha256": "9b1aae95ce0620415e95be64f79067cc7e48a2b0a1d13f613558437fa376d105",
+      "controller_constructed": true,
+      "initial_assignment_verified": false,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "historical_held_reference_0_sha256": "6d5d9bbf63e8fe48ae2d5deacd5f13544dd856c61ddc6e1f7082ed87caacd5d0",
+      "historical_held_reference_0_shape": [
+        46,
+        3
+      ],
+      "historical_held_reference_0_dtype": "float64",
+      "raw_command_bitwise_matches_saved_held_reference": true,
+      "bitwise_comparison_is_informational": true,
+      "history_path": "data\\MMD19_s33001\\history.npz"
+    },
+    {
+      "status": "PASS",
+      "method": "MMD19",
+      "seed": 33002,
+      "parameters": {
+        "gamma": 20.0
+      },
+      "source_root": "\\\\?\\E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\external",
+      "initial_sha256": "fb7101a42e421b63f33de7d3bdc48fb875da8e1af0b99f085f80ea17dce5f144",
+      "raw_command_sha256": "6a778729c644e90a7c45c34483fd6813ae248decf4ad1fe71752af3357abd6fa",
+      "historical_manuscript_sha256": "9b1aae95ce0620415e95be64f79067cc7e48a2b0a1d13f613558437fa376d105",
+      "controller_constructed": true,
+      "initial_assignment_verified": false,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "historical_held_reference_0_sha256": "6a778729c644e90a7c45c34483fd6813ae248decf4ad1fe71752af3357abd6fa",
+      "historical_held_reference_0_shape": [
+        46,
+        3
+      ],
+      "historical_held_reference_0_dtype": "float64",
+      "raw_command_bitwise_matches_saved_held_reference": true,
+      "bitwise_comparison_is_informational": true,
+      "history_path": "data\\MMD19_s33002\\history.npz"
+    },
+    {
+      "status": "PASS",
+      "method": "MMD19",
+      "seed": 33003,
+      "parameters": {
+        "gamma": 20.0
+      },
+      "source_root": "\\\\?\\E:\\swarm-git-20261116\\heterogeneous_swarm\\reproduction\\snapshots\\external",
+      "initial_sha256": "601b5bd1ac15a8a6062fe666a57efccabd07618239d6a78b09663c9c8cbb7718",
+      "raw_command_sha256": "00d474d612cf4e80e02ce6bb207af949360ae5fedccff019d6a763476969db68",
+      "historical_manuscript_sha256": "9b1aae95ce0620415e95be64f79067cc7e48a2b0a1d13f613558437fa376d105",
+      "controller_constructed": true,
+      "initial_assignment_verified": false,
+      "state_propagation_steps": 0,
+      "closed_loop_executed": false,
+      "historical_held_reference_0_sha256": "00d474d612cf4e80e02ce6bb207af949360ae5fedccff019d6a763476969db68",
+      "historical_held_reference_0_shape": [
+        46,
+        3
+      ],
+      "historical_held_reference_0_dtype": "float64",
+      "raw_command_bitwise_matches_saved_held_reference": true,
+      "bitwise_comparison_is_informational": true,
+      "history_path": "data\\MMD19_s33003\\history.npz"
+    }
+  ],
+  "new_closed_loop_trajectories": 0,
+  "total_model_propagation_steps": 0,
+  "scope": "Hash verification; saved-trajectory statistics and plot-data recomputation; initial controller construction and nominal reference evaluation. No trajectory rerun or timing rerun.",
+  "bitwise_policy": "Initial-reference SHA256 comparisons are informational. A platform-dependent bit difference is not automatically a numerical or physical failure. Investigate numeric differences separately before drawing physical conclusions.",
+  "numerical_policy": "Frozen recomputation tolerances are retained: statistics <1e-9 and plot arrays atol=3e-10, rtol=0. A failed check diagnoses reproducibility, not physical safety.",
+  "integrity_before": {
+    "status": "PASS",
+    "checked_copied_files": 307,
+    "new_trajectories": 0,
+    "current_timing_results": "PASS; hash verification only, not repeated timing"
+  },
+  "recomputed_stdout": {
+    "status": "PASS",
+    "checks": 351,
+    "maximum_error": 0.0,
+    "figure_arrays": 37,
+    "output": "\\\\?\\E:\\swarm-git-20261116\\heterogeneous_swarm\\verification\\recomputed",
+    "new_trajectories": 0
+  },
+  "recomputed": {
+    "status": "PASS",
+    "per_seed_metric_checks": 351,
+    "maximum_statistical_error": 0.0,
+    "figure_array_checks": 37,
+    "maximum_figure_array_error": 0.0,
+    "detailed_report": "recomputed/report.json",
+    "statistical_checks": "recomputed/numerical_checks.csv"
+  },
+  "integrity_after": {
+    "status": "PASS",
+    "checked_copied_files": 307,
+    "new_trajectories": 0,
+    "current_timing_results": "PASS; hash verification only, not repeated timing"
+  },
+  "preflight_count": 9,
+  "initial_command_bitwise_matches": 9,
+  "initial_command_bitwise_differences": 0,
+  "completed_utc": "2026-11-16T04:03:31.162469+00:00",
+  "exit_code": 0
+}

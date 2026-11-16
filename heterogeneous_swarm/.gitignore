@@ -1,0 +1,12 @@
+.venv*/
+__pycache__/
+*.pyc
+/work/
+/build/
+/devel/
+/install/
+/log/
+.env
+.env.*
+*.bag
+*.ulg

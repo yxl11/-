@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "completed_utc": "2026-11-08T16:08:00.503248+00:00",
+  "copied_files": [
+    {
+      "path": "reference/density_reference/appendix_fragment.tex",
+      "sha256": "4fe126f0bb07ad475242cf403e46ea7f2ebda79829c6e8e4db28cda18561f9d2",
+      "bytes": 2261,
+      "workspace_source": "output/reviews/two_round_revision_20261108/density_reference/appendix_fragment.tex",
+      "purpose": "Independent analytic fixed-N Gaussian/KDE sampling reference; copied existing output only, not one of the nine trajectories and not automatically recomputed."
+    },
+    {
+      "path": "reference/density_reference/body_sentence_zh.txt",
+      "sha256": "285f473677b8caccd1857907cf6a031d89e2a3043dfc239aaf9369ca1d18afd4",
+      "bytes": 155,
+      "workspace_source": "output/reviews/two_round_revision_20261108/density_reference/body_sentence_zh.txt",
+      "purpose": "Independent analytic fixed-N Gaussian/KDE sampling reference; copied existing output only, not one of the nine trajectories and not automatically recomputed."
+    },
+    {
+      "path": "reference/density_reference/compute_density_reference.py",
+      "sha256": "4c72d2a42598b8f98d160836acfee4617fa25ee17f96aaa31de5f96d8e6d55bd",
+      "bytes": 18176,
+      "workspace_source": "output/reviews/two_round_revision_20261108/density_reference/compute_density_reference.py",
+      "purpose": "Independent analytic fixed-N Gaussian/KDE sampling reference; copied existing output only, not one of the nine trajectories and not automatically recomputed."
+    },
+    {
+      "path": "reference/density_reference/per_time_role.csv",
+      "sha256": "ed7b283efcbfc1539eda07e8aabcdef6b79690ba95e3e59eceae97231b801026",
+      "bytes": 200251,
+      "workspace_source": "output/reviews/two_round_revision_20261108/density_reference/per_time_role.csv",
+      "purpose": "Independent analytic fixed-N Gaussian/KDE sampling reference; copied existing output only, not one of the nine trajectories and not automatically recomputed."
+    },
+    {
+      "path": "reference/density_reference/reference_data.npz",
+      "sha256": "05252e4bfd89fd391039cf312e7bd75a0a824b2881f9fbe2d0c21d7a331bc46b",
+      "bytes": 39947,
+      "workspace_source": "output/reviews/two_round_revision_20261108/density_reference/reference_data.npz",
+      "purpose": "Independent analytic fixed-N Gaussian/KDE sampling reference; copied existing output only, not one of the nine trajectories and not automatically recomputed."
+    },
+    {
+      "path": "reference/density_reference/report_zh.md",
+      "sha256": "ee8312950670257c7c5e7eb8f83648c08533d083c86d247a3a9f041a5851a162",
+      "bytes": 2172,
+      "workspace_source": "output/reviews/two_round_revision_20261108/density_reference/report_zh.md",
+      "purpose": "Independent analytic fixed-N Gaussian/KDE sampling reference; copied existing output only, not one of the nine trajectories and not automatically recomputed."
+    },
+    {
+      "path": "reference/density_reference/results.json",
+      "sha256": "b4495186855d29422e16c0cdf547dc1f4663588acede75a9cf76290c2b606c28",
+      "bytes": 5482,
+      "workspace_source": "output/reviews/two_round_revision_20261108/density_reference/results.json",
+      "purpose": "Independent analytic fixed-N Gaussian/KDE sampling reference; copied existing output only, not one of the nine trajectories and not automatically recomputed."
+    },
+    {
+      "path": "reference/density_reference/source_manifest.json",
+      "sha256": "1ece1db30f8de46ca23be64946d932197a5119581b58c3caa31d5cfde3b8a4c6",
+      "bytes": 6300,
+      "workspace_source": "output/reviews/two_round_revision_20261108/density_reference/source_manifest.json",
+      "purpose": "Independent analytic fixed-N Gaussian/KDE sampling reference; copied existing output only, not one of the nine trajectories and not automatically recomputed."
+    },
+    {
+      "path": "reference/density_reference/validation.json",
+      "sha256": "55c3208b1e688e5f110a5dc394dae2e27e2b2b4e182056bedb2e40c4bdb2f199",
+      "bytes": 3910,
+      "workspace_source": "output/reviews/two_round_revision_20261108/density_reference/validation.json",
+      "purpose": "Independent analytic fixed-N Gaussian/KDE sampling reference; copied existing output only, not one of the nine trajectories and not automatically recomputed."
+    },
+    {
+      "path": "reference/density_reference/window_role.csv",
+      "sha256": "1073f2a93a776e091f8c8beb999f699354140fafe053dae8b0d38c7b2cb09b7f",
+      "bytes": 1401,
+      "workspace_source": "output/reviews/two_round_revision_20261108/density_reference/window_role.csv",
+      "purpose": "Independent analytic fixed-N Gaussian/KDE sampling reference; copied existing output only, not one of the nine trajectories and not automatically recomputed."
+    }
+  ],
+  "original_frozen_hash_entries_unchanged": 297,
+  "total_frozen_files": 307,
+  "analytic_script_executed": false,
+  "new_closed_loop_trajectories": 0,
+  "validation_status": "Original archived validation reports PASS; its calculation was not repeated."
+}

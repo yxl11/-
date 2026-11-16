@@ -1,0 +1,109 @@
+{
+  "status": "PASS",
+  "independent_overlap_formula_cases": 1071,
+  "independent_overlap_max_absolute_difference": 1.0658141036401503e-14,
+  "fixed_self_term_time_range_by_role": [
+    5.329070518200751e-15,
+    4.440892098500626e-16,
+    4.440892098500626e-16
+  ],
+  "run_configuration_and_geometry_checks": [
+    {
+      "method": "P",
+      "seed": 33001,
+      "configuration_and_metric_clock_match": true,
+      "shape_history_max_absolute_difference": 0.0
+    },
+    {
+      "method": "P",
+      "seed": 33002,
+      "configuration_and_metric_clock_match": true,
+      "shape_history_max_absolute_difference": 0.0
+    },
+    {
+      "method": "P",
+      "seed": 33003,
+      "configuration_and_metric_clock_match": true,
+      "shape_history_max_absolute_difference": 0.0
+    },
+    {
+      "method": "RAS08",
+      "seed": 33001,
+      "configuration_and_metric_clock_match": true,
+      "shape_history_max_absolute_difference": 0.0
+    },
+    {
+      "method": "RAS08",
+      "seed": 33002,
+      "configuration_and_metric_clock_match": true,
+      "shape_history_max_absolute_difference": 0.0
+    },
+    {
+      "method": "RAS08",
+      "seed": 33003,
+      "configuration_and_metric_clock_match": true,
+      "shape_history_max_absolute_difference": 0.0
+    },
+    {
+      "method": "MMD19",
+      "seed": 33001,
+      "configuration_and_metric_clock_match": true,
+      "shape_history_max_absolute_difference": 0.0
+    },
+    {
+      "method": "MMD19",
+      "seed": 33002,
+      "configuration_and_metric_clock_match": true,
+      "shape_history_max_absolute_difference": 0.0
+    },
+    {
+      "method": "MMD19",
+      "seed": 33003,
+      "configuration_and_metric_clock_match": true,
+      "shape_history_max_absolute_difference": 0.0
+    }
+  ],
+  "analytic_limits": {
+    "Fixed-wing": {
+      "N_to_infinity_expected_bias": 0.009484155380002801,
+      "N_1e12_total_minus_bias": 8.247387842108544e-11,
+      "N_1_pair_cross_term": 0.0,
+      "beta_to_zero_bias_check_beta": 0.0017,
+      "beta_to_zero_bias_observed": 1.2212453270876722e-14,
+      "beta_to_zero_scaled_total_expected_1": 0.999999999988002,
+      "beta_to_infinity_total_expected_1": 0.9999999999999997,
+      "beta_to_infinity_variance_expected_0": 3.7817622017745983e-28,
+      "rotation_invariance_max_absolute_difference": 0.0
+    },
+    "FPV": {
+      "N_to_infinity_expected_bias": 0.016507994075336985,
+      "N_1e12_total_minus_bias": 2.1181369158629337e-11,
+      "N_1_pair_cross_term": 0.0,
+      "beta_to_zero_bias_check_beta": 0.0015,
+      "beta_to_zero_bias_observed": 2.1538326677728037e-14,
+      "beta_to_zero_scaled_total_expected_1": 0.9999999999545456,
+      "beta_to_infinity_total_expected_1": 0.9999999999999999,
+      "beta_to_infinity_variance_expected_0": 1.8180586082021068e-29,
+      "rotation_invariance_max_absolute_difference": 0.0
+    },
+    "Quadrotor": {
+      "N_to_infinity_expected_bias": 0.01432114639716675,
+      "N_1e12_total_minus_bias": 2.375106361585111e-11,
+      "N_1_pair_cross_term": 0.0,
+      "beta_to_zero_bias_check_beta": 0.00135,
+      "beta_to_zero_bias_observed": 1.865174681370263e-14,
+      "beta_to_zero_scaled_total_expected_1": 0.999999999959319,
+      "beta_to_infinity_total_expected_1": 0.9999999999999999,
+      "beta_to_infinity_variance_expected_0": 1.7240924862154535e-29,
+      "rotation_invariance_max_absolute_difference": 0.0
+    }
+  },
+  "analytic_limit_statements": [
+    "N -> infinity: expected normalized L2 -> smoothing bias squared",
+    "beta -> 0 at fixed N: bias -> 0, N beta^3 E[L]/sqrt(det(Sigma)) -> 1",
+    "beta -> infinity: bias -> 1, variance -> 0",
+    "N = 1: off-diagonal pair term vanishes",
+    "Isotropic kernel: translation and rotation leave this expectation unchanged"
+  ],
+  "no_random_sampling_no_simulation": true
+}

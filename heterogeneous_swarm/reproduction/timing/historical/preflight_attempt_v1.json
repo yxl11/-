@@ -1,0 +1,9 @@
+{
+  "status": "PRE_TIMING_ABORT",
+  "reason": "ModuleNotFoundError: No module named threadpoolctl",
+  "command_calls": 0,
+  "certificate_calls": 0,
+  "v1_script_sha256": "b3a3f5504820fc5873e35cb49ffc78d5e96591fdedbc637242497fa8502ca590",
+  "v1_protocol_sha256": "02d0fb1823d038e9ffd79f9bfc9b6ba2423fa9921b7b9a59fa83cec3f2ebdc95",
+  "v2_protocol_sha256": "3421eab7a6601f322fdfe3eec779040fd799b1510e425ace97c7af3c4c2f270a"
+}

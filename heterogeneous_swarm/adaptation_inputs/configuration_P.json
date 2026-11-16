@@ -1,0 +1,182 @@
+{
+  "duration_s": 178.0,
+  "dt_s": 0.02,
+  "task_period_s": 0.1,
+  "metric_period_s": 0.5,
+  "counts": [
+    10,
+    16,
+    20
+  ],
+  "names": [
+    "fixed_wing_scout",
+    "fpv_relay",
+    "quadrotor_support"
+  ],
+  "sigma_m": [
+    [
+      13.0,
+      9.0,
+      3.5
+    ],
+    [
+      5.5,
+      4.5,
+      3.0
+    ],
+    [
+      4.8,
+      4.5,
+      2.8
+    ]
+  ],
+  "bandwidth_m": [
+    1.7,
+    1.5,
+    1.35
+  ],
+  "vmax_mps": [
+    15.0,
+    12.0,
+    10.0
+  ],
+  "amax_mps2": [
+    2.0,
+    1.5,
+    1.0
+  ],
+  "tau_s": [
+    0.4,
+    0.6,
+    0.8
+  ],
+  "D_m2ps": 2.5,
+  "kernel_length_m": 10.0,
+  "A_m2ps": [
+    [
+      0.0,
+      22.4,
+      0.0
+    ],
+    [
+      9.6,
+      0.0,
+      12.8
+    ],
+    [
+      0.0,
+      19.2,
+      0.0
+    ]
+  ],
+  "B": [
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ]
+  ],
+  "weights": [
+    0.42857142857142855,
+    1.0,
+    0.6666666666666666
+  ],
+  "kappa_m2ps": 10.0,
+  "role_kernel_length": 1.0,
+  "kc_per_s": 0.24,
+  "kf_per_s": 0.16,
+  "safe_distance_m": 2.0,
+  "initial_distance_m": 2.7,
+  "separation_buffer_m": 0.6,
+  "backup_horizon_s": 8.0,
+  "numerical_margin_m": 1e-07,
+  "candidate_levels": 8,
+  "initial_shape_scale": 0.85,
+  "test_slowdown_mps": 0.0,
+  "test_shape_gain_per_s": 0.0,
+  "test_shape_cap_mps": 0.8,
+  "metric_directions": 64,
+  "metric_direction_seed": 9127,
+  "thresholds": {
+    "center_m": 1.0,
+    "relative_m": 2.0,
+    "shape_proxy_m": 2.5,
+    "hold_s": 30.0,
+    "activation_mps": 0.02
+  },
+  "phase_windows_s": [
+    [
+      0.0,
+      8.0
+    ],
+    [
+      8.0,
+      68.0
+    ],
+    [
+      68.0,
+      86.0
+    ],
+    [
+      86.0,
+      102.0
+    ],
+    [
+      102.0,
+      178.0
+    ]
+  ],
+  "metric_windows_s": {
+    "whole": [
+      0.0,
+      178.0
+    ],
+    "launch": [
+      0.0,
+      8.0
+    ],
+    "sweep": [
+      8.0,
+      68.0
+    ],
+    "reshape": [
+      68.0,
+      86.0
+    ],
+    "entry": [
+      86.0,
+      102.0
+    ],
+    "orbit": [
+      102.0,
+      178.0
+    ],
+    "exact_circle": [
+      102.0,
+      174.0
+    ]
+  },
+  "snapshot_times_s": [
+    0.0,
+    24.0,
+    46.0,
+    68.0,
+    86.0,
+    102.0,
+    120.0,
+    138.0,
+    156.0,
+    174.0,
+    178.0
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "status": "PASS",
+  "completed_utc": "2026-11-08T16:00:14.535296+00:00",
+  "integrity": {
+    "status": "PASS",
+    "checked_copied_files": 297,
+    "new_trajectories": 0,
+    "current_timing_results": "PASS; hash verification only, not repeated timing"
+  },
+  "per_seed_metric_checks": 351,
+  "maximum_statistical_error": 0.0,
+  "figure_array_checks": [
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "reference_axes_limits",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "reference_inset_limits",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "P_time",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "P_q",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "P_m",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "P_samples",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "P_final",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "P_roles",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "P_completed_circle",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "P_fraction",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "RAS08_time",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "RAS08_q",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "RAS08_m",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "RAS08_samples",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "RAS08_final",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "RAS08_roles",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "RAS08_completed_circle",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "RAS08_fraction",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "MMD19_time",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "MMD19_q",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "MMD19_m",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "MMD19_samples",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "MMD19_final",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "MMD19_roles",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "MMD19_completed_circle",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "MMD19_fraction",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "methods",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "seeds",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "snapshot_times_s",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "shape_matrices",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure2_plot_data.npz",
+      "array": "shape_matrix_times_s",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure3_plot_data.npz",
+      "array": "time_s",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure3_plot_data.npz",
+      "array": "per_seed_errors_m",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure3_plot_data.npz",
+      "array": "pointwise_median_errors_m",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure3_plot_data.npz",
+      "array": "methods",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure3_plot_data.npz",
+      "array": "seeds",
+      "max_absolute_error": 0.0
+    },
+    {
+      "file": "figure3_plot_data.npz",
+      "array": "metrics",
+      "max_absolute_error": 0.0
+    }
+  ],
+  "new_closed_loop_trajectories": 0,
+  "computation_scope": "Original read-only integral definitions applied to audited fast/slow/history records. Ec/EB and both figure datasets reconstructed from raw positions/reference; target shapes analytic. Slow density/shape records are integrated, not a new KDE estimator.",
+  "source_root": ".",
+  "output_files_sha256": {
+    "aggregates.csv": "c7b2ec92495f7defd4c2ee1c88e64d5ac2afa33df7b86740cb8723967981ea00",
+    "comparisons.csv": "b27a31d2d8cfa6d09774d04c6fb8c4c1fecb4de00bcc01ba6df72ce941b3d0b3",
+    "completion_terminal.csv": "af1f1e67f6ea02a202f4a6c520a6fe5bf083d3c071657eb5b5e4c0733e610cfc",
+    "figure2_plot_data.npz": "e8d96dd9ddfb326cd907690a0a7a3248b2a0bcb002f747894253217cc1daba13",
+    "figure3_plot_data.npz": "4dac38520986406510fbd594a95dd637c976874d3e831a09443afa87eebcfd9d",
+    "numerical_checks.csv": "6c1dd6a5127c69f6c515f972c4685b85191bb014178227a3d889c688c1a7bd23",
+    "per_seed.csv": "fa78d65ba1aef89fa4dd39e53c588d1e0df130150d6ebbfdbee3372d4f2cac4b",
+    "results.json": "1596c8539fcd3ea162b659f91c93b5ea5d82d2f05dbc77e53198d40bcbfc8e63",
+    "role_per_seed.csv": "659e0b1d704e27dcfcad4c66c187d0625537ac98e8b3aa0058b6c8e37ef52a73"
+  }
+}

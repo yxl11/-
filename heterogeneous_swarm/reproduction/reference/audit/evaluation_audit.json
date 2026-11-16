@@ -1,0 +1,735 @@
+{
+  "status": "PASS",
+  "stage": "evaluation",
+  "checked_utc": "2026-11-08T09:21:42.772642+00:00",
+  "runs_checked": 3,
+  "completed_and_valid_count": 3,
+  "independent_nominal_updates": 5340,
+  "scope": "Calibration recorded-bound integrity and independently reconstructed commands/metrics; selected evaluation full segment replay",
+  "old_evaluation_performance_read": false,
+  "gain_selection_performed": false,
+  "frozen_sources_unchanged": true,
+  "experiment_evidence_unchanged": true,
+  "script_sha256": "49a63b8fc2997d34df70cd82f34d0fe14f7c6e02aaf2d165bbbe5d531a386d0b",
+  "protocol_sha256": "b9287417afadae30cef227d0e424733bf6cab398b4ce635d36c3435855f5a896",
+  "per_run": [
+    {
+      "candidate_id": "B",
+      "seed": 33001,
+      "stage": "evaluation",
+      "folder": "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001",
+      "status": "PASS",
+      "valid_before_completion_guard": true,
+      "parameters": {
+        "kc_per_s": 0.24,
+        "kf_per_s": 0.16
+      },
+      "input_hashes_verified": 59,
+      "initial_identity_verified": true,
+      "platform": {
+        "state_samples": 8901,
+        "execution_intervals": 8900,
+        "all_states_and_commands_finite": true,
+        "fixed_wing_max_rates_mps2_rad_s": [
+          2.000000000000046,
+          0.15335884201266303,
+          0.0872664625997166
+        ],
+        "platform_bounds_verified": true
+      },
+      "distance": {
+        "minimum_recorded_continuous_distance_m": 2.3020526820870466,
+        "minimum_actual_state_distance_m": 2.3020603662744916,
+        "continuous_bound_scope": "All 8900 stored bounds checked against threshold, summary and independently recomputed endpoints; no segment dynamics replay in calibration",
+        "local_system_s": 0.0,
+        "backup_system_s": 0.0,
+        "all_interval_diagnostics_verified": true
+      },
+      "retained_terminal_certificate": {
+        "generation": 8900,
+        "origin_step": 8899,
+        "cursor": 1,
+        "margin_m": 0.009919377938058194,
+        "recertified_at_origin": true
+      },
+      "independent_nominal_updates": 1780,
+      "source_formula_errors": {
+        "raw_reference": 4.2366110619695974e-13,
+        "nu": 4.1389114358025836e-13,
+        "shape": 1.1621259510263826e-13,
+        "affine_velocity": 4.440892098500626e-16,
+        "affine_mean": 2.220446049250313e-16,
+        "projection_mean_command": 1.7888468484272835e-13,
+        "effective_displacement": 9.823253321883385e-13,
+        "projected_common_displacement": 2.562949852347174e-13
+      },
+      "common_metric_errors": {
+        "reference": 0.0,
+        "centers": 0.0,
+        "role_center_error": 0.0,
+        "edge_error": 0.0,
+        "region_by_role": 0.0,
+        "relative_density_l2_by_role": 1.4210854715202004e-14,
+        "shape_by_role": 8.881784197001252e-16
+      },
+      "window_metrics": {
+        "sweep_regrouping": {
+          "center_m": 0.34261574656606353,
+          "formation_m": 0.37217263715032645,
+          "density": 3.074101314362144,
+          "shape_m": 3.0049497865455894,
+          "region_pct": 100.0,
+          "acceleration_rms_mps2": 0.3203474061567632,
+          "mapping_rms_mps": 4.826140119641415e-16,
+          "safety_rms_mps": 0.0,
+          "local_intervention_s": 0.0,
+          "backup_intervention_s": 0.0,
+          "safety_intervention_s": 0.0,
+          "segment_distance_lower_m": 2.3020526820870466,
+          "center_peak_m": 0.6466572040818095
+        },
+        "patrol": {
+          "center_m": 2.6731525060409345,
+          "formation_m": 1.1525447197897611,
+          "density": 3.247125098849709,
+          "shape_m": 3.0870898973726284,
+          "region_pct": 100.0,
+          "acceleration_rms_mps2": 0.7589781095158744,
+          "mapping_rms_mps": 6.263390143131859e-16,
+          "safety_rms_mps": 0.0,
+          "local_intervention_s": 0.0,
+          "backup_intervention_s": 0.0,
+          "safety_intervention_s": 0.0,
+          "segment_distance_lower_m": 2.5036182281880555,
+          "center_peak_m": 2.922758819852599
+        },
+        "initial_deployment": {
+          "center_m": 1.8338149411523665,
+          "formation_m": 3.58206720431429,
+          "density": 3.0182561884164825,
+          "shape_m": 1.44324020160839,
+          "region_pct": 89.04375000000002,
+          "acceleration_rms_mps2": 0.673408748341928,
+          "mapping_rms_mps": 0.31157994396266414,
+          "safety_rms_mps": 0.0,
+          "local_intervention_s": 0.0,
+          "backup_intervention_s": 0.0,
+          "safety_intervention_s": 0.0,
+          "segment_distance_lower_m": 2.3102973799619115,
+          "center_peak_m": 4.207083967553417
+        }
+      },
+      "complete": 46,
+      "terminal_in_region": 46,
+      "full_replay": {
+        "status": "completed_verified",
+        "method": "P",
+        "seed": 33001,
+        "parameters": {
+          "kc_per_s": 0.24,
+          "kf_per_s": 0.16
+        },
+        "elapsed_s": 178.0,
+        "feedback_verification": "independent physical-coordinate formula on all task updates",
+        "nominal_updates": 1780,
+        "replayed_segments": 8900,
+        "maximum_segment_lower_error_m": 0.0,
+        "fast_states_checked": 8901,
+        "slow_metric_samples": 357,
+        "terminal_certificate": {
+          "generation": 8900,
+          "origin_step": 8899,
+          "cursor": 1,
+          "margin_m": 0.009919377938058194,
+          "recertified_at_origin": true
+        },
+        "minimum_continuous_distance_m": 2.3020526820870466,
+        "common_metric_errors": {
+          "reference": 0.0,
+          "centers": 0.0,
+          "role_center_error": 0.0,
+          "edge_error": 0.0,
+          "region_by_role": 0.0,
+          "relative_density_l2_by_role": 1.4210854715202004e-14,
+          "shape_by_role": 8.881784197001252e-16
+        },
+        "phase_metrics": {
+          "sweep_regrouping": {
+            "center_rms_m": 0.34261574656606353,
+            "edge_rms_m": 0.37217263715032645,
+            "density_loss": 3.074101314362144,
+            "shape_rms_m": 3.0049497865455894,
+            "region_fraction": 1.0
+          },
+          "patrol": {
+            "center_rms_m": 2.6731525060409345,
+            "edge_rms_m": 1.1525447197897611,
+            "density_loss": 3.247125098849709,
+            "shape_rms_m": 3.0870898973726284,
+            "region_fraction": 1.0
+          },
+          "initial_deployment": {
+            "center_rms_m": 1.8338149411523665,
+            "edge_rms_m": 3.58206720431429,
+            "density_loss": 3.0182561884164825,
+            "shape_rms_m": 1.44324020160839,
+            "region_fraction": 0.8904375000000001
+          }
+        },
+        "source_formula_errors": {
+          "raw_reference": 4.2366110619695974e-13,
+          "nu": 4.1389114358025836e-13,
+          "shape": 1.1621259510263826e-13,
+          "affine_velocity": 4.440892098500626e-16,
+          "affine_mean": 2.220446049250313e-16,
+          "projection_mean_command": 1.7888468484272835e-13,
+          "effective_displacement": 9.823253321883385e-13,
+          "projected_common_displacement": 2.562949852347174e-13
+        },
+        "external_native_score": null,
+        "initial_hash": "af471cad293d573a62d438f54908f579db7e81452c90fc7d65fe09f2ba509239",
+        "members_completing_turn": 46,
+        "terminal_members_inside": 46,
+        "record_sha256": {
+          "summary.json": "d7e7522d0b15161029bcada3bac4b3830e881df04ee84869c8fca2806ff4e0b3",
+          "registration.json": "7f01ea370d94d38d04e2ad27e63423b57f57ad88f83110f0f42ea52ae7b50186",
+          "input_manifest.json": "c7b83ad31e47aeb5bdf22c29123c528e38f7f753c18e90b8c88e5007e3b8a1dd",
+          "history.npz": "95488ec6b11ce5c55c05465844c4d73767629701f5c27333378541d87125d024",
+          "task_history.npz": "6d28f4e519b718b63f760a703c937c7bdb9543e96ce70e5509bf77ba69060f07",
+          "fast_metrics.npz": "31ee05411ee6a538a71002ee6e03ee79fe9ea0207fda80235376e1eb9fef3155",
+          "slow_metrics.npz": "2d6d7fe25fbc2e905eaf164d24112267abe46bf56e742faab630f79d2ddb17fd",
+          "terminal_certificate.npz": "523584e9a9d9664c648b8b719092a555b4cbf460ac94e2b9213e4c642dd20cb8",
+          "candidate_events.json": "4b09b2922f1fc3b0eec0410461ecdd1df78c7fa51e89b78f9bdc3cb04d1d5341",
+          "certificate_ledger.json": "13b22cccaa2e7a48010e0d54d7f8eb376bbe7a51329862b739de353ffb60597e"
+        }
+      },
+      "process": {
+        "candidate": "B",
+        "seed": 33001,
+        "id": "B_s33001",
+        "exit_code": 0,
+        "wall_seconds": 889.8440000000119,
+        "status": "completed",
+        "completed_s": 178.0
+      },
+      "process_completed_successfully": true,
+      "audit_wall_seconds": 22.396464799996465
+    },
+    {
+      "candidate_id": "B",
+      "seed": 33002,
+      "stage": "evaluation",
+      "folder": "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002",
+      "status": "PASS",
+      "valid_before_completion_guard": true,
+      "parameters": {
+        "kc_per_s": 0.24,
+        "kf_per_s": 0.16
+      },
+      "input_hashes_verified": 59,
+      "initial_identity_verified": true,
+      "platform": {
+        "state_samples": 8901,
+        "execution_intervals": 8900,
+        "all_states_and_commands_finite": true,
+        "fixed_wing_max_rates_mps2_rad_s": [
+          2.000000000000046,
+          0.17263478299722745,
+          0.08726646259971668
+        ],
+        "platform_bounds_verified": true
+      },
+      "distance": {
+        "minimum_recorded_continuous_distance_m": 2.2089223325546534,
+        "minimum_actual_state_distance_m": 2.208932460314464,
+        "continuous_bound_scope": "All 8900 stored bounds checked against threshold, summary and independently recomputed endpoints; no segment dynamics replay in calibration",
+        "local_system_s": 0.0,
+        "backup_system_s": 0.0,
+        "all_interval_diagnostics_verified": true
+      },
+      "retained_terminal_certificate": {
+        "generation": 8900,
+        "origin_step": 8899,
+        "cursor": 1,
+        "margin_m": 0.007009809387677812,
+        "recertified_at_origin": true
+      },
+      "independent_nominal_updates": 1780,
+      "source_formula_errors": {
+        "raw_reference": 4.369837824924616e-13,
+        "nu": 4.298783551348606e-13,
+        "shape": 1.1690648449302898e-13,
+        "affine_velocity": 4.440892098500626e-16,
+        "affine_mean": 2.220446049250313e-16,
+        "projection_mean_command": 1.7881529590368928e-13,
+        "effective_displacement": 1.0480505352461478e-12,
+        "projected_common_displacement": 2.439159985101469e-13
+      },
+      "common_metric_errors": {
+        "reference": 0.0,
+        "centers": 0.0,
+        "role_center_error": 0.0,
+        "edge_error": 0.0,
+        "region_by_role": 0.0,
+        "relative_density_l2_by_role": 1.2434497875801753e-14,
+        "shape_by_role": 1.7763568394002505e-15
+      },
+      "window_metrics": {
+        "sweep_regrouping": {
+          "center_m": 0.3553498120580266,
+          "formation_m": 0.39980428140330065,
+          "density": 3.127266207022962,
+          "shape_m": 3.0882133439608617,
+          "region_pct": 99.85427350427352,
+          "acceleration_rms_mps2": 0.31947069478680673,
+          "mapping_rms_mps": 4.823045679839665e-16,
+          "safety_rms_mps": 0.0,
+          "local_intervention_s": 0.0,
+          "backup_intervention_s": 0.0,
+          "safety_intervention_s": 0.0,
+          "segment_distance_lower_m": 2.2089223325546534,
+          "center_peak_m": 0.7853653964353562
+        },
+        "patrol": {
+          "center_m": 2.6739611730807833,
+          "formation_m": 1.1525173247891767,
+          "density": 3.2068933818676557,
+          "shape_m": 3.0707473287266907,
+          "region_pct": 100.0,
+          "acceleration_rms_mps2": 0.7589712636056741,
+          "mapping_rms_mps": 6.270023980785626e-16,
+          "safety_rms_mps": 0.0,
+          "local_intervention_s": 0.0,
+          "backup_intervention_s": 0.0,
+          "safety_intervention_s": 0.0,
+          "segment_distance_lower_m": 2.485645006072902,
+          "center_peak_m": 2.9252219999584534
+        },
+        "initial_deployment": {
+          "center_m": 1.7691895689667523,
+          "formation_m": 2.9761782234094505,
+          "density": 2.950610222585156,
+          "shape_m": 1.5060709452396521,
+          "region_pct": 87.05677083333335,
+          "acceleration_rms_mps2": 0.609689981078783,
+          "mapping_rms_mps": 0.32193815812416604,
+          "safety_rms_mps": 0.0,
+          "local_intervention_s": 0.0,
+          "backup_intervention_s": 0.0,
+          "safety_intervention_s": 0.0,
+          "segment_distance_lower_m": 2.2480061779991165,
+          "center_peak_m": 3.8870144239143882
+        }
+      },
+      "complete": 46,
+      "terminal_in_region": 46,
+      "full_replay": {
+        "status": "completed_verified",
+        "method": "P",
+        "seed": 33002,
+        "parameters": {
+          "kc_per_s": 0.24,
+          "kf_per_s": 0.16
+        },
+        "elapsed_s": 178.0,
+        "feedback_verification": "independent physical-coordinate formula on all task updates",
+        "nominal_updates": 1780,
+        "replayed_segments": 8900,
+        "maximum_segment_lower_error_m": 0.0,
+        "fast_states_checked": 8901,
+        "slow_metric_samples": 357,
+        "terminal_certificate": {
+          "generation": 8900,
+          "origin_step": 8899,
+          "cursor": 1,
+          "margin_m": 0.007009809387677812,
+          "recertified_at_origin": true
+        },
+        "minimum_continuous_distance_m": 2.2089223325546534,
+        "common_metric_errors": {
+          "reference": 0.0,
+          "centers": 0.0,
+          "role_center_error": 0.0,
+          "edge_error": 0.0,
+          "region_by_role": 0.0,
+          "relative_density_l2_by_role": 1.2434497875801753e-14,
+          "shape_by_role": 1.7763568394002505e-15
+        },
+        "phase_metrics": {
+          "sweep_regrouping": {
+            "center_rms_m": 0.3553498120580266,
+            "edge_rms_m": 0.39980428140330065,
+            "density_loss": 3.127266207022962,
+            "shape_rms_m": 3.0882133439608617,
+            "region_fraction": 0.9985427350427352
+          },
+          "patrol": {
+            "center_rms_m": 2.6739611730807833,
+            "edge_rms_m": 1.1525173247891767,
+            "density_loss": 3.2068933818676557,
+            "shape_rms_m": 3.0707473287266907,
+            "region_fraction": 1.0
+          },
+          "initial_deployment": {
+            "center_rms_m": 1.7691895689667523,
+            "edge_rms_m": 2.9761782234094505,
+            "density_loss": 2.950610222585156,
+            "shape_rms_m": 1.5060709452396521,
+            "region_fraction": 0.8705677083333334
+          }
+        },
+        "source_formula_errors": {
+          "raw_reference": 4.369837824924616e-13,
+          "nu": 4.298783551348606e-13,
+          "shape": 1.1690648449302898e-13,
+          "affine_velocity": 4.440892098500626e-16,
+          "affine_mean": 2.220446049250313e-16,
+          "projection_mean_command": 1.7881529590368928e-13,
+          "effective_displacement": 1.0480505352461478e-12,
+          "projected_common_displacement": 2.439159985101469e-13
+        },
+        "external_native_score": null,
+        "initial_hash": "fb7101a42e421b63f33de7d3bdc48fb875da8e1af0b99f085f80ea17dce5f144",
+        "members_completing_turn": 46,
+        "terminal_members_inside": 46,
+        "record_sha256": {
+          "summary.json": "98cac64505be4998fa68507ae318a23eceefcb2455a4189ce7e51aafe5136ce0",
+          "registration.json": "1ff2db44ffc55b60d17cdfd3378c0db7a6466f06bc47ad7567e0584d96a5f8eb",
+          "input_manifest.json": "8793bee5abb320603719b22a4e5b44a62dbdd69ad93810f0dc17b0876d47b414",
+          "history.npz": "ef50667642e2ea5dece76ce7155dcb22adb1b74858db0c1f0ebb7ea781a9137b",
+          "task_history.npz": "e815507952fbbe6f501fec56258492f6f748fd948556d9c278ce2583199c4c49",
+          "fast_metrics.npz": "254c5c218639c20f95dab240297829bf9c17888dc3d3d53e919b5509f8003662",
+          "slow_metrics.npz": "4a8d353628902eeee6a9ec566ba48c96b50f499b6f5f2c143265393d9e45edcc",
+          "terminal_certificate.npz": "a3141e63b2ba24a2dbcd91af7f02b6b624b677151a8cae73a26bb749ba1c24a5",
+          "candidate_events.json": "f0b1a5bacd5afffb0bf34a72fa7bd728c3cae76f7bb16c24d9be85bc4a6920c8",
+          "certificate_ledger.json": "643f1327bdf957223df68b0c342fda2f0cf3e49f954b3e47dd435b8edf2094ad"
+        }
+      },
+      "process": {
+        "candidate": "B",
+        "seed": 33002,
+        "id": "B_s33002",
+        "exit_code": 0,
+        "wall_seconds": 893.8429999999935,
+        "status": "completed",
+        "completed_s": 178.0
+      },
+      "process_completed_successfully": true,
+      "audit_wall_seconds": 24.917754199996125
+    },
+    {
+      "candidate_id": "B",
+      "seed": 33003,
+      "stage": "evaluation",
+      "folder": "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003",
+      "status": "PASS",
+      "valid_before_completion_guard": true,
+      "parameters": {
+        "kc_per_s": 0.24,
+        "kf_per_s": 0.16
+      },
+      "input_hashes_verified": 59,
+      "initial_identity_verified": true,
+      "platform": {
+        "state_samples": 8901,
+        "execution_intervals": 8900,
+        "all_states_and_commands_finite": true,
+        "fixed_wing_max_rates_mps2_rad_s": [
+          2.000000000000046,
+          0.1745329251994443,
+          0.08726646259971677
+        ],
+        "platform_bounds_verified": true
+      },
+      "distance": {
+        "minimum_recorded_continuous_distance_m": 2.381530701653819,
+        "minimum_actual_state_distance_m": 2.381540062759726,
+        "continuous_bound_scope": "All 8900 stored bounds checked against threshold, summary and independently recomputed endpoints; no segment dynamics replay in calibration",
+        "local_system_s": 0.0,
+        "backup_system_s": 0.0,
+        "all_interval_diagnostics_verified": true
+      },
+      "retained_terminal_certificate": {
+        "generation": 8900,
+        "origin_step": 8899,
+        "cursor": 1,
+        "margin_m": 0.0018682434551045013,
+        "recertified_at_origin": true
+      },
+      "independent_nominal_updates": 1780,
+      "source_formula_errors": {
+        "raw_reference": 4.076738946423575e-13,
+        "nu": 3.979039320256561e-13,
+        "shape": 1.076083666617933e-13,
+        "affine_velocity": 6.661338147750939e-16,
+        "affine_mean": 2.220446049250313e-16,
+        "projection_mean_command": 1.7234564470003377e-13,
+        "effective_displacement": 9.725553695716371e-13,
+        "projected_common_displacement": 2.4202861936828413e-13
+      },
+      "common_metric_errors": {
+        "reference": 0.0,
+        "centers": 0.0,
+        "role_center_error": 0.0,
+        "edge_error": 0.0,
+        "region_by_role": 0.0,
+        "relative_density_l2_by_role": 1.4210854715202004e-14,
+        "shape_by_role": 1.7763568394002505e-15
+      },
+      "window_metrics": {
+        "sweep_regrouping": {
+          "center_m": 0.33766623145505065,
+          "formation_m": 0.3623940705438689,
+          "density": 3.026759556519045,
+          "shape_m": 3.1613068470474537,
+          "region_pct": 100.0,
+          "acceleration_rms_mps2": 0.319391133171555,
+          "mapping_rms_mps": 4.753370847081259e-16,
+          "safety_rms_mps": 0.0,
+          "local_intervention_s": 0.0,
+          "backup_intervention_s": 0.0,
+          "safety_intervention_s": 0.0,
+          "segment_distance_lower_m": 2.3834141924523298,
+          "center_peak_m": 0.5904053085243859
+        },
+        "patrol": {
+          "center_m": 2.6822935042727187,
+          "formation_m": 1.1695956218522263,
+          "density": 3.1979207361618394,
+          "shape_m": 3.1020662323976955,
+          "region_pct": 100.0,
+          "acceleration_rms_mps2": 0.7589539822269371,
+          "mapping_rms_mps": 6.193681834855676e-16,
+          "safety_rms_mps": 0.0,
+          "local_intervention_s": 0.0,
+          "backup_intervention_s": 0.0,
+          "safety_intervention_s": 0.0,
+          "segment_distance_lower_m": 2.418115991087817,
+          "center_peak_m": 2.9318085078328786
+        },
+        "initial_deployment": {
+          "center_m": 1.5859896487044718,
+          "formation_m": 2.666444915639083,
+          "density": 2.868833175948777,
+          "shape_m": 1.797846674779986,
+          "region_pct": 91.89791666666667,
+          "acceleration_rms_mps2": 0.6268045577579618,
+          "mapping_rms_mps": 0.1936338331324397,
+          "safety_rms_mps": 0.0,
+          "local_intervention_s": 0.0,
+          "backup_intervention_s": 0.0,
+          "safety_intervention_s": 0.0,
+          "segment_distance_lower_m": 2.381530701653819,
+          "center_peak_m": 3.577191463105469
+        }
+      },
+      "complete": 46,
+      "terminal_in_region": 46,
+      "full_replay": {
+        "status": "completed_verified",
+        "method": "P",
+        "seed": 33003,
+        "parameters": {
+          "kc_per_s": 0.24,
+          "kf_per_s": 0.16
+        },
+        "elapsed_s": 178.0,
+        "feedback_verification": "independent physical-coordinate formula on all task updates",
+        "nominal_updates": 1780,
+        "replayed_segments": 8900,
+        "maximum_segment_lower_error_m": 0.0,
+        "fast_states_checked": 8901,
+        "slow_metric_samples": 357,
+        "terminal_certificate": {
+          "generation": 8900,
+          "origin_step": 8899,
+          "cursor": 1,
+          "margin_m": 0.0018682434551045013,
+          "recertified_at_origin": true
+        },
+        "minimum_continuous_distance_m": 2.381530701653819,
+        "common_metric_errors": {
+          "reference": 0.0,
+          "centers": 0.0,
+          "role_center_error": 0.0,
+          "edge_error": 0.0,
+          "region_by_role": 0.0,
+          "relative_density_l2_by_role": 1.4210854715202004e-14,
+          "shape_by_role": 1.7763568394002505e-15
+        },
+        "phase_metrics": {
+          "sweep_regrouping": {
+            "center_rms_m": 0.33766623145505065,
+            "edge_rms_m": 0.3623940705438689,
+            "density_loss": 3.026759556519045,
+            "shape_rms_m": 3.1613068470474537,
+            "region_fraction": 1.0
+          },
+          "patrol": {
+            "center_rms_m": 2.6822935042727187,
+            "edge_rms_m": 1.1695956218522263,
+            "density_loss": 3.1979207361618394,
+            "shape_rms_m": 3.1020662323976955,
+            "region_fraction": 1.0
+          },
+          "initial_deployment": {
+            "center_rms_m": 1.5859896487044718,
+            "edge_rms_m": 2.666444915639083,
+            "density_loss": 2.868833175948777,
+            "shape_rms_m": 1.797846674779986,
+            "region_fraction": 0.9189791666666667
+          }
+        },
+        "source_formula_errors": {
+          "raw_reference": 4.076738946423575e-13,
+          "nu": 3.979039320256561e-13,
+          "shape": 1.076083666617933e-13,
+          "affine_velocity": 6.661338147750939e-16,
+          "affine_mean": 2.220446049250313e-16,
+          "projection_mean_command": 1.7234564470003377e-13,
+          "effective_displacement": 9.725553695716371e-13,
+          "projected_common_displacement": 2.4202861936828413e-13
+        },
+        "external_native_score": null,
+        "initial_hash": "601b5bd1ac15a8a6062fe666a57efccabd07618239d6a78b09663c9c8cbb7718",
+        "members_completing_turn": 46,
+        "terminal_members_inside": 46,
+        "record_sha256": {
+          "summary.json": "b2be3696c4a877783ddd69aac9ac19aea9e8bbccc347cd26e3b635b08686dfac",
+          "registration.json": "670e0666163d2d7673b6557c797ae64cbc2f5f6b90a32a91a20ec760ea40a845",
+          "input_manifest.json": "58a20dd01c807161431c713576ef98d27e749cf5e442c63814c432b4294acda4",
+          "history.npz": "d3c0b13bdff5778a22fb7acd0cae824483a5557677e364254ea890e692e86042",
+          "task_history.npz": "9e026620e8ee89ae7398ddef72877b25dc7aaa5f2e582f599fcc4accb6e9249a",
+          "fast_metrics.npz": "d88e9d52245044ffa373dd1c06eb42ee44bef40c19f50d8526d305e7d5f2016d",
+          "slow_metrics.npz": "21bd4056175100d24d31558b7ac4388b7795f31da21f56ea45ea1a0744954300",
+          "terminal_certificate.npz": "355808b3246e22f08668664b39a27466c2da065ea13a2edfe2239594036cc45c",
+          "candidate_events.json": "2f72cde35206e195bfb8b7f6796814b79e2b358ab9d146bdc9ea6e58881ffc2a",
+          "certificate_ledger.json": "408632a106a72a1cee3853339959bc3938db4ce3714729055533c4ef48901e2d"
+        }
+      },
+      "process": {
+        "candidate": "B",
+        "seed": 33003,
+        "id": "B_s33003",
+        "exit_code": 0,
+        "wall_seconds": 881.7339999999967,
+        "status": "completed",
+        "completed_s": 178.0
+      },
+      "process_completed_successfully": true,
+      "audit_wall_seconds": 24.495410899980925
+    }
+  ],
+  "evidence_hashes_before": {
+    "output/reviews/p_gain_calibration_20261108/protocol.json": "b9287417afadae30cef227d0e424733bf6cab398b4ce635d36c3435855f5a896",
+    "output/reviews/p_gain_calibration_20261108/evaluation_registration.json": "f8fade2302a818a188902211eac78979315956d9e99a67e9b6807ec5ac833cb8",
+    "output/reviews/p_gain_calibration_20261108/evaluation_results.json": "665b79dfb2ffcff20046960206b824cd7753951cf0a3d515986ac50158cf4321",
+    "output/reviews/p_gain_calibration_20261108/audit/audit_campaign.py": "49a63b8fc2997d34df70cd82f34d0fe14f7c6e02aaf2d165bbbe5d531a386d0b",
+    "output/reviews/p_gain_calibration_20261108/audit/replay_helpers.py": "bef7d52181a288498fc9236662a987769aa3f7eb9b29e57da85b321947a1bb15",
+    "output/reviews/p_gain_calibration_20261108/audit/build_replay_auditor.py": "1dd131250d14ee73a502335812f123750e60fac0f1fb1d698aea2ef384edd6b5",
+    "output/reviews/mixed_sweep_orbit_calibration_20261102/audit_calibration.py": "d4102fb28a7868e69f7147f0d478c3179bb0ba0b26fc82ccfc1f850023ea330e",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/audit_evaluation.py": "b2294fa1b96e9eb5e3a73b3aeb70a02e7782a6817c3c4b3f9b50d1fe1a58c6d5",
+    "output/reviews/p_gain_calibration_20261108/selection.json": "717f16d7d7b3d2f34a6c55df81efd38075eace1d4c8ba5996e8099aab05478d0",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/summary.json": "d7e7522d0b15161029bcada3bac4b3830e881df04ee84869c8fca2806ff4e0b3",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/configuration.json": "ed3fa381840a6e223be5fc42456948d11d0c1bfe81f561c28b7f0ea34be1c9da",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/registration.json": "7f01ea370d94d38d04e2ad27e63423b57f57ad88f83110f0f42ea52ae7b50186",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/experiment_identity.json": "07be49b8ecb01c7def6f841de7fdbe5a739e98345315adfd6e01dbd41dd6ad6e",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/controller_identity.json": "2a9135080b20016c9ec6cf1d49a9c6724491336ea361c61dc5bc95e3c5903d6d",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/input_manifest.json": "c7b83ad31e47aeb5bdf22c29123c528e38f7f753c18e90b8c88e5007e3b8a1dd",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/initial.npz": "af471cad293d573a62d438f54908f579db7e81452c90fc7d65fe09f2ba509239",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/history.npz": "95488ec6b11ce5c55c05465844c4d73767629701f5c27333378541d87125d024",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/fast_metrics.npz": "31ee05411ee6a538a71002ee6e03ee79fe9ea0207fda80235376e1eb9fef3155",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/slow_metrics.npz": "2d6d7fe25fbc2e905eaf164d24112267abe46bf56e742faab630f79d2ddb17fd",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/task_history.npz": "6d28f4e519b718b63f760a703c937c7bdb9543e96ce70e5509bf77ba69060f07",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/schema.json": "14e1dcbbbe2c41e4fe5e7496e33e22c06475bb69c4b66d3e1bdc98d475ac3f82",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/terminal_certificate.npz": "523584e9a9d9664c648b8b719092a555b4cbf460ac94e2b9213e4c642dd20cb8",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/candidate_events.json": "4b09b2922f1fc3b0eec0410461ecdd1df78c7fa51e89b78f9bdc3cb04d1d5341",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/certificate_ledger.json": "13b22cccaa2e7a48010e0d54d7f8eb376bbe7a51329862b739de353ffb60597e",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/summary.json": "98cac64505be4998fa68507ae318a23eceefcb2455a4189ce7e51aafe5136ce0",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/configuration.json": "ed3fa381840a6e223be5fc42456948d11d0c1bfe81f561c28b7f0ea34be1c9da",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/registration.json": "1ff2db44ffc55b60d17cdfd3378c0db7a6466f06bc47ad7567e0584d96a5f8eb",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/experiment_identity.json": "6b56e895733657e1a1c8d06e812a6de449d4a2a581677833b76a4791321d873d",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/controller_identity.json": "2a9135080b20016c9ec6cf1d49a9c6724491336ea361c61dc5bc95e3c5903d6d",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/input_manifest.json": "8793bee5abb320603719b22a4e5b44a62dbdd69ad93810f0dc17b0876d47b414",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/initial.npz": "fb7101a42e421b63f33de7d3bdc48fb875da8e1af0b99f085f80ea17dce5f144",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/history.npz": "ef50667642e2ea5dece76ce7155dcb22adb1b74858db0c1f0ebb7ea781a9137b",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/fast_metrics.npz": "254c5c218639c20f95dab240297829bf9c17888dc3d3d53e919b5509f8003662",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/slow_metrics.npz": "4a8d353628902eeee6a9ec566ba48c96b50f499b6f5f2c143265393d9e45edcc",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/task_history.npz": "e815507952fbbe6f501fec56258492f6f748fd948556d9c278ce2583199c4c49",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/schema.json": "14e1dcbbbe2c41e4fe5e7496e33e22c06475bb69c4b66d3e1bdc98d475ac3f82",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/terminal_certificate.npz": "a3141e63b2ba24a2dbcd91af7f02b6b624b677151a8cae73a26bb749ba1c24a5",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/candidate_events.json": "f0b1a5bacd5afffb0bf34a72fa7bd728c3cae76f7bb16c24d9be85bc4a6920c8",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/certificate_ledger.json": "643f1327bdf957223df68b0c342fda2f0cf3e49f954b3e47dd435b8edf2094ad",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/summary.json": "b2be3696c4a877783ddd69aac9ac19aea9e8bbccc347cd26e3b635b08686dfac",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/configuration.json": "ed3fa381840a6e223be5fc42456948d11d0c1bfe81f561c28b7f0ea34be1c9da",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/registration.json": "670e0666163d2d7673b6557c797ae64cbc2f5f6b90a32a91a20ec760ea40a845",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/experiment_identity.json": "07768f3111d5bdefc0bf6eab1c60c97a35a69020aec8bd89595cf4bdf7697858",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/controller_identity.json": "2a9135080b20016c9ec6cf1d49a9c6724491336ea361c61dc5bc95e3c5903d6d",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/input_manifest.json": "58a20dd01c807161431c713576ef98d27e749cf5e442c63814c432b4294acda4",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/initial.npz": "601b5bd1ac15a8a6062fe666a57efccabd07618239d6a78b09663c9c8cbb7718",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/history.npz": "d3c0b13bdff5778a22fb7acd0cae824483a5557677e364254ea890e692e86042",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/fast_metrics.npz": "d88e9d52245044ffa373dd1c06eb42ee44bef40c19f50d8526d305e7d5f2016d",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/slow_metrics.npz": "21bd4056175100d24d31558b7ac4388b7795f31da21f56ea45ea1a0744954300",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/task_history.npz": "9e026620e8ee89ae7398ddef72877b25dc7aaa5f2e582f599fcc4accb6e9249a",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/schema.json": "14e1dcbbbe2c41e4fe5e7496e33e22c06475bb69c4b66d3e1bdc98d475ac3f82",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/terminal_certificate.npz": "355808b3246e22f08668664b39a27466c2da065ea13a2edfe2239594036cc45c",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/candidate_events.json": "2f72cde35206e195bfb8b7f6796814b79e2b358ab9d146bdc9ea6e58881ffc2a",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/certificate_ledger.json": "408632a106a72a1cee3853339959bc3938db4ce3714729055533c4ef48901e2d"
+  },
+  "evidence_hashes_after": {
+    "output/reviews/p_gain_calibration_20261108/protocol.json": "b9287417afadae30cef227d0e424733bf6cab398b4ce635d36c3435855f5a896",
+    "output/reviews/p_gain_calibration_20261108/evaluation_registration.json": "f8fade2302a818a188902211eac78979315956d9e99a67e9b6807ec5ac833cb8",
+    "output/reviews/p_gain_calibration_20261108/evaluation_results.json": "665b79dfb2ffcff20046960206b824cd7753951cf0a3d515986ac50158cf4321",
+    "output/reviews/p_gain_calibration_20261108/audit/audit_campaign.py": "49a63b8fc2997d34df70cd82f34d0fe14f7c6e02aaf2d165bbbe5d531a386d0b",
+    "output/reviews/p_gain_calibration_20261108/audit/replay_helpers.py": "bef7d52181a288498fc9236662a987769aa3f7eb9b29e57da85b321947a1bb15",
+    "output/reviews/p_gain_calibration_20261108/audit/build_replay_auditor.py": "1dd131250d14ee73a502335812f123750e60fac0f1fb1d698aea2ef384edd6b5",
+    "output/reviews/mixed_sweep_orbit_calibration_20261102/audit_calibration.py": "d4102fb28a7868e69f7147f0d478c3179bb0ba0b26fc82ccfc1f850023ea330e",
+    "output/reviews/mixed_sweep_orbit_paired_20261102/audit_evaluation.py": "b2294fa1b96e9eb5e3a73b3aeb70a02e7782a6817c3c4b3f9b50d1fe1a58c6d5",
+    "output/reviews/p_gain_calibration_20261108/selection.json": "717f16d7d7b3d2f34a6c55df81efd38075eace1d4c8ba5996e8099aab05478d0",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/summary.json": "d7e7522d0b15161029bcada3bac4b3830e881df04ee84869c8fca2806ff4e0b3",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/configuration.json": "ed3fa381840a6e223be5fc42456948d11d0c1bfe81f561c28b7f0ea34be1c9da",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/registration.json": "7f01ea370d94d38d04e2ad27e63423b57f57ad88f83110f0f42ea52ae7b50186",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/experiment_identity.json": "07be49b8ecb01c7def6f841de7fdbe5a739e98345315adfd6e01dbd41dd6ad6e",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/controller_identity.json": "2a9135080b20016c9ec6cf1d49a9c6724491336ea361c61dc5bc95e3c5903d6d",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/input_manifest.json": "c7b83ad31e47aeb5bdf22c29123c528e38f7f753c18e90b8c88e5007e3b8a1dd",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/initial.npz": "af471cad293d573a62d438f54908f579db7e81452c90fc7d65fe09f2ba509239",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/history.npz": "95488ec6b11ce5c55c05465844c4d73767629701f5c27333378541d87125d024",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/fast_metrics.npz": "31ee05411ee6a538a71002ee6e03ee79fe9ea0207fda80235376e1eb9fef3155",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/slow_metrics.npz": "2d6d7fe25fbc2e905eaf164d24112267abe46bf56e742faab630f79d2ddb17fd",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/task_history.npz": "6d28f4e519b718b63f760a703c937c7bdb9543e96ce70e5509bf77ba69060f07",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/schema.json": "14e1dcbbbe2c41e4fe5e7496e33e22c06475bb69c4b66d3e1bdc98d475ac3f82",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/terminal_certificate.npz": "523584e9a9d9664c648b8b719092a555b4cbf460ac94e2b9213e4c642dd20cb8",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/candidate_events.json": "4b09b2922f1fc3b0eec0410461ecdd1df78c7fa51e89b78f9bdc3cb04d1d5341",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33001/certificate_ledger.json": "13b22cccaa2e7a48010e0d54d7f8eb376bbe7a51329862b739de353ffb60597e",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/summary.json": "98cac64505be4998fa68507ae318a23eceefcb2455a4189ce7e51aafe5136ce0",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/configuration.json": "ed3fa381840a6e223be5fc42456948d11d0c1bfe81f561c28b7f0ea34be1c9da",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/registration.json": "1ff2db44ffc55b60d17cdfd3378c0db7a6466f06bc47ad7567e0584d96a5f8eb",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/experiment_identity.json": "6b56e895733657e1a1c8d06e812a6de449d4a2a581677833b76a4791321d873d",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/controller_identity.json": "2a9135080b20016c9ec6cf1d49a9c6724491336ea361c61dc5bc95e3c5903d6d",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/input_manifest.json": "8793bee5abb320603719b22a4e5b44a62dbdd69ad93810f0dc17b0876d47b414",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/initial.npz": "fb7101a42e421b63f33de7d3bdc48fb875da8e1af0b99f085f80ea17dce5f144",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/history.npz": "ef50667642e2ea5dece76ce7155dcb22adb1b74858db0c1f0ebb7ea781a9137b",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/fast_metrics.npz": "254c5c218639c20f95dab240297829bf9c17888dc3d3d53e919b5509f8003662",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/slow_metrics.npz": "4a8d353628902eeee6a9ec566ba48c96b50f499b6f5f2c143265393d9e45edcc",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/task_history.npz": "e815507952fbbe6f501fec56258492f6f748fd948556d9c278ce2583199c4c49",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/schema.json": "14e1dcbbbe2c41e4fe5e7496e33e22c06475bb69c4b66d3e1bdc98d475ac3f82",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/terminal_certificate.npz": "a3141e63b2ba24a2dbcd91af7f02b6b624b677151a8cae73a26bb749ba1c24a5",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/candidate_events.json": "f0b1a5bacd5afffb0bf34a72fa7bd728c3cae76f7bb16c24d9be85bc4a6920c8",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33002/certificate_ledger.json": "643f1327bdf957223df68b0c342fda2f0cf3e49f954b3e47dd435b8edf2094ad",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/summary.json": "b2be3696c4a877783ddd69aac9ac19aea9e8bbccc347cd26e3b635b08686dfac",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/configuration.json": "ed3fa381840a6e223be5fc42456948d11d0c1bfe81f561c28b7f0ea34be1c9da",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/registration.json": "670e0666163d2d7673b6557c797ae64cbc2f5f6b90a32a91a20ec760ea40a845",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/experiment_identity.json": "07768f3111d5bdefc0bf6eab1c60c97a35a69020aec8bd89595cf4bdf7697858",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/controller_identity.json": "2a9135080b20016c9ec6cf1d49a9c6724491336ea361c61dc5bc95e3c5903d6d",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/input_manifest.json": "58a20dd01c807161431c713576ef98d27e749cf5e442c63814c432b4294acda4",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/initial.npz": "601b5bd1ac15a8a6062fe666a57efccabd07618239d6a78b09663c9c8cbb7718",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/history.npz": "d3c0b13bdff5778a22fb7acd0cae824483a5557677e364254ea890e692e86042",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/fast_metrics.npz": "d88e9d52245044ffa373dd1c06eb42ee44bef40c19f50d8526d305e7d5f2016d",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/slow_metrics.npz": "21bd4056175100d24d31558b7ac4388b7795f31da21f56ea45ea1a0744954300",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/task_history.npz": "9e026620e8ee89ae7398ddef72877b25dc7aaa5f2e582f599fcc4accb6e9249a",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/schema.json": "14e1dcbbbe2c41e4fe5e7496e33e22c06475bb69c4b66d3e1bdc98d475ac3f82",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/terminal_certificate.npz": "355808b3246e22f08668664b39a27466c2da065ea13a2edfe2239594036cc45c",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/candidate_events.json": "2f72cde35206e195bfb8b7f6796814b79e2b358ab9d146bdc9ea6e58881ffc2a",
+    "output/reviews/p_gain_calibration_20261108/runs/evaluation/B_s33003/certificate_ledger.json": "408632a106a72a1cee3853339959bc3938db4ce3714729055533c4ef48901e2d"
+  }
+}

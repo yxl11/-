@@ -1,0 +1,29 @@
+{
+  "seed": 771923,
+  "normal_truncation": 2.6,
+  "minimum_m": 2.7,
+  "proposals_per_pair": 20000,
+  "kinematic_grid_dt_s": 0.02,
+  "generation_rule": "Independent symmetric Gaussian pairs +/-z, reject coordinate tails, continuous conservative target envelopes and pair spacing; first passing candidate, no trajectory-dependent choice",
+  "registered_utc": "2026-10-31T17:23:59.399927+00:00",
+  "before_trajectory_results": true,
+  "derivative_bounds": "Quintic maxima 15/8,10/sqrt(3),60; log-scale and rotating-frame chain rule; nearest grid point radius h/2. Full derivation in adaptation_notes_zh.md.",
+  "gain_source_sha256": "aebfe63f7f9812b0e3bfa07d1056b778eea7c53cc0163058d751d5013213330d",
+  "gains": {
+    "RAS08": {
+      "alpha": 0.2,
+      "coupling": 0.2
+    },
+    "MMD19": {
+      "gamma": 10
+    }
+  },
+  "new_calibration_performed": false,
+  "fixed_kernel_rule": "RMS initial role sigmas, physical units, constant over this trajectory",
+  "sources_sha256": {
+    "prepare_external.py": "a3814bd3b0e5a9cd4407b5b8f4da7f70e08a377b50230c1e4b220872a9027795",
+    "external_adapters.py": "5367752d856257523be0c0953db46d1a2c902298f9c7bdd5bc1e7c6e26a516dd",
+    "mission.py": "0ef82482104584b1ff1b9f172204521daf4421f1105aa694631d8193c1df5a85",
+    "shape_models.py": "9238d180da7041f8deb357f75dd1176624283c4e1ef63c14c8efa362f608340f"
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "status": "PASS",
+  "checked_times_s": [
+    0.0,
+    16.0,
+    46.0,
+    77.0,
+    94.0,
+    138.0,
+    178.0
+  ],
+  "RAS_zero_error_reference_max_error_mps": 0.0,
+  "target_derivative_max_error_mps": 1.2242686864283314e-09,
+  "MMD_loss_directional_gradient_max_error": 1.0296382886923472e-11,
+  "static_original_core_command_max_error_mps": 1.7763568394002505e-15,
+  "affine_transport_at_targets_max_error_mps": 5.329070518200751e-15,
+  "MMD_rotated_vs_full_covariance_max_error_mps": 4.163336342344337e-16,
+  "target_representation": [
+    {
+      "time_s": 0.0,
+      "density_squared_by_role": [
+        7.790003853905731,
+        1.5311764041319587,
+        0.7279765697293111
+      ],
+      "centered_shape_by_role_m": [
+        3.684546181990253,
+        1.295911555775434,
+        0.7627945392100048
+      ],
+      "region_fraction_by_role": [
+        0.8,
+        0.5,
+        0.7
+      ]
+    },
+    {
+      "time_s": 16.0,
+      "density_squared_by_role": [
+        7.700470138663418,
+        1.5399575659715485,
+        0.7384877607586966
+      ],
+      "centered_shape_by_role_m": [
+        3.2934007969029575,
+        1.2552630019629791,
+        0.7496878613353108
+      ],
+      "region_fraction_by_role": [
+        0.8,
+        0.5,
+        0.7
+      ]
+    },
+    {
+      "time_s": 46.0,
+      "density_squared_by_role": [
+        7.711701966405609,
+        1.5296748243215201,
+        0.7502881731544335
+      ],
+      "centered_shape_by_role_m": [
+        3.137421044111642,
+        1.24604688359823,
+        0.735425671343764
+      ],
+      "region_fraction_by_role": [
+        0.8,
+        0.5,
+        0.7
+      ]
+    },
+    {
+      "time_s": 77.0,
+      "density_squared_by_role": [
+        7.707748280894726,
+        1.53962040862327,
+        0.7257040503497852
+      ],
+      "centered_shape_by_role_m": [
+        3.36432959648319,
+        1.2648441717142072,
+        0.7655250867279848
+      ],
+      "region_fraction_by_role": [
+        0.8,
+        0.5,
+        0.7
+      ]
+    },
+    {
+      "time_s": 94.0,
+      "density_squared_by_role": [
+        7.850956712920275,
+        1.5173794316695477,
+        0.7094329782833818
+      ],
+      "centered_shape_by_role_m": [
+        3.885215139140483,
+        1.3550443973019934,
+        0.8089705838947501
+      ],
+      "region_fraction_by_role": [
+        0.8,
+        0.5,
+        0.7
+      ]
+    },
+    {
+      "time_s": 138.0,
+      "density_squared_by_role": [
+        7.850956712920268,
+        1.5173794316695497,
+        0.7094329782833813
+      ],
+      "centered_shape_by_role_m": [
+        3.711585958837776,
+        1.1569685012332225,
+        0.7411638348677155
+      ],
+      "region_fraction_by_role": [
+        0.8,
+        0.5,
+        0.7
+      ]
+    },
+    {
+      "time_s": 178.0,
+      "density_squared_by_role": [
+        7.850956712920267,
+        1.5173794316695493,
+        0.709432978283378
+      ],
+      "centered_shape_by_role_m": [
+        3.539840089262179,
+        1.3219529567787471,
+        0.787769977986642
+      ],
+      "region_fraction_by_role": [
+        0.8,
+        0.5,
+        0.7
+      ]
+    }
+  ],
+  "identities": {
+    "RAS08": {
+      "method": "RAS08",
+      "identity": "Ren-Sorensen2008 Eq6 velocity-law adaptation with time-varying affine member targets; all-leader exact-reference specialization; 3D component extension",
+      "original_core_sha256": "1d2c498d27f8201aa3ebb5025d92bdfec7c9b59fbcc79b0593ff70852c15afeb",
+      "parameters": {
+        "alpha": 0.2,
+        "coupling": 0.2
+      },
+      "targets_sha256": "a00b46c250f9511eabe6c4e13a0918503e3f8086f517e5ab8bab1702f809601f",
+      "graph": {
+        "node_count": 46,
+        "undirected_edge_count": 835,
+        "binary_laplacian_max_eigenvalue": 46.00000000000005,
+        "binary_algebraic_connectivity": 16.000000000000007,
+        "normalized_max_eigenvalue": 0.9999999999999999,
+        "enabled_edge_weight_before_gain": 0.021739130434782584,
+        "definition": "complete within role and across role pairs (0,1),(1,2); no (0,2) edges"
+      },
+      "assignment_seconds": 0.0011859000660479069,
+      "no_P_feedback_added": true,
+      "theory_scope": "Affine shape change and mixed execution are adaptation conditions, not the source rigid-frame single-integrator guarantee."
+    },
+    "MMD19": {
+      "method": "MMD19",
+      "identity": "Arbel2019 deterministic empirical-measure MMD flow with instantaneous Gaussian targets and prescribed affine transport",
+      "original_core_sha256": "65473095d3e90922c231e54b3b5c5236998410ff5853c038d21a80eafa236fb7",
+      "parameters": {
+        "gamma": 10.0
+      },
+      "kernel_lengths_m": [
+        9.349688051837166,
+        4.453463071962462,
+        4.128357219685977
+      ],
+      "kernel_rule": "Fixed physical RBF length = RMS initial role standard deviations",
+      "no_P_feedback_added": true,
+      "theory_scope": "Time-dependent targets and mixed execution do not inherit the static-target source dissipation/convergence statement."
+    }
+  },
+  "assignment_sha256": "2a4bf0ae3f024d8db6abb4350ca525f0e2819fbbee9fade7703cdc99bed87563",
+  "target_geometry": {
+    "minimum_continuous_target_distance_lower_m": 2.7029736024138167,
+    "target_region_fraction_by_role": [
+      0.8,
+      0.5,
+      0.7
+    ]
+  },
+  "source_hashes": {
+    "external_adapters.py": "5367752d856257523be0c0953db46d1a2c902298f9c7bdd5bc1e7c6e26a516dd",
+    "prepare_external.py": "a3814bd3b0e5a9cd4407b5b8f4da7f70e08a377b50230c1e4b220872a9027795",
+    "targets.npz": "a00b46c250f9511eabe6c4e13a0918503e3f8086f517e5ab8bab1702f809601f",
+    "target_registration.json": "c946c7c2e602ea1f5b1ecaf057244c7cc9e9df108bcf7a7cc4f273d01de1ce46",
+    "target_checks.json": "81f01e6292b75b7f18135638b64bebbbc79ddb5657064daa77b67bd3658eda66",
+    "assignment.npz": "2a4bf0ae3f024d8db6abb4350ca525f0e2819fbbee9fade7703cdc99bed87563"
+  }
+}

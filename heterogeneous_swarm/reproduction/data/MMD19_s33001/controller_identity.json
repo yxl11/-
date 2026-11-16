@@ -1,0 +1,20 @@
+{
+  "method": "MMD19",
+  "identity": "Arbel2019 deterministic empirical-measure MMD flow with instantaneous Gaussian targets and prescribed affine transport",
+  "original_core_sha256": "65473095d3e90922c231e54b3b5c5236998410ff5853c038d21a80eafa236fb7",
+  "parameters": {
+    "gamma": 20.0
+  },
+  "kernel_lengths_m": [
+    9.349688051837166,
+    4.453463071962462,
+    4.128357219685977
+  ],
+  "kernel_rule": "Fixed physical RBF length = RMS initial role standard deviations",
+  "no_P_feedback_added": true,
+  "theory_scope": "Time-dependent targets and mixed execution do not inherit the static-target source dissipation/convergence statement.",
+  "external_adapter_sha256": "5367752d856257523be0c0953db46d1a2c902298f9c7bdd5bc1e7c6e26a516dd",
+  "scope": "Registered ten-seed paired evaluation",
+  "shape_feedback_sha256": "d88f55347c300254fe9aac00eccef73cc070c82bb8c21083377e9883b7dbf6aa",
+  "shape_models_sha256": "9238d180da7041f8deb357f75dd1176624283c4e1ef63c14c8efa362f608340f"
+}

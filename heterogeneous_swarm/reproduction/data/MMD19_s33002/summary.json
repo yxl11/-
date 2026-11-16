@@ -1,0 +1,151 @@
+{
+  "status": "completed",
+  "method": "MMD19",
+  "seed": 33002,
+  "counts": [
+    10,
+    16,
+    20
+  ],
+  "completed_seconds": 178.0,
+  "requested_seconds": 178.0,
+  "completed_steps": 8900,
+  "wall_seconds": 1420.6836648000171,
+  "failure": null,
+  "inputs_unchanged": true,
+  "changed_inputs": [],
+  "controller_identity_check": {
+    "method": "MMD19",
+    "identity": "Arbel2019 deterministic empirical-measure MMD flow with instantaneous Gaussian targets and prescribed affine transport",
+    "original_core_sha256": "65473095d3e90922c231e54b3b5c5236998410ff5853c038d21a80eafa236fb7",
+    "parameters": {
+      "gamma": 20.0
+    },
+    "kernel_lengths_m": [
+      9.349688051837166,
+      4.453463071962462,
+      4.128357219685977
+    ],
+    "kernel_rule": "Fixed physical RBF length = RMS initial role standard deviations",
+    "no_P_feedback_added": true,
+    "theory_scope": "Time-dependent targets and mixed execution do not inherit the static-target source dissipation/convergence statement.",
+    "external_adapter_sha256": "5367752d856257523be0c0953db46d1a2c902298f9c7bdd5bc1e7c6e26a516dd",
+    "scope": "Registered ten-seed paired evaluation",
+    "shape_feedback_sha256": "d88f55347c300254fe9aac00eccef73cc070c82bb8c21083377e9883b7dbf6aa",
+    "shape_models_sha256": "9238d180da7041f8deb357f75dd1176624283c4e1ef63c14c8efa362f608340f"
+  },
+  "actual_state_consistency": "bitwise equal at every committed step",
+  "bootstrap": {
+    "status": "certified",
+    "prediction_steps": 1,
+    "minimum_prefix_lower_m": 2.7436520592471223,
+    "minimum_sample_m": 2.743653839647122,
+    "tail_lower_m": 2.7436520592471223,
+    "certificate_margin_m": 0.7436520592471223,
+    "tail_pair": [
+      20,
+      24
+    ],
+    "tail_path_max_m": 0.0,
+    "position_allowance_max_m": 8.902000000000002e-07,
+    "mapping": {
+      "changed_FW_count": 0,
+      "FW_below_floor_count": 0,
+      "FW_above_speed_cap_count": 0,
+      "FW_above_inclination_count": 0,
+      "FW_mapping_change_max_mps": 0.0,
+      "FW_mapping_change_rms_mps": 0.0,
+      "all_command_change_max_mps": 0.0
+    }
+  },
+  "retained_terminal_certificate": {
+    "status": "certified",
+    "prediction_steps": 288,
+    "minimum_prefix_lower_m": 2.003740643431354,
+    "minimum_sample_m": 2.0038212915296474,
+    "tail_lower_m": 2.0364084258659885,
+    "certificate_margin_m": 0.0037406434313540515,
+    "tail_pair": [
+      42,
+      45
+    ],
+    "tail_path_max_m": 9.553268313857071,
+    "position_allowance_max_m": 9.189000000000023e-07,
+    "mapping": {
+      "changed_FW_count": 0,
+      "FW_below_floor_count": 0,
+      "FW_above_speed_cap_count": 0,
+      "FW_above_inclination_count": 0,
+      "FW_mapping_change_max_mps": 2.5121479338940403e-15,
+      "FW_mapping_change_rms_mps": 1.7540121831874933e-15,
+      "all_command_change_max_mps": 2.5121575169596163e-15
+    },
+    "backup_mps": [
+      4.513596634435126,
+      7.786362785127333,
+      0.0
+    ],
+    "generation": 8895,
+    "created_step": 8899,
+    "consumed_segments": 1,
+    "saved_prefix_states": 289,
+    "prefix_sha256": "70be4ddd8d175e3f6a5693d280e859674ac1388f246b00f0a087122b69588b67",
+    "prefix_and_backup_sha256": "0baa17aa86fc4986c9b4005b244ecb72a3ddcda816a497fc579e318ba375bbcc"
+  },
+  "terminal_fresh_backup_certificate": {
+    "status": "certified",
+    "prediction_steps": 288,
+    "minimum_prefix_lower_m": 2.003740643631354,
+    "minimum_sample_m": 2.003842424031354,
+    "tail_lower_m": 2.0828366032805468,
+    "certificate_margin_m": 0.003740643631354068,
+    "tail_pair": [
+      42,
+      45
+    ],
+    "tail_path_max_m": 9.527492339666455,
+    "position_allowance_max_m": 9.189000000000023e-07,
+    "mapping": {
+      "changed_FW_count": 0,
+      "FW_below_floor_count": 0,
+      "FW_above_speed_cap_count": 0,
+      "FW_above_inclination_count": 0,
+      "FW_mapping_change_max_mps": 8.881784197001252e-16,
+      "FW_mapping_change_rms_mps": 8.881784197001252e-16,
+      "all_command_change_max_mps": 8.881784197001252e-16
+    },
+    "terminal_trial_backup_mps": [
+      4.5000000000000036,
+      7.7942286340599445,
+      0.0
+    ]
+  },
+  "minimum_continuous_distance_lower_m": 2.000344026675395,
+  "fallback_steps": 5,
+  "local_repair_steps": 118,
+  "total_certificate_calls": 9187,
+  "cpu_seconds": 1397.1875,
+  "policy_branch_steps": {
+    "nominal": 8777,
+    "pair_escape": 118,
+    "local_cruise": 0,
+    "retained_backup": 5
+  },
+  "FW_speed_min_mps": 8.483765443486492,
+  "FW_speed_max_mps": 15.00000000000002,
+  "FW_inclination_max_deg": 0.5694908887739459,
+  "FW_rate_max_mps2_deg_s": [
+    2.0,
+    10.0,
+    0.9039248663800039
+  ],
+  "rotor_acceleration_max_mps2": [
+    1.500000000000038,
+    1.0000000000000353
+  ],
+  "real_time_delays_simulated": false,
+  "backup_mode": "tangent",
+  "lifetime_reserve_m": 8.901000000000002e-07,
+  "controller_identity_scope": "Arbel2019 deterministic empirical-measure MMD flow with instantaneous Gaussian targets and prescribed affine transport",
+  "scope": "Registered ten-seed paired evaluation"
+}

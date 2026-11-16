@@ -1,0 +1,29 @@
+{
+  "identity": "P with registered kc/kf, frozen D/kappa, prescribed affine transport and unchanged role metrics",
+  "gain_study": {
+    "stage": "evaluation",
+    "candidate_id": "B",
+    "protocol_path": "output/reviews/p_gain_calibration_20261108/protocol.json",
+    "initial_manifest_path": "output/reviews/mixed_sweep_orbit_paired_20261102/initial_manifest.json",
+    "additional_input_paths": [
+      "output/reviews/p_gain_calibration_20261108/checks/worker_static.json",
+      "output/reviews/p_gain_calibration_20261108/checks/regression.json",
+      "output/reviews/p_gain_calibration_20261108/selection.json"
+    ],
+    "selection_sha256": "717f16d7d7b3d2f34a6c55df81efd38075eace1d4c8ba5996e8099aab05478d0",
+    "source_evaluation_protocol_role": "Execution provenance only; this study protocol defines gains and initial-state split"
+  },
+  "frozen_density_parameters": {
+    "D_m2ps": 2.5,
+    "kappa_m2ps": 10.0
+  },
+  "method": "P",
+  "parameters": {
+    "kc_per_s": 0.24,
+    "kf_per_s": 0.16
+  },
+  "external_adapter_sha256": "5367752d856257523be0c0953db46d1a2c902298f9c7bdd5bc1e7c6e26a516dd",
+  "scope": "One finite P kc/kf calibration, followed by at most one candidate on the three previously seen paired evaluation initials. Original paper, evidence and external gains remain unchanged.; evaluation",
+  "shape_feedback_sha256": "d88f55347c300254fe9aac00eccef73cc070c82bb8c21083377e9883b7dbf6aa",
+  "shape_models_sha256": "9238d180da7041f8deb357f75dd1176624283c4e1ef63c14c8efa362f608340f"
+}
